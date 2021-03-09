@@ -27,4 +27,4 @@ QQ阅读cookie = type=http-request,pattern=https:\/\/(iostgw6\.reader\.qq\.com\/
 小乐cookie = type=http-request,pattern=https:\/\/minapp\.xqrobot\.net\/*,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/xiaole.js
 
 [MITM]
-hostname = %APPEND% iostgw6.reader.qq.com, newios.reader.qq.com, huodong.fanli.com, passport.fanli.com, gw.fanli.com, veishop.iboxpay.com, qmyd.yichengw.cn, bububao.duoshoutuan.com, yuedongzu.yichengw.cn, 
+hostname = %APPEND% iostgw6.reader.qq.com, newios.reader.qq.com, huodong.fanli.com, passport.fanli.com, gw.fanli.com, veishop.iboxpay.com, qmyd.yichengw.cn, bububao.duoshoutuan.com, yuedongzu.yichengw.cn, minapp.xqrobot.net
