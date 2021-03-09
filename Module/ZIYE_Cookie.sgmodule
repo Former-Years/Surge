@@ -14,5 +14,17 @@ QQ阅读cookie = type=http-request,pattern=https:\/\/(iostgw6\.reader\.qq\.com\/
 笑谱cookie1 = type=http-request,pattern=https:\/\/veishop\.iboxpay\.com\/*,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/iboxpay.js
 笑谱cookie2 = type=http-response,pattern=https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf-user-auth-web\/ignore_tk\/veishop\/v1\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/iboxpay.js
 
+# > 全民悦动
+全民悦动cookie = type=http-response,pattern=https:\/\/qmyd\.yichengw\.cn\/*,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/qmyd.js
+
+# > 步步宝
+步步宝cookie = type=http-response,pattern=https:\/\/bububao\.duoshoutuan\.com\/user\/*,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/bububao.js
+
+# > 悦动族
+悦动族cookie = type=http-response,pattern=https:\/\/yuedongzu\.yichengw\.cn\/*,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/yuedongzu.js
+
+# > 小乐
+小乐cookie = type=http-request,pattern=https:\/\/minapp\.xqrobot\.net\/*,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/xiaole.js
+
 [MITM]
-hostname = %APPEND% iostgw6.reader.qq.com, newios.reader.qq.com, huodong.fanli.com, passport.fanli.com, gw.fanli.com, veishop.iboxpay.com
+hostname = %APPEND% iostgw6.reader.qq.com, newios.reader.qq.com, huodong.fanli.com, passport.fanli.com, gw.fanli.com, veishop.iboxpay.com, qmyd.yichengw.cn, bububao.duoshoutuan.com, yuedongzu.yichengw.cn, 
