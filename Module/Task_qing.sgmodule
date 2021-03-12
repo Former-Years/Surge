@@ -77,8 +77,8 @@ WPS = type=cron,cronexp="35 0 0 * * *",wake-system=1,script-path=https://raw.git
 京东金融养猪 = type=cron,cronexp="5 2 0 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_pigPet.js
 # > 京东点点券
 京东点点券 = type=cron,cronexp="10 2 0 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_necklace.js
-# > 京东泡泡大战
-京东泡泡大战 = type=cron,cronexp="15 2 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/799953468/Quantumult-X/master/Scripts/JD/jd_paopao.js
+# > 京东环球挑战赛
+京东环球挑战赛 = type=cron,cronexp="15 2 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_global.js
 # > 东东小窝
 东东小窝 = type=cron,cronexp="20 2 0 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_small_home.js
 # > 京东赚赚小程序
@@ -111,15 +111,13 @@ WPS = type=cron,cronexp="35 0 0 * * *",wake-system=1,script-path=https://raw.git
 京小兑小程序 = type=cron,cronexp="30 3 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_jxd.js
 # > 京东极速版领红包
 京东极速版领红包 = type=cron,cronexp="35 3 0 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_speed_redpocke.js
-# > 京东环球挑战赛
-京东环球挑战赛 = type=cron,cronexp="40 3 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_global.js
 # > 京东极速版
-京东极速版 = type=cron,cronexp="45 3 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_speed_sign.js
+京东极速版 = type=cron,cronexp="40 3 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_speed_sign.js
 # > 趣头条
 趣头条 = type=cron,cronexp="5 1 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.js
 # > 中青看点极速版
 中青看点极速版 = type=cron,cronexp="5 */10 1-22 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js
-中青自动阅读 = type=cron,cronexp="10 14 1-21/2 * * *",wake-system=1,timeout=7200,script-path=https://raw.githubusercontent.com/songyangzz/QuantumultX/master/YOUTH_READ.js
+中青自动阅读 = type=cron,cronexp="10 13 1-21/2 * * *",wake-system=1,timeout=7200,script-path=https://raw.githubusercontent.com/songyangzz/QuantumultX/master/YOUTH_READ.js
 # > 京东农场
 京东农场 = type=cron,cronexp="5 0 6-18/6 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_fruit.js
 # > 京东萌宠
@@ -140,8 +138,6 @@ WPS = type=cron,cronexp="35 0 0 * * *",wake-system=1,script-path=https://raw.git
 京喜工厂 = type=cron,cronexp="10 11 */1 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_dreamFactory.js
 # > 京喜财富岛
 京喜财富岛 = type=cron,cronexp="10 12 */1 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_cfd.js
-# > QQ阅读
-QQ阅读 = type=cron,cronexp="10 13 1-20 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/QQread.js
 # > 火山极速版
 火山极速版 = type=cron,cronexp="30 */10 1-23 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon_old.js
 # > 笑谱
