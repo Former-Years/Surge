@@ -4,9 +4,6 @@
 
 
 [Script]
-# > QQ阅读
-QQ阅读cookie = type=http-request,pattern=https:\/\/(iostgw6\.reader\.qq\.com\/*||newios\.reader\.qq\.com\/*),script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/QQread.js
-
 # > 返利网
 返利网cookie = type=http-request,pattern=https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/flw.js
 
@@ -15,4 +12,4 @@ QQ阅读cookie = type=http-request,pattern=https:\/\/(iostgw6\.reader\.qq\.com\/
 笑谱cookie2 = type=http-response,pattern=https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf-user-auth-web\/ignore_tk\/veishop\/v1\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/iboxpay.js
 
 [MITM]
-hostname = %APPEND% iostgw6.reader.qq.com, newios.reader.qq.com, huodong.fanli.com, passport.fanli.com, gw.fanli.com, veishop.iboxpay.com
+hostname = %APPEND% huodong.fanli.com, passport.fanli.com, gw.fanli.com, veishop.iboxpay.com
