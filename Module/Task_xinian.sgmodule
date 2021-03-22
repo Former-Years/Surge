@@ -173,7 +173,7 @@ IT之家 = type=cron,cronexp="35 2 0 * * *",wake-system=1,script-path=https://ra
 # > 京东快递
 京东快递 = type=cron,cronexp="45 5 0 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_kd.js
 # > 京喜农场
-京喜农场 = type=cron,cronexp="50 5 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_nc.js
+京喜农场 = type=cron,cronexp="50 5 0,23 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_nc.js
 # > 中青浏览赚
 中青浏览赚 = type=cron,cronexp="55 5 0,1,2 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth_gain.js
 # > 京东疯狂的Joy
@@ -234,7 +234,7 @@ QQ阅读 = type=cron,cronexp="10 14 1-20 * * *",wake-system=1,script-path=https:
 # > 笑谱
 笑谱 = type=cron,cronexp="0 */30 8-23 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/iboxpay.js
 # > 京东直播抽奖
-京东直播抽奖 = type=cron,cronexp="45 */30 1-23 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd_live_lottery_social.js
+京东直播抽奖 = type=cron,cronexp="45 */30 8-23 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd_live_lottery_social.js
 # > 京东价格保护
 京东价格保护 = type=cron,cronexp="0 55 23 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/ZCY01/daily_scripts/main/jd/jd_priceProtect.js
 # > 取关京东店铺和商品
