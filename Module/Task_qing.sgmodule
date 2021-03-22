@@ -108,8 +108,10 @@ WPS = type=cron,cronexp="35 0 0 * * *",wake-system=1,script-path=https://raw.git
 京小兑小程序 = type=cron,cronexp="25 3 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_jxd.js
 # > 京东极速版领红包
 京东极速版领红包 = type=cron,cronexp="30 3 0 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_speed_redpocke.js
+# > 京东女装盲盒
+京东女装盲盒 = type=cron,cronexp="35 3 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_nzmh.js
 # > 京东极速版
-京东极速版 = type=cron,cronexp="35 3 0,1 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_speed_sign.js
+京东极速版 = type=cron,cronexp="40 3 0,1 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_speed_sign.js
 # > 趣头条
 趣头条 = type=cron,cronexp="5 1 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.js
 # > 中青看点极速版
