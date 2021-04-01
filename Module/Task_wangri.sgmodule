@@ -30,6 +30,8 @@
 宠汪汪兑奖品 = type=cron,cronexp="0-5 0 0,8,12,16 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_joy_reward.js
 # > 京喜财富岛提现
 京喜财富岛提现 = type=cron,cronexp="0,1 0 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/58xinian/Surge/master/Script/jx_cfdtx.js
+# > 京东手机狂欢城
+京东手机狂欢城 = type=cron,cronexp="0 0 0-18/6 * * *",timeout=600,wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_carnivalcity.js
 # > 京东汽车兑换
 京东汽车兑换 = type=cron,cronexp="0 0 0 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_car_exchange.js
 # > 宠汪汪偷积分狗粮
