@@ -106,6 +106,8 @@ WPS = type=cron,cronexp="35 0 0 * * *",wake-system=1,script-path=https://raw.git
 东东健康社区 = type=cron,cronexp="25 3 0,23 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_health.js
 # > 京东幸运大转盘
 京东幸运大转盘 = type=cron,cronexp="30 3 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_market_lottery.js
+# > 京东球队赢好礼
+京东球队赢好礼 = type=cron,cronexp="35 3 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_tcl.js
 # > 趣头条
 趣头条 = type=cron,cronexp="5 1 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.js
 # > 中青看点极速版
