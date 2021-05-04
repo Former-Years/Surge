@@ -125,8 +125,8 @@ IT之家 = type=cron,cronexp="35 2 0 * * *",wake-system=1,script-path=https://ra
 京东领金贴 = type=cron,cronexp="45 3 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_jin_tie.js
 # > 索尼俱乐部
 索尼俱乐部 = type=cron,cronexp="50 3 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/sony/sonyClub.js
-# > 无忧行
-无忧行 = type=cron,cronexp="55 3 0 * * *",wake-system=1,script-path=https://ooxx.be/js/jegotrip.js
+# > 东东健康社区
+东东健康社区 = type=cron,cronexp="55 3 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_health.js
 # > 快看漫画
 快看漫画 = type=cron,cronexp="0 4 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/KuaiKan-DailyBonus/KKMH.js
 # > 京喜
@@ -179,12 +179,10 @@ IT之家 = type=cron,cronexp="35 2 0 * * *",wake-system=1,script-path=https://ra
 京东女装盲盒 = type=cron,cronexp="0 6 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_nzmh.js
 # > 京东极速版
 京东极速版 = type=cron,cronexp="5 6 0,1 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_speed_sign.js
-# > 东东健康社区
-东东健康社区 = type=cron,cronexp="10 6 0,23 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_health.js
 # > 京东幸运大转盘
-京东幸运大转盘 = type=cron,cronexp="15 6 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_market_lottery.js
+京东幸运大转盘 = type=cron,cronexp="10 6 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_market_lottery.js
 # > 京东球队赢好礼
-京东球队赢好礼 = type=cron,cronexp="20 6 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_tcl.js
+京东球队赢好礼 = type=cron,cronexp="15 6 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_tcl.js
 # > 趣头条
 趣头条 = type=cron,cronexp="5 1 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.js
 # > 切换会话
