@@ -6,8 +6,6 @@
 [Script]
 # > 京东直播
 京东直播 = type=cron,cronexp="0 10-20/5 3 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_live.js
-# > 滴滴睡觉
-滴滴睡觉 = type=cron,cronexp="0 1 6,22 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_sleep.js
 # > 彩云天气
 彩云天气 = type=cron,cronexp="0 0 8,12,15,18,21 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js
 # > 京豆变动通知
@@ -242,8 +240,6 @@ IT之家 = type=cron,cronexp="35 2 0 * * *",wake-system=1,script-path=https://ra
 今日头条极速版 = type=cron,cronexp="40 5,35 8-23 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/jrtt.js
 # > 火山极速版
 火山极速版 = type=cron,cronexp="45 */10 1-23 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/hotsoon_old.js
-# > 滴滴喝水
-滴滴喝水 = type=cron,cronexp="50 40 8,20,9-19/2 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_drink.js
 # > 京东家庭号
 京东家庭号 = type=cron,cronexp="10 15 12,23 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_family.js
 # > 京东每日抽奖
