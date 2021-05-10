@@ -98,7 +98,7 @@
 # > 京东签到领现金
 京东签到领现金 = type=cron,cronexp="0 3 0,23 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_cash.js
 # > 京喜农场
-京喜农场 = type=cron,cronexp="5 3 0,23 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_nc.js
+京喜农场 = type=cron,cronexp="5 3 0,12,23 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_jxnc.js
 # > 京小兑小程序
 京小兑小程序 = type=cron,cronexp="10 3 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_jxd.js
 # > 京东极速版领红包
