@@ -1,6 +1,6 @@
 #!name=Task
 #!desc=定时脚本
-#!system=ios
+#!system=mac
 
 
 [Script]
