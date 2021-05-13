@@ -125,8 +125,6 @@
 京东关注有礼 = type=cron,cronexp="5 4 0 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_shop_follow_sku.js
 # > 京东店铺大转盘
 京东店铺大转盘 = type=cron,cronexp="10 4 0,10,23 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_shop_lottery.js
-# > 京东刺客567之寻宝
-京东刺客567之寻宝 = type=cron,cronexp="15 4 0,12 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_oppo.js
 # > 趣头条
 趣头条 = type=cron,cronexp="5 1 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.js
 # > 中青看点极速版
