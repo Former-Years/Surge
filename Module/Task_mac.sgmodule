@@ -92,8 +92,6 @@
 京东关注有礼 = type=cron,cronexp="30 5 0 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_shop_follow_sku.js
 # > 京东店铺大转盘
 京东店铺大转盘 = type=cron,cronexp="40 5 0,10,23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_shop_lottery.js
-# > 京东海尔欢乐大逃亡
-京东海尔欢乐大逃亡 = type=cron,cronexp="50 5 0,23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/car/adolf_haier.js
 # > 京东农场
 京东农场 = type=cron,cronexp="5 0 6-18/6 * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_fruit.js
 # > 京东萌宠
