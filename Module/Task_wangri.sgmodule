@@ -131,7 +131,7 @@
 趣头条 = type=cron,cronexp="5 1 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.js
 # > 中青看点极速版
 中青看点极速版 = type=cron,cronexp="5 */10 1-22 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/youth.js
-中青自动阅读 = type=cron,cronexp="10 17 1-21/2 * * *",wake-system=1,timeout=7200,script-path=https://raw.githubusercontent.com/songyangzz/QuantumultX/master/YOUTH_READ.js
+中青自动阅读 = type=cron,cronexp="10 18 1-21/2 * * *",wake-system=1,timeout=7200,script-path=https://raw.githubusercontent.com/songyangzz/QuantumultX/master/YOUTH_READ.js
 # > 京东农场
 京东农场 = type=cron,cronexp="5 0 6-18/6 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_fruit.js
 # > 京东萌宠
@@ -164,6 +164,8 @@
 京东每日抽奖 = type=cron,cronexp="10 16 1,22,23 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_daily_lottery.js
 # > 滴滴喝水
 滴滴喝水 = type=cron,cronexp="40 40 8,20,9-19/2 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_drink.js
+# > 京东京享值PK
+京东京享值PK = type=cron,cronexp="10 17 4,14,23 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_pk.js
 # > 京东有机牧场
 京东有机牧场 = type=cron,cronexp="0 0 0,1-22/2 1-31 4-7 *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/member/monk_pasture.js
 # > 京东整点京豆雨
