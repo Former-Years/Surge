@@ -1,6 +1,6 @@
 {
     "id": "xinian.app.sub",
-    "name": "xinian应用订阅",
+    "name": "xinian应用备份",
     "author": "@xinian",
     "icon": "https://raw.githubusercontent.com/58xinian/icon/master/xinian.png",
     "repo": "https://github.com/58xinian/Surge/tree/main/Script",
@@ -25,8 +25,32 @@
         "repo": "https://github.com/DD-D1/2020scripts/blob/master/zymkSign.js",
         "script": "https://raw.githubusercontent.com/DD-D1/2020scripts/master/zymkSign.js",
         "icons": [
-          "https://raw.githubusercontent.com/Orz-3/mini/master/didi.png",
-          "https://raw.githubusercontent.com/Orz-3/task/master/didi.png"
+          "https://raw.githubusercontent.com/58xinian/icon/master/zymk.png",
+          "https://raw.githubusercontent.com/58xinian/icon/master/zymk.png"
+        ]
+      },
+      {
+        "id": "ctrip",
+        "name": "携程旅行",
+        "keys": ["cookie_ctrip"],
+        "author": "@nzw9314",
+        "repo": "https://github.com/nzw9314/QuantumultX/blob/master/Task/ctrip.js",
+        "script": "https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/ctrip.js",
+        "icons": [
+          "https://raw.githubusercontent.com/58xinian/icon/master/ctrip_mini.png",
+          "https://raw.githubusercontent.com/58xinian/icon/master/ctrip.png"
+        ]
+      },
+      {
+        "id": "jdtqz",
+        "name": "京东特权活力值",
+        "keys": ["CookieJD"],
+        "author": "@iisams",
+        "repo": "https://github.com/iisams/Scripts/blob/master/liwo/jdtqz.js",
+        "script": "https://raw.githubusercontent.com/iisams/Scripts/master/liwo/jdtqz.js",
+        "icons": [
+          "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/jd.png",
+          "https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png"
         ]
       }
     ]
