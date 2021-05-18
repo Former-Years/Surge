@@ -107,22 +107,16 @@ WPS = type=cron,cronexp="35 0 0 * * *",wake-system=1,script-path=https://raw.git
 东东健康社区 = type=cron,cronexp="20 3 0,23 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_health.js
 # > 京东幸运大转盘
 京东幸运大转盘 = type=cron,cronexp="25 3 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_market_lottery.js
-# > 京东球队赢好礼
-京东球队赢好礼 = type=cron,cronexp="30 3 0 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_tcl.js
 # > 京东加购有礼
-京东加购有礼 = type=cron,cronexp="35 3 0 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/car/monk_shop_add_to_car.js
+京东加购有礼 = type=cron,cronexp="30 3 0,11 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/car/monk_shop_add_to_car.js
 # > 京东粉丝互动
-京东粉丝互动 = type=cron,cronexp="40 3 0 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_fanslove.js
-# > 京东超市大转盘
-京东超市大转盘 = type=cron,cronexp="45 3 0 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_marketLottery.js
-# > 京东超级无线组队分奖品
-京东超级无线组队分奖品 = type=cron,cronexp="50 3 0 * * 2",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_shop_captain.js
+京东粉丝互动 = type=cron,cronexp="35 3 0 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_fanslove.js
 # > 京东关注有礼
-京东关注有礼 = type=cron,cronexp="55 3 0 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_shop_follow_sku.js
+京东关注有礼 = type=cron,cronexp="40 3 0,11 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_shop_follow_sku.js
 # > 京东店铺大转盘
-京东店铺大转盘 = type=cron,cronexp="0 4 0,10,23 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_shop_lottery.js
+京东店铺大转盘 = type=cron,cronexp="45 3 0,10,23 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_shop_lottery.js
 # > 京东金融领豆
-京东金融领豆 = type=cron,cronexp="5 4 0 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/dompling/Script/master/jd/jd_jr_sign.js
+京东金融领豆 = type=cron,cronexp="50 3 0 * * *",wake-system=1,timeout=600,script-path=https://raw.githubusercontent.com/dompling/Script/master/jd/jd_jr_sign.js
 # > 趣头条
 趣头条 = type=cron,cronexp="5 1 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.js
 # > 中青看点极速版
@@ -165,6 +159,6 @@ WPS = type=cron,cronexp="35 0 0 * * *",wake-system=1,script-path=https://raw.git
 # > 京东半点京豆雨
 京东半点京豆雨 = type=cron,cronexp="0 30,34 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/jd_half_redrain.js
 # > 京东保价
-京东保价 = type=cron,cronexp="0 55 23 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_price.js
+京东保价 = type=cron,cronexp="0 15 23 * * *",wake-system=1,timeout=600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_price.js
 # > 取关京东店铺和商品
-取关京东店铺和商品 = type=cron,cronexp="0 56 5,23 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_unsubscribe.js
+取关京东店铺和商品 = type=cron,cronexp="0 35 5,23 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_unsubscribe.js
