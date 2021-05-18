@@ -30,15 +30,15 @@
         ]
       },
       {
-        "id": "ctrip",
-        "name": "携程旅行",
-        "keys": ["cookie_ctrip"],
-        "author": "@nzw9314",
-        "repo": "https://github.com/nzw9314/QuantumultX/blob/master/Task/ctrip.js",
-        "script": "https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/ctrip.js",
+        "id": "jdds",
+        "name": "京东读书",
+        "keys": ["jddsurlname", "jddshdname"],
+        "author": "@DD-D1",
+        "repo": "https://github.com/DD-D1/2020scripts/blob/master/jddsSign.js",
+        "script": "https://raw.githubusercontent.com/DD-D1/2020scripts/master/jddsSign.js",
         "icons": [
-          "https://raw.githubusercontent.com/58xinian/icon/master/ctrip_mini.png",
-          "https://raw.githubusercontent.com/58xinian/icon/master/ctrip.png"
+          "https://raw.githubusercontent.com/58xinian/icon/master/jdds.png",
+          "https://raw.githubusercontent.com/58xinian/icon/master/jdds.png"
         ]
       },
       {
@@ -51,6 +51,30 @@
         "icons": [
           "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/jd.png",
           "https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png"
+        ]
+      },
+      {
+        "id": "ctrip",
+        "name": "携程旅行",
+        "keys": ["cookie_ctrip"],
+        "author": "@nzw9314",
+        "repo": "https://github.com/nzw9314/QuantumultX/blob/master/Task/ctrip.js",
+        "script": "https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/ctrip.js",
+        "icons": [
+          "https://raw.githubusercontent.com/58xinian/icon/master/ctrip_mini.png",
+          "https://raw.githubusercontent.com/58xinian/icon/master/ctrip.png"
+        ]
+      },
+      {
+        "id": "ttwk",
+        "name": "天天挖矿",
+        "keys": ["ttwksignurl", "ttwksignheader", "ttwksignbody"],
+        "author": "@yangtingxiao",
+        "repo": "https://github.com/yangtingxiao/QuantumultX/blob/master/scripts/ttwk/ttwk.js",
+        "script": "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js",
+        "icons": [
+          "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/ttwk.png",
+          "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/ttwk.png"
         ]
       }
     ]
