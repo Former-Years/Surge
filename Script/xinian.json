@@ -1,0 +1,33 @@
+{
+    "id": "xinian.app.sub",
+    "name": "xinian应用订阅",
+    "author": "@xinian",
+    "icon": "https://raw.githubusercontent.com/58xinian/icon/master/xinian.png",
+    "repo": "https://github.com/58xinian/Surge/tree/main/Script",
+    "apps": [
+      {
+        "id": "huke",
+        "name": "虎课网",
+        "keys": ["huke_token", "huke_header"],
+        "author": "@xinian",
+        "repo": "https://github.com/58xinian/Surge/blob/main/Script/huke.js",
+        "script": "https://raw.githubusercontent.com/58xinian/Surge/main/Script/huke.js",
+        "icons": [
+          "https://raw.githubusercontent.com/58xinian/icon/master/huke_mini.png",
+          "https://raw.githubusercontent.com/58xinian/icon/master/huke.png"
+        ]
+      },
+      {
+        "id": "zymk",
+        "name": "知音漫客",
+        "keys": ["zymkurlname", "zymkhdname", "zymkbdname"],
+        "author": "@DD-D1",
+        "repo": "https://github.com/DD-D1/2020scripts/blob/master/zymkSign.js",
+        "script": "https://raw.githubusercontent.com/DD-D1/2020scripts/master/zymkSign.js",
+        "icons": [
+          "https://raw.githubusercontent.com/Orz-3/mini/master/didi.png",
+          "https://raw.githubusercontent.com/Orz-3/task/master/didi.png"
+        ]
+      }
+    ]
+  }
