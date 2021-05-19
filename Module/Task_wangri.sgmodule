@@ -37,16 +37,16 @@
 # > 滴滴出行
 滴滴出行 = type=cron,cronexp="55 0 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js
 # > 京东特权活力值
-京东特权活力值 = type=cron,cronexp="20 1 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/iisams/Scripts/master/liwo/jdtqz.js
+京东特权活力值 = type=cron,cronexp="0 1 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/iisams/Scripts/master/liwo/jdtqz.js
 # > 支付宝天天挖矿小程序
-支付宝天天挖矿 = type=cron,cronexp="30 1 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js
+支付宝天天挖矿 = type=cron,cronexp="5 1 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js
 # > 伊利乳品小程序
-伊利乳品 = type=cron,cronexp="10 2 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/id77/QuantumultX/master/task/yiLi.js
+伊利乳品 = type=cron,cronexp="15 1 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/id77/QuantumultX/master/task/yiLi.js
 # > 中青浏览赚
-中青浏览赚 = type=cron,cronexp="40 2 0,1,2 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/youth_gain.js
+中青浏览赚 = type=cron,cronexp="20 1 0,1,2 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/youth_gain.js
 # > 饿了么
-饿了么 = type=cron,cronexp="45 2 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/songyangzz/QuantumultX/master/elem/elemSign.js
-饿了么打卡 = type=cron,cronexp="50 2 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/elem/elemCheckIn.js
+饿了么 = type=cron,cronexp="25 1 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/songyangzz/QuantumultX/master/elem/elemSign.js
+饿了么打卡 = type=cron,cronexp="30 1 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/elem/elemCheckIn.js
 # > 趣头条
 趣头条 = type=cron,cronexp="5 1 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.js
 # > 中青看点极速版
