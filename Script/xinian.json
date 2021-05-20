@@ -54,15 +54,27 @@
         ]
       },
       {
-        "id": "ctrip",
-        "name": "携程旅行",
-        "keys": ["cookie_ctrip"],
-        "author": "@nzw9314",
-        "repo": "https://github.com/nzw9314/QuantumultX/blob/master/Task/ctrip.js",
-        "script": "https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/ctrip.js",
+        "id": "hellobike",
+        "name": "哈啰出行",
+        "keys": ["hellobike"],
+        "author": "@chavyleung",
+        "repo": "https://github.com/chavyleung/scripts/blob/master/hellobike/hellobike.js",
+        "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/hellobike/hellobike.js",
         "icons": [
-          "https://raw.githubusercontent.com/58xinian/icon/master/ctrip_mini.png",
-          "https://raw.githubusercontent.com/58xinian/icon/master/ctrip.png"
+          "https://raw.githubusercontent.com/58xinian/icon/master/hellobike_mini.png",
+          "https://raw.githubusercontent.com/58xinian/icon/master/hellobike.png"
+        ]
+      },
+      {
+        "id": "qunar",
+        "name": "去哪儿",
+        "keys": ["chavy_cookie_qunar"],
+        "author": "@chavyleung",
+        "repo": "https://github.com/chavyleung/scripts/blob/master/qunar/qunar.js",
+        "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/qunar/qunar.js",
+        "icons": [
+          "https://raw.githubusercontent.com/58xinian/icon/master/qunar_mini.png",
+          "https://raw.githubusercontent.com/58xinian/icon/master/qunar.png"
         ]
       },
       {
