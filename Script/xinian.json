@@ -54,18 +54,6 @@
         ]
       },
       {
-        "id": "zZ.DiDi",
-        "name": "滴滴出行",
-        "keys": ["DiDi", "DiDi_city"],
-        "author": "@zZPiglet",
-        "repo": "https://github.com/zZPiglet/Task/blob/master/DiDi/DiDi_new.js",
-        "script": "https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js",
-        "icons": [
-          "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/didi.png",
-          "https://raw.githubusercontent.com/Orz-3/mini/master/Color/didi.png"
-        ]
-      },
-      {
         "id": "hellobike",
         "name": "哈啰出行",
         "keys": ["hellobike"],
