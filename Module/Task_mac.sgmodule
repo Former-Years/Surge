@@ -241,4 +241,4 @@ IT之家 = type=cron,cronexp="30 4 0 * * *",wake-system=1,script-path=https://ra
 # > 京东保价
 京东保价 = type=cron,cronexp="0 15 22 * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_price.js
 # > 取关京东店铺和商品
-取关京东店铺和商品 = type=cron,cronexp="0 35,50 4,10,14,22 * * *",wake-system=1,timeout=7200,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_unsubscribe.js
+取关京东店铺和商品 = type=cron,cronexp="0 35,45,55 4,10,14,22 * * *",wake-system=1,timeout=7200,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_unsubscribe.js
