@@ -187,16 +187,14 @@ IT之家 = type=cron,cronexp="30 4 0 * * *",wake-system=1,script-path=https://ra
 京东赢一加新品手机 = type=cron,cronexp="20 12 0,11 * 5,6 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_oneplus.js
 # > 京东飞利浦电视成长记
 京东飞利浦电视成长记 = type=cron,cronexp="30 12 0,11 * 5,6 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_flp.js
-# > 京东Redmi合成小金刚
-京东Redmi合成小金刚 = type=cron,cronexp="40 12 0,11 21-27 5 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_mi.js
 # > 京东人头马x博朗
-京东人头马x博朗 = type=cron,cronexp="50 12 0,11 20-31 5 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_martin.js
+京东人头马x博朗 = type=cron,cronexp="40 12 0,11 20-31 5 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_martin.js
 # > 京东超级盒子
-京东超级盒子 = type=cron,cronexp="0 13 0,20 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_superbox.js
+京东超级盒子 = type=cron,cronexp="50 12 0,20 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_superbox.js
 # > 京东618大势新品赏
-京东618大势新品赏 = type=cron,cronexp="10 13 0,20 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_newInteraction.js
+京东618大势新品赏 = type=cron,cronexp="0 13 0,20 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_newInteraction.js
 # > 京喜阶梯红包
-京喜阶梯红包 = type=cron,cronexp="20 13 0,23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_jxhb.js
+京喜阶梯红包 = type=cron,cronexp="10 13 0,23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_jxhb.js
 # > 趣头条
 趣头条 = type=cron,cronexp="5 1 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.js
 # > 切换会话
