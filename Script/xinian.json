@@ -78,6 +78,18 @@
         ]
       },
       {
+        "id": "dongqiudi",
+        "name": "懂球帝",
+        "keys": ["chavy_cookie_dongqiudi"],
+        "author": "@chavyleung",
+        "repo": "https://github.com/chavyleung/scripts/blob/master/dongqiudi/dongqiudi.js",
+        "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/dongqiudi/dongqiudi.js",
+        "icons": [
+          "https://raw.githubusercontent.com/58xinian/icon/master/dqd.png",
+          "https://raw.githubusercontent.com/58xinian/icon/master/dqd.png"
+        ]
+      },
+      {
         "id": "ttwk",
         "name": "天天挖矿",
         "keys": ["ttwksignurl", "ttwksignheader", "ttwksignbody"],
