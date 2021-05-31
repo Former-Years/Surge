@@ -24,7 +24,7 @@
 宠汪汪兑奖品 = type=cron,cronexp="56-59 59 23,7,11,15 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_joy_reward.js
 宠汪汪兑奖品 = type=cron,cronexp="0-5 0 0,8,12,16 * * *",wake-system=1,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_joy_reward.js
 # > 京喜财富岛提现
-京喜财富岛提现 = type=cron,cronexp="0,1 0 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/jx_cfdtx.js
+京喜财富岛提现 = type=cron,cronexp="0,1 0 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/dompling/Script/master/jd/jd_tx.js
 # > 京东家电星推官
 京东家电星推官 = type=cron,cronexp="0 0,30 0 * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_xtg.js
 # > 京东渠道店铺签到
