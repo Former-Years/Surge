@@ -1164,29 +1164,29 @@ function getToken() {
 	if (appreg.exec($request.url)) {
 		let CityValue = appreg.exec($request.url)[1];
 		let TokenValue = decodeURIComponent(appreg.exec($request.url)[2]);
-		if ($.read("#DiDi") != (undefined || null)) {
-			if ($.read("#DiDi") != TokenValue || $.read("#DiDi_city") != CityValue) {
-				$.write(TokenValue, "#DiDi");
-				$.write(CityValue, "#DiDi_city");
+		if ($.read("#Didi") != (undefined || null)) {
+			if ($.read("#DiDi") != TokenValue || $.read("#Didi_city") != CityValue) {
+				$.write(TokenValue, "#Didi");
+				$.write(CityValue, "#Didi_city");
 				$.notify("更新 " + $.name + " Token 成功 🎉", "", "");
 			}
 		} else {
-			$.write(TokenValue, "#DiDi");
-			$.write(CityValue, "#DiDi_city");
+			$.write(TokenValue, "#Didi");
+			$.write(CityValue, "#Didi_city");
 			$.notify("首次写入 " + $.name + " Token 成功 🎉", "", "");
 		}
 	} else if (minireg.exec($request.url)) {
 		let CityValue = minireg.exec($request.url)[2];
 		let TokenValue = decodeURIComponent(minireg.exec($request.url)[1]);
 		if ($.read("#DiDi") != (undefined || null)) {
-			if ($.read("#DiDi") != TokenValue || $.read("#DiDi_city") != CityValue) {
-				$.write(TokenValue, "#DiDi");
-				$.write(CityValue, "#DiDi_city");
+			if ($.read("#Didi") != TokenValue || $.read("#Didi_city") != CityValue) {
+				$.write(TokenValue, "#Didi");
+				$.write(CityValue, "#Didi_city");
 				$.notify("更新 " + $.name + " Token 成功 🎉", "", "");
 			}
 		} else {
-			$.write(TokenValue, "#DiDi");
-			$.write(CityValue, "#DiDi_city");
+			$.write(TokenValue, "#Didi");
+			$.write(CityValue, "#Didi_city");
 			$.notify("首次写入 " + $.name + " Token 成功 🎉", "", "");
 		}
 	} else {
