@@ -180,19 +180,17 @@ IT之家 = type=cron,cronexp="30 4 0 * * *",wake-system=1,script-path=https://ra
 # > 京东店铺大转盘
 京东店铺大转盘 = type=cron,cronexp="50 11 0,10,23 * * *",wake-system=1,timeout=3600,script-path=https://share.r2ray.com/dust/normal/monk_shop_lottery.js
 # > 京东赢一加新品手机
-京东赢一加新品手机 = type=cron,cronexp="0 12 0,11 * 5,6 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_oneplus.js
+京东赢一加新品手机 = type=cron,cronexp="0 12 0,11 * 5,6 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/inoyna11/jd28/master/adolf_oneplus.js
 # > 京东飞利浦电视成长记
-京东飞利浦电视成长记 = type=cron,cronexp="10 12 0,11 * 5,6 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_flp.js
+京东飞利浦电视成长记 = type=cron,cronexp="10 12 0,11 * 5,6 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/inoyna11/jd28/master/adolf_flp.js
 # > 京东超级盒子
-京东超级盒子 = type=cron,cronexp="20 12 0,20 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/adolf_superbox.js
+京东超级盒子 = type=cron,cronexp="20 12 0,20 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/inoyna11/jd28/master/adolf_superbox.js
 # > 京东618大势新品赏
-京东618大势新品赏 = type=cron,cronexp="30 12 0,20 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/adolf_newInteraction.js
+京东618大势新品赏 = type=cron,cronexp="30 12 0,20 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/inoyna11/jd28/master/adolf_newInteraction.js
 # > 京喜阶梯红包
-京喜阶梯红包 = type=cron,cronexp="40 12 0,23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/adolf_jxhb.js
+京喜阶梯红包 = type=cron,cronexp="40 12 0,23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/inoyna11/jd28/master/adolf_jxhb.js
 # > 京东金榜创造营
 京东金榜创造营 = type=cron,cronexp="50 12 0,23 * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_gold_creator.js
-# > 京东沸腾之夜
-京东沸腾之夜 = type=cron,cronexp="0 13 0,23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd_party_night.js
 # > 趣头条
 趣头条 = type=cron,cronexp="5 1 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.js
 # > 切换会话
@@ -235,7 +233,7 @@ IT之家 = type=cron,cronexp="30 4 0 * * *",wake-system=1,script-path=https://ra
 # > 京东每日抽奖
 京东每日抽奖 = type=cron,cronexp="10 16 1,22,23 * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_daily_lottery.js
 # > 京东有机牧场
-京东有机牧场 = type=cron,cronexp="0 0 0,1-22/2 1-31 4-7 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/member/monk_pasture.js
+京东有机牧场 = type=cron,cronexp="0 0 0,1-22/2 1-31 4-7 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/inoyna11/jd28/master/jd_monk_pasture.js
 # > 京东618动物联萌
 京东618动物联萌 = type=cron,cronexp="10 17 0-23/2 * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_zoo.js
 京东618动物联萌收金币 = type=cron,cronexp="50 */30 * * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_zooCollect.js
