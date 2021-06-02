@@ -373,7 +373,7 @@ IT之家cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/use
 活动抽奖cookie = script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/WeChatLottery_new.js,type=http-request,pattern=^https:\/\/api-hdcj\.9w9\.com\/v\d\/sign
 
 # > 滴滴出行
-滴滴出行cookie = script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/didi.js,type=http-request,pattern=^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\?
+滴滴出行cookie = script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js,type=http-request,pattern=^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\?
 
 # > 115
 115cookie = script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/115/115.js,type=http-request,pattern=^https?:\/\/proapi\.115\.com\/ios\/user\/takespc\?
