@@ -191,12 +191,6 @@ IT之家 = type=cron,cronexp="30 4 0 * * *",wake-system=1,script-path=https://ra
 京喜阶梯红包 = type=cron,cronexp="40 12 0,23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/inoyna11/jd28/master/adolf_jxhb.js
 # > 京东金榜创造营
 京东金榜创造营 = type=cron,cronexp="50 12 0,23 * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_gold_creator.js
-# > 京东新潮品牌狂欢
-京东新潮品牌狂欢 = type=cron,cronexp="55 12 0,11 1-18 6 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_mcxhd_brandcity.js
-# > 京东到家鲜豆庄园
-京东到家鲜豆庄园 = type=cron,cronexp="0 13 0,23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jddj_help.js
-# > 京东特物ZX联想
-京东特物ZX联想 = type=cron,cronexp="10 13 0,23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/superBrand.js
 # > 趣头条
 趣头条 = type=cron,cronexp="5 1 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.js
 # > 切换会话
@@ -243,10 +237,13 @@ IT之家 = type=cron,cronexp="30 4 0 * * *",wake-system=1,script-path=https://ra
 # > 京东618动物联萌
 京东618动物联萌 = type=cron,cronexp="10 17 0-23/2 * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_zoo.js
 京东618动物联萌收金币 = type=cron,cronexp="50 */30 * * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_zooCollect.js
-# > 京东整点京豆雨
-京东整点京豆雨 = type=cron,cronexp="0,1 0 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/jd_super_redrain.js
-# > 京东半点京豆雨
-京东半点京豆雨 = type=cron,cronexp="0,1 30 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/jd_half_redrain.js
+# > 京东京豆雨
+京东京豆雨1 = type=cron,cronexp="0,1 0 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/ljqailym/jd_scripts/master/lxk0301_live_redrain.js
+京东京豆雨2 = type=cron,cronexp="0,1 0 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/ljqailym/jd_scripts/master/lxk0301_live_redrain2.js
+京东京豆雨3 = type=cron,cronexp="0,1 0 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/ljqailym/jd_scripts/master/lxk0301_live_redrain3.js
+京东京豆雨4 = type=cron,cronexp="0,1 0 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/ljqailym/jd_scripts/master/lxk0301_live_redrain4.js
+京东京豆雨5 = type=cron,cronexp="0,1 0 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/ljqailym/jd_scripts/master/lxk0301_live_redrain5.js
+京东京豆雨6 = type=cron,cronexp="0,1 0 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/ljqailym/jd_scripts/master/lxk0301_live_redrain6.js
 # > 京东CrazyJoy挂机
 京东CrazyJoy挂机 = type=cron,cronexp="55 18 1,12 * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_crazy_joy_coin.js
 # > 京东保价
