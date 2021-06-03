@@ -191,6 +191,8 @@ IT之家 = type=cron,cronexp="30 4 0 * * *",wake-system=1,script-path=https://ra
 京喜阶梯红包 = type=cron,cronexp="40 12 0,23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/inoyna11/jd28/master/adolf_jxhb.js
 # > 京东金榜创造营
 京东金榜创造营 = type=cron,cronexp="50 12 0,23 * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_gold_creator.js
+# > 京东星店长
+京东星店长 = type=cron,cronexp="0 13 0,23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/jd/jd_starStore.js
 # > 趣头条
 趣头条 = type=cron,cronexp="5 1 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.js
 # > 切换会话
@@ -235,7 +237,7 @@ IT之家 = type=cron,cronexp="30 4 0 * * *",wake-system=1,script-path=https://ra
 # > 京东有机牧场
 京东有机牧场 = type=cron,cronexp="0 0 0,1-22/2 1-31 4-7 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/inoyna11/jd28/master/jd_monk_pasture.js
 # > 京东618动物联萌
-京东618动物联萌 = type=cron,cronexp="10 17 0-23/2 * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_zoo.js
+京东618动物联萌 = type=cron,cronexp="10 17 0-23/2 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/jd/jd_zoo.js
 京东618动物联萌收金币 = type=cron,cronexp="50 */30 * * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_zooCollect.js
 # > 京东京豆雨
 京东京豆雨1 = type=cron,cronexp="0,1 0 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/ljqailym/jd_scripts/master/lxk0301_live_redrain.js
