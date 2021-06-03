@@ -235,7 +235,7 @@ IT之家 = type=cron,cronexp="30 4 0 * * *",wake-system=1,script-path=https://ra
 # > 京东有机牧场
 京东有机牧场 = type=cron,cronexp="0 0 0,1-22/2 1-31 4-7 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/inoyna11/jd28/master/jd_monk_pasture.js
 # > 京东618动物联萌
-京东618动物联萌 = type=cron,cronexp="10 17 0-23/2 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/jd/jd_zoo.js
+京东618动物联萌 = type=cron,cronexp="10 17 0-23/2 * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_zoo.js
 京东618动物联萌收金币 = type=cron,cronexp="50 */30 * * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_zooCollect.js
 # > 京东京豆雨
 京东京豆雨1 = type=cron,cronexp="0,1 0 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/ljqailym/jd_scripts/master/lxk0301_live_redrain.js
