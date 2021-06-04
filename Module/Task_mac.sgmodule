@@ -188,7 +188,9 @@ IT之家 = type=cron,cronexp="30 4 0 * * *",wake-system=1,script-path=https://ra
 # > 京东明星小店
 京东明星小店 = type=cron,cronexp="40 12 0,21 * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_star_shop.js
 # > 京东宝洁消消乐
-京东宝洁消消乐 = type=cron,cronexp="50 12 0,21 1-18 6 *",wake-system=1,timeout=3600,script-path=https://cdn.jsdelivr.net/gh/zooPanda/zoo@dev/zooBaojiexiaoxiaole.js
+京东宝洁消消乐 = type=cron,cronexp="50 12 0 1-18 6 *",wake-system=1,timeout=3600,script-path=https://cdn.jsdelivr.net/gh/zooPanda/zoo@dev/zooBaojiexiaoxiaole.js
+# > 京东新潮品牌狂欢
+京东新潮品牌狂欢 = type=cron,cronexp="0 13 0 * * *",wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_mcxhd.js
 # > 趣头条
 趣头条 = type=cron,cronexp="5 1 */1 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.js
 # > 切换会话
