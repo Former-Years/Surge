@@ -92,8 +92,8 @@ QQ萌宠cookie = requires-body=1,type=http-response,pattern=https:\/\/qqpet.jwet
 达美乐比萨cookie = type=http-request,pattern=^https?:\/\/dominos0724\.shjimang\.com\/Ajax\/GetSmsCode,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Domino/Domino_getSMS.js,requires-body=true
 
 # > 海底捞
-海底捞cookie1 = type=http-request,pattern=^https:\/\/superapp\.kiwa-tech\.com\/app\/coupon\/customerLevelShow,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Haidilao/Haidilao.js,requires-body=true
-海底捞cookie2 = type=http-request,pattern=^https:\/\/activity-1\.m\.duiba\.com\.cn\/signactivity\/getSignInfo,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Haidilao/Haidilao.js
+海底捞cookie1 = type=http-request,pattern=^https:\/\/superapp\.kiwa-tech\.com\/app\/coupon\/customerLevelShow,script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/Haidilao.js,requires-body=true
+海底捞cookie2 = type=http-request,pattern=^https:\/\/activity-1\.m\.duiba\.com\.cn\/signactivity\/getSignInfo,script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/Haidilao.js
 
 # > 腾讯新闻
 腾讯新闻cookie = type=http-request,pattern=https:\/\/api\.inews\.qq\.com\/event\/v1\/user\/event\/report\?,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/txnews.js, requires-body=true
@@ -373,34 +373,16 @@ IT之家cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/use
 活动抽奖cookie = script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/WeChatLottery_new.js,type=http-request,pattern=^https:\/\/api-hdcj\.9w9\.com\/v\d\/sign
 
 # > 滴滴出行
-滴滴出行cookie = script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js,type=http-request,pattern=^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\?
-
-# > 115
-115cookie = script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/115/115.js,type=http-request,pattern=^https?:\/\/proapi\.115\.com\/ios\/user\/takespc\?
+滴滴出行cookie = script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/DiDi/DiDi_new.js,type=http-request,pattern=^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\?
 
 # > 奈雪
-奈雪cookie = script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Naixue/Naixue.js,type=http-request,pattern=^https:\/\/webapi\.qmai\.cn\/web\/cy\/v\d\/store\/template-scene
-
-# > 掌门好老师
-掌门好老师cookie = script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/ZMTeacher/ZMTeacher.js,type=http-request,pattern=^https:\/\/teacherapi\.zmlearn\.com\/v1\/teacherApp\/app\/points\/taskCenter
-
-# > 便利蜂
-便利蜂cookie = script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Blibee/Blibee.js,type=http-request,pattern=^https:\/\/h5\.bianlifeng\.com\/meepo\/taskCenter\/home\/v\d
+奈雪cookie = script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/Naixue.js,type=http-request,pattern=^https:\/\/webapi\.qmai\.cn\/web\/cy\/v\d\/store\/template-scene
 
 # > 欧可林
 欧可林cookie = script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Oclean/Oclean.js,type=http-request,pattern=^https:\/\/mall\.oclean\.com\/API\/VshopProcess\.ashx$
 
 # > 微信小程序-欧可林商城
 欧可林商城cookie = script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Oclean/Oclean_mini.js,type=http-request,pattern=^https:\/\/mall\.oclean\.com\/API\/VshopProcess\.ashx\?action=TaskHome&clientType=5&client=5&openId=
-
-# > 微博通知
-微博通知cookie = script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Weibo/Weibo.js,type=http-request,pattern=^https:\/\/m\.weibo\.cn\/feed\/
-
-# > 小黑盒
-小黑盒cookie = script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/heybox/heybox.js,type=http-request,pattern=https:\/\/api\.xiaoheihe\.cn\/account\/home_v2\/\?
-
-# > 豆瓣电影日历
-豆瓣电影日历cookie = script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/MovieCalendar/MovieCalendar.js,type=http-request,pattern=^https:\/\/frodo\.douban\.com\/api\/v\d\/calendar\/today 
 
 # > 微信喜马拉雅
 微信喜马拉雅cookie = script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/xmly_wc.js,type=http-request,pattern=https://m.ximalaya.com/wechat/
