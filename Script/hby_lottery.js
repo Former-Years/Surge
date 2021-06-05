@@ -1,23 +1,23 @@
 /*
-618主会场红包雨
-活动时间 6/1至6/18 20-21点
+ 618主会场红包雨
+ 活动时间 6/1至6/18 20-21点
 
-已支持IOS双京东账号,Node.js支持N个京东账号
-脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
+ 已支持IOS双京东账号,Node.js支持N个京东账号
+ 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 
-[task_local]
-#主会场红包雨
-1 20 1-18 6 * https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/long_hby_lottery.js, tag=618主会场红包雨, enabled=true
+ [task_local]
+ #主会场红包雨
+ 1 20 1-18 6 * https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/long_hby_lottery.js, tag=618主会场红包雨, enabled=true
 
  ================Loon==============
-[Script]
-cron "1 20 1-18 6 *" script-path=https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/long_hby_lottery.js,tag=618主会场红包雨
+ [Script]
+ cron "1 20 1-18 6 *" script-path=https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/long_hby_lottery.js,tag=618主会场红包雨
 
  ===============Surge=================
-618主会场红包雨 = type=cron,cronexp="1 20 1-18 6 *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/long_hby_lottery.js
+ 618主会场红包雨 = type=cron,cronexp="1 20 1-18 6 *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/long_hby_lottery.js
 
  ============小火箭=========
-618主会场红包雨= type=cron,script-path=https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/long_hby_lottery.js, cronexpr="1 20 1-18 6 *",timeout=200, enable=true
+ 618主会场红包雨= type=cron,script-path=https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/long_hby_lottery.js, cronexpr="1 20 1-18 6 *",timeout=200, enable=true
  */
 const $ = new Env('618主会场红包雨');
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -26,6 +26,9 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '';
 let allMessage = '';
+$.appFlag = false;
+$.wxFlag = false;
+
 
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
@@ -49,12 +52,6 @@ const JD_API_HOST = 'https://api.m.jd.com';
         return;
     }
 
-    let hour = new Date().getHours()
-    if (hour < 20 || hour > 21) {
-        $.msg($.name, '不在活动时间范围内(20点-21点)', '不在活动时间范围内(20点-21点)');
-        return;
-    }
-
     for (let i = 0; i < cookiesArr.length; i++) {
         if (cookiesArr[i]) {
             cookie = cookiesArr[i];
@@ -73,7 +70,20 @@ const JD_API_HOST = 'https://api.m.jd.com';
                 }
                 continue
             }
-            await lottery();
+
+            // WX
+            await isLottery(1);
+            if(!$.lotteryFlag){
+                $.wait(200)
+                await lottery(1);
+            }
+
+            // APP
+            await isLottery(2);
+            if(!$.lotteryFlag){
+                $.wait(200)
+                await lottery(2);
+            }
         }
     }
     if ($.isNode() && allMessage) {
@@ -87,8 +97,35 @@ const JD_API_HOST = 'https://api.m.jd.com';
         $.done();
     })
 
-async function lottery() {
-    let body = {"source":2,"openId":""};
+
+async function isLottery(source) {
+    let body = {"source": source ,"openId":""};
+    $.lotteryFlag = false;
+    return new Promise(resolve => {
+        $.post(taskPostUrl('hby_tip', body), (err, resp, data) => {
+            try {
+                if (err) {
+                    console.log(`${JSON.stringify(err)}`)
+                    console.log(`${$.name} API请求失败，请检查网路重试`)
+                } else {
+                    data = JSON.parse(data);
+                    $.lotteryFlag = data.data.result === 0;
+                    if($.lotteryFlag){
+                        console.log(`当前没有可领取的红包`)
+                    }
+                }
+            } catch (e) {
+                $.logErr(e, resp)
+            } finally {
+                resolve(isLottery);
+            }
+        })
+    })
+}
+
+
+async function lottery(source) {
+    let body = {"source":source,"openId":""};
     return new Promise(resolve => {
         $.post(taskPostUrl('hby_lottery', body), (err, resp, data) => {
             try {
@@ -98,10 +135,15 @@ async function lottery() {
                 } else {
                     data = JSON.parse(data);
                     if(data.data.bizCode === 0){
-                        let hbInfo = data.data.result.hbInfo.discount;
+                        let hbInfo = 0;
+                        if(data.data.result.hbInfo.discount != undefined){
+                            hbInfo = data.data.result.hbInfo.discount;
+                        }
+                        let channel = source === 1 ? "小程序" : "APP";
                         console.log(`领取成功，获得${JSON.stringify(data.data)}`);
-                        allMessage += `京东账号${$.index}-${$.nickName || $.UserName}\n领取成功，获得 ${hbInfo} 红包${$.index !== cookiesArr.length ? '\n\n' : '\n\n'}`;
+                        allMessage += `京东账号${$.index}-${$.nickName || $.UserName}\n领取成功，获得 ${channel} ${hbInfo} 红包${$.index !== cookiesArr.length ? '\n\n' : '\n\n'}`;
                     }else if (data.data.bizCode === -1006) {
+                        $.isLottery = true;
                         console.log(`次数已满: ${data.data.bizMsg}`);
                     }else {
                         console.log(`异常：${JSON.stringify(data.data)}`);
