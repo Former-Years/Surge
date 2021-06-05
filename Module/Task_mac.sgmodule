@@ -79,7 +79,7 @@ bilibili = type=cron,cronexp="0 1 0 * * *",wake-system=1,script-path=https://raw
 # > 樊登读书
 樊登读书 = type=cron,cronexp="20 3 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/fandeng/fandeng.js
 # > 海底捞
-海底捞 = type=cron,cronexp="30 3 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Haidilao/Haidilao.js
+海底捞 = type=cron,cronexp="30 3 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/Haidilao.js
 # > WPS
 WPS = type=cron,cronexp="40 3 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/wps/wps.js
 # > 苏宁易购
@@ -99,7 +99,7 @@ IT之家 = type=cron,cronexp="30 4 0 * * *",wake-system=1,script-path=https://ra
 # > 饿了么
 饿了么 = type=cron,cronexp="0 5 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/songyangzz/QuantumultX/master/elem/elemSign.js
 饿了么任务 = type=cron,cronexp="10 5 0 * * *",wake-system=1,script-path=https://gitlab.com/hellomatrix/lord/raw/master/script/eleme/eleme_mission.js
-饿了么打卡 = type=cron,cronexp="20 5 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/elem/elemCheckIn.js
+饿了么打卡 = type=cron,cronexp="20 5 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/elem/elemCheckIn.js
 饿了么领豆 = type=cron,cronexp="30 5 23 * * *",wake-system=1,script-path=https://gitlab.com/hellomatrix/lord/raw/master/script/eleme/eleme_daily.js
 # > 九木杂物社小程序
 九木杂物社 = type=cron,cronexp="40 5 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/jiumu/jiumu.js
@@ -112,7 +112,7 @@ IT之家 = type=cron,cronexp="30 4 0 * * *",wake-system=1,script-path=https://ra
 # > 京东金融领豆
 京东金融领豆 = type=cron,cronexp="20 6 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/dompling/Script/master/jd/jd_jr_sign.js
 # > 微信小程序-奈雪
-奈雪 = type=cron,cronexp="30 6 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Naixue/Naixue.js
+奈雪 = type=cron,cronexp="30 6 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/Naixue.js
 # > 欧可林
 欧可林 = type=cron,cronexp="40 6 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Oclean/Oclean.js
 # > 京东点点券
