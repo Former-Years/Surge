@@ -88,9 +88,6 @@ CU云加速cookie = type=http-request,pattern=^https:\/\/www\.cuuc\.club\/user\/
 # > QQ萌宠
 QQ萌宠cookie = requires-body=1,type=http-response,pattern=https:\/\/qqpet.jwetech.com\/api\/authorizations,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/QQPet/lkQQPet.js
 
-# > 达美乐比萨
-达美乐比萨cookie = type=http-request,pattern=^https?:\/\/dominos0724\.shjimang\.com\/Ajax\/GetSmsCode,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Domino/Domino_getSMS.js,requires-body=true
-
 # > 海底捞
 海底捞cookie1 = type=http-request,pattern=^https:\/\/superapp\.kiwa-tech\.com\/app\/coupon\/customerLevelShow,script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/Haidilao.js,requires-body=true
 海底捞cookie2 = type=http-request,pattern=^https:\/\/activity-1\.m\.duiba\.com\.cn\/signactivity\/getSignInfo,script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/Haidilao.js
@@ -399,9 +396,6 @@ Funboat积分cookie = type=http-request,pattern=https:\/\/h5\.youzan\.com\/wscus
 
 # > 小木虫论坛
 小木虫论坛cookie = type=http-request,pattern=https?:\/\/mapi.xmcimg.com\/bbs\/memcp.php\?action,script-path=https://raw.githubusercontent.com/toulanboy/scripts/master/muchong/muchong.js
-
-# > 京东价格提醒
-京东价格提醒cookie = type=http-request,pattern=https:\/\/apapia-history\.manmanbuy\.com\/ChromeWidgetServices\/WidgetServices\.ashx,script-path=https://raw.githubusercontent.com/toulanboy/scripts/master/jd_price_detect/jd_price_detect.js,requires-body=true
 
 # > QQ会员成长值
 QQ会员成长值cookie = type=http-request,pattern=https:\/\/proxy.vac.qq.com\/cgi-bin\/srfentry.fcgi,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/QQVip/qqVipCheckIn.js
