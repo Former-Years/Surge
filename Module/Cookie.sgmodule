@@ -89,8 +89,8 @@ CU云加速cookie = type=http-request,pattern=^https:\/\/www\.cuuc\.club\/user\/
 QQ萌宠cookie = requires-body=1,type=http-response,pattern=https:\/\/qqpet.jwetech.com\/api\/authorizations,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/QQPet/lkQQPet.js
 
 # > 海底捞
-海底捞cookie1 = type=http-request,pattern=^https:\/\/superapp\.kiwa-tech\.com\/app\/coupon\/customerLevelShow,script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/Haidilao.js,requires-body=true
-海底捞cookie2 = type=http-request,pattern=^https:\/\/activity-1\.m\.duiba\.com\.cn\/signactivity\/getSignInfo,script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/Haidilao.js
+海底捞cookie1 = type=http-request,pattern=^https:\/\/superapp\.kiwa-tech\.com\/app\/coupon\/customerLevelShow,script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/Haidilao.js,requires-body=true
+海底捞cookie2 = type=http-request,pattern=^https:\/\/activity-1\.m\.duiba\.com\.cn\/signactivity\/getSignInfo,script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/Haidilao.js
 
 # > 腾讯新闻
 腾讯新闻cookie = type=http-request,pattern=https:\/\/api\.inews\.qq\.com\/event\/v1\/user\/event\/report\?,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/txnews.js, requires-body=true
@@ -370,10 +370,10 @@ IT之家cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/use
 活动抽奖cookie = script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/WeChatLottery_new.js,type=http-request,pattern=^https:\/\/api-hdcj\.9w9\.com\/v\d\/sign
 
 # > 滴滴出行
-滴滴出行cookie = script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/DiDi/DiDi_new.js,type=http-request,pattern=^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\?
+滴滴出行cookie = script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/DiDi/DiDi_new.js,type=http-request,pattern=^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\?
 
 # > 奈雪
-奈雪cookie = script-path=https://raw.githubusercontent.com/58xinian/Surge/main/Script/Naixue.js,type=http-request,pattern=^https:\/\/webapi\.qmai\.cn\/web\/cy\/v\d\/store\/template-scene
+奈雪cookie = script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/Naixue.js,type=http-request,pattern=^https:\/\/webapi\.qmai\.cn\/web\/cy\/v\d\/store\/template-scene
 
 # > 欧可林
 欧可林cookie = script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Oclean/Oclean.js,type=http-request,pattern=^https:\/\/mall\.oclean\.com\/API\/VshopProcess\.ashx$
