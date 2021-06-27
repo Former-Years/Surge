@@ -2,19 +2,19 @@
     "id": "xinian.app.sub",
     "name": "xinian应用备份",
     "author": "@xinian",
-    "icon": "https://raw.githubusercontent.com/58xinian/icon/master/xinian.png",
-    "repo": "https://github.com/58xinian/Surge/tree/main/Script",
+    "icon": "https://raw.githubusercontent.com/Former-Years/icon/master/xinian.png",
+    "repo": "https://github.com/Former-Years/Surge/tree/main/Script",
     "apps": [
       {
         "id": "huke",
         "name": "虎课网",
         "keys": ["huke_token", "huke_header"],
         "author": "@xinian",
-        "repo": "https://github.com/58xinian/Surge/blob/main/Script/huke.js",
-        "script": "https://raw.githubusercontent.com/58xinian/Surge/main/Script/huke.js",
+        "repo": "https://github.com/Former-Years/Surge/blob/main/Script/huke.js",
+        "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/huke.js",
         "icons": [
-          "https://raw.githubusercontent.com/58xinian/icon/master/huke_mini.png",
-          "https://raw.githubusercontent.com/58xinian/icon/master/huke.png"
+          "https://raw.githubusercontent.com/Former-Years/icon/master/huke_mini.png",
+          "https://raw.githubusercontent.com/Former-Years/icon/master/huke.png"
         ]
       },
       {
@@ -25,8 +25,8 @@
         "repo": "https://github.com/DD-D1/2020scripts/blob/master/zymkSign.js",
         "script": "https://raw.githubusercontent.com/DD-D1/2020scripts/master/zymkSign.js",
         "icons": [
-          "https://raw.githubusercontent.com/58xinian/icon/master/zymk.png",
-          "https://raw.githubusercontent.com/58xinian/icon/master/zymk.png"
+          "https://raw.githubusercontent.com/Former-Years/icon/master/zymk.png",
+          "https://raw.githubusercontent.com/Former-Years/icon/master/zymk.png"
         ]
       },
       {
@@ -37,8 +37,8 @@
         "repo": "https://github.com/DD-D1/2020scripts/blob/master/jddsSign.js",
         "script": "https://raw.githubusercontent.com/DD-D1/2020scripts/master/jddsSign.js",
         "icons": [
-          "https://raw.githubusercontent.com/58xinian/icon/master/jdds.png",
-          "https://raw.githubusercontent.com/58xinian/icon/master/jdds.png"
+          "https://raw.githubusercontent.com/Former-Years/icon/master/jdds.png",
+          "https://raw.githubusercontent.com/Former-Years/icon/master/jdds.png"
         ]
       },
       {
@@ -61,8 +61,8 @@
         "repo": "https://github.com/chavyleung/scripts/blob/master/hellobike/hellobike.js",
         "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/hellobike/hellobike.js",
         "icons": [
-          "https://raw.githubusercontent.com/58xinian/icon/master/hellobike_mini.png",
-          "https://raw.githubusercontent.com/58xinian/icon/master/hellobike.png"
+          "https://raw.githubusercontent.com/Former-Years/icon/master/hellobike_mini.png",
+          "https://raw.githubusercontent.com/Former-Years/icon/master/hellobike.png"
         ]
       },
       {
@@ -73,8 +73,8 @@
         "repo": "https://github.com/chavyleung/scripts/blob/master/qunar/qunar.js",
         "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/qunar/qunar.js",
         "icons": [
-          "https://raw.githubusercontent.com/58xinian/icon/master/qunar_mini.png",
-          "https://raw.githubusercontent.com/58xinian/icon/master/qunar.png"
+          "https://raw.githubusercontent.com/Former-Years/icon/master/qunar_mini.png",
+          "https://raw.githubusercontent.com/Former-Years/icon/master/qunar.png"
         ]
       },
       {
@@ -85,8 +85,8 @@
         "repo": "https://github.com/chavyleung/scripts/blob/master/dongqiudi/dongqiudi.js",
         "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/dongqiudi/dongqiudi.js",
         "icons": [
-          "https://raw.githubusercontent.com/58xinian/icon/master/dqd.png",
-          "https://raw.githubusercontent.com/58xinian/icon/master/dqd.png"
+          "https://raw.githubusercontent.com/Former-Years/icon/master/dqd.png",
+          "https://raw.githubusercontent.com/Former-Years/icon/master/dqd.png"
         ]
       },
       {
