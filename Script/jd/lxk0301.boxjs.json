@@ -3,7 +3,7 @@
   "name": "lxk0301脚本订阅",
   "author": "@lxk0301",
   "icon": "https://avatars0.githubusercontent.com/u/21308593?s=52&v=4",
-  "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
+  "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
   "apps": [
     {
       "id": "JD_Cookies",
@@ -12,7 +12,7 @@
       "descs_html": [
         "请勿随意在输入框修改内容，建议通过脚本去获取cookie，若要修改，请按照JSON 格式修改（<a href=\"https://www.bejson.com/json/format\">可使用此JSON校验</a> ，或点击右上角按钮🔘进行校验(如有弹窗提示则为异常JSON)）。",
         "示例：[{\"userName\":\"jd_xxx\",\"cookie\":\"pt_key=AAJ;pt_pin=jd_xxx;\"},{\"userName\":\"jd_66\",\"cookie\":\"pt_key=AAJ;pt_pin=jd_66;\"}]",
-        "脚本地址【<a href=\"https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/JD_extra_cookie.js\">京东多 CK获取</a>】,并按照此脚本注释进行配置",
+        "脚本地址【<a href=\"https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/JD_extra_cookie.js\">京东多 CK获取</a>】,并按照此脚本注释进行配置",
         "使用方式【<a href=\"https://home.m.jd.com/myJd/newhome.action\">个人中心</a>】获取对应的数据Code",
         "注：如与NobyDa的京东cookie重复，建议在此处删除重复的cookie"
       ],
@@ -55,7 +55,7 @@
         }
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
       "icons": [
         "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/jd.png",
         "https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png"
@@ -81,7 +81,7 @@
         }
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
       "icons": [
         "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/jd.png",
         "https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png"
@@ -123,11 +123,11 @@
         }
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
       "script": "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/jd_fruit.js",
       "icons": [
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdnc_mini.png",
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdnc.png"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdnc_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdnc.png"
       ]
     },
     {
@@ -159,11 +159,11 @@
         }
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
       "script": "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/jd_pet.js",
       "icons": [
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdmc_mini.png",
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdmc.png"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdmc_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdmc.png"
       ]
     },
     {
@@ -195,11 +195,11 @@
         }
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
       "script": "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/jd_plantBean.js",
       "icons": [
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdzd_mini.png",
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdzd.png"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdzd_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdzd.png"
       ]
     },
     {
@@ -252,11 +252,11 @@
         }
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
-      "script": "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/jd_joy.js",
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/jd_joy.js",
       "icons": [
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdcww_mini.png",
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdcww.png"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdcww_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdcww.png"
       ]
     },
     {
@@ -298,11 +298,11 @@
         }
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
-      "script": "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/jd_joy_reward.js",
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/jd_joy_reward.js",
       "icons": [
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdcww_mini.png",
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdcww.png"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdcww_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdcww.png"
       ]
     },
     {
@@ -384,11 +384,11 @@
         }
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
-      "script": "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/jd_joy_run.js",
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/jd_joy_run.js",
       "icons": [
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdcww_mini.png",
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdcww.png"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdcww_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdcww.png"
       ]
     },
     {
@@ -412,11 +412,11 @@
         }
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
-      "script": "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/jd_moneyTree.js",
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/jd_moneyTree.js",
       "icons": [
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdyqs_mini.png",
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdyqs.png"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdyqs_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdyqs.png"
       ]
     },
     {
@@ -433,11 +433,11 @@
         }
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
-      "script": "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/jd_speed.js",
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/jd_speed.js",
       "icons": [
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdjs_mini.png",
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdjs.png"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdjs_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdjs.png"
       ]
     },
     {
@@ -485,8 +485,8 @@
         }
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
-      "script": "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/jd_unsubscribe.js",
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/jd_unsubscribe.js",
       "icons": [
         "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/jd.png",
         "https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png"
@@ -520,16 +520,16 @@
         }
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
       "scripts":[
         {
           "name" : "东东超市",
-          "script" : "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/jd_superMarket.js"
+          "script" : "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/jd_superMarket.js"
         }
       ],
       "icons": [
-        "https://raw.githubusercontent.com/58xinian/icon/master/jxc_mini.png",
-        "https://raw.githubusercontent.com/58xinian/icon/master/jxc.png"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jxc_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jxc.png"
       ]
     },
     {
@@ -556,16 +556,16 @@
         }
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
       "scripts": [
         {
           "name" : "东东超市兑换奖品",
-          "script" : "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/jd_blueCoin.js"
+          "script" : "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/jd_blueCoin.js"
         }
       ],
       "icons": [
-        "https://raw.githubusercontent.com/58xinian/icon/master/jxc_mini.png",
-        "https://raw.githubusercontent.com/58xinian/icon/master/jxc.png"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jxc_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jxc.png"
       ]
     },
     {
@@ -600,11 +600,11 @@
         }
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
-      "script": "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/backUp/xmSports.js",
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/backUp/xmSports.js",
       "icons": [
-        "https://raw.githubusercontent.com/58xinian/icon/master/xmyd_mini.png",
-        "https://raw.githubusercontent.com/58xinian/icon/master/xmyd.png"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/xmyd_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/xmyd.png"
       ]
     },
     {
@@ -623,11 +623,11 @@
         }
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
-      "script": "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/jd_jdfactory.js",
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/jd_jdfactory.js",
       "icons": [
-        "https://raw.githubusercontent.com/58xinian/icon/master/jd_factory_mini.png",
-        "https://raw.githubusercontent.com/58xinian/icon/master/jd_factory.png"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jd_factory_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jd_factory.png"
       ]
     },
     {
@@ -659,12 +659,12 @@
         }
       ],
       "icons": [
-        "https://raw.githubusercontent.com/58xinian/icon/master/jdgc_mini.png",
-        "https://github.com/58xinian/icon/raw/master/jdgc.png"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jdgc_mini.png",
+        "https://github.com/Former-Years/icon/raw/master/jdgc.png"
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
-      "script": "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/jd_dreamFactory.js"
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/jd_dreamFactory.js"
     },
     {
       "id": "jd_jxCFD_invites",
@@ -688,12 +688,12 @@
         }
       ],
       "icons": [
-        "https://raw.githubusercontent.com/58xinian/icon/master/jxcfd_mini.png",
-        "https://raw.githubusercontent.com/58xinian/icon/master/jxcfd.png"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jxcfd_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jxcfd.png"
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
-      "script": "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/jd_cfd.js"
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/jd_cfd.js"
     },
     {
       "id": "jd_cash",
@@ -728,8 +728,8 @@
         "https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png"
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
-      "script": "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/jd_cash.js"
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/jd_cash.js"
     },
     {
       "id": "jd_jxd",
@@ -745,16 +745,16 @@
         }
       ],
       "author": "@lxk0301",
-      "repo": "https://github.com/58xinian/Surge/tree/main/Script/jd",
+      "repo": "https://github.com/Former-Years/Surge/tree/main/Script/jd",
       "scripts":[
         {
           "name" : "京小兑",
-          "script" : "https://raw.githubusercontent.com/58xinian/Surge/main/Script/jd/activity/jd_jxd.js"
+          "script" : "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/activity/jd_jxd.js"
         }
       ],
       "icons": [
-        "https://raw.githubusercontent.com/58xinian/icon/master/jd_jxd_mini.png",
-        "https://raw.githubusercontent.com/58xinian/icon/master/jd_jxd.png"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jd_jxd_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/jd_jxd.png"
       ]
     }
   ]
