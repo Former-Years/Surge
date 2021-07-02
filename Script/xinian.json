@@ -100,6 +100,30 @@
           "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/ttwk.png",
           "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/ttwk.png"
         ]
+      },
+      {
+        "id": "eleme",
+        "name": "饿了么吃货豆",
+        "keys": ["eleme_app_cookie", "eleme_app_longitude", "eleme_app_latitude"],
+        "author": "@hellomatrix",
+        "repo": "https://gitlab.com/hellomatrix/lord/raw/master/script/eleme/eleme_daily.js",
+        "script": "https://gitlab.com/hellomatrix/lord/raw/master/script/eleme/eleme_daily.js",
+        "icons": [
+          "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/elem.png",
+          "https://raw.githubusercontent.com/Orz-3/mini/master/Color/elem.png"
+        ]
+      },
+      {
+        "id": "dwnc",
+        "name": "动物农场",
+        "keys": ["openid", "sessid"],
+        "author": "@okboy688",
+        "repo": "https://cdn.jsdelivr.net/gh/okboy688/task@dabd36e96efcde5e2880a147764cb4f566340372/dwnc.js",
+        "script": "https://cdn.jsdelivr.net/gh/okboy688/task@dabd36e96efcde5e2880a147764cb4f566340372/dwnc.js",
+        "icons": [
+          "https://raw.githubusercontent.com/Former-Years/icon/master/jdnc.png",
+          "https://raw.githubusercontent.com/Former-Years/icon/master/jdnc_mini.png"
+        ]
       }
     ]
   }
