@@ -13,5 +13,8 @@
 # > 轻颜/蒸汽波/Ulike相机解锁VIP
 轻颜/蒸汽波/Ulike相机解锁VIP = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/qyxj.js,type=http-response,pattern=^https:\/\/commerce-.*api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info
 
+# > 彩云天气
+彩云天气 = type=http-response,pattern=https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user),requires-body=1,script-path=https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Crack/caiyun.js
+
 [MITM]
-hostname = %APPEND% api.m.jd.com, weixin110.qq.com, commerce-i18n-api.faceu.mobi,commerce-api.faceu.mobi, pay.wecut.com
+hostname = %APPEND% api.m.jd.com, weixin110.qq.com, commerce-i18n-api.faceu.mobi, commerce-api.faceu.mobi, pay.wecut.com, biz.caiyunapp.com
