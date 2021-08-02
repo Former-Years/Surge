@@ -3,7 +3,7 @@
   "name": "打工仔",
   "author": "@CrawlID",
   "icon": "https://raw.githubusercontent.com/Former-Years/icon/master/Part-timeJob.png",
-  "repo": "https://github.com/Fokit/Quantumult-X/tree/main/scripts",
+  "repo": "",
   "apps": [
     {
       "id": "CrawlID",
