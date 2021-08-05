@@ -13,4 +13,4 @@
 特效关注3 = type=http-request,pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=isvObfuscator,requires-body=1,max-size=0,script-path=Script/Rewrite/get_follow_wxshop_info.js
 
 [MITM]
-hostname = %APPEND% api.m.jd.com, shopmember.m.jd.com, wq.jd.com
+hostname = %APPEND% shopmember.m.jd.com, wq.jd.com, api.m.jd.com
