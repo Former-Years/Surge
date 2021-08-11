@@ -62,7 +62,7 @@
 云闪付cookie = type=http-request,pattern=https://youhui.95516.com/newsign/api/coin_details,script-path=https://gitee.com/passerby-b/javascript/raw/master/unipay.js
 
 # > 小米运动
-小米运动token = type=http-response,pattern=^https:\/\/account\.huami\.com\/v2\/client\/login, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/backUp/xmSports.js
+小米运动token = type=http-response,pattern=https:\/\/account(\-cn2)?\.huami\.com(.*)\/login, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/backUp/xmSports.js
 
 # > 途虎养车
 途虎养车cookie = type=http-request,pattern=https://api.tuhu.cn/User/GetUserCurrentAndNextGradeInfo,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/tuhu/tuhu.Cookie.js
