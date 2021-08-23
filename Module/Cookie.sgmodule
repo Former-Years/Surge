@@ -279,9 +279,9 @@ Zaker.cookie = script-path=https://raw.githubusercontent.com/chavyleung/scripts/
 掌上飞车cookie = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zsfc/zsfc.js,type=http-request,pattern=^https:\/\/mwegame\.qq\.com\/ams\/sign\/doSign\/month
 
 # > 趣头条
-趣头条cookie1 = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.cookie.js,type=http-request,pattern=^https:\/\/api\.1sapp\.com\/sign\/info?
-趣头条cookie2 = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.cookie.js,type=http-request,pattern=^https:\/\/api\.1sapp\.com\/content\/readV2?
-趣头条cookie3 = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.cookie.js,type=http-request,pattern=^https:\/\/api\.1sapp\.com\/x\/feed\/getReward?
+趣头条cookie1 = script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/qtt/qtt.cookie.js,type=http-request,pattern=^https:\/\/api\.1sapp\.com\/sign\/info?
+趣头条cookie2 = script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/qtt/qtt.cookie.js,type=http-request,pattern=^https:\/\/api\.1sapp\.com\/content\/readV2?
+趣头条cookie3 = script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/qtt/qtt.cookie.js,type=http-request,pattern=^https:\/\/api\.1sapp\.com\/x\/feed\/getReward?
 
 # > 米读
 米读cookie = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/midu/midu.cookie.js,requires-body=true,type=http-request,pattern=^https:\/\/apiwz\.midukanshu\.com
