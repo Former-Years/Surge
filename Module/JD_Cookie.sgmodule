@@ -1,0 +1,11 @@
+#!name=Get JD Cookie
+#!desc=获取京东Cookie
+
+
+[Script]
+# > 京东Cookie
+京东Cookie = type=http-request,pattern=jd-mlogin\/static\/html\/appjmp_blank\.html,script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/jd/backUp/JD_extra_cookie.js
+
+
+[MITM]
+hostname = %APPEND% plogin.m.jd.com
