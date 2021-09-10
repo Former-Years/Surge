@@ -2,8 +2,6 @@
 #!desc=抓取京东关注有礼&收藏有礼&特效关注&组队瓜分和会员开卡数据
 
 [Script]
-# > Surge路径：iCloud云盘-Surge-Script-Rewrite
-# > Quantumult X路径：iCloud云盘-Quantumult X-Scripts-Script-Rewrite
 组队瓜分 = type=http-response,pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=jComExchange,requires-body=1,max-size=0,script-path=get_gfjd_id.js
 会员开卡 = type=http-response,pattern=^https:\/\/shopmember\.m\.jd\.com\/shopcard,requires-body=1,max-size=0,script-path=get_opencard_id.js
 关注有礼 = type=http-request,pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=drawShopGift,requires-body=1,max-size=0,script-path=get_followgift_id.js
