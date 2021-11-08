@@ -14,6 +14,9 @@ URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT-
 ^https?:\/\/btrace\.qq\.com data=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt,REJECT-TINYGIF
 
 [Script]
+# > 京东|淘宝比价
+京东|淘宝比价 = type=http-response,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/zwf234/rules/master/js/price.js
+
 # > 轻颜/蒸汽波/Ulike相机解锁VIP
 轻颜/蒸汽波/Ulike相机解锁VIP = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/qyxj.js,type=http-response,pattern=^https:\/\/commerce-.*api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info
 
@@ -27,4 +30,4 @@ URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT-
 WPS Office = type=http-response,pattern=^https?:\/\/account\.wps\.cn\/api\/users,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js
 
 [MITM]
-hostname = %APPEND% commerce-i18n-api.faceu.mobi, commerce-api.faceu.mobi, pay.wecut.com, biz.caiyunapp.com, btrace.qq.com, ap*.intsig.net, account.wps.cn
+hostname = %APPEND% api.m.jd.com, trade-acs.m.taobao.com, commerce-i18n-api.faceu.mobi, commerce-api.faceu.mobi, pay.wecut.com, biz.caiyunapp.com, btrace.qq.com, ap*.intsig.net, account.wps.cn
