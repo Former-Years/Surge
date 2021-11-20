@@ -3,7 +3,7 @@
 
 [Script]
 # > 中青分享阅读助力10次
-中青分享阅读助力Cookie = type=http-request,pattern=https:\/\/script\.baertt\.com\/count2\/callback,script-path=https://gitee.com/curtinlv/qx/raw/master/Script/youthShareRead.js
+中青分享阅读助力Cookie = type=http-request,pattern=https:\/\/script\.baertt\.com\/count2\/callback,script-path=https://gitee.com/curtinlv/qx/raw/master/Script/youthShareRead.js,timeout=60
 
 [MITM]
 hostname = %APPEND% script.baertt.com
