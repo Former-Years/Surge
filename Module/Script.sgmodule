@@ -33,5 +33,8 @@ URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT-
 # > WPS Office
 WPS Office = type=http-response,pattern=^https?:\/\/account\.wps\.cn\/api\/users,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js
 
+# > 百度云盘
+百度云盘 = type=http-response,pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Crack/bdcloud.js
+
 [MITM]
-hostname = %APPEND% api.m.jd.com, trade-acs.m.taobao.com, commerce-i18n-api.faceu.mobi, commerce-api.faceu.mobi, pay.wecut.com, biz.caiyunapp.com, btrace.qq.com, ap*.intsig.net, account.wps.cn
+hostname = %APPEND% api.m.jd.com, trade-acs.m.taobao.com, commerce-i18n-api.faceu.mobi, commerce-api.faceu.mobi, pay.wecut.com, biz.caiyunapp.com, btrace.qq.com, ap*.intsig.net, account.wps.cn, pan.baidu.com
