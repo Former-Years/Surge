@@ -2,6 +2,9 @@
 #!desc=获取Cookie
 
 [Script]
+# > 中国联通
+中国联通Cookie = type=http-request,pattern=^https:\/\/m\.client\.10010\.com\/serviceimportantbusiness\/smart\/smartwisdomCommonNew,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/dompling/Script/master/10010/index.js
+
 # > 动物农场
 动物农场Cookie = type=http-request,pattern=^https://minigame.ucpopo.com/dwnc/getWsUrl?.*,script-path=https://cdn.jsdelivr.net/gh/okboy688/task@dabd36e96efcde5e2880a147764cb4f566340372/dwnc.js
 
