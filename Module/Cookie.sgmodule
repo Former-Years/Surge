@@ -132,7 +132,7 @@ QQ萌宠cookie = requires-body=1,type=http-response,pattern=https:\/\/qqpet.jwet
 #1. 先登录: <https://music.163.com/m/login>
 #2. 再访问: <https://music.163.com/#/user/level>
 #3. 提示: `获取会话: 成功!`
-网易云音乐cookie = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/neteasemusic/neteasemusic.cookie.js,type=^https:\/\/music.163.com\/weapi\/user\/level,requires-body=true
+网易云音乐cookie = type=http-request,pattern=^https:\/\/music.163.com\/weapi\/user\/level,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/neteasemusic/neteasemusic.cookie.js
 
 # > 什么值得买
 # 登录: https://zhiyou.smzdm.com/user/login
@@ -207,13 +207,6 @@ CSDNcookie2 = script-path=https://raw.githubusercontent.com/chavyleung/scripts/m
 
 # > 米游社
 米游社cookie1 = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/mihoyo/mihoyo.cookie.js,type=http-request,pattern=^https:\/\/api-takumi.mihoyo.com\/apihub\/api\/getGameList
-
-# > 中国联通
-# 打开 APP , 进入签到页面, 系统提示: `获取刷新链接: 成功`,然后手动签到 1 次
-# 首页>天天抽奖, 系统提示 `2` 次: `获取Cookie: 成功 (登录抽奖)` 和 `获取Cookie: 成功 (抽奖次数)`
-10010cookie1 = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.cookie.js,type=http-request,pattern=^https:\/\/act.10010.com\/SigninApp\/signin\/querySigninActivity.htm
-10010cookie2 = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.cookie.js,type=http-request,pattern=^https:\/\/act.10010.com\/SigninApp(.*?)\/signin\/daySign
-10010cookie3 = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.cookie.js,type=http-request,pattern=^https:\/\/m.client.10010.com\/dailylottery\/static\/(textdl\/userLogin|active\/findActivityInfo)
 
 # > 美团外卖
 美团外卖cookie1 = script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/wmmeituan/wmmeituan.cookie.js,type=http-request,pattern=^https:\/\/promotion.waimai.meituan.com\/playcenter\/signIn\/entry
