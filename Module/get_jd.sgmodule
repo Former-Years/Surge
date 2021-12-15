@@ -3,7 +3,7 @@
 
 [Script]
 # > 组队瓜分京豆、组队瓜分京豆-captain、让福袋飞、加购有礼、分享有礼、店铺大转盘抽奖(1口令版本，2链接版本)
-通用合一1 = type=http-response,pattern=^https://\w+-isv.isvjcloud.com/customer/getSimpleActInfoVo,requires-body=1,max-size=0,script-path=jd_zd_share2.js
+通用合一1 = type=http-response,pattern=^https\:\/\/api\.m\.jd\.com\/client\.action\?functionId\=jComExchange,requires-body=1,max-size=0,script-path=jd_zd_share2.js
 通用合一2 = type=http-response,pattern=^https://\w+-isv.isvjcloud.com/customer/getSimpleActInfoVo,requires-body=1,max-size=0,script-path=jd_zd_share.js
 会员开卡 = type=http-response,pattern=^https:\/\/shopmember\.m\.jd\.com\/shopcard,requires-body=1,max-size=0,script-path=get_opencard_id.js
 关注有礼 = type=http-request,pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=drawShopGift,requires-body=1,max-size=0,script-path=get_followgift_id.js
