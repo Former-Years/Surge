@@ -1,4 +1,4 @@
-const scriptName = "饿了么";
+const scriptName = "饿了么任务";
 const elemeCookieKey = "eleme_app_cookie";
 const elemeLongitudeKey = "eleme_app_longitude";
 const elemeLatitudeKey = "eleme_app_latitude";
