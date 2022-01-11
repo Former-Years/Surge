@@ -1,4 +1,4 @@
-const scriptName = '饿了么';
+const scriptName = '饿了么领豆';
 const getCookieRegex = /^https?:\/\/h5\.ele\.me\/restapi\/biz\.svip_scene\/svip\/engine\/queryTrafficSupply\?.*longitude=([^&]*).*latitude=([^&]*)/;
 const elemeCookieKey = 'eleme_app_cookie';
 const elemeLongitudeKey = 'eleme_app_longitude';
