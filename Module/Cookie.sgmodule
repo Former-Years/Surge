@@ -12,7 +12,7 @@
 动物农场Cookie = type=http-request,pattern=^https://minigame.ucpopo.com/dwnc/getWsUrl?.*,script-path=https://cdn.jsdelivr.net/gh/okboy688/task@dabd36e96efcde5e2880a147764cb4f566340372/dwnc.js
 
 # > 饿了么吃货豆
-饿了么吃货豆Cookie = type=http-request,pattern=^https?:\/\/h5\.ele\.me\/restapi\/biz\.svip_scene\/svip\/engine\/queryTrafficSupply,script-path=https://gitlab.com/hellomatrix/lord/raw/master/script/eleme/eleme_daily.js
+饿了么吃货豆Cookie = type=http-request,pattern=^https?:\/\/h5\.ele\.me\/restapi\/biz\.svip_scene\/svip\/engine\/queryTrafficSupply,script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/elem/eleme_daily.js
 
 # > 京东金融领豆
 京东金融领豆Cookie = type=http-request,pattern=^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/uc\/newna\/m\/userstat,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/dompling/Script/master/jd/jd_jr_cookie.js
