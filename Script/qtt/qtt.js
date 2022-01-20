@@ -689,7 +689,7 @@ function tTime(timestamp) {
 }
 
 // 通知信息部分
-function showmsg() {
+/*function showmsg() {
   let subTitle = ``
   let detail = ``
   const name = signinfo.login.data.nickname ? signinfo.login.data.nickname : `未设置昵称或Cookie失效`
@@ -835,7 +835,7 @@ function showmsg() {
 
   senku.msg(cookieName + ` 用户:${name}`, subTitle, detail)
   senku.done()
-}
+}*/
 
 
 function init() {
