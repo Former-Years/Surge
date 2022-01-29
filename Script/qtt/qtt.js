@@ -161,7 +161,7 @@ function sleep() {
   })
 }
 // 早睡
-function sleepNight() {
+/*function sleepNight() {
   return new Promise((resolve, reject) => {
     const url = {
       url: sleepNightVal,
@@ -209,7 +209,7 @@ function sleepMorning() {
       }
     })
   })
-}
+}*/
 // 睡觉金币
 function sleepReward() {
   return new Promise((resolve, reject) => {
