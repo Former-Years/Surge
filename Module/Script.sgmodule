@@ -4,16 +4,19 @@
 
 [Rule]
 # > 优酷 去广告
-URL-REGEX,^http:\/\/.*\.cp31\.ott\.cibntv\.net\/youku\/,REJECT-TINYGIF
+URL-REGEX,^http:\/\/.*\.cp31\.ott\.cibntv\.net\/youku\/,REJECT
 
 # > 京东  去广告
-URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT-TINYGIF
+URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT
 # > 京东极速版 去广告
-URL-REGEX,https://api.m.jd.com/client.action\?functionId=lite_advertising,REJECT-TINYGIF
+URL-REGEX,https://api.m.jd.com/client.action\?functionId=lite_advertising,REJECT
+
+# > 交管12123 去广告
+URL-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$,REJECT
 
 [URL Rewrite]
 # > 腾讯视频 去广告
-^https?:\/\/btrace\.qq\.com data=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt,REJECT-TINYGIF
+^https?:\/\/btrace\.qq\.com data=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt,REJECT
 
 [Script]
 # > 轻颜/蒸汽波/Ulike相机解锁VIP
