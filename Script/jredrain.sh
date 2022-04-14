@@ -330,6 +330,6 @@ if [ ! -d "/ql" ];then
 else
   echo "$lrr" | sed -e "s/RRAID/$1/g" > /ql/data/scripts/ddSneak_woof/lxk0301_live_redrain.js
   echo "红包雨RRA替换成$1完成，准备执行脚本"
-  task lxk0301_live_redrain.js now
+  task ddSneak_woof/lxk0301_live_redrain.js now
 fi
 
