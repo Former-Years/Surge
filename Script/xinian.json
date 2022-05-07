@@ -124,6 +124,76 @@
           "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/elem.png",
           "https://raw.githubusercontent.com/Orz-3/mini/master/Color/elem.png"
         ]
+      },
+      {
+        "id": "ksjsb",
+        "name": "快手极速版",
+        "keys": [
+          "ksjsbCookie",
+          "ksjsbCash",
+          "ksjsbWithdrawTime",
+          "ksjsbAggressive",
+          "ksjsbNotify"
+        ],
+        "settings": [
+          {
+            "id": "ksjsbCookie",
+            "name": "ksjsbCookie",
+            "val": "",
+            "type": "text",
+            "placeholder": "kuaishou.api_st=xxx",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": "kuaishou.api_st=xxx"
+          },
+          {
+            "id": "ksjsbCash",
+            "name": "ksjsbCash",
+            "type": "text",
+            "val": "",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          },
+          {
+            "id": "ksjsbWithdrawTime",
+            "name": "提现时间",
+            "type": "text",
+            "val": "15",
+            "placeholder": "15",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          },
+          {
+            "id": "ksjsbAggressive",
+            "name": "ksjsbAggressive",
+            "type": "text",
+            "val": "0",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          },
+          {
+            "id": "ksjsbNotify",
+            "name": "是否通知",
+            "type": "text",
+            "val": "1",
+            "placeholder": "1",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          }
+        ],
+        "author": "@偷撸",
+        "repo": "",
+        "script": "",
+        "icons": [
+          "https://raw.githubusercontent.com/Former-Years/icon/master/ksjsb.png",
+          "https://raw.githubusercontent.com/Former-Years/icon/master/ksjsb.png"
+        ]
       }
     ]
   }
