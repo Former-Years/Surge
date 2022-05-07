@@ -141,7 +141,7 @@
             "name": "ksjsbCookie",
             "val": "",
             "type": "text",
-            "placeholder": "kuaishou.api_st=xxx",
+            "placeholder": "",
             "autoGrow": true,
             "rows": 2,
             "desc": "kuaishou.api_st=xxx"
@@ -160,8 +160,8 @@
             "id": "ksjsbWithdrawTime",
             "name": "提现时间",
             "type": "text",
-            "val": "15",
-            "placeholder": "15",
+            "val": "",
+            "placeholder": "",
             "autoGrow": true,
             "rows": 2,
             "desc": "默认每天15点提现"
@@ -170,7 +170,7 @@
             "id": "ksjsbAggressive",
             "name": "ksjsbAggressive",
             "type": "text",
-            "val": "0",
+            "val": "",
             "placeholder": "",
             "autoGrow": true,
             "rows": 2,
@@ -180,11 +180,11 @@
             "id": "ksjsbNotify",
             "name": "是否通知",
             "type": "text",
-            "val": "1",
-            "placeholder": "1",
+            "val": "",
+            "placeholder": "",
             "autoGrow": true,
             "rows": 2,
-            "desc": "默认提现时间会触发通知，设置为0则不通知"
+            "desc": "默认提现时间会触发通知，设置成2改为每次运行都通知，设置为0则不通知"
           }
         ],
         "author": "@偷撸",
