@@ -79,21 +79,30 @@
             "name": "小米运动Token",
             "val": "",
             "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
             "desc": "小米运动登录时获取的token"
           },
           {
             "id": "xmMinStep",
             "name": "最小运动步数",
-            "val": "19000",
+            "val": "30060",
             "type": "text",
-            "desc": "需要修改最小的运动步数的数字,例如:19000"
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": "需要修改最小的运动步数的数字,例如:30060"
           },
           {
             "id": "xmMaxStep",
             "name": "最大运动步数",
-            "val": "25000",
+            "val": "33010",
             "type": "text",
-            "desc": "需要修改最小的运动步数的数字,例如:25000"
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": "需要修改最小的运动步数的数字,例如:33010"
           }
         ],
         "author": "@null",
@@ -117,7 +126,7 @@
         "settings": [
           {
             "id": "ksjsbCookie",
-            "name": "ksjsbCookie",
+            "name": "快手极速版Cookie",
             "val": "",
             "type": "text",
             "placeholder": "",
