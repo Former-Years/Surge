@@ -69,13 +69,13 @@
         "id": "xmSports",
         "name": "小米运动",
         "keys": [
-          "xmSportsToken",
+          "XM_SPORT_TOKEN",
           "xmMinStep",
           "xmMaxStep"
         ],
         "settings": [
           {
-            "id": "xmSportsToken",
+            "id": "XM_SPORT_TOKEN",
             "name": "小米运动Token",
             "val": "",
             "type": "text",
@@ -96,7 +96,7 @@
             "desc": "需要修改最小的运动步数的数字,例如:25000"
           }
         ],
-        "author": "@lxk0301",
+        "author": "@null",
         "repo": "https://github.com/Former-Years/Surge/blob/main/Script/xmSports.js",
         "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/xmSports.js",
         "icons": [
@@ -166,7 +166,7 @@
             "desc": "默认提现时间会触发通知，设置成2改为每次运行都通知，设置为0则不通知"
           }
         ],
-        "author": "@偷撸",
+        "author": "@null",
         "repo": "",
         "script": "",
         "icons": [
