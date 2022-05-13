@@ -1,18 +1,14 @@
 {
   "id": "Part-timeJob",
   "name": "打工仔",
-  "author": "@CrawlID",
+  "author": "打工仔",
   "icon": "https://raw.githubusercontent.com/Former-Years/icon/master/Part-timeJob.png",
   "repo": "",
   "apps": [
     {
-      "id": "CrawlID",
+      "id": "GrabID",
       "name": "超级无线抓取ID",
-      "keys": [
-        "TG_BOT_TOKEN",
-        "TG_USER_ID",
-        "QUOTATION"
-      ],
+      "keys": ["TG_BOT_TOKEN", "TG_USER_ID", "QUOTATION"],
       "settings": [
         {
           "id": "TG_BOT_TOKEN",
