@@ -110,6 +110,50 @@
         ]
       },
       {
+        "id": "elm",
+        "name": "饿了么",
+        "keys": ["elmck", "elmdh", "SM_STARTTIME"],
+        "settings": [
+          {
+            "id": "elmck",
+            "name": "饿了么CK",
+            "val": "",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          },
+          {
+            "id": "elmdh",
+            "name": "兑换设置",
+            "val": "false",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": "默认为false，如需开启兑换，请设置为true"
+          },
+          {
+            "id": "SM_STARTTIME",
+            "name": "开抢时间",
+            "val": "60",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": "默认为60，当为60时，9点59分运行脚本，10点准时开抢，如果网络慢可以设置为59，则9点59分59秒开抢"
+          }
+        ],
+        "author": "@xiecoll",
+        "repo": "https://gitee.com/xiecoll/radish-script/raw/master/ELM/lb_elm.js",
+        "script": "https://gitee.com/xiecoll/radish-script/raw/master/ELM/lb_elm.js",
+        "icons": [
+          "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/elem.png",
+          "https://raw.githubusercontent.com/Orz-3/mini/master/Color/elem.png"
+        ]
+      },
+      {
         "id": "ksjsb",
         "name": "快手极速版",
         "keys": ["ksjsbCookie", "ksjsbCash", "ksjsbWithdrawTime", "ksjsbAggressive", "ksjsbNotify"],
