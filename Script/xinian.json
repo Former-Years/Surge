@@ -68,11 +68,7 @@
       {
         "id": "xmSports",
         "name": "小米运动",
-        "keys": [
-          "XM_SPORT_TOKEN",
-          "xmMinStep",
-          "xmMaxStep"
-        ],
+        "keys": ["XM_SPORT_TOKEN", "xmMinStep", "xmMaxStep"],
         "settings": [
           {
             "id": "XM_SPORT_TOKEN",
@@ -116,13 +112,7 @@
       {
         "id": "ksjsb",
         "name": "快手极速版",
-        "keys": [
-          "ksjsbCookie",
-          "ksjsbCash",
-          "ksjsbWithdrawTime",
-          "ksjsbAggressive",
-          "ksjsbNotify"
-        ],
+        "keys": ["ksjsbCookie", "ksjsbCash", "ksjsbWithdrawTime", "ksjsbAggressive", "ksjsbNotify"],
         "settings": [
           {
             "id": "ksjsbCookie",
