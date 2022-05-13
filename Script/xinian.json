@@ -66,7 +66,7 @@
         ]
       },
       {
-        "id": "xmSports",
+        "id": "xmyd",
         "name": "小米运动",
         "keys": ["XM_SPORT_TOKEN", "xmMinStep", "xmMaxStep"],
         "settings": [
@@ -102,8 +102,8 @@
           }
         ],
         "author": "@null",
-        "repo": "",
-        "script": "",
+        "repo": "https://github.com/Former-Years/Surge/blob/main/Script/xmSports.js",
+        "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/xmSports.js",
         "icons": [
           "https://raw.githubusercontent.com/Former-Years/icon/master/xmyd_mini.png",
           "https://raw.githubusercontent.com/Former-Years/icon/master/xmyd.png"
