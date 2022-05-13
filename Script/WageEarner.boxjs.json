@@ -1,0 +1,54 @@
+{
+  "id": "Part-timeJob",
+  "name": "打工仔",
+  "author": "打工仔",
+  "icon": "https://raw.githubusercontent.com/Former-Years/icon/master/Part-timeJob.png",
+  "repo": "",
+  "apps": [
+    {
+      "id": "GrabID",
+      "name": "超级无线抓取ID",
+      "keys": ["TG_BOT_TOKEN", "TG_USER_ID", "QUOTATION"],
+      "settings": [
+        {
+          "id": "TG_BOT_TOKEN",
+          "name": "TG_BOT_TOKEN",
+          "val": "",
+          "type": "text",
+          "placeholder": "123:ABCD",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "输入后你将是一个合格的打工人"
+        },
+        {
+          "id": "TG_USER_ID",
+          "name": "TG群组/频道ID",
+          "type": "text",
+          "val": "-1001393498619",
+          "placeholder": "TG群组/频道ID",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "默认为偷撸频道ID-1001393498619"
+        },
+        {
+          "id": "QUOTATION",
+          "name": "打工语录",
+          "type": "text",
+          "val": "只要我够努力，老板很快就能过上他想要的生活！该起床奋斗了！加油，打工人！&靠别人，是公主，靠你叽哇，是日本人，靠自己，我是光荣的打工人！&打工赚不了几个钱，不过多打几份工，可以让你没有时间花钱！&打工累吗?累。但是我不能哭，因为骑电动车的时候擦眼泪不安全！&这么不努力，怎么做打工人啊你！&打工人打工魂打工人都是人上人！&应对失眠的最好办法就是通宵 加油 打工人！&打工可能会少活十年，不打工你一天也活不下去。加油，打工人!
+&冷吗?冷就对了，温暖是留给开小轿车的人。早安共享单车人 !&难吗？难对了，只要我们不努力，总没有饭吃。加油打工人！&累吗，累就对了，舒服是留给有钱人的。加油，打工人!&没有困难的工作，只有勇敢的打工人!&在天愿作比翼鸟在地怨为打工人&有人相爱，有人夜里看海，有人七八个闹钟起不来。加油打工人!&爱不是生活的全部，打工才是。加油，打工人！&我带上了头盔，就无法吻你，摘下了头盔被交警罚款50。加油，打工人！&每天对着空气挥一拳，不为别的，就为干这个世界！加油，打工人！&不是工作需要我，而是我需要工作，我打工，我快乐。加油，打工人！&不拼爹，不拼娘，不拼工作，不拼钱，我们打工人只拼命。努力！打工人！&天气变冷不像夏天的砖那么烫手了，就是总下雨滑不溜丢的。加油，打工人！&世上有两种最耀眼的光芒，一种是太阳，一种是打工人努力的模样。加油，打工人！&说起打工就流泪；打工烦，打工难，真的好想把家还！&年年打工年年愁，天天加班像只猴，加班加点无报酬，天天挨骂无理由！&敢上九天揽月，敢下五洋捉鳖，但却不敢迟到，因为迟到扣钱。加油，打工人 ！&有人夜夜笙歌，有人早为生活奔波，加油打工人！",
+          "placeholder": "打工人，打工魂！",
+          "autoGrow": true,
+          "rows": 8,
+          "desc": "使用&分割"
+        }
+      ],
+      "author": "@打工仔",
+      "repo": "",
+      "script": "",
+      "icons": [
+        "https://raw.githubusercontent.com/Former-Years/icon/master/Part-timeJob.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/Part-timeJob.png"
+      ]
+    }
+  ]
+}
