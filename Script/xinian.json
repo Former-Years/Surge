@@ -68,10 +68,10 @@
       {
         "id": "xmyd",
         "name": "小米运动",
-        "keys": ["XM_SPORT_TOKEN", "xmMinStep", "xmMaxStep"],
+        "keys": ["xmSportsToken", "xmMinStep", "xmMaxStep"],
         "settings": [
           {
-            "id": "XM_SPORT_TOKEN",
+            "id": "xmSportsToken",
             "name": "小米运动Token",
             "val": "",
             "type": "text",
