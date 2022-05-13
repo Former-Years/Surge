@@ -30,42 +30,6 @@
         ]
       },
       {
-        "id": "zymk",
-        "name": "知音漫客",
-        "keys": ["zymkurlname", "zymkhdname", "zymkbdname"],
-        "author": "@DD-D1",
-        "repo": "https://github.com/DD-D1/2020scripts/blob/master/zymkSign.js",
-        "script": "https://raw.githubusercontent.com/DD-D1/2020scripts/master/zymkSign.js",
-        "icons": [
-          "https://raw.githubusercontent.com/Former-Years/icon/master/zymk.png",
-          "https://raw.githubusercontent.com/Former-Years/icon/master/zymk.png"
-        ]
-      },
-      {
-        "id": "jdds",
-        "name": "京东读书",
-        "keys": ["jddsurlname", "jddshdname"],
-        "author": "@DD-D1",
-        "repo": "https://github.com/DD-D1/2020scripts/blob/master/jddsSign.js",
-        "script": "https://raw.githubusercontent.com/DD-D1/2020scripts/master/jddsSign.js",
-        "icons": [
-          "https://raw.githubusercontent.com/Former-Years/icon/master/jdds.png",
-          "https://raw.githubusercontent.com/Former-Years/icon/master/jdds.png"
-        ]
-      },
-      {
-        "id": "jdtqz",
-        "name": "京东特权活力值",
-        "keys": ["CookieJD"],
-        "author": "@iisams",
-        "repo": "https://github.com/iisams/Scripts/blob/master/liwo/jdtqz.js",
-        "script": "https://raw.githubusercontent.com/iisams/Scripts/master/liwo/jdtqz.js",
-        "icons": [
-          "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/jd.png",
-          "https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png"
-        ]
-      },
-      {
         "id": "hellobike",
         "name": "哈啰出行",
         "keys": ["hellobike"],
@@ -75,18 +39,6 @@
         "icons": [
           "https://raw.githubusercontent.com/Former-Years/icon/master/hellobike_mini.png",
           "https://raw.githubusercontent.com/Former-Years/icon/master/hellobike.png"
-        ]
-      },
-      {
-        "id": "qunar",
-        "name": "去哪儿",
-        "keys": ["chavy_cookie_qunar"],
-        "author": "@chavyleung",
-        "repo": "https://github.com/chavyleung/scripts/blob/master/qunar/qunar.js",
-        "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/qunar/qunar.js",
-        "icons": [
-          "https://raw.githubusercontent.com/Former-Years/icon/master/qunar_mini.png",
-          "https://raw.githubusercontent.com/Former-Years/icon/master/qunar.png"
         ]
       },
       {
@@ -114,15 +66,42 @@
         ]
       },
       {
-        "id": "eleme",
-        "name": "饿了么吃货豆",
-        "keys": ["eleme_app_cookie", "eleme_app_longitude", "eleme_app_latitude"],
-        "author": "@hellomatrix",
-        "repo": "https://gitlab.com/hellomatrix/lord/raw/master/script/eleme/eleme_daily.js",
-        "script": "https://gitlab.com/hellomatrix/lord/raw/master/script/eleme/eleme_daily.js",
+        "id": "xmSports",
+        "name": "小米运动",
+        "keys": [
+          "xmSportsToken",
+          "xmMinStep",
+          "xmMaxStep"
+        ],
+        "settings": [
+          {
+            "id": "xmSportsToken",
+            "name": "小米运动Token",
+            "val": "",
+            "type": "text",
+            "desc": "小米运动登录时获取的token"
+          },
+          {
+            "id": "xmMinStep",
+            "name": "最小运动步数",
+            "val": "19000",
+            "type": "text",
+            "desc": "需要修改最小的运动步数的数字,例如:19000"
+          },
+          {
+            "id": "xmMaxStep",
+            "name": "最大运动步数",
+            "val": "25000",
+            "type": "text",
+            "desc": "需要修改最小的运动步数的数字,例如:25000"
+          }
+        ],
+        "author": "@lxk0301",
+        "repo": "https://github.com/Former-Years/Surge/blob/main/Script/xmSports.js",
+        "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/xmSports.js",
         "icons": [
-          "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/elem.png",
-          "https://raw.githubusercontent.com/Orz-3/mini/master/Color/elem.png"
+          "https://raw.githubusercontent.com/Former-Years/icon/master/xmyd_mini.png",
+          "https://raw.githubusercontent.com/Former-Years/icon/master/xmyd.png"
         ]
       },
       {
