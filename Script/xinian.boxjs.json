@@ -154,6 +154,30 @@
         ]
       },
       {
+        "id": "thyc",
+        "name": "途虎养车",
+        "keys": ["THYCtoken"],
+        "settings": [
+          {
+            "id": "THYCtoken",
+            "name": "途虎养车CK",
+            "val": "",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          }
+        ],
+        "author": "@xl2101200",
+        "repo": "https://raw.githubusercontent.com/xl2101200/-/main/thyc.js",
+        "script": "https://raw.githubusercontent.com/xl2101200/-/main/thyc.js",
+        "icons": [
+          "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/tuhu.png",
+          "https://raw.githubusercontent.com/Orz-3/mini/master/Color/tuhu.png"
+        ]
+      },
+      {
         "id": "ksjsb",
         "name": "快手极速版",
         "keys": ["ksjsbCookie", "ksjsbCash", "ksjsbWithdrawTime", "ksjsbAggressive", "ksjsbNotify"],
