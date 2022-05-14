@@ -34,7 +34,7 @@ bilibiliCookie = type=http-request,pattern=^https:\/\/(www|live)\.bilibili\.com\
 
 # > 美团
 美团Cookie = type=http-request,pattern=^https:\/\/i.meituan.com\/evolve\/signin\/signpost\/,requires-body=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.cookie.js
-美团Cookie = type=http-request,pattern=https://cube.meituan.com/topcube/api/toc/task/getInviterInfo,requires-body=1,script-path=https://raw.githubusercontent.com/leafTheFish/DeathNote/main/meituan.js
+美团Cookie = type=http-request,pattern=https:\/\/cube\.meituan\.com\/topcube\/api\/toc\/task\/getInviterInfo,requires-body=1,script-path=https://raw.githubusercontent.com/leafTheFish/DeathNote/main/meituan.js
 
 # > 时光相册
 时光相册Cookie = type=http-request,pattern=^https:\/\/api.everphoto.cn\/users\/self\/checkin\/v2,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/everphoto/everphoto.cookie.js
@@ -72,10 +72,10 @@ IT之家Cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/use
 趣头条Cookie3 = type=http-request,pattern=^https:\/\/api\.1sapp\.com\/x\/feed\/getReward?,script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/qtt/qtt.js
 
 # > 饿了么
-饿了么Cookie = type=http-request,pattern=https://h5.ele.me/svip/task-list,script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/elmyq.js
+饿了么Cookie = type=http-request,pattern=https:\/\/h5\.ele\.me\/svip\/task-list,script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/elmyq.js
 
 # > 途虎养车
-途虎养车Cookie = type=http-request,pattern=https://cl-gateway.tuhu.cn/cl-common-api/api,script-path=https://raw.githubusercontent.com/xl2101200/-/main/thyc.js
+途虎养车Cookie = type=http-request,pattern=https:\/\/cl-gateway\.tuhu\.cn\/cl-common-api\/api,script-path=https://raw.githubusercontent.com/xl2101200/-/main/thyc.js
 
 
 [MITM]
