@@ -34,6 +34,7 @@ bilibiliCookie = type=http-request,pattern=^https:\/\/(www|live)\.bilibili\.com\
 
 # > 美团
 美团Cookie = type=http-request,pattern=^https:\/\/i.meituan.com\/evolve\/signin\/signpost\/,requires-body=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.cookie.js
+美团Cookie = type=http-request,pattern=https://open.meituan.com/user/v1/info,requires-body=1,script-path=https://raw.githubusercontent.com/leafTheFish/DeathNote/main/meituan.js
 
 # > 时光相册
 时光相册Cookie = type=http-request,pattern=^https:\/\/api.everphoto.cn\/users\/self\/checkin\/v2,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/everphoto/everphoto.cookie.js
@@ -78,4 +79,4 @@ IT之家Cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/use
 
 
 [MITM]
-hostname = %APPEND% operation-api.jimistore.com, *.huami.com, passport.iqiyi.com, *.bilibili.com, api.dongqiudi.com, club.yili.com, *.m.163.com, music.163.com, *.smzdm.com, 113.96.156.178,*.ximalaya.com, i.meituan.com, api.everphoto.cn, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, wxavip-up.ezrpro.cn, mall.oclean.com, c.tieba.baidu.com, api.1sapp.com, h5.ele.me, cl-gateway.tuhu.cn
+hostname = %APPEND% operation-api.jimistore.com, *.huami.com, passport.iqiyi.com, *.bilibili.com, api.dongqiudi.com, club.yili.com, *.m.163.com, music.163.com, *.smzdm.com, 113.96.156.178,*.ximalaya.com, i.meituan.com,open.meituan.com, api.everphoto.cn, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, wxavip-up.ezrpro.cn, mall.oclean.com, c.tieba.baidu.com, api.1sapp.com, h5.ele.me, cl-gateway.tuhu.cn

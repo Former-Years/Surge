@@ -1,9 +1,7 @@
-
-
 //美团天天神卷+赚米粒
 //百度 美团登录自己抓Token ，美团小程序首页天天赚钱
 //只支持青龙
-// 环境变量 mtTk （建议直接复制）
+// 环境变量 meituanCookie （建议直接复制）
 //多账号用 @
 //如需关闭膨胀，环境变量 sjpz 值：false
 //本次更新：增加推送，可设置膨胀。
@@ -31,11 +29,11 @@ let num = rand(10, 99), slcks = "",userId,uuid,inviteCode
         fhxzck()
     } else {
        
-        if (process.env.mtTk && process.env.mtTk.indexOf('@') > -1) {
-            slckArr = process.env.mtTk.split('@');
+        if (process.env.meituanCookie && process.env.meituanCookie.indexOf('@') > -1) {
+            slckArr = process.env.meituanCookie.split('@');
             console.log(`您选择的是用"@"隔开\n`)
         } else {
-            slcks = [process.env.mtTk]
+            slcks = [process.env.meituanCookie]
         };
         Object.keys(slcks).forEach((item) => {
             if (slcks[item]) {

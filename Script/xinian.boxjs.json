@@ -156,10 +156,10 @@
       {
         "id": "mt",
         "name": "美团",
-        "keys": ["mtTk", "sjpz", "meituanyq"],
+        "keys": ["meituanCookie", "sjpz", "meituanyq"],
         "settings": [
           {
-            "id": "mtTk",
+            "id": "meituanCookie",
             "name": "美团CK",
             "val": "",
             "type": "text",
