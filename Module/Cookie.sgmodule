@@ -79,4 +79,4 @@ IT之家Cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/use
 
 
 [MITM]
-hostname = %APPEND% operation-api.jimistore.com, *.huami.com, passport.iqiyi.com, *.bilibili.com, api.dongqiudi.com, club.yili.com, *.m.163.com, music.163.com, *.smzdm.com, 113.96.156.178,*.ximalaya.com, i.meituan.com,open.meituan.com, api.everphoto.cn, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, wxavip-up.ezrpro.cn, mall.oclean.com, c.tieba.baidu.com, api.1sapp.com, h5.ele.me, cl-gateway.tuhu.cn
+hostname = %APPEND% operation-api.jimistore.com, *.huami.com, passport.iqiyi.com, *.bilibili.com, api.dongqiudi.com, club.yili.com, *.m.163.com, music.163.com, *.smzdm.com, 113.96.156.178,*.ximalaya.com, i.meituan.com,cube.meituan.com, api.everphoto.cn, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, wxavip-up.ezrpro.cn, mall.oclean.com, c.tieba.baidu.com, api.1sapp.com, h5.ele.me, cl-gateway.tuhu.cn
