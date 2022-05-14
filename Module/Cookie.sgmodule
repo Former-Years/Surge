@@ -71,7 +71,7 @@ IT之家Cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/use
 趣头条Cookie3 = type=http-request,pattern=^https:\/\/api\.1sapp\.com\/x\/feed\/getReward?,script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/qtt/qtt.js
 
 # > 饿了么
-饿了么Cookie = type=http-request,pattern=https://h5.ele.me/svip/task-list,script-path=https://gitee.com/xiecoll/radish-script/raw/master/ELM/lb_elm.js
+饿了么Cookie = type=http-request,pattern=https://h5.ele.me/svip/task-list,script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/elmyq.js
 
 # > 途虎养车
 途虎养车Cookie = type=http-request,pattern=https://cl-gateway.tuhu.cn/cl-common-api/api,script-path=https://raw.githubusercontent.com/xl2101200/-/main/thyc.js
