@@ -122,7 +122,7 @@
             "placeholder": "",
             "autoGrow": true,
             "rows": 2,
-            "desc": ""
+            "desc": "多账号用@"
           },
           {
             "id": "elmdh",
@@ -154,6 +154,50 @@
         ]
       },
       {
+        "id": "mt",
+        "name": "美团",
+        "keys": ["mtTk", "sjpz", "meituanyq"],
+        "settings": [
+          {
+            "id": "mtTk",
+            "name": "美团CK",
+            "val": "",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": "多账号用@"
+          },
+          {
+            "id": "sjpz",
+            "name": "膨胀红包",
+            "val": "true",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": "如需关闭膨胀，设置为false"
+          },
+          {
+            "id": "meituanyq",
+            "name": "优惠券邀请码",
+            "val": "",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          }
+        ],
+        "author": "@萝卜",
+        "repo": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/mtyq.js",
+        "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/mtyq.js",
+        "icons": [
+          "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/meituan.png",
+          "https://raw.githubusercontent.com/Orz-3/mini/master/Color/meituan.png"
+        ]
+      },
+      {
         "id": "thyc",
         "name": "途虎养车",
         "keys": ["THYCtoken"],
@@ -166,7 +210,7 @@
             "placeholder": "",
             "autoGrow": true,
             "rows": 2,
-            "desc": ""
+            "desc": "多账号是换行"
           }
         ],
         "author": "@xl2101200",
@@ -190,7 +234,7 @@
             "placeholder": "",
             "autoGrow": true,
             "rows": 2,
-            "desc": "kuaishou.api_st=xxx"
+            "desc": "多账号用@"
           },
           {
             "id": "ksjsbCash",
