@@ -224,10 +224,10 @@
       {
         "id": "ksjsb",
         "name": "快手极速版",
-        "keys": ["ksjsbCookie", "ksjsbCash", "ksjsbWithdrawTime", "ksjsbAggressive", "ksjsbNotify"],
+        "keys": ["ksjsb_data", "Notify"],
         "settings": [
           {
-            "id": "ksjsbCookie",
+            "id": "ksjsb_data",
             "name": "快手极速版Cookie",
             "val": "",
             "type": "text",
@@ -237,49 +237,19 @@
             "desc": "多账号用@"
           },
           {
-            "id": "ksjsbCash",
-            "name": "固定提现金额",
-            "type": "text",
-            "val": "",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": "默认按照账户的提现列表从高到低提现到绑定的提现账号，都有绑定的话默认提现到支付宝。要固定提现金额的话填到变量ksjsbCash里。如果提现失败，手动接验证码提现一次"
-          },
-          {
-            "id": "ksjsbWithdrawTime",
-            "name": "提现时间",
-            "type": "text",
-            "val": "",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": "默认每天15点提现"
-          },
-          {
-            "id": "ksjsbAggressive",
-            "name": "ksjsbAggressive",
-            "type": "text",
-            "val": "",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": ""
-          },
-          {
-            "id": "ksjsbNotify",
+            "id": "Notify",
             "name": "是否通知",
             "type": "text",
             "val": "",
             "placeholder": "",
             "autoGrow": true,
             "rows": 2,
-            "desc": "默认提现时间会触发通知，设置成2改为每次运行都通知，设置为0则不通知"
+            "desc": "默认1，设置为0则不通知"
           }
         ],
-        "author": "@null",
-        "repo": "",
-        "script": "",
+        "author": "@yml2213",
+        "repo": "https://raw.githubusercontent.com/yml2213/javascript/master/ksjsb/ksjsb.js",
+        "script": "https://raw.githubusercontent.com/yml2213/javascript/master/ksjsb/ksjsb.js",
         "icons": [
           "https://raw.githubusercontent.com/Former-Years/icon/master/ksjsb.png",
           "https://raw.githubusercontent.com/Former-Years/icon/master/ksjsb.png"
