@@ -220,40 +220,4 @@
           "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/tuhu.png",
           "https://raw.githubusercontent.com/Orz-3/mini/master/Color/tuhu.png"
         ]
-      },
-      {
-        "id": "ksjsb",
-        "name": "快手极速版",
-        "keys": ["ksjsb_data", "Notify"],
-        "settings": [
-          {
-            "id": "ksjsb_data",
-            "name": "快手极速版Cookie",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": "多账号用@"
-          },
-          {
-            "id": "Notify",
-            "name": "是否通知",
-            "type": "text",
-            "val": "",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": "默认1，设置为0则不通知"
-          }
-        ],
-        "author": "@yml2213",
-        "repo": "https://raw.githubusercontent.com/yml2213/javascript/master/ksjsb/ksjsb.js",
-        "script": "https://raw.githubusercontent.com/yml2213/javascript/master/ksjsb/ksjsb.js",
-        "icons": [
-          "https://raw.githubusercontent.com/Former-Years/icon/master/ksjsb.png",
-          "https://raw.githubusercontent.com/Former-Years/icon/master/ksjsb.png"
-        ]
       }
-    ]
-  }
