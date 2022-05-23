@@ -1,9 +1,6 @@
 #!name=Shield JD
 #!desc=屏蔽京东相关信息
 
-[Rule]
-DOMAIN,blackhole.m.jd.com,reject
-
 [URL Rewrite]
 https://wqs.jd.com/_async_cookie.html - reject
 https://st.jingxi.com/_async_cookie.html - reject
