@@ -34,10 +34,3 @@ https:\/\/.+\.m\.jd.com\/m2 data="https://raw.githubusercontent.com/mieqq/mieqq/
 https://lbsgw.m.jd.com/m data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 https://hawks.jd.com/log data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 https://perf.m.jd.com/app_monitor/v1/report data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-[Script]
-# 屏蔽eid手机跟踪
-屏蔽eid = type=http-request,pattern=https://*.jd.com,requires-body=1,script-path=https://raw.githubusercontent.com/id77/QuantumultX/master/Script/fuckEid.js
-
-[MITM]
-hostname = %APPEND% *.jd.com
