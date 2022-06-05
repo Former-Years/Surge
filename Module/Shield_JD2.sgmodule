@@ -1,9 +1,0 @@
-#!name=Shield JD2
-#!desc=屏蔽京东eid手机跟踪
-
-[Script]
-# 屏蔽eid手机跟踪
-屏蔽eid = type=http-request,pattern=https://*.jd.com,requires-body=1,script-path=https://raw.githubusercontent.com/id77/QuantumultX/master/Script/fuckEid.js
-
-[MITM]
-hostname = %APPEND% *.jd.com
