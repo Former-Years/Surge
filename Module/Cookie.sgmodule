@@ -32,13 +32,6 @@ bilibiliCookie = type=http-request,pattern=^https:\/\/(www|live)\.bilibili\.com\
 # > 喜马拉雅
 喜马拉雅Cookie = type=http-request,pattern=^https?:\/\/.*\/mobile\-user\/(v1\/)?homePage\/.*,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/ximalaya/ximalaya.cookie.js
 
-# > 美团
-美团Cookie1 = type=http-request,pattern=^https:\/\/i.meituan.com\/evolve\/signin\/signpost\/,requires-body=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.cookie.js
-美团Cookie2 = type=http-request,pattern=https:\/\/open\.meituan\.com\/user\/v1\/info?,requires-body=1,script-path=https://raw.githubusercontent.com/leafTheFish/DeathNote/main/meituan.js
-
-# > 时光相册
-时光相册Cookie = type=http-request,pattern=^https:\/\/api.everphoto.cn\/users\/self\/checkin\/v2,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/everphoto/everphoto.cookie.js
-
 # > 哈啰出行
 哈啰出行Cookie = type=http-request,pattern=^https:\/\/gameapi\.hellobike\.com\/api,requires-body=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/hellobike/hellobike.js
 
@@ -71,12 +64,6 @@ IT之家Cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/use
 趣头条Cookie2 = type=http-request,pattern=^https:\/\/api\.1sapp\.com\/content\/readV2?,script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/qtt/qtt.js
 趣头条Cookie3 = type=http-request,pattern=^https:\/\/api\.1sapp\.com\/x\/feed\/getReward?,script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/qtt/qtt.js
 
-# > 饿了么
-饿了么Cookie = type=http-request,pattern=https:\/\/h5\.ele\.me\/svip\/task-list,script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/elmyq.js
-
-# > 途虎养车
-途虎养车Cookie = type=http-request,pattern=https:\/\/cl-gateway\.tuhu\.cn\/cl-common-api\/api,script-path=https://raw.githubusercontent.com/xl2101200/-/main/thyc.js
-
 
 [MITM]
-hostname = %APPEND% operation-api.jimistore.com, *.huami.com, passport.iqiyi.com, *.bilibili.com, api.dongqiudi.com, club.yili.com, *.m.163.com, music.163.com, *.smzdm.com, 113.96.156.178,*.ximalaya.com, i.meituan.com,open.meituan.com, api.everphoto.cn, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, wxavip-up.ezrpro.cn, mall.oclean.com, c.tieba.baidu.com, api.1sapp.com, h5.ele.me, cl-gateway.tuhu.cn
+hostname = %APPEND% operation-api.jimistore.com, *.huami.com, passport.iqiyi.com, *.bilibili.com, api.dongqiudi.com, club.yili.com, *.m.163.com, music.163.com, *.smzdm.com, 113.96.156.178,*.ximalaya.com, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, wxavip-up.ezrpro.cn, mall.oclean.com, c.tieba.baidu.com, api.1sapp.com
