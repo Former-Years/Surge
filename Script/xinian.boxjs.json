@@ -256,7 +256,8 @@
       "name": "掌上飞车",
       "keys": [
         "zsfc_url",
-        "zsfc_headers"
+        "zsfc_headers",
+        "zsfc_query"
       ],
       "settings": [
         {
@@ -272,6 +273,16 @@
         {
           "id": "zsfc_headers",
           "name": "掌上飞车headers",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": ""
+        },
+        {
+          "id": "zsfc_query",
+          "name": "掌上飞车query",
           "val": "",
           "type": "text",
           "placeholder": "",
