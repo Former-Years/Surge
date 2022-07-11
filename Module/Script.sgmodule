@@ -37,5 +37,8 @@ WPS Office = type=http-response,pattern=^https?:\/\/account\.wps\.cn\/api\/users
 # > 美图秀秀
 美图秀秀 = type=http-response,pattern=^https?://(api|h5).xiuxiu.meitu.com/(v1/user/show.json|v1/vip/vip_show.json|v1/vip/prompt/query.json|v1/h5/vip/sub_detail.json|v1/h5/user/self_show.json|v1/h5/vip/user_detail.json|v1/vip/prompt/query.json|v1/vip/prompt/query.json),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/Mtxx.js
 
+# > bilbii 大会员画质
+哔哩画质 = type=http-response,pattern=https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)),requires-body=1,script-path=https://github.com/Sunert/Script/raw/master/Script/Bilibili/BiliHD.js
+
 [MITM]
-hostname = %APPEND% commerce-i18n-api.faceu.mobi, commerce-api.faceu.mobi, pay.wecut.com, biz.caiyunapp.com, btrace.qq.com, ap*.intsig.net, account.wps.cn, pan.baidu.com, api.m.com, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com
+hostname = %APPEND% commerce-i18n-api.faceu.mobi, commerce-api.faceu.mobi, pay.wecut.com, biz.caiyunapp.com, btrace.qq.com, ap*.intsig.net, account.wps.cn, pan.baidu.com, api.m.com, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, api.bilibili.com
