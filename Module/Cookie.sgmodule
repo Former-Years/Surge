@@ -67,5 +67,8 @@ IT之家Cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/use
 # > 掌上飞车
 掌上飞车Cookie = type=http-request,pattern=^https:\/\/mwegame\.qq\.com\/ams\/sign\/doSign\/month,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zsfc/zsfc.js
 
+# > 掌上飞车
+吾爱Cookie = type=http-request,pattern=https:\/\/www\.52pojie\.cn\/home\.php\?,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/52pojie-DailyBonus/52pojie.js
+
 [MITM]
-hostname = %APPEND% operation-api.jimistore.com, *.huami.com, passport.iqiyi.com, *.bilibili.com, api.dongqiudi.com, club.yili.com, *.m.163.com, music.163.com, *.smzdm.com, 113.96.156.178,*.ximalaya.com, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, mall.oclean.com, c.tieba.baidu.com, api.1sapp.com, m.client.10010.com, mwegame.qq.com
+hostname = %APPEND% operation-api.jimistore.com, *.huami.com, passport.iqiyi.com, *.bilibili.com, api.dongqiudi.com, club.yili.com, *.m.163.com, music.163.com, *.smzdm.com, 113.96.156.178,*.ximalaya.com, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, mall.oclean.com, c.tieba.baidu.com, api.1sapp.com, m.client.10010.com, mwegame.qq.com, www.52pojie.cn
