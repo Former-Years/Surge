@@ -68,6 +68,7 @@ IT之家Cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/use
 掌上飞车Cookie = type=http-request,pattern=^https:\/\/mwegame\.qq\.com\/ams\/sign\/doSign\/month,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zsfc/zsfc.js
 
 # > 吾爱破解
+# 浏览器打开https://www.52pojie.cn/home.php获取
 吾爱破解Cookie = type=http-request,pattern=https:\/\/www\.52pojie\.cn\/home\.php\?,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/52pojie-DailyBonus/52pojie.js
 
 [MITM]
