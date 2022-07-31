@@ -28,7 +28,7 @@ URL-REGEX,^https?:\/\/c\.l\.qq\/.com,REJECT
 
 [Script]
 # > 轻颜相机
-轻颜相机 = type=http-response,pattern=^https:\/\/commerce-.*api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info$,script-path=https://raw.githubusercontent.com/songyangzz/QuantumultX/master/ulike/ulike.js
+轻颜相机 = type=http-response,pattern=^https:\/\/commerce-.*api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info$,requires-body=1,script-path=https://raw.githubusercontent.com/songyangzz/QuantumultX/master/ulike/ulike.js
 
 # > 彩云天气
 彩云天气 = type=http-response,pattern=https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user),requires-body=1,script-path=https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Crack/caiyun.js
