@@ -6,21 +6,29 @@
 # > 优酷 去广告
 URL-REGEX,^http:\/\/.*\.cp31\.ott\.cibntv\.net\/youku\/,REJECT
 
-# > 京东  去广告
+# > 京东 去广告
 URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT
+
 # > 京东极速版 去广告
 URL-REGEX,https://api.m.jd.com/client.action\?functionId=lite_advertising,REJECT
 
 # > 交管12123 去广告
 URL-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$,REJECT
 
-[URL Rewrite]
+# > 爱奇艺 去暂停广告
+DOMAIN-SUFFIX,cupid.iqiyi.com,REJECT
+
+# > 优酷 去广告
+DOMAIN,iyes.youku.com,REJECT
+URL-REGEX,^http:\/\/.*\.cp31\.ott\.cibntv\.net\/youku\/,REJECT
+
 # > 腾讯视频 去广告
-^https?:\/\/btrace\.qq\.com data=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt,REJECT
+URL-REGEX,^https?:\/\/pgdt\.gtimg\.cn,REJECT
+URL-REGEX,^https?:\/\/c\.l\.qq\/.com,REJECT
 
 [Script]
-# > 轻颜/蒸汽波/Ulike相机解锁VIP
-轻颜/蒸汽波/Ulike相机解锁VIP = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/qyxj.js,type=http-response,pattern=^https:\/\/commerce-.*api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info
+# > 轻颜相机
+轻颜相机 = type=http-response,pattern=^https:\/\/commerce-.*api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info$,script-path=https://raw.githubusercontent.com/songyangzz/QuantumultX/master/ulike/ulike.js
 
 # > 彩云天气
 彩云天气 = type=http-response,pattern=https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user),requires-body=1,script-path=https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Crack/caiyun.js
@@ -41,4 +49,4 @@ WPS Office = type=http-response,pattern=^https?:\/\/account\.wps\.cn\/api\/users
 哔哩画质 = type=http-response,pattern=https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)),requires-body=1,script-path=https://github.com/Sunert/Script/raw/master/Script/Bilibili/BiliHD.js
 
 [MITM]
-hostname = %APPEND% commerce-i18n-api.faceu.mobi, commerce-api.faceu.mobi, pay.wecut.com, biz.caiyunapp.com, btrace.qq.com, ap*.intsig.net, account.wps.cn, pan.baidu.com, api.m.com, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, api.bilibili.com
+hostname = %APPEND% commerce-api.faceu.mobi, biz.caiyunapp.com, btrace.qq.com, ap*.intsig.net, account.wps.cn, pan.baidu.com, api.m.com, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, api.bilibili.com
