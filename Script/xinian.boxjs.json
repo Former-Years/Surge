@@ -300,37 +300,15 @@
       ]
     },
     {
-      "id": "xzmdk",
+      "id": "AtstudyDK",
       "name": "学掌门打卡",
       "keys": [
-        "dakaurl",
-        "dakahd",
-        "dakabody"
+        "daka_hd"
       ],
       "settings": [
         {
-          "id": "dakaurl",
-          "name": "学掌门url",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": ""
-        },
-        {
-          "id": "dakahd",
+          "id": "daka_hd",
           "name": "学掌门headers",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": ""
-        },
-        {
-          "id": "dakabody",
-          "name": "学掌门query",
           "val": "",
           "type": "text",
           "placeholder": "",
@@ -340,11 +318,11 @@
         }
       ],
       "author": "@xinian",
-      "repo": "",
-      "script": "",
+      "repo": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/daka.js",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/daka.js",
       "icons": [
-        "https://raw.githubusercontent.com/Former-Years/icon/master/zsfc.png",
-        "https://raw.githubusercontent.com/Former-Years/icon/master/zsfc.png"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/atstudy.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/atstudy.png"
       ]
     }
   ]
