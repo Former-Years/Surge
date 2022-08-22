@@ -55,11 +55,11 @@ if (isGetUserInfo = typeof $request !== `undefined`) {
 // 获取 daka_hd
 function GetUserInfo() {
   // if ($request && $request.url.indexOf("summary") > -1 && $request.headers && $request.body) {
-    if ($request && $request.url.indexOf("summary") > -1 && $request.headers) {
+  if ($request && $request.url.indexOf("summary") > -1 && $request.headers) {
     // $.setdata($request.url, KEY_daka_url)
     $.setdata(JSON.stringify($request.headers), KEY_daka_hd)
-  $.msg($.name, "", "🎉 打卡headers获取成功")
-}
+    $.msg($.name, "", "🎉 打卡headers获取成功")
+  }
 }
 
 
