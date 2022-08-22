@@ -8,7 +8,7 @@ let daka_hd = $.getdata('daka_hd');
 let KEY_daka_hd = 'daka_hd';
 //  KEY_daka_body = 'daka_body';
 
-let Message, daka_hd_Arr = [];
+let Message = "", daka_hd_Arr = [];
 
 if (isGetUserInfo = typeof $request !== `undefined`) {
   GetUserInfo();
