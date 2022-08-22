@@ -118,11 +118,11 @@ function ksdaka() {
             if (typeof data !== 'number') {
               console.log(`🎉 打卡成功：${data}`)
               $.msg($.name, "", `🎉 打卡成功：${data}`)
-              // Message += `🎉 打卡成功：${data}`
+              Message += `🎉 打卡成功：${data}`
             } else {
               $.log(`❌ 打卡失败：${data}`)
               $.msg($.name, "", `❌ 打卡失败：${data}`)
-              // Message += `❌ 打卡失败：${data}`
+              Message += `❌ 打卡失败：${data}`
             }
           }
         }
