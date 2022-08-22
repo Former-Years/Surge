@@ -117,8 +117,10 @@ function ksdaka() {
             // console.log(data)
             if (typeof data !== 'number') {
               console.log(`🎉 打卡成功：${data}`)
+              Message += `🎉 打卡成功：${data}`
             } else {
               $.log(`❌ 打卡失败：${data}`)
+              Message += `❌ 打卡成功：${data}`
             }
           }
         }
