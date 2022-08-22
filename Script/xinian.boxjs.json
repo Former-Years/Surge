@@ -298,6 +298,54 @@
         "https://raw.githubusercontent.com/Former-Years/icon/master/zsfc.png",
         "https://raw.githubusercontent.com/Former-Years/icon/master/zsfc.png"
       ]
+    },
+    {
+      "id": "xzmdk",
+      "name": "学掌门打卡",
+      "keys": [
+        "dakaurl",
+        "dakahd",
+        "dakabody"
+      ],
+      "settings": [
+        {
+          "id": "dakaurl",
+          "name": "学掌门url",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": ""
+        },
+        {
+          "id": "dakahd",
+          "name": "学掌门headers",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": ""
+        },
+        {
+          "id": "dakabody",
+          "name": "学掌门query",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": ""
+        }
+      ],
+      "author": "@xinian",
+      "repo": "",
+      "script": "",
+      "icons": [
+        "https://raw.githubusercontent.com/Former-Years/icon/master/zsfc.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/zsfc.png"
+      ]
     }
   ]
 }
