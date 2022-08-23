@@ -117,10 +117,10 @@ function ksdaka() {
             // console.log(data)
             if (typeof data !== 'number') {
               console.log(`🎉 打卡成功：${data}`)
-              Message += `账号 ${$.index} 🎉 打卡成功：${data}`\n\n
+              Message += `账号 ${$.index} 🎉 打卡成功：${data}\n\n`
             } else {
               $.log(`❌ 打卡失败：${data}`)
-              Message += `账号 ${$.index} ❌ 打卡失败：${data}`\n\n
+              Message += `账号 ${$.index} ❌ 打卡失败：${data}\n\n`
             }
           }
         }
