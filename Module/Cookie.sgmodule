@@ -75,7 +75,7 @@ IT之家Cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/use
 
 # > 腾讯视频
 # 浏览器访问: https://film.qq.com获取
-腾讯视频Cookie = type=http-request,pattern=^https:\/\/access.video.qq.com\/user\/auth_refresh,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/videoqq/videoqq.cookie.js
+腾讯视频Cookie = type=http-request,pattern=^https:\/\/v\.qq\.com,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/videoqq/videoqq.cookie.js
 
 # > 学掌门打卡
 学掌门打卡Cookie = type=http-request,pattern=https:\/\/www\.atstudy\.com\/api\/consume\/usercourse,script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/daka.js
