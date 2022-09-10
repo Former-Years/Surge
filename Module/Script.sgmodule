@@ -3,8 +3,10 @@
 
 
 [Rule]
+AND,((PROTOCOL,UDP), (DEST-PORT,443)),REJECT-NO-DROP
 # > 优酷 去广告
-URL-REGEX,^http:\/\/.*\.cp31\.ott\.cibntv\.net\/youku\/,REJECT
+DOMAIN, iyes.youku.com,REJECT
+URL-REGEX,^http:\/\/.*\.cp31\.ott\.cibntv\.net\/youku\/,REJECT-TINYGIF
 
 # > 京东 去广告
 URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT
@@ -32,12 +34,15 @@ URL-REGEX,^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.
 # > 云闪付 去广告
 URL-REGEX,^https:\/\/wallet\.95516\.com\/s\/wl\/icon\/long,REJECT
 
-[Script]
-# > 小红书 去广告
-红书广告 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/xiaohongshu/xiaohongshu.ad.js
+# > 油管 去广告
+URL-REGEX,^https?:\/\/.+?\.googlevideo\.com\/.+&oda,REJECT-TINYGIF
 
-# > 轻颜相机
-轻颜相机 = type=http-response,pattern=^https:\/\/commerce-.*api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info$,requires-body=1,script-path=https://raw.githubusercontent.com/songyangzz/QuantumultX/master/ulike/ulike.js
+[Script]
+# > 油管 去广告
+油管广告 = type=http-request,pattern="^https?:\/\/.+?\.googlevideo\.com\/.+ctier(?!(,|=SH))",script-path=https://raw.githubusercontent.com/githubdulong/Script/master/youtube_ad.js
+
+# > 小红书 去广告
+红书广告 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config,requires-body=1,script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/xiaohongshu/xiaohongshu.ad.js
 
 # > 彩云天气
 彩云天气 = type=http-response,pattern=https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user),requires-body=1,script-path=https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Crack/caiyun.js
@@ -58,4 +63,4 @@ WPS Office = type=http-response,pattern=^https?:\/\/account\.wps\.cn\/api\/users
 哔哩画质 = type=http-response,pattern=https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)),requires-body=1,script-path=https://github.com/Sunert/Script/raw/master/Script/Bilibili/BiliHD.js
 
 [MITM]
-hostname = %APPEND% commerce-api.faceu.mobi, biz.caiyunapp.com, btrace.qq.com, ap*.intsig.net, account.wps.cn, pan.baidu.com, api.m.com, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, api.bilibili.com
+hostname = %APPEND% r*.googlevideo.com, edith.xiaohongshu.com, biz.caiyunapp.com, btrace.qq.com, ap*.intsig.net, account.wps.cn, pan.baidu.com, api.m.com, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, api.bilibili.com
