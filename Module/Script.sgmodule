@@ -22,11 +22,20 @@ DOMAIN-SUFFIX,cupid.iqiyi.com,REJECT
 DOMAIN,iyes.youku.com,REJECT
 URL-REGEX,^http:\/\/.*\.cp31\.ott\.cibntv\.net\/youku\/,REJECT
 
-# > 腾讯视频 去广告
-URL-REGEX,^https?:\/\/pgdt\.gtimg\.cn,REJECT
-URL-REGEX,^https?:\/\/c\.l\.qq\/.com,REJECT
+# > 腾讯视频 修正+去开屏（重装app）
+DOMAIN,vv.video.qq.com,𝗗𝗜𝗥𝗘𝗖𝗧
+OR,((DOMAIN,pgdt.gtimg.cn), (AND,((USER-AGENT,live4iphoneRel*), (IP-CIDR,0.0.0.0/0,no-resolve)))),REJECT-DROP
+
+# > 美团 去广告
+URL-REGEX,^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4),REJECT
+
+# > 云闪付 去广告
+URL-REGEX,^https:\/\/wallet\.95516\.com\/s\/wl\/icon\/long,REJECT
 
 [Script]
+# > 小红书 去广告
+红书广告 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/xiaohongshu/xiaohongshu.ad.js
+
 # > 轻颜相机
 轻颜相机 = type=http-response,pattern=^https:\/\/commerce-.*api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info$,requires-body=1,script-path=https://raw.githubusercontent.com/songyangzz/QuantumultX/master/ulike/ulike.js
 
