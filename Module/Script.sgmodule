@@ -39,9 +39,6 @@ URL-REGEX,^https:\/\/wallet\.95516\.com\/s\/wl\/icon\/long,REJECT
 URL-REGEX,^https?:\/\/.+?\.googlevideo\.com\/.+&oda,REJECT-TINYGIF
 
 [Script]
-# > 油管 去广告
-油管广告 = type=http-request,pattern="^https?:\/\/.+?\.googlevideo\.com\/.+ctier(?!(,|=SH))",script-path=https://raw.githubusercontent.com/githubdulong/Script/master/youtube_ad.js
-
 # > 小红书 去广告
 红书广告 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config,requires-body=1,script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/xiaohongshu/xiaohongshu.ad.js
 
