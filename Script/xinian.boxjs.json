@@ -116,106 +116,18 @@
         "id": "mtmc",
         "name": "美团买菜",
         "keys": [
-          "tenantId",
-          "poiId",
-          "poi",
-          "bizId",
-          "utm_medium",
-          "utm_term",
-          "uuid",
-          "app_tag",
-          "userid"
+          "jojo_mall_meituan"
         ],
         "settings": [
           {
-            "id": "tenantId",
-            "name": "tenantId",
+            "id": "jojo_mall_meituan",
+            "name": "美团买菜Token",
             "val": "",
             "type": "text",
             "placeholder": "",
             "autoGrow": true,
             "rows": 2,
-            "desc": ""
-          },
-          {
-            "id": "poiId",
-            "name": "poiId",
-            "val": "true",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": ""
-          },
-          {
-            "id": "poi",
-            "name": "poi",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": ""
-          },
-          {
-            "id": "bizId",
-            "name": "bizId",
-            "val": "true",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": ""
-          },
-          {
-            "id": "utm_medium",
-            "name": "utm_medium",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": ""
-          },
-          {
-            "id": "utm_term",
-            "name": "utm_term",
-            "val": "true",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": ""
-          },
-          {
-            "id": "uuid",
-            "name": "uuid",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": ""
-          },
-          {
-            "id": "app_tag",
-            "name": "app_tag",
-            "val": "true",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": ""
-          },
-          {
-            "id": "userid",
-            "name": "userid",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": ""
+            "desc": "美团买菜Token"
           }
         ],
         "author": "@JoJoJotarou",
