@@ -1,312 +1,331 @@
 {
-  "id": "xinian.app.sub",
-  "name": "xinian 自用订阅",
-  "author": "@xinian",
-  "icon": "https://raw.githubusercontent.com/Former-Years/icon/master/xinian.png",
-  "repo": "https://github.com/Former-Years/Surge/tree/main/Script",
-  "apps": [
-    {
-      "id": "huke",
-      "name": "虎课网",
-      "keys": [
-        "huke_token",
-        "huke_header"
-      ],
-      "author": "@xinian",
-      "repo": "https://github.com/Former-Years/Surge/blob/main/Script/huke.js",
-      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/huke.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Former-Years/icon/master/huke_mini.png",
-        "https://raw.githubusercontent.com/Former-Years/icon/master/huke.png"
-      ]
-    },
-    {
-      "id": "hellobike",
-      "name": "哈啰出行",
-      "keys": [
-        "hellobike"
-      ],
-      "author": "@chavyleung",
-      "repo": "https://github.com/chavyleung/scripts/blob/master/hellobike/hellobike.js",
-      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/hellobike/hellobike.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Former-Years/icon/master/hellobike_mini.png",
-        "https://raw.githubusercontent.com/Former-Years/icon/master/hellobike.png"
-      ]
-    },
-    {
-      "id": "dongqiudi",
-      "name": "懂球帝",
-      "keys": [
-        "chavy_cookie_dongqiudi"
-      ],
-      "author": "@chavyleung",
-      "repo": "https://github.com/chavyleung/scripts/blob/master/dongqiudi/dongqiudi.js",
-      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/dongqiudi/dongqiudi.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Former-Years/icon/master/dqd.png",
-        "https://raw.githubusercontent.com/Former-Years/icon/master/dqd.png"
-      ]
-    },
-    {
-      "id": "ttwk",
-      "name": "天天挖矿",
-      "keys": [
-        "ttwksignurl",
-        "ttwksignheader",
-        "ttwksignbody"
-      ],
-      "author": "@yangtingxiao",
-      "repo": "https://github.com/yangtingxiao/QuantumultX/blob/master/scripts/ttwk/ttwk.js",
-      "script": "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js",
-      "icons": [
-        "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/ttwk.png",
-        "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/ttwk.png"
-      ]
-    },
-    {
-      "id": "xmyd",
-      "name": "小米运动",
-      "keys": [
-        "xmSportsToken",
-        "xmMinStep",
-        "xmMaxStep"
-      ],
-      "settings": [
-        {
-          "id": "xmSportsToken",
-          "name": "小米运动Token",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": "小米运动登录时获取的token"
-        },
-        {
-          "id": "xmMinStep",
-          "name": "最小运动步数",
-          "val": "30060",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": "需要修改最小的运动步数的数字,例如:30060"
-        },
-        {
-          "id": "xmMaxStep",
-          "name": "最大运动步数",
-          "val": "33010",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": "需要修改最小的运动步数的数字,例如:33010"
-        }
-      ],
-      "author": "@null",
-      "repo": "https://github.com/Former-Years/Surge/blob/main/Script/xmSports.js",
-      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/xmSports.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Former-Years/icon/master/xmyd_mini.png",
-        "https://raw.githubusercontent.com/Former-Years/icon/master/xmyd.png"
-      ]
-    },
-    {
-      "id": "elm",
-      "name": "饿了么",
-      "keys": [
-        "elmck",
-        "elmdh",
-        "SM_STARTTIME"
-      ],
-      "settings": [
-        {
-          "id": "elmck",
-          "name": "饿了么CK",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": "多账号用@"
-        },
-        {
-          "id": "elmdh",
-          "name": "兑换设置",
-          "val": "false",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": "默认为false，如需开启兑换，请设置为true"
-        },
-        {
-          "id": "SM_STARTTIME",
-          "name": "开抢时间",
-          "val": "60",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": "默认为60，当为60时，9点59分运行脚本，10点准时开抢，如果网络慢可以设置为59，则9点59分59秒开抢"
-        }
-      ],
-      "author": "@萝卜",
-      "repo": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/elmyq.js",
-      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/elmyq.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/elem.png",
-        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/elem.png"
-      ]
-    },
-    {
-      "id": "mt",
-      "name": "美团",
-      "keys": [
-        "meituanCookie",
-        "sjpz",
-        "meituanyq"
-      ],
-      "settings": [
-        {
-          "id": "meituanCookie",
-          "name": "美团CK",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": "多账号用@"
-        },
-        {
-          "id": "sjpz",
-          "name": "膨胀红包",
-          "val": "true",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": "如需关闭膨胀，设置为false"
-        },
-        {
-          "id": "meituanyq",
-          "name": "优惠券邀请码",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": ""
-        }
-      ],
-      "author": "@萝卜",
-      "repo": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/mtyq.js",
-      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/mtyq.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/meituan.png",
-        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/meituan.png"
-      ]
-    },
-    {
-      "id": "thyc",
-      "name": "途虎养车",
-      "keys": [
-        "THYCtoken"
-      ],
-      "settings": [
-        {
-          "id": "THYCtoken",
-          "name": "途虎养车CK",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": "多账号是换行"
-        }
-      ],
-      "author": "@xl2101200",
-      "repo": "https://raw.githubusercontent.com/xl2101200/-/main/thyc.js",
-      "script": "https://raw.githubusercontent.com/xl2101200/-/main/thyc.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/tuhu.png",
-        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/tuhu.png"
-      ]
-    },
-    {
-      "id": "zsfc",
-      "name": "掌上飞车",
-      "keys": [
-        "zsfc_url",
-        "zsfc_headers",
-        "zsfc_query"
-      ],
-      "settings": [
-        {
-          "id": "zsfc_url",
-          "name": "掌上飞车url",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": ""
-        },
-        {
-          "id": "zsfc_headers",
-          "name": "掌上飞车headers",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": ""
-        },
-        {
-          "id": "zsfc_query",
-          "name": "掌上飞车query",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": ""
-        }
-      ],
-      "author": "@chavyleung",
-      "repo": "https://raw.githubusercontent.com/chavyleung/scripts/master/zsfc/zsfc.js",
-      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/zsfc/zsfc.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Former-Years/icon/master/zsfc.png",
-        "https://raw.githubusercontent.com/Former-Years/icon/master/zsfc.png"
-      ]
-    },
-    {
-      "id": "AtstudyDK",
-      "name": "学掌门打卡",
-      "keys": [
-        "daka_hd"
-      ],
-      "settings": [
-        {
-          "id": "daka_hd",
-          "name": "学掌门headers",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": ""
-        }
-      ],
-      "author": "@xinian",
-      "repo": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/daka.js",
-      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/daka.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Former-Years/icon/master/atstudy.png",
-        "https://raw.githubusercontent.com/Former-Years/icon/master/atstudy.png"
-      ]
-    }
-  ]
-}
+    "id": "xinian.app.sub",
+    "name": "xinian 自用订阅",
+    "author": "@xinian",
+    "icon": "https://raw.githubusercontent.com/Former-Years/icon/master/xinian.png",
+    "repo": "https://github.com/Former-Years/Surge/tree/main/Script",
+    "apps": [
+      {
+        "id": "huke",
+        "name": "虎课网",
+        "keys": [
+          "huke_token",
+          "huke_header"
+        ],
+        "author": "@xinian",
+        "repo": "https://github.com/Former-Years/Surge/blob/main/Script/huke.js",
+        "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/huke.js",
+        "icons": [
+          "https://raw.githubusercontent.com/Former-Years/icon/master/huke_mini.png",
+          "https://raw.githubusercontent.com/Former-Years/icon/master/huke.png"
+        ]
+      },
+      {
+        "id": "hellobike",
+        "name": "哈啰出行",
+        "keys": [
+          "hellobike"
+        ],
+        "author": "@chavyleung",
+        "repo": "https://github.com/chavyleung/scripts/blob/master/hellobike/hellobike.js",
+        "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/hellobike/hellobike.js",
+        "icons": [
+          "https://raw.githubusercontent.com/Former-Years/icon/master/hellobike_mini.png",
+          "https://raw.githubusercontent.com/Former-Years/icon/master/hellobike.png"
+        ]
+      },
+      {
+        "id": "dongqiudi",
+        "name": "懂球帝",
+        "keys": [
+          "chavy_cookie_dongqiudi"
+        ],
+        "author": "@chavyleung",
+        "repo": "https://github.com/chavyleung/scripts/blob/master/dongqiudi/dongqiudi.js",
+        "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/dongqiudi/dongqiudi.js",
+        "icons": [
+          "https://raw.githubusercontent.com/Former-Years/icon/master/dqd.png",
+          "https://raw.githubusercontent.com/Former-Years/icon/master/dqd.png"
+        ]
+      },
+      {
+        "id": "ttwk",
+        "name": "天天挖矿",
+        "keys": [
+          "ttwksignurl",
+          "ttwksignheader",
+          "ttwksignbody"
+        ],
+        "author": "@yangtingxiao",
+        "repo": "https://github.com/yangtingxiao/QuantumultX/blob/master/scripts/ttwk/ttwk.js",
+        "script": "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js",
+        "icons": [
+          "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/ttwk.png",
+          "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/ttwk.png"
+        ]
+      },
+      {
+        "id": "xmyd",
+        "name": "小米运动",
+        "keys": [
+          "xmSportsToken",
+          "xmMinStep",
+          "xmMaxStep"
+        ],
+        "settings": [
+          {
+            "id": "xmSportsToken",
+            "name": "小米运动Token",
+            "val": "",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": "小米运动登录时获取的token"
+          },
+          {
+            "id": "xmMinStep",
+            "name": "最小运动步数",
+            "val": "30060",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": "需要修改最小的运动步数的数字,例如:30060"
+          },
+          {
+            "id": "xmMaxStep",
+            "name": "最大运动步数",
+            "val": "33010",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": "需要修改最小的运动步数的数字,例如:33010"
+          }
+        ],
+        "author": "@null",
+        "repo": "https://github.com/Former-Years/Surge/blob/main/Script/xmSports.js",
+        "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/xmSports.js",
+        "icons": [
+          "https://raw.githubusercontent.com/Former-Years/icon/master/xmyd_mini.png",
+          "https://raw.githubusercontent.com/Former-Years/icon/master/xmyd.png"
+        ]
+      },
+      {
+        "id": "mtmc",
+        "name": "美团买菜",
+        "keys": [
+          "tenantId",
+          "poiId",
+          "poi",
+          "bizId",
+          "utm_medium",
+          "utm_term",
+          "uuid",
+          "app_tag",
+          "userid"
+        ],
+        "settings": [
+          {
+            "id": "tenantId",
+            "name": "tenantId",
+            "val": "",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          },
+          {
+            "id": "poiId",
+            "name": "poiId",
+            "val": "true",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          },
+          {
+            "id": "poi",
+            "name": "poi",
+            "val": "",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          },
+          {
+            "id": "bizId",
+            "name": "bizId",
+            "val": "true",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          },
+          {
+            "id": "utm_medium",
+            "name": "utm_medium",
+            "val": "",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          },
+          {
+            "id": "utm_term",
+            "name": "utm_term",
+            "val": "true",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          },
+          {
+            "id": "uuid",
+            "name": "uuid",
+            "val": "",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          },
+          {
+            "id": "app_tag",
+            "name": "app_tag",
+            "val": "true",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          },
+          {
+            "id": "userid",
+            "name": "userid",
+            "val": "",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          }
+        ],
+        "author": "@JoJoJotarou",
+        "repo": "https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/mall.meituan.mallcoin.task.js",
+        "script": "https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/mall.meituan.mallcoin.task.js",
+        "icons": [
+          "https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/icon/mall.meituan.png",
+          "https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/icon/mall.meituan.png"
+        ]
+      },
+      {
+        "id": "thyc",
+        "name": "途虎养车",
+        "keys": [
+          "THYCtoken"
+        ],
+        "settings": [
+          {
+            "id": "THYCtoken",
+            "name": "途虎养车CK",
+            "val": "",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": "多账号是换行"
+          }
+        ],
+        "author": "@xl2101200",
+        "repo": "https://raw.githubusercontent.com/xl2101200/-/main/thyc.js",
+        "script": "https://raw.githubusercontent.com/xl2101200/-/main/thyc.js",
+        "icons": [
+          "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/tuhu.png",
+          "https://raw.githubusercontent.com/Orz-3/mini/master/Color/tuhu.png"
+        ]
+      },
+      {
+        "id": "zsfc",
+        "name": "掌上飞车",
+        "keys": [
+          "zsfc_url",
+          "zsfc_headers",
+          "zsfc_query"
+        ],
+        "settings": [
+          {
+            "id": "zsfc_url",
+            "name": "掌上飞车url",
+            "val": "",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          },
+          {
+            "id": "zsfc_headers",
+            "name": "掌上飞车headers",
+            "val": "",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          },
+          {
+            "id": "zsfc_query",
+            "name": "掌上飞车query",
+            "val": "",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          }
+        ],
+        "author": "@chavyleung",
+        "repo": "https://raw.githubusercontent.com/chavyleung/scripts/master/zsfc/zsfc.js",
+        "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/zsfc/zsfc.js",
+        "icons": [
+          "https://raw.githubusercontent.com/Former-Years/icon/master/zsfc.png",
+          "https://raw.githubusercontent.com/Former-Years/icon/master/zsfc.png"
+        ]
+      },
+      {
+        "id": "AtstudyDK",
+        "name": "学掌门打卡",
+        "keys": [
+          "daka_hd"
+        ],
+        "settings": [
+          {
+            "id": "daka_hd",
+            "name": "学掌门headers",
+            "val": "",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          }
+        ],
+        "author": "@xinian",
+        "repo": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/daka.js",
+        "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/daka.js",
+        "icons": [
+          "https://raw.githubusercontent.com/Former-Years/icon/master/atstudy.png",
+          "https://raw.githubusercontent.com/Former-Years/icon/master/atstudy.png"
+        ]
+      }
+    ]
+  }
+  
