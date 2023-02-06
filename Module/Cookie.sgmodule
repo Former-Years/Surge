@@ -26,7 +26,7 @@
 网易云音乐Cookie = type=http-request,pattern=^https:\/\/music.163.com\/weapi\/user\/level,requires-body=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/neteasemusic/neteasemusic.cookie.js
 
 # > 什么值得买
-什么值得买Cookie = type=http-request,pattern=^https:\/\/www\.smzdm\.com\/?.?,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/smzdm/smzdm.cookie.js
+什么值买Cookie = type=http-request,pattern=^https?:\/\/user-api\.smzdm\.com\/checkin$,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js
 
 # > 哈啰出行
 哈啰出行Cookie = type=http-request,pattern=^https:\/\/gameapi\.hellobike\.com\/api,requires-body=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/hellobike/hellobike.js
@@ -82,4 +82,4 @@ B站Cookie(网页) = type=http-request,pattern=^https?:\/\/m.bilibili.com/$,scri
 喜马拉雅Cookie = type=http-request,pattern=^https?:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/app-skin-service\/skin\/,script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/xmlySign.js
 
 [MITM]
-hostname = %APPEND% operation-api.jimistore.com, *.huami.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, music.163.com, *.smzdm.com, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, mall.oclean.com, c.tieba.baidu.com, m.client.10010.com, mwegame.qq.com, www.52pojie.cn, iacc.rec.qq.com, www.atstudy.com, ccsp-egmas.sf-express.com, mall.meituan.com, app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com
+hostname = %APPEND% operation-api.jimistore.com, *.huami.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, music.163.com, user-api.smzdm.com, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, mall.oclean.com, c.tieba.baidu.com, m.client.10010.com, mwegame.qq.com, www.52pojie.cn, iacc.rec.qq.com, www.atstudy.com, ccsp-egmas.sf-express.com, mall.meituan.com, app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com
