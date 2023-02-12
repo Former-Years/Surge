@@ -85,7 +85,8 @@ B站Cookie(网页) = type=http-request,pattern=^https?:\/\/m.bilibili.com/$,scri
 阿里云盘Cookie = type=http-response,pattern=https:\/\/auth.aliyundrive.com\/v2\/account\/token,requires-body=1,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/ali/aliYunPanCheckIn.js
 
 # > 无忧行
-无忧行Cookie = type=http-response,pattern=https:\/\/app\.jegotrip\.com\.cn\/api\/service\/v1\/mission\/sign\/querySign\?token=,requires-body=1,script-path=https://gist.githubusercontent.com/Former-Years/25c6a77db962cb46b89f7418267dfa0c/raw/405c25c5b316f8d25dfe2b2092ad3f9f7c3133a1/jegotrip.cookie.js
+无忧行Cookie = type=http-response,pattern=https://app.jegotrip.com.cn/api/.*\?token=([0-9a-f]+),requires-body=1,script-path=https://gist.githubusercontent.com/Former-Years/25c6a77db962cb46b89f7418267dfa0c/raw/405c25c5b316f8d25dfe2b2092ad3f9f7c3133a1/jegotrip.cookie.js,max-size=524288,timeout=5,debug=true,enable=true
+
 
 [MITM]
 hostname = %APPEND% operation-api.jimistore.com, *.huami.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, music.163.com, user-api.smzdm.com, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, mall.oclean.com, c.tieba.baidu.com, m.client.10010.com, mwegame.qq.com, www.52pojie.cn, iacc.rec.qq.com, www.atstudy.com, ccsp-egmas.sf-express.com, mall.meituan.com, app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com, auth.aliyundrive.com, app.jegotrip.com.cn
