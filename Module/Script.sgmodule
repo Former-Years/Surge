@@ -15,6 +15,9 @@ URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT
 # > 京东极速版 去广告
 URL-REGEX,https://api.m.jd.com/client.action\?functionId=lite_advertising,REJECT
 
+# > 京东金融 去广告
+URL-REGEX,^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/aladdin\/(new)?na\/m\/getLoadingPicture,REJECT
+
 # > 交管12123 去广告
 URL-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$,REJECT
 
@@ -30,14 +33,24 @@ DOMAIN,vv.video.qq.com,𝗗𝗜𝗥𝗘𝗖𝗧
 OR,((DOMAIN,pgdt.gtimg.cn), (AND,((USER-AGENT,live4iphoneRel*), (IP-CIDR,0.0.0.0/0,no-resolve)))),REJECT-DROP
 
 # > 美团 去广告
+DOMAIN,portal-portm.meituan.com,REJECT
+URL-REGEX,^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg),REJECT
+URL-REGEX,^https?:\/\/peisongapi\.meituan\.com\/client\/getInitiateImage,REJECT-TINYGIF
+URL-REGEX,^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/\w+\.(gif|jpg|jpg\.webp)$,REJECT
 URL-REGEX,^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4),REJECT
+URL-REGEX,^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg,REJECT
+URL-REGEX,^https?:\/\/p\d\.meituan\.net\/movie\/\w+\.jpg\?may_covertWebp,REJECT
 
 # > 云闪付 去广告
 URL-REGEX,^https:\/\/wallet\.95516\.com\/s\/wl\/icon\/long,REJECT
 
+# > 中国联通 去开屏
+DOMAIN-SUFFIX,m1.ad.10010.com,REJECT
+
 [Script]
 # > 小红书 去广告
-红书广告 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config,requires-body=1,script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/xiaohongshu/xiaohongshu.ad.js
+开屏广告 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/xiaohongshu/xiaohongshu.ad.js,script-update-interval=0
+推荐广告 = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/xiaohongshu/xiaohongshu.ad.js,script-update-interval=0
 
 # > 彩云天气
 彩云天气 = type=http-response,pattern=https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user),requires-body=1,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/cytq.js
@@ -58,4 +71,4 @@ WPS Office = type=http-response,pattern=^https?:\/\/account\.wps\.cn\/api\/users
 哔哩画质 = type=http-response,pattern=https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)),requires-body=1,script-path=https://github.com/Sunert/Script/raw/master/Script/Bilibili/BiliHD.js
 
 [MITM]
-hostname = %APPEND% r*.googlevideo.com, edith.xiaohongshu.com, biz.caiyunapp.com, btrace.qq.com, ap*.intsig.net, account.wps.cn, pan.baidu.com, api.m.com, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, api.bilibili.com
+hostname = %APPEND% edith.xiaohongshu.com, biz.caiyunapp.com, ap*.intsig.net, account.wps.cn, pan.baidu.com, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, api.bilibili.com
