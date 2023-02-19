@@ -47,14 +47,6 @@ URL-REGEX,^https:\/\/wallet\.95516\.com\/s\/wl\/icon\/long,REJECT
 # > 中国联通 去开屏
 DOMAIN-SUFFIX,m1.ad.10010.com,REJECT
 
-# > QQ空间广告屏蔽
-URL-REGEX,^http:\/\/c\.gdt\.qq\.com\/gdt_clickwap\.fcg\?viewid,REJECT
-URL-REGEX,^http:\/\/pgdt\.gtimg\.cn\/gdt\/0\/.+\.jpg,REJECT
-URL-REGEX,^http:\/\/v\.gdt\.qq\.com\/gdt_stats\.fcg\?viewid,REJECT
-URL-REGEX,^http:\/\/rpt\.gdt\.qq\.com\/creative_view\?viewid,REJECT
-URL-REGEX,^http:\/\/pgdt\.gtimg\.cn\/gdt\/.+\.(png|jpg),REJECT
-URL-REGEX,^http:\/\/pgdt\.gtimg\.cn\/.+\/snscosdownload\/SH\/reserved\/.+,REJECT
-
 
 [Script]
 # > 小红书 去广告
