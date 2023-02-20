@@ -15,7 +15,7 @@
 # > 阿里云盘_个人信息
 阿里云盘个人信息 = type=http-response,pattern=https://api.aliyundrive.com/v2/databox/get_personal_info,requires-body=1,script-path=https://gist.githubusercontent.com/ddgksf2013/f4752e632fd3375ea2811985c5b635dc/raw/alicloud.js
 # > 阿里云盘_列表属性
-阿里云盘个人信息 = type=http-response,pattern=https://api.aliyundrive.com/business/v1.0/users/feature/list,requires-body=1,script-path=https://gist.githubusercontent.com/ddgksf2013/f4752e632fd3375ea2811985c5b635dc/raw/alicloud.js
+阿里云盘列表属性 = type=http-response,pattern=https://api.aliyundrive.com/business/v1.0/users/feature/list,requires-body=1,script-path=https://gist.githubusercontent.com/ddgksf2013/f4752e632fd3375ea2811985c5b635dc/raw/alicloud.js
 
 
 [MITM]
