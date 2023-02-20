@@ -1,3 +1,22 @@
-{
-	"folders": []
-}
+#!name=Alicloud
+#!desc=阿里云盘净化+解锁本地会员功能[倍速、码率]
+
+
+# > 阿里云盘_首页设置
+阿里云盘首页设置 = type=http-response,pattern=^https?:\/\/api\.aliyundrive\.com\/apps\/v\d\/users\/(apps|home)\/widgets$,requires-body=1,script-path=https://gist.githubusercontent.com/ddgksf2013/f4752e632fd3375ea2811985c5b635dc/raw/alicloud.js
+# > 阿里云盘_我的页面VIP卡片
+阿里云盘VIP卡片 = type=http-response,pattern=https://api.aliyundrive.com/business/v1/users/me/vip/info,requires-body=1,script-path=https://gist.githubusercontent.com/ddgksf2013/f4752e632fd3375ea2811985c5b635dc/raw/alicloud.js
+# > 阿里云盘_我的页面处理
+阿里云盘我的页面 = type=http-response,pattern=https://member.aliyundrive.com/v1/users/tools,requires-body=1,script-path=https://gist.githubusercontent.com/ddgksf2013/f4752e632fd3375ea2811985c5b635dc/raw/alicloud.js
+# > 阿里云盘_我的信息
+阿里云盘我的信息 = type=http-response,pattern=https://member.aliyundrive.com/v1/users/me,requires-body=1,script-path=https://gist.githubusercontent.com/ddgksf2013/f4752e632fd3375ea2811985c5b635dc/raw/alicloud.js
+# > 阿里云盘_会员信息
+阿里云盘会员信息 = type=http-response,pattern=https://api.aliyundrive.com/business/v1.0/users/vip/info,requires-body=1,script-path=https://gist.githubusercontent.com/ddgksf2013/f4752e632fd3375ea2811985c5b635dc/raw/alicloud.js
+# > 阿里云盘_个人信息
+阿里云盘个人信息 = type=http-response,pattern=https://api.aliyundrive.com/v2/databox/get_personal_info,requires-body=1,script-path=https://gist.githubusercontent.com/ddgksf2013/f4752e632fd3375ea2811985c5b635dc/raw/alicloud.js
+# > 阿里云盘_列表属性
+阿里云盘个人信息 = type=http-response,pattern=https://api.aliyundrive.com/business/v1.0/users/feature/list,requires-body=1,script-path=https://gist.githubusercontent.com/ddgksf2013/f4752e632fd3375ea2811985c5b635dc/raw/alicloud.js
+
+
+[MITM]
+hostname = %APPEND% api.aliyundrive.com, member.aliyundrive.com
