@@ -1,7 +1,7 @@
 #!name=Alicloud
 #!desc=阿里云盘净化+解锁本地会员功能[倍速、码率]
 
-
+[Script]
 # > 阿里云盘_首页设置
 阿里云盘首页设置 = type=http-response,pattern=^https?:\/\/api\.aliyundrive\.com\/apps\/v\d\/users\/(apps|home)\/widgets$,requires-body=1,script-path=https://gist.githubusercontent.com/ddgksf2013/f4752e632fd3375ea2811985c5b635dc/raw/alicloud.js
 # > 阿里云盘_我的页面VIP卡片
