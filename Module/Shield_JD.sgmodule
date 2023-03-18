@@ -14,7 +14,6 @@ https://wq.jd.com/sendata/getsendata data="https://raw.githubusercontent.com/mie
 
 # 屏蔽dns
 https://dns.jd.com/v\d data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-https://dns.jd.com/v6 data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 https:\/\/mapi\.m\.jd\.com\/config\/.+\.action\?isNewVersion data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 https:\/\/gia\.jd\.com\/.+\.html data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
