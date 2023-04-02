@@ -82,7 +82,6 @@ WPS Office = type=http-response,pattern=^https?:\/\/account\.wps\.cn\/api\/users
 
 # > 醒图+剪映会员+轻颜相机会员
 醒图剪映轻颜 = type=http-response,pattern=^http[s]?:\/\/.+((retouchpics)|(faceu)|(ulikecam)).(com|cn|mobi)\/.+(user|\/v1\/homepage\/pro|ever_photo\/space_info).*$,requires-body=1,script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/XTJY.js
-醒图 = type=http-request,pattern=^http[s]?:\/\/commerce-api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info\?(iid|.&aid|.&iid).*$,script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/xintu.js
 剪映 = type=http-request,pattern=^http[s]?:\/\/commerce-api-.*\.faceu\.mobi\/commerce\/v1\/.*$,script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/JY.js
 轻颜 = type=http-request,pattern=^http[s]?:\/\/commerce-api.faceu.mobi\/commerce\/v1\/subscription\/user_info.*total_memory.*$,script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/jxyq.js
 
