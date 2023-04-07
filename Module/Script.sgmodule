@@ -80,11 +80,10 @@ WPS Office = type=http-response,pattern=^https?:\/\/account\.wps\.cn\/api\/users
 # > bilbii 大会员画质
 哔哩画质 = type=http-response,pattern=https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)),requires-body=1,script-path=https://github.com/Sunert/Script/raw/master/Script/Bilibili/BiliHD.js
 
-# > 醒图+剪映会员+轻颜相机会员
-醒图剪映轻颜 = type=http-response,pattern=^http[s]?:\/\/.+((retouchpics)|(faceu)|(ulikecam)).(com|cn|mobi)\/.+(user|\/v1\/homepage\/pro|ever_photo\/space_info).*$,requires-body=1,script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/XTJY.js
-剪映 = type=http-request,pattern=^http[s]?:\/\/commerce-api-.*\.faceu\.mobi\/commerce\/v1\/.*$,script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/JY.js
-轻颜 = type=http-request,pattern=^http[s]?:\/\/commerce-api.faceu.mobi\/commerce\/v1\/subscription\/user_info.*total_memory.*$,script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/jxyq.js
+# >轻颜相机会员
+轻颜1 = type=http-response,pattern=^http[s]?:\/\/.+((retouchpics)|(faceu)|(ulikecam)).(com|cn|mobi)\/.+(user|\/v1\/homepage\/pro|ever_photo\/space_info).*$,requires-body=1,script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/XTJY.j
+轻颜2 = type=http-request,pattern=^http[s]?:\/\/commerce-api.faceu.mobi\/commerce\/v1\/subscription\/user_info.*total_memory.*$,script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/jxyq.js
 
 
 [MITM]
-hostname = %APPEND% edith.xiaohongshu.com, biz.caiyunapp.com, ap*.intsig.net, account.wps.cn, pan.baidu.com, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, api.bilibili.com, *faceu*,*retouchpics*, *.ulikecam.com
+hostname = %APPEND% edith.xiaohongshu.com, biz.caiyunapp.com, ap*.intsig.net, account.wps.cn, pan.baidu.com, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, api.bilibili.com, *faceu*, *.ulikecam.com
