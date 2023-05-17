@@ -33,7 +33,7 @@ DOMAIN,iyes.youku.com,REJECT
 URL-REGEX,^http:\/\/.*\.cp31\.ott\.cibntv\.net\/youku\/,REJECT
 
 # > 腾讯视频 修正+去开屏（重装app）
-DOMAIN,vv.video.qq.com,𝗗𝗜𝗥𝗘𝗖𝗧
+DOMAIN,vv.video.qq.com,DIRECT
 OR,((DOMAIN,pgdt.gtimg.cn), (AND,((USER-AGENT,live4iphoneRel*), (IP-CIDR,0.0.0.0/0,no-resolve)))),REJECT-DROP
 
 # > 美团 去广告
@@ -61,6 +61,9 @@ DOMAIN,adshows.21cn.com,REJECT
 URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade,REJECT
 URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/,REJECT
 URL-REGEX,^https?:\/\/shopic\.sf-express\.com\/crm\/mobile\/common\/flashscreen,REJECT
+
+# > 递易智能 去广告
+URL-REGEX,^http:\/\/wxapi\.diyibox\.com\/api\/Advertising\/GetAdvertising$,REJECT-TINYGIF
 
 
 [Script]
