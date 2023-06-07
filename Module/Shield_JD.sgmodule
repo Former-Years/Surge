@@ -1,6 +1,7 @@
 #!name=Shield JD
 #!desc=屏蔽京东相关信息
 
+
 [URL Rewrite]
 https://wqs.jd.com/_async_cookie.html - reject
 https://st.jingxi.com/_async_cookie.html - reject
@@ -34,3 +35,7 @@ https:\/\/.+\.m\.jd.com\/m2 data="https://raw.githubusercontent.com/mieqq/mieqq/
 https://lbsgw.m.jd.com/m data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 https://hawks.jd.com/log data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 https://perf.m.jd.com/app_monitor/v1/report data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+[Rule]
+# 屏蔽京东收集信息
+DOMAIN-SUFFIX,jdqd.jd.com,REJECT
