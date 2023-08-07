@@ -285,6 +285,32 @@
           "https://raw.githubusercontent.com/Former-Years/icon/master/atstudy.png",
           "https://raw.githubusercontent.com/Former-Years/icon/master/atstudy.png"
         ]
+      },
+      {
+        "id": "gaode",
+        "name": "高德地图",
+        "keys": [
+          "gaode_usersignKeyGD"
+        ],
+        "settings": [
+          {
+            "id": "gaode_usersignKeyGD",
+            "name": "高德地图Cookie",
+            "val": "",
+            "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
+            "desc": ""
+          }
+        ],
+        "author": "@Zoo",
+        "repo": "https://raw.githubusercontent.com/Crazy-Z7/Task/main/GDTu.js",
+        "script": "https://raw.githubusercontent.com/Crazy-Z7/Task/main/GDTu.js",
+        "icons": [
+          "https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_0967.jpeg",
+          "https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_0967.jpeg"
+        ]
       }
     ]
   }
