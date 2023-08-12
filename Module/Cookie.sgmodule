@@ -7,6 +7,7 @@
 
 # > Bing积分
 Bing积分Cookie = type=http-request,pattern=https:\/\/rewards\.bing\.com,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js
+BingAppCookie = type=http-request,pattern=https:\/\/prod\.rewardsplatform\.microsoft\.com\/dapi\/me,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js
 
 # > 爱奇艺
 爱奇艺Cookie = type=http-request,pattern=^https:\/\/passport\.iqiyi\.com\/apis\/user\/,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js
@@ -76,4 +77,4 @@ B站Cookie(网页) = type=http-request,pattern=^https?:\/\/m.bilibili.com/$,scri
 无忧行Cookie = type=http-response,pattern=https://app.jegotrip.com.cn/api/.*\?token=([0-9a-f]+),requires-body=1,script-path=https://gist.githubusercontent.com/Former-Years/25c6a77db962cb46b89f7418267dfa0c/raw/405c25c5b316f8d25dfe2b2092ad3f9f7c3133a1/jegotrip.cookie.js
 
 [MITM]
-hostname = %APPEND% m5.amap.com, rewards.bing.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, user-api.smzdm.com, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, mall.oclean.com, c.tieba.baidu.com, mwegame.qq.com, iacc.rec.qq.com, www.atstudy.com, ccsp-egmas.sf-express.com, mall.meituan.com, app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com, auth.aliyundrive.com, app.jegotrip.com.cn, -app3.jegotrip.com.cn
+hostname = %APPEND% m5.amap.com, rewards.bing.com, prod.rewardsplatform.microsoft.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, user-api.smzdm.com, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, mall.oclean.com, c.tieba.baidu.com, mwegame.qq.com, iacc.rec.qq.com, www.atstudy.com, ccsp-egmas.sf-express.com, mall.meituan.com, app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com, auth.aliyundrive.com, app.jegotrip.com.cn, -app3.jegotrip.com.cn
