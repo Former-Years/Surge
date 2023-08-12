@@ -2,9 +2,6 @@
 #!desc=获取Cookie
 
 [Script]
-# > 高德地图
-高德地图Cookie = type=http-request,pattern=https://m5.amap.com/ws/alice/activity/daily_sign/do_sign,requires-body=1,script-path=https://raw.githubusercontent.com/Crazy-Z7/Task/main/GDTu.js
-
 # > Bing积分
 Bing积分Cookie = type=http-request,pattern=https:\/\/rewards\.bing\.com,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js
 BingAppCookie = type=http-request,pattern=https:\/\/prod\.rewardsplatform\.microsoft\.com\/dapi\/me,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js
@@ -73,8 +70,5 @@ B站Cookie(网页) = type=http-request,pattern=^https?:\/\/m.bilibili.com/$,scri
 # > 阿里云盘
 阿里云盘Cookie = type=http-response,pattern=https:\/\/auth.aliyundrive.com\/v2\/account\/token,requires-body=1,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/ali/aliYunPanCheckIn.js
 
-# > 无忧行
-无忧行Cookie = type=http-response,pattern=https://app.jegotrip.com.cn/api/.*\?token=([0-9a-f]+),requires-body=1,script-path=https://gist.githubusercontent.com/Former-Years/25c6a77db962cb46b89f7418267dfa0c/raw/405c25c5b316f8d25dfe2b2092ad3f9f7c3133a1/jegotrip.cookie.js
-
 [MITM]
-hostname = %APPEND% m5.amap.com, rewards.bing.com, prod.rewardsplatform.microsoft.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, user-api.smzdm.com, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, mall.oclean.com, c.tieba.baidu.com, mwegame.qq.com, iacc.rec.qq.com, www.atstudy.com, ccsp-egmas.sf-express.com, mall.meituan.com, app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com, auth.aliyundrive.com, app.jegotrip.com.cn, -app3.jegotrip.com.cn
+hostname = %APPEND% rewards.bing.com, prod.rewardsplatform.microsoft.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, user-api.smzdm.com, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, mall.oclean.com, c.tieba.baidu.com, mwegame.qq.com, iacc.rec.qq.com, www.atstudy.com, ccsp-egmas.sf-express.com, mall.meituan.com, app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com, auth.aliyundrive.com, app.jegotrip.com.cn, -app3.jegotrip.com.cn
