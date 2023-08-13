@@ -4,8 +4,8 @@
 [Script]
 # > Bing积分
 Bing积分Cookie = type=http-request,pattern=https:\/\/rewards\.bing\.com,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js
-Bing App Token = type=http-request,pattern=https:\/\/login\.microsoftonline\.com\/.*\/oauth2\/v2\.0\/token,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js
-Bing App ClientId = type=http-request,pattern=https:\/\/login\.microsoftonline\.com\/.*\/oauth2\/v2\.0\/token,requires-body=1,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js
+Bing App Token = type=http-response,pattern=https:\/\/login\.microsoftonline\.com\/.*\/oauth2\/v2\.0\/token,requires-body=1,script-path=https://gist.githubusercontent.com/Former-Years/935d042a5a8a06d7dab6da633517dc2c/raw/be99bba1f0a388efae484423d2cd23af8b4badca/bingPoint.js
+Bing App ClientId = type=http-request,pattern=https:\/\/login\.microsoftonline\.com\/.*\/oauth2\/v2\.0\/token,requires-body=1,script-path=https://gist.githubusercontent.com/Former-Years/935d042a5a8a06d7dab6da633517dc2c/raw/be99bba1f0a388efae484423d2cd23af8b4badca/bingPoint.js
 
 # > 爱奇艺
 爱奇艺Cookie = type=http-request,pattern=^https:\/\/passport\.iqiyi\.com\/apis\/user\/,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js
