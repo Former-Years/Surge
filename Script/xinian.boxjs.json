@@ -394,6 +394,16 @@
           "autoGrow": true,
           "rows": 2,
           "desc": "ClientId"
+        },
+        {
+          "id": "bingPointAppTokenTypeKey",
+          "name": "AppTokenType",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "AppTokenType"
         }
       ],
       "author": "@lowking",
