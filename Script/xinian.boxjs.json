@@ -380,6 +380,9 @@
             "name": "RefreshToken",
             "val": "",
             "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
             "desc": "RefreshToken"
           },
           {
@@ -387,6 +390,9 @@
             "name": "ClientId",
             "val": "",
             "type": "text",
+            "placeholder": "",
+            "autoGrow": true,
+            "rows": 2,
             "desc": "ClientId"
           }
         ],
