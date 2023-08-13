@@ -1,406 +1,405 @@
 {
-    "id": "xinian.app.sub",
-    "name": "xinian 自用订阅",
-    "author": "@xinian",
-    "icon": "https://raw.githubusercontent.com/Former-Years/icon/master/xinian.png",
-    "repo": "https://github.com/Former-Years/Surge/tree/main/Script",
-    "apps": [
-      {
-        "id": "huke",
-        "name": "虎课网",
-        "keys": [
-          "huke_token",
-          "huke_header"
-        ],
-        "author": "@xinian",
-        "repo": "https://github.com/Former-Years/Surge/blob/main/Script/huke.js",
-        "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/huke.js",
-        "icons": [
-          "https://raw.githubusercontent.com/Former-Years/icon/master/huke_mini.png",
-          "https://raw.githubusercontent.com/Former-Years/icon/master/huke.png"
-        ]
-      },
-      {
-        "id": "hellobike",
-        "name": "哈啰出行",
-        "keys": [
-          "hellobike"
-        ],
-        "author": "@chavyleung",
-        "repo": "https://github.com/chavyleung/scripts/blob/master/hellobike/hellobike.js",
-        "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/hellobike/hellobike.js",
-        "icons": [
-          "https://raw.githubusercontent.com/Former-Years/icon/master/hellobike_mini.png",
-          "https://raw.githubusercontent.com/Former-Years/icon/master/hellobike.png"
-        ]
-      },
-      {
-        "id": "dongqiudi",
-        "name": "懂球帝",
-        "keys": [
-          "chavy_cookie_dongqiudi"
-        ],
-        "author": "@chavyleung",
-        "repo": "https://github.com/chavyleung/scripts/blob/master/dongqiudi/dongqiudi.js",
-        "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/dongqiudi/dongqiudi.js",
-        "icons": [
-          "https://raw.githubusercontent.com/Former-Years/icon/master/dqd.png",
-          "https://raw.githubusercontent.com/Former-Years/icon/master/dqd.png"
-        ]
-      },
-      {
-        "id": "ttwk",
-        "name": "天天挖矿",
-        "keys": [
-          "ttwksignurl",
-          "ttwksignheader",
-          "ttwksignbody"
-        ],
-        "author": "@yangtingxiao",
-        "repo": "https://github.com/yangtingxiao/QuantumultX/blob/master/scripts/ttwk/ttwk.js",
-        "script": "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js",
-        "icons": [
-          "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/ttwk.png",
-          "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/ttwk.png"
-        ]
-      },
-      {
-        "id": "xmyd",
-        "name": "小米运动",
-        "keys": [
-          "xmSportsToken",
-          "xmMinStep",
-          "xmMaxStep"
-        ],
-        "settings": [
-          {
-            "id": "xmSportsToken",
-            "name": "小米运动Token",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": "小米运动登录时获取的token"
-          },
-          {
-            "id": "xmMinStep",
-            "name": "最小运动步数",
-            "val": "30060",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": "需要修改最小的运动步数的数字,例如:30060"
-          },
-          {
-            "id": "xmMaxStep",
-            "name": "最大运动步数",
-            "val": "33010",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": "需要修改最小的运动步数的数字,例如:33010"
-          }
-        ],
-        "author": "@null",
-        "repo": "https://github.com/Former-Years/Surge/blob/main/Script/xmSports.js",
-        "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/xmSports.js",
-        "icons": [
-          "https://raw.githubusercontent.com/Former-Years/icon/master/xmyd_mini.png",
-          "https://raw.githubusercontent.com/Former-Years/icon/master/xmyd.png"
-        ]
-      },
-      {
-        "id": "mtmc",
-        "name": "美团买菜",
-        "keys": [
-          "jojo_mall_meituan"
-        ],
-        "settings": [
-          {
-            "id": "jojo_mall_meituan",
-            "name": "美团买菜Token",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": "美团买菜Token"
-          }
-        ],
-        "author": "@JoJoJotarou",
-        "repo": "https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/mall.meituan.mallcoin.task.js",
-        "script": "https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/mall.meituan.mallcoin.task.js",
-        "icons": [
-          "https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/icon/mall.meituan.png",
-          "https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/icon/mall.meituan.png"
-        ]
-      },
-      {
-        "id": "thyc",
-        "name": "途虎养车",
-        "keys": [
-          "THYCtoken"
-        ],
-        "settings": [
-          {
-            "id": "THYCtoken",
-            "name": "途虎养车CK",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": "多账号是换行"
-          }
-        ],
-        "author": "@xl2101200",
-        "repo": "https://raw.githubusercontent.com/xl2101200/-/main/thyc.js",
-        "script": "https://raw.githubusercontent.com/xl2101200/-/main/thyc.js",
-        "icons": [
-          "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/tuhu.png",
-          "https://raw.githubusercontent.com/Orz-3/mini/master/Color/tuhu.png"
-        ]
-      },
-      {
-        "id": "zsfc",
-        "name": "掌上飞车",
-        "keys": [
-          "zsfc_url",
-          "zsfc_headers",
-          "zsfc_query"
-        ],
-        "settings": [
-          {
-            "id": "zsfc_url",
-            "name": "掌上飞车url",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": ""
-          },
-          {
-            "id": "zsfc_headers",
-            "name": "掌上飞车headers",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": ""
-          },
-          {
-            "id": "zsfc_query",
-            "name": "掌上飞车query",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": ""
-          }
-        ],
-        "author": "@chavyleung",
-        "repo": "https://raw.githubusercontent.com/chavyleung/scripts/master/zsfc/zsfc.js",
-        "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/zsfc/zsfc.js",
-        "icons": [
-          "https://raw.githubusercontent.com/Former-Years/icon/master/zsfc.png",
-          "https://raw.githubusercontent.com/Former-Years/icon/master/zsfc.png"
-        ]
-      },
-      {
-        "id": "qqvideo",
-        "name": "腾讯视频",
-        "keys": [
-          "videoqq_pc_cookie",
-          "videoqq_ref_url",
-          "videoqq_cookie"
-        ],
-        "settings": [
-          {
-            "id": "videoqq_pc_cookie",
-            "name": "pc_cookie",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": "腾讯视频网页版cookie"
-          },
-          {
-            "id": "videoqq_ref_url",
-            "name": "ref_url",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": "腾讯视频Request URL"
-          },
-          {
-            "id": "videoqq_cookie",
-            "name": "腾讯视频APP_Cookie",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": "腾讯视频APP_Cookie"
-          }
-        ],
-        "author": "@MartinsKing",
-        "repo": "https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/videoqq.js",
-        "script": "https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/videoqq.js",
-        "icons": [
-          "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/videoqq.png",
-          "https://raw.githubusercontent.com/Orz-3/mini/master/Color/videoqq.png"
-        ]
-      },
-      {
-        "id": "AtstudyDK",
-        "name": "学掌门打卡",
-        "keys": [
-          "daka_hd"
-        ],
-        "settings": [
-          {
-            "id": "daka_hd",
-            "name": "学掌门headers",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": ""
-          }
-        ],
-        "author": "@xinian",
-        "repo": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/daka.js",
-        "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/daka.js",
-        "icons": [
-          "https://raw.githubusercontent.com/Former-Years/icon/master/atstudy.png",
-          "https://raw.githubusercontent.com/Former-Years/icon/master/atstudy.png"
-        ]
-      },
-      {
-        "id": "lkBingPoint",
-        "name": "Bing积分",
-        "desc_html": "⚠️使用说明</br>详情【<a href='https://github.com/lowking/Scripts/blob/master/bing/bingPoint.js?raw=true'><font class='red--text'>点我查看</font></a>】",
-        "icons": [
-          "https://raw.githubusercontent.com/lowking/Scripts/master/doc/icon/bingPoint.png",
-          "https://raw.githubusercontent.com/lowking/Scripts/master/doc/icon/bingPoint.png"
-        ],
-        "keys": [
-          "bingPointCookieKey"
-        ],
-        "settings": [
-          {
-            "id": "lkIsEnableLogBingPoint",
-            "name": "开启/关闭日志",
-            "val": true,
-            "type": "boolean",
-            "desc": "默认开启"
-          },
-          {
-            "id": "lkNotifyOnlyFailBingPoint",
-            "name": "只当执行失败才通知",
-            "val": false,
-            "type": "boolean",
-            "desc": "默认关闭"
-          },
-          {
-            "id": "lkIsEnableTgNotifyBingPoint",
-            "name": "开启/关闭Telegram通知",
-            "val": false,
-            "type": "boolean",
-            "desc": "默认关闭"
-          },
-          {
-            "id": "lkTgNotifyUrlBingPoint",
-            "name": "Telegram通知地址",
-            "val": "",
-            "type": "text",
-            "desc": "Tg的通知地址，如：https://api.telegram.org/bot-token/sendMessage?chat_id=-100140&parse_mode=Markdown&text="
-          },
-          {
-            "id": "bingResetHoursKey",
-            "name": "Bing每日任务重置时间",
-            "val": 8,
-            "type": "number",
-            "desc": "写小时数，默认：8"
-          },
-          {
-            "id": "bingPointCookieKey",
-            "name": "Bing积分cookie",
-            "val": "",
-            "type": "text",
-            "desc": "Bing积分cookie"
-          },
-          {
-            "id": "bingSearchCookieMobileKey",
-            "name": "Bing每日搜索cookie(移动端)",
-            "val": "",
-            "type": "text",
-            "desc": "请使用手机打开https://cn.bing.com/search?q=test抓去对应请求的cookie"
-          },
-          {
-            "id": "searchMobileAmountKey",
-            "name": "Bing每日执行搜索(移动端)次数",
-            "val": 10,
-            "type": "number",
-            "desc": "Bing每日执行搜索(移动端)次数"
-          },
-          {
-            "id": "bingSearchCookieKey",
-            "name": "Bing每日搜索cookie(PC)",
-            "val": "",
-            "type": "text",
-            "desc": "请使用电脑打开https://cn.bing.com/search?q=test抓去对应请求的cookie"
-          },
-          {
-            "id": "searchPcAmountKey",
-            "name": "Bing每日执行搜索(PC)次数",
-            "val": 10,
-            "type": "number",
-            "desc": "Bing每日执行搜索(PC)次数"
-          },
-          {
-            "id": "searchEdgeAmountKey",
-            "name": "Bing每日执行搜索(Edge)次数",
-            "val": 10,
-            "type": "number",
-            "desc": "Bing每日执行搜索(Edge)次数"
-          },
-          {
-            "id": "bingPointAppRefreshTokenKey",
-            "name": "RefreshToken",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": "RefreshToken"
-          },
-          {
-            "id": "bingPointAppClientIdKey",
-            "name": "ClientId",
-            "val": "",
-            "type": "text",
-            "placeholder": "",
-            "autoGrow": true,
-            "rows": 2,
-            "desc": "ClientId"
-          }
-        ],
-        "author": "@lowking",
-        "repo": "https://github.com/lowking/Scripts",
-        "script": "https://github.com/lowking/Scripts/blob/master/bing/bingPoint.js?raw=true",
-        "script_timeout": 60
-      }
-    ]
-  }
-  
+  "id": "xinian.app.sub",
+  "name": "xinian 自用订阅",
+  "author": "@xinian",
+  "icon": "https://raw.githubusercontent.com/Former-Years/icon/master/xinian.png",
+  "repo": "https://github.com/Former-Years/Surge/tree/main/Script",
+  "apps": [
+    {
+      "id": "huke",
+      "name": "虎课网",
+      "keys": [
+        "huke_token",
+        "huke_header"
+      ],
+      "author": "@xinian",
+      "repo": "https://github.com/Former-Years/Surge/blob/main/Script/huke.js",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/huke.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Former-Years/icon/master/huke_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/huke.png"
+      ]
+    },
+    {
+      "id": "hellobike",
+      "name": "哈啰出行",
+      "keys": [
+        "hellobike"
+      ],
+      "author": "@chavyleung",
+      "repo": "https://github.com/chavyleung/scripts/blob/master/hellobike/hellobike.js",
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/hellobike/hellobike.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Former-Years/icon/master/hellobike_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/hellobike.png"
+      ]
+    },
+    {
+      "id": "dongqiudi",
+      "name": "懂球帝",
+      "keys": [
+        "chavy_cookie_dongqiudi"
+      ],
+      "author": "@chavyleung",
+      "repo": "https://github.com/chavyleung/scripts/blob/master/dongqiudi/dongqiudi.js",
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/dongqiudi/dongqiudi.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Former-Years/icon/master/dqd.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/dqd.png"
+      ]
+    },
+    {
+      "id": "ttwk",
+      "name": "天天挖矿",
+      "keys": [
+        "ttwksignurl",
+        "ttwksignheader",
+        "ttwksignbody"
+      ],
+      "author": "@yangtingxiao",
+      "repo": "https://github.com/yangtingxiao/QuantumultX/blob/master/scripts/ttwk/ttwk.js",
+      "script": "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js",
+      "icons": [
+        "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/ttwk.png",
+        "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/ttwk.png"
+      ]
+    },
+    {
+      "id": "xmyd",
+      "name": "小米运动",
+      "keys": [
+        "xmSportsToken",
+        "xmMinStep",
+        "xmMaxStep"
+      ],
+      "settings": [
+        {
+          "id": "xmSportsToken",
+          "name": "小米运动Token",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "小米运动登录时获取的token"
+        },
+        {
+          "id": "xmMinStep",
+          "name": "最小运动步数",
+          "val": "30060",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "需要修改最小的运动步数的数字,例如:30060"
+        },
+        {
+          "id": "xmMaxStep",
+          "name": "最大运动步数",
+          "val": "33010",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "需要修改最小的运动步数的数字,例如:33010"
+        }
+      ],
+      "author": "@null",
+      "repo": "https://github.com/Former-Years/Surge/blob/main/Script/xmSports.js",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/xmSports.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Former-Years/icon/master/xmyd_mini.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/xmyd.png"
+      ]
+    },
+    {
+      "id": "mtmc",
+      "name": "美团买菜",
+      "keys": [
+        "jojo_mall_meituan"
+      ],
+      "settings": [
+        {
+          "id": "jojo_mall_meituan",
+          "name": "美团买菜Token",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "美团买菜Token"
+        }
+      ],
+      "author": "@JoJoJotarou",
+      "repo": "https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/mall.meituan.mallcoin.task.js",
+      "script": "https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/mall.meituan.mallcoin.task.js",
+      "icons": [
+        "https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/icon/mall.meituan.png",
+        "https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/icon/mall.meituan.png"
+      ]
+    },
+    {
+      "id": "thyc",
+      "name": "途虎养车",
+      "keys": [
+        "THYCtoken"
+      ],
+      "settings": [
+        {
+          "id": "THYCtoken",
+          "name": "途虎养车CK",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "多账号是换行"
+        }
+      ],
+      "author": "@xl2101200",
+      "repo": "https://raw.githubusercontent.com/xl2101200/-/main/thyc.js",
+      "script": "https://raw.githubusercontent.com/xl2101200/-/main/thyc.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/tuhu.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/tuhu.png"
+      ]
+    },
+    {
+      "id": "zsfc",
+      "name": "掌上飞车",
+      "keys": [
+        "zsfc_url",
+        "zsfc_headers",
+        "zsfc_query"
+      ],
+      "settings": [
+        {
+          "id": "zsfc_url",
+          "name": "掌上飞车url",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": ""
+        },
+        {
+          "id": "zsfc_headers",
+          "name": "掌上飞车headers",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": ""
+        },
+        {
+          "id": "zsfc_query",
+          "name": "掌上飞车query",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": ""
+        }
+      ],
+      "author": "@chavyleung",
+      "repo": "https://raw.githubusercontent.com/chavyleung/scripts/master/zsfc/zsfc.js",
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/zsfc/zsfc.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Former-Years/icon/master/zsfc.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/zsfc.png"
+      ]
+    },
+    {
+      "id": "qqvideo",
+      "name": "腾讯视频",
+      "keys": [
+        "videoqq_pc_cookie",
+        "videoqq_ref_url",
+        "videoqq_cookie"
+      ],
+      "settings": [
+        {
+          "id": "videoqq_pc_cookie",
+          "name": "pc_cookie",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "腾讯视频网页版cookie"
+        },
+        {
+          "id": "videoqq_ref_url",
+          "name": "ref_url",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "腾讯视频Request URL"
+        },
+        {
+          "id": "videoqq_cookie",
+          "name": "腾讯视频APP_Cookie",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "腾讯视频APP_Cookie"
+        }
+      ],
+      "author": "@MartinsKing",
+      "repo": "https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/videoqq.js",
+      "script": "https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/videoqq.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/videoqq.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/videoqq.png"
+      ]
+    },
+    {
+      "id": "AtstudyDK",
+      "name": "学掌门打卡",
+      "keys": [
+        "daka_hd"
+      ],
+      "settings": [
+        {
+          "id": "daka_hd",
+          "name": "学掌门headers",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": ""
+        }
+      ],
+      "author": "@xinian",
+      "repo": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/daka.js",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/daka.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Former-Years/icon/master/atstudy.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/atstudy.png"
+      ]
+    },
+    {
+      "id": "lkBingPoint",
+      "name": "Bing积分",
+      "desc_html": "⚠️使用说明</br>详情【<a href='https://github.com/lowking/Scripts/blob/master/bing/bingPoint.js?raw=true'><font class='red--text'>点我查看</font></a>】",
+      "icons": [
+        "https://raw.githubusercontent.com/lowking/Scripts/master/doc/icon/bingPoint.png",
+        "https://raw.githubusercontent.com/lowking/Scripts/master/doc/icon/bingPoint.png"
+      ],
+      "keys": [
+        "bingPointCookieKey"
+      ],
+      "settings": [
+        {
+          "id": "lkIsEnableLogBingPoint",
+          "name": "开启/关闭日志",
+          "val": true,
+          "type": "boolean",
+          "desc": "默认开启"
+        },
+        {
+          "id": "lkNotifyOnlyFailBingPoint",
+          "name": "只当执行失败才通知",
+          "val": false,
+          "type": "boolean",
+          "desc": "默认关闭"
+        },
+        {
+          "id": "lkIsEnableTgNotifyBingPoint",
+          "name": "开启/关闭Telegram通知",
+          "val": false,
+          "type": "boolean",
+          "desc": "默认关闭"
+        },
+        {
+          "id": "lkTgNotifyUrlBingPoint",
+          "name": "Telegram通知地址",
+          "val": "",
+          "type": "text",
+          "desc": "Tg的通知地址，如：https://api.telegram.org/bot-token/sendMessage?chat_id=-100140&parse_mode=Markdown&text="
+        },
+        {
+          "id": "bingResetHoursKey",
+          "name": "Bing每日任务重置时间",
+          "val": 8,
+          "type": "number",
+          "desc": "写小时数，默认：8"
+        },
+        {
+          "id": "bingPointCookieKey",
+          "name": "Bing积分cookie",
+          "val": "",
+          "type": "text",
+          "desc": "Bing积分cookie"
+        },
+        {
+          "id": "bingSearchCookieMobileKey",
+          "name": "Bing每日搜索cookie(移动端)",
+          "val": "",
+          "type": "text",
+          "desc": "请使用手机打开https://cn.bing.com/search?q=test抓去对应请求的cookie"
+        },
+        {
+          "id": "searchMobileAmountKey",
+          "name": "Bing每日执行搜索(移动端)次数",
+          "val": 10,
+          "type": "number",
+          "desc": "Bing每日执行搜索(移动端)次数"
+        },
+        {
+          "id": "bingSearchCookieKey",
+          "name": "Bing每日搜索cookie(PC)",
+          "val": "",
+          "type": "text",
+          "desc": "请使用电脑打开https://cn.bing.com/search?q=test抓去对应请求的cookie"
+        },
+        {
+          "id": "searchPcAmountKey",
+          "name": "Bing每日执行搜索(PC)次数",
+          "val": 10,
+          "type": "number",
+          "desc": "Bing每日执行搜索(PC)次数"
+        },
+        {
+          "id": "searchEdgeAmountKey",
+          "name": "Bing每日执行搜索(Edge)次数",
+          "val": 10,
+          "type": "number",
+          "desc": "Bing每日执行搜索(Edge)次数"
+        },
+        {
+          "id": "bingPointAppRefreshTokenKey",
+          "name": "RefreshToken",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "RefreshToken"
+        },
+        {
+          "id": "bingPointAppClientIdKey",
+          "name": "ClientId",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "ClientId"
+        }
+      ],
+      "author": "@lowking",
+      "repo": "https://github.com/lowking/Scripts",
+      "script": "https://github.com/lowking/Scripts/blob/master/bing/bingPoint.js?raw=true",
+      "script_timeout": 60
+    }
+  ]
+}
