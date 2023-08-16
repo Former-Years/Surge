@@ -308,20 +308,20 @@
       "repo": "https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js",
       "script": "https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js",
       "icons": [
-        "https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_0967.jpeg",
-        "https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_0967.jpeg"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/ampDache.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/ampDache.png"
       ]
     },
     {
       "id": "tls",
       "name": "特仑苏",
       "keys": [
-        "env_name"
+        "tls_data"
       ],
       "settings": [
         {
-          "id": "env_name",
-          "name": "env_name",
+          "id": "tls_data",
+          "name": "tls_data",
           "val": "",
           "type": "text",
           "placeholder": "",
@@ -334,8 +334,8 @@
       "repo": "https://raw.githubusercontent.com/Sliverkiss/helloworld/master/Study/tls.js",
       "script": "https://raw.githubusercontent.com/Sliverkiss/helloworld/master/Study/tls.js",
       "icons": [
-        "https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_0967.jpeg",
-        "https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_0967.jpeg"
+        "https://raw.githubusercontent.com/Former-Years/icon/master/tls.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/tls.png"
       ]
     }
   ]
