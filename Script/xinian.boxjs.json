@@ -290,12 +290,12 @@
       "id": "ampDache",
       "name": "高德打车",
       "keys": [
-        "gdVal"
+        "GD_Val"
       ],
       "settings": [
         {
-          "id": "gdVal",
-          "name": "gdVal",
+          "id": "GD_Val",
+          "name": "GD_Val",
           "val": "",
           "type": "text",
           "placeholder": "",
