@@ -9,9 +9,9 @@
 高德打车Cookie = type=http-response, pattern=^https:\/\/m5(-zb)?\.amap\.com\/ws\/yuece\/(act|openapi)\/(activity\/current\/)?query,requires-body=1,script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js
 
 # > Bing积分
-Bing积分Cookie = type=http-request,pattern=https:\/\/rewards\.bing\.com,script-path=https://gist.githubusercontent.com/Former-Years/935d042a5a8a06d7dab6da633517dc2c/raw/cfb5eebc16b9993dec2d860a705bd48ea6a7bf36/bingPoint.js
-Bing App Token = type=http-response,pattern=https:\/\/login\.microsoftonline\.com\/.*\/oauth2\/v2\.0\/token,requires-body=1,script-path=https://gist.githubusercontent.com/Former-Years/935d042a5a8a06d7dab6da633517dc2c/raw/cfb5eebc16b9993dec2d860a705bd48ea6a7bf36/bingPoint.js
-Bing App ClientId = type=http-request,pattern=https:\/\/login\.microsoftonline\.com\/.*\/oauth2\/v2\.0\/token,requires-body=1,script-path=https://gist.githubusercontent.com/Former-Years/935d042a5a8a06d7dab6da633517dc2c/raw/cfb5eebc16b9993dec2d860a705bd48ea6a7bf36/bingPoint.js
+Bing积分Cookie = type=http-request,pattern=https:\/\/rewards\.bing\.com,script-path=https://gist.githubusercontent.com/Former-Years/935d042a5a8a06d7dab6da633517dc2c/raw/558be8c8eedb48d98d50973b36bd77132bebb062/bingPoint.js
+Bing App Token = type=http-response,pattern=https:\/\/login\.microsoftonline\.com\/.*\/oauth2\/v2\.0\/token,requires-body=1,script-path=https://gist.githubusercontent.com/Former-Years/935d042a5a8a06d7dab6da633517dc2c/raw/558be8c8eedb48d98d50973b36bd77132bebb062/bingPoint.js
+Bing App ClientId = type=http-request,pattern=https:\/\/login\.microsoftonline\.com\/.*\/oauth2\/v2\.0\/token,requires-body=1,script-path=https://gist.githubusercontent.com/Former-Years/935d042a5a8a06d7dab6da633517dc2c/raw/558be8c8eedb48d98d50973b36bd77132bebb062/bingPoint.js
 
 # > 爱奇艺
 爱奇艺Cookie = type=http-request,pattern=^https:\/\/passport\.iqiyi\.com\/apis\/user\/,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js
