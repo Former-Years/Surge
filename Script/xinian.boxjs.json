@@ -142,23 +142,34 @@
       "id": "thyc",
       "name": "途虎养车",
       "keys": [
-        "THYCtoken"
+        "tuhuvx",
+        "TU_usersignKeyTU"
       ],
       "settings": [
         {
-          "id": "THYCtoken",
-          "name": "途虎养车CK",
+          "id": "tuhuvx",
+          "name": "tuhuvx",
           "val": "",
           "type": "text",
           "placeholder": "",
           "autoGrow": true,
           "rows": 2,
-          "desc": "多账号是换行"
+          "desc": ""
+        },
+        {
+          "id": "TU_usersignKeyTU",
+          "name": "TU_usersignKeyTU",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": ""
         }
       ],
-      "author": "@xl2101200",
-      "repo": "https://raw.githubusercontent.com/xl2101200/-/main/thyc.js",
-      "script": "https://raw.githubusercontent.com/xl2101200/-/main/thyc.js",
+      "author": "@Zoo",
+      "repo": "https://raw.githubusercontent.com/Crazy-Z7/Task/main/Tuhyche.js",
+      "script": "https://raw.githubusercontent.com/Crazy-Z7/Task/main/Tuhyche.js",
       "icons": [
         "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/tuhu.png",
         "https://raw.githubusercontent.com/Orz-3/mini/master/Color/tuhu.png"
