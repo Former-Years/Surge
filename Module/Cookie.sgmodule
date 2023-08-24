@@ -2,6 +2,9 @@
 #!desc=获取Cookie
 
 [Script]
+# > 途虎养车
+途虎养车Cookie = type=http-request,pattern=https://api.tuhu.cn/User/GetInternalCenterInfo,script-path=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Tuhyche.js
+
 # > 特仑苏 微信小程序获取
 特仑苏Cookie = type=http-request, pattern=^https:\/\/mall\.telunsu\.net\/wxapi\/rest\/getUser\?openid=.+,script-path=https://raw.githubusercontent.com/Sliverkiss/helloworld/master/Study/tls.js
 
@@ -78,4 +81,4 @@ B站Cookie(网页) = type=http-request,pattern=^https?:\/\/m.bilibili.com/$,scri
 阿里云盘Cookie = type=http-response,pattern=https:\/\/auth.(aliyundrive|alipan).com\/v2\/account\/token,requires-body=1,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/ali/aliYunPanCheckIn.js
 
 [MITM]
-hostname = %APPEND% mall.telunsu.net, *.amap.com, rewards.bing.com, login.microsoftonline.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, user-api.smzdm.com, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, mall.oclean.com, c.tieba.baidu.com, mwegame.qq.com, iacc.rec.qq.com, www.atstudy.com, ccsp-egmas.sf-express.com, mall.meituan.com, app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com, auth.aliyundrive.com, app.jegotrip.com.cn, -app3.jegotrip.com.cn
+hostname = %APPEND% api.tuhu.cn, mall.telunsu.net, *.amap.com, rewards.bing.com, login.microsoftonline.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, user-api.smzdm.com, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, mall.oclean.com, c.tieba.baidu.com, mwegame.qq.com, iacc.rec.qq.com, www.atstudy.com, ccsp-egmas.sf-express.com, mall.meituan.com, app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com, auth.aliyundrive.com, app.jegotrip.com.cn, -app3.jegotrip.com.cn
