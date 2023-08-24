@@ -142,20 +142,9 @@
       "id": "thyc",
       "name": "途虎养车",
       "keys": [
-        "tuhuvx",
-        "TU_usersignKeyTU"
+        "tuhuvx"
       ],
       "settings": [
-        {
-          "id": "tuhuvx",
-          "name": "tuhuvx",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": ""
-        },
         {
           "id": "TU_usersignKeyTU",
           "name": "TU_usersignKeyTU",
