@@ -2,9 +2,6 @@
 #!desc=获取Cookie
 
 [Script]
-# > 途虎养车
-途虎养车Cookie = type=http-request,pattern=https://api.tuhu.cn/User/GetInternalCenterInfo,script-path=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Tuhyche.js
-
 # > 特仑苏 微信小程序获取
 特仑苏Cookie = type=http-request, pattern=^https:\/\/mall\.telunsu\.net\/wxapi\/rest\/getUser\?openid=.+,script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/tls.js
 
@@ -31,38 +28,14 @@ Bing App ClientId = type=http-request,pattern=https:\/\/login\.microsoftonline\.
 # > 什么值得买
 什么值买Cookie = type=http-request,pattern=^https?:\/\/user-api\.smzdm\.com\/checkin$,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js
 
-# > 哈啰出行
-哈啰出行Cookie = type=http-request,pattern=^https:\/\/gameapi\.hellobike\.com\/api,requires-body=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/hellobike/hellobike.js
-
-# > 快看漫画
-快看漫画Cookie = type=http-request,pattern=^https:\/\/api\.kkmh\.com\/v\d\/passport\/user,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/KuaiKan-DailyBonus/KKMH.js
-
-# > 百果园
-百果园Cookie = type=http-request,pattern=^https:\/\/wx-mini.pagoda.com.cn\/api\/v1\/wxmini\/signIn\/customer,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/pagoda/pagoda.cookie.js
-
 # > IT之家
 IT之家Cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/usersign\/getsigninfo?,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/ithome/ithome.cookie.js
-
-# > 南方周末
-南方周末Cookie = type=http-request,pattern=^http:\/\/api\.infzm\.com\/mobile\/pumpkin_task\/complete?,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/nfzm/nfzm.cookie.js
-
-# > 欧可林
-欧可林Cookie = type=http-request,pattern=^https:\/\/mall\.oclean\.com\/API\/VshopProcess\.ashx$,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Oclean/Oclean.js
-
-# > 索尼俱乐部
-# 打开https://raw.githubusercontent.com/lowking/Scripts/master/lowking.boxjs.json填写账号密码即可
 
 # > 百度贴吧
 百度贴吧Cookie = type=http-request,pattern=https?:\/\/(c\.tieba\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/BDTieBa-DailyBonus/TieBa.js
 
-# > 掌上飞车
-掌上飞车Cookie = type=http-request,pattern=^https:\/\/mwegame\.qq\.com\/ams\/sign\/doSign\/month,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zsfc/zsfc.js
-
 # > 腾讯视频
 腾讯视频Cookie = type=http-request,pattern=^https?:\/\/iacc\.rec\.qq\.com,script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/videoqq.js
-
-# > 学掌门打卡
-学掌门打卡Cookie = type=http-request,pattern=https:\/\/www\.atstudy\.com\/api\/consume\/usercourse,script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/daka.js
 
 # > 顺丰速运
 顺丰速运Cookie = type=http-request,pattern=^https:\/\/ccsp-egmas.sf-express.com\/cx-app-member\/member\/app\/user\/universalSign,requires-body=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/sfexpress/sfexpress.cookie.js
@@ -70,15 +43,11 @@ IT之家Cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/use
 # > 美团买菜
 美团买菜Cookie = type=http-request,pattern=^https?:\/\/mall\.meituan\.com\/api\/c\/mallcoin\/checkIn\/queryTaskListInfoV.\?,script-path=https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/mall.meituan.cookie.js
 
-# > Bilibili
-B站Cookie(APP) = type=http-request,pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/domain\?,script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/BiliBili.js
-B站Cookie(网页) = type=http-request,pattern=^https?:\/\/m.bilibili.com/$,script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/BiliBili.js
-
-# > 喜马拉雅
-喜马拉雅Cookie = type=http-request,pattern=^https?:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/app-skin-service\/skin\/,script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/xmlySign.js
-
 # > 阿里云盘
 阿里云盘Cookie = type=http-response,pattern=https:\/\/auth.(aliyundrive|alipan).com\/v2\/account\/token,requires-body=1,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/ali/aliYunPanCheckIn.js
 
+# > 网易云音乐
+网易云音乐Cookie = type=http-request,pattern=^https?:\/\/music\.163\.com\/weapi\/cloudbean\/records\/incomes,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/netease_musician/cookie.js
+
 [MITM]
-hostname = %APPEND% api.tuhu.cn, mall.telunsu.net, *.amap.com, rewards.bing.com, login.microsoftonline.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, user-api.smzdm.com, gameapi.hellobike.com, api.kkmh.com, wx-mini.pagoda.com.cn, my.ruanmei.com, api.infzm.com, mall.oclean.com, c.tieba.baidu.com, mwegame.qq.com, iacc.rec.qq.com, www.atstudy.com, ccsp-egmas.sf-express.com, mall.meituan.com, app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com, auth.aliyundrive.com, app.jegotrip.com.cn, -app3.jegotrip.com.cn
+hostname = %APPEND% mall.telunsu.net, *.amap.com, rewards.bing.com, login.microsoftonline.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, user-api.smzdm.com, my.ruanmei.com, c.tieba.baidu.com, iacc.rec.qq.com, ccsp-egmas.sf-express.com, mall.meituan.com, auth.aliyundrive.com, app.jegotrip.com.cn, -app3.jegotrip.com.cn, music.163.com
