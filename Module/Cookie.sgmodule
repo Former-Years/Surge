@@ -46,5 +46,8 @@ IT之家Cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/use
 # > 捷停车
 捷停车Cookie = type=http-request,pattern=^https:\/\/sytgate\.jslife\.com\.cn\/core-gateway\/order\/carno\/pay\/info,requires-body=1,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/jparking_sign.js
 
+# > PP停车
+PP停车Cookie = type=http-request,pattern=^https:\/\/api\.660pp\.com\/rest\/[\d\.]+?\/user\/token,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/pp_parking.js
+
 [MITM]
-hostname = %APPEND% mall.telunsu.net, *.amap.com, rewards.bing.com, login.microsoftonline.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, user-api.smzdm.com, my.ruanmei.com, c.tieba.baidu.com, ccsp-egmas.sf-express.com, mall.meituan.com, auth.aliyundrive.com, app.jegotrip.com.cn, -app3.jegotrip.com.cn, sytgate.jslife.com.cn
+hostname = %APPEND% mall.telunsu.net, *.amap.com, rewards.bing.com, login.microsoftonline.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, user-api.smzdm.com, my.ruanmei.com, c.tieba.baidu.com, ccsp-egmas.sf-express.com, mall.meituan.com, auth.aliyundrive.com, app.jegotrip.com.cn, -app3.jegotrip.com.cn, sytgate.jslife.com.cn, api.660pp.com
