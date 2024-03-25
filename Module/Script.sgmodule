@@ -80,8 +80,5 @@ URL-REGEX,^http:\/\/wxapi\.diyibox\.com\/api\/Advertising\/GetAdvertising$,REJEC
 # > WPS Office
 WPS Office = type=http-response,pattern=^https?:\/\/account\.wps\.cn\/api\/users,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js
 
-# > bilbii 大会员画质
-哔哩画质 = type=http-response,pattern=https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)),requires-body=1,script-path=https://github.com/Sunert/Script/raw/master/Script/Bilibili/BiliHD.js
-
 [MITM]
-hostname = %APPEND% edith.xiaohongshu.com, biz.caiyunapp.com, ap*.intsig.net, account.wps.cn, pan.baidu.com, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, api.bilibili.com
+hostname = %APPEND% edith.xiaohongshu.com, biz.caiyunapp.com, ap*.intsig.net, account.wps.cn
