@@ -1,5 +1,0 @@
-#!name=Exclude JD MITM
-#!desc=排除京东MITM
-
-[MITM]
-hostname = %APPEND% -lite-msg.m.jd.com, -jdpaysdk.jd.com, -jdcs.m.jd.com, -ddms.jd.com, -redpoint-msg.m.jd.com, -msjdpay.jd.com, -payfinish.jd.com, -payfinish.m.jd.com, -imio.jd.com
