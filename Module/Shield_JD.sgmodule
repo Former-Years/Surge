@@ -1,5 +1,6 @@
 #!name=Shield JD
 #!desc=屏蔽京东相关信息
+#!category=xinian
 
 
 [URL Rewrite]
