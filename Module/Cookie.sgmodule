@@ -45,10 +45,10 @@ IT之家Cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/use
 # > PP停车
 PP停车Cookie = type=http-request,pattern=^https:\/\/api\.660pp\.com\/rest\/[\d\.]+?\/user\/token,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/pp_parking.js
 
-# > 微信支付有优惠
+# > 微信支付有优惠 微信小程序获取
 微付金币Cookie = type=http-response,pattern=https:\/\/payapp\.weixin\.qq\.com\/coupon-center-user\/home\/login,requires-body=1,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/wechat_pay_coupon.js
 
-# > 途虎养车
+# > 途虎养车 微信小程序获取
 途虎养车Cookie = type=http-request,pattern=https:\/\/api\.tuhu\.cn\/User\/GetInternalCenterInfo,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/tuhu.js
 
 
