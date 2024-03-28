@@ -1,5 +1,6 @@
 #!name=Alicloud
 #!desc=阿里云盘净化+解锁本地会员功能[倍速、码率]
+#!category=xinian
 
 [Script]
 # > 阿里云盘_首页设置
