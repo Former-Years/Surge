@@ -49,5 +49,18 @@ PP停车Cookie = type=http-request,pattern=^https:\/\/api\.660pp\.com\/rest\/[\d
 QQ音乐Cookie1 = type=http-request,pattern=https://c6.y.qq.com/shop/fcgi-bin/fcg_get_order?,script-path=https://raw.githubusercontent.com/WowYiJiu/Personal/main/Script/qqMusic.js
 QQ音乐Cookie2 = type=http-request,pattern=https://u6.y.qq.com/cgi-bin/musics.fcg?,script-path=https://raw.githubusercontent.com/WowYiJiu/Personal/main/Script/qqMusic.js
 
+# > 携程旅行
+携程旅行Cookie = type=http-response,pattern=^https:\/\/m\.ctrip\.com\/restapi\/soa2\/\d+\/[a-zA-Z]+Login(?:$|\?),requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Ctrip-DailyBonus/Ctrip.js
+
+# > 奶茶合一
+奶茶合一Cookie1 = type=http-response,pattern=^https:\/\/(webapi|webapi2)\.qmai\.cn\/web\/seller\/(oauth\/flash-sale-login|account\/login-minp),requires-body=1,script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js
+奶茶合一Cookie2 = type=http-request,pattern=^https:\/\/(webapi|webapi2|qmwebapi)\.qmai\.cn\/web\/(catering\/integral|cmk-center)\/sign\/(signIn|takePartInSign),requires-body=1,script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js
+
+# > 柠季
+柠季Cookie = type=http-response,pattern=^https?:\/\/pos\.meituan\.com\/api\/v1\/crm\/frontend\/campaign\/display,requires-body=1,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/ningji/ningji.js
+
+# > 蜜雪冰城
+蜜雪冰城Cookie = type=http-response,pattern=^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info,requires-body=1,script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js
+
 [MITM]
-hostname = %APPEND% mall.telunsu.net, *.amap.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, user-api.smzdm.com, my.ruanmei.com, c.tieba.baidu.com, ccsp-egmas.sf-express.com, mall.meituan.com, auth.aliyundrive.com, app.jegotrip.com.cn, -app3.jegotrip.com.cn, sytgate.jslife.com.cn, api.660pp.com, *.y.qq.com
+hostname = %APPEND% mall.telunsu.net, *.amap.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, user-api.smzdm.com, my.ruanmei.com, c.tieba.baidu.com, ccsp-egmas.sf-express.com, mall.meituan.com, auth.aliyundrive.com, app.jegotrip.com.cn, -app3.jegotrip.com.cn, sytgate.jslife.com.cn, api.660pp.com, *.y.qq.com, m.ctrip.com, webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn, pos.meituan.com, mxsa.mxbc.net
