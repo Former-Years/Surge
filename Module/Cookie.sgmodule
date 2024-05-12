@@ -21,9 +21,6 @@
 # > 网易新闻
 网易新闻Cookie = type=http-request,pattern=^https:\/\/(.*?)c\.m\.163\.com\/uc\/api\/sign\/v3\/commit,requires-body=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/neteasenews/neteasenews.cookie.js
 
-# > 什么值得买
-什么值买Cookie = type=http-request,pattern=^https?:\/\/user-api\.smzdm\.com\/checkin$,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js
-
 # > IT之家
 IT之家Cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/usersign\/getsigninfo?,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/ithome/ithome.cookie.js
 
@@ -62,5 +59,11 @@ QQ音乐Cookie2 = type=http-request,pattern=https://u6.y.qq.com/cgi-bin/musics.f
 # > 蜜雪冰城
 蜜雪冰城Cookie = type=http-response,pattern=^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info,requires-body=1,script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js
 
+# > 美的会员
+美的会员Cookie = type=http-request,pattern=^https:\/\/mvip.midea.cn\/next\/mucuserinfo\/getmucuserinfo,script-path=https://gist.githubusercontent.com/Sliverkiss/3c0239a09cbe381c572a826a5caf5621/raw/midea.js
+
+# > 天翼云盘
+天翼云盘Cookie = type=http-request,pattern=^https:\/\/api\.cloud\.189\.cn\/mkt\/userSign\.action?,script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/ty.cookie.js
+
 [MITM]
-hostname = %APPEND% mall.telunsu.net, *.amap.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, user-api.smzdm.com, my.ruanmei.com, c.tieba.baidu.com, ccsp-egmas.sf-express.com, mall.meituan.com, auth.aliyundrive.com, app.jegotrip.com.cn, -app3.jegotrip.com.cn, sytgate.jslife.com.cn, api.660pp.com, *.y.qq.com, m.ctrip.com, webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn, pos.meituan.com, mxsa.mxbc.net
+hostname = %APPEND% mall.telunsu.net, *.amap.com, passport.iqiyi.com, api.dongqiudi.com, club.yili.com, *.m.163.com, my.ruanmei.com, c.tieba.baidu.com, ccsp-egmas.sf-express.com, mall.meituan.com, auth.aliyundrive.com, app.jegotrip.com.cn, -app3.jegotrip.com.cn, sytgate.jslife.com.cn, api.660pp.com, *.y.qq.com, m.ctrip.com, webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn, pos.meituan.com, mxsa.mxbc.net, mvip.midea.cn, api.cloud.189.cn
