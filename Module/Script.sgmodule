@@ -65,17 +65,3 @@ URL-REGEX,^https?:\/\/shopic\.sf-express\.com\/crm\/mobile\/common\/flashscreen,
 
 # > 递易智能 去广告
 URL-REGEX,^http:\/\/wxapi\.diyibox\.com\/api\/Advertising\/GetAdvertising$,REJECT-TINYGIF
-
-
-[Script]
-# > 彩云天气
-彩云天气 = type=http-response,pattern=https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user),requires-body=1,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/cytq.js
-
-# > 扫描全能王
-扫描全能王 = type=http-response,pattern=https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?,requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/CamScanner.js
-
-# > WPS Office
-WPS Office = type=http-response,pattern=^https?:\/\/account\.wps\.cn\/api\/users,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js
-
-[MITM]
-hostname = %APPEND% biz.caiyunapp.com, ap*.intsig.net, account.wps.cn
