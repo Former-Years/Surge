@@ -43,3 +43,6 @@ DOMAIN-SUFFIX,jdqd.jd.com,REJECT
 # 屏蔽京东App换号不用断网或开飞行模式
 URL-REGEX,^https:\/\/wlogin\.m\.jd\.com\/applogin_v2$,REJECT
 URL-REGEX,^https:\/\/wlmonitor\.m\.jd\.com\/login_report$,REJECT
+
+[MITM]
+hostname = %APPEND% wlmonitor.m.jd.com, wlogin.m.jd.com
