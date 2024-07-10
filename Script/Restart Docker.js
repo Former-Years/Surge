@@ -12,14 +12,14 @@ $httpClient.post({
 }, (error, response, data) => {
   if (error) {
     // 将超时错误信息处理为成功信息
-    const successMsg = `容器 ${containerName} 重启成功`;
+    const successMsg = `\n\n容器 ${containerName} 重启成功`;
     $.log(successMsg);
     $.msg($.name, successMsg);
     $.done();
     return;
   }
   if (response.status !== 204) {
-    const errorMsg = `容器 ${containerName} 重启失败，响应数据：${data}`;
+    const errorMsg = `\n\n容器 ${containerName} 重启失败，响应数据：${data}`;
     $.logErr(errorMsg);
     $.msg($.name, errorMsg);
     $.done({
@@ -27,7 +27,7 @@ $httpClient.post({
     });
     return;
   }
-  const successMsg = `容器 ${containerName} 重启成功`;
+  const successMsg = `\n\n容器 ${containerName} 重启成功`;
   $.log(successMsg);
   $.msg($.name, successMsg);
   $.done();
