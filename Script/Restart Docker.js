@@ -3,6 +3,14 @@ const $ = new Env('Docker 容器重启');
 // Docker 容器名字
 const containerName = 'pagermaid_pyro';
 
+// 处理成功的函数
+function handleSuccess() {
+  const successMsg = `容器 ${containerName} 重启成功`;
+  $.log(successMsg);
+  $.msg($.name, "", successMsg);
+  $.done();
+}
+
 // 使用 $httpClient 模块发出 HTTP 请求来重启 Docker 容器
 $httpClient.post({
   url: `http://localhost:2375/containers/${containerName}/restart`,
@@ -12,12 +20,10 @@ $httpClient.post({
 }, (error, response, data) => {
   if (error) {
     // 将超时错误信息处理为成功信息
-    const successMsg = `容器 ${containerName} 重启成功`;
-    $.log(successMsg);
-    $.msg($.name, "", successMsg);
-    $.done();
+    handleSuccess();
     return;
   }
+
   if (response.status !== 204) {
     const errorMsg = `容器 ${containerName} 重启失败，响应数据：${data}`;
     $.logErr(errorMsg);
@@ -27,10 +33,8 @@ $httpClient.post({
     });
     return;
   }
-  const successMsg = `容器 ${containerName} 重启成功`;
-  $.log(successMsg);
-  $.msg($.name, "", successMsg);
-  $.done();
+
+  handleSuccess();
 });
 
 
