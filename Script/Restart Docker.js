@@ -1,5 +1,5 @@
+// Docker 容器 NAMES
 const containerName = 'pagermaid_pyro';
-
 // 使用 $httpClient 模块发出 HTTP 请求来重启 Docker 容器
 $httpClient.post({
   url: 'http://localhost:2375/containers/' + containerName + '/restart',
