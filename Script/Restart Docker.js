@@ -1,3 +1,4 @@
+const $ = new Env('重启人形Docker容器');
 // Docker 容器 NAMES
 const containerName = 'pagermaid_pyro';
 // 使用 $httpClient 模块发出 HTTP 请求来重启 Docker 容器
