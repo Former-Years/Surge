@@ -1,31 +1,36 @@
 const $ = new Env('重启人形Docker容器');
-// Docker 容器 NAMES
+
+// Docker 容器名字
 const containerName = 'pagermaid_pyro';
+
 // 使用 $httpClient 模块发出 HTTP 请求来重启 Docker 容器
 $httpClient.post({
-  url: 'http://localhost:2375/containers/' + containerName + '/restart',
+  url: `http://localhost:2375/containers/${containerName}/restart`,
   headers: {
     'Content-Type': 'application/json'
   }
 }, (error, response, data) => {
   if (error) {
-    $.logErr(`容器 ${containerName} 重启失败，错误信息：${error.message}`);
-    notify('Docker 容器重启', `容器 ${containerName} 重启失败`, error.message);
+    const errorMsg = `容器 ${containerName} 重启失败，错误信息：${error}`;
+    $.logErr(errorMsg);
+    $.msg('Docker 容器重启', errorMsg);
     $.done({
-      error: `容器 ${containerName} 重启失败：${error.message}`
+      error: errorMsg
     });
     return;
   }
   if (response.status !== 204) {
-    $.logErr(`容器 ${containerName} 重启失败，响应数据：${data}`);
-    notify('Docker 容器重启', `容器 ${containerName} 重启失败`, data);
+    const errorMsg = `容器 ${containerName} 重启失败，响应数据：${data}`;
+    $.logErr(errorMsg);
+    $.msg('Docker 容器重启', errorMsg);
     $.done({
-      error: `容器 ${containerName} 重启失败，响应数据：${data}`
+      error: errorMsg
     });
     return;
   }
-  $.log(`容器 ${containerName} 重启成功`);
-  notify('Docker 容器重启', `容器 ${containerName} 重启成功`, '');
+  const successMsg = `容器 ${containerName} 重启成功`;
+  $.log(successMsg);
+  $.msg('Docker 容器重启', successMsg);
   $.done();
 });
 
