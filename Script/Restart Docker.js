@@ -14,7 +14,7 @@ $httpClient.post({
     // 将超时错误信息处理为成功信息
     const successMsg = `容器 ${containerName} 重启成功`;
     $.log(successMsg);
-    $.msg('Docker 容器重启', successMsg);
+    $.msg($.name, successMsg);
     $.done();
     return;
   }
