@@ -9,8 +9,6 @@ const REQUEST_HEADERS = {
     'Accept-Language': 'en',
   }
 let args = getArgs();
-let iconUrl = args.icon || '';
-let iconColor = args['icon-color'] || '';
 
 (async () => {
   let now = new Date();
@@ -20,10 +18,10 @@ let iconColor = args['icon-color'] || '';
   minutes = minutes > 9 ? minutes : "0" + minutes;
 
   let panel_result = {
-    title: `${args.title || '流媒体解锁查询'} | ${hour}:${minutes}`,
+    title: `${args.title} | ${hour}:${minutes}` || `流媒体解锁查询 | ${hour}:${minutes}`,
     content: '',
-    icon: iconUrl || "play.circle",
-    "icon-color": iconColor || "#007aff",
+    icon: args.icon || "play.circle",
+    "icon-color": args.color || "#007aff",
   }
 
   let [{ region, status }] = await Promise.all([testDisneyPlus()])
