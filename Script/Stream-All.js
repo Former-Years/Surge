@@ -54,15 +54,15 @@ function getArgs() {
 function formatDisneyPlusResult(status, region) {
   switch (status) {
     case STATUS_COMING:
-      return `\nD+: 即将登陆~ ${region.toUpperCase()} |`;
+      return `D+: 即将登陆~ ${region.toUpperCase()} |`;
     case STATUS_AVAILABLE:
-      return `\nD+: \u2611${region.toUpperCase()} |`;
+      return `D+: \u2611${region.toUpperCase()} |`;
     case STATUS_NOT_AVAILABLE:
-      return `\nD+: \u2612 |`;
+      return `D+: \u2612 |`;
     case STATUS_TIMEOUT:
-      return `\nD+: N/A |`;
+      return `D+: N/A |`;
     default:
-      return `\nD+: 错误 |`;
+      return `D+: 错误 |`;
   }
 }
 
@@ -162,7 +162,7 @@ async function check_netflix() {
       if (code === 'Not Found') {
         return inner_check(80018499)
       }
-      netflix_check_result += '\u2611' + code.toUpperCase()
+      netflix_check_result += '\u2611' + code.toUpperCase() + ' |'
       return Promise.reject('BreakSignal')
     })
     .then((code) => {
@@ -170,7 +170,7 @@ async function check_netflix() {
         return Promise.reject('Not Available')
       }
 
-      netflix_check_result += '⚠' + code.toUpperCase()
+      netflix_check_result += '⚠' + code.toUpperCase() + ' |'
       return Promise.reject('BreakSignal')
     })
     .catch((error) => {
@@ -178,10 +178,10 @@ async function check_netflix() {
         return
       }
       if (error === 'Not Available') {
-        netflix_check_result += '\u2612'
+        netflix_check_result += '\u2612 |'
         return
       }
-      netflix_check_result += 'N/A'
+      netflix_check_result += 'N/A |'
     })
 
   return netflix_check_result;
