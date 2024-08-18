@@ -35,7 +35,7 @@ function handleResponse(data) {
 
     if (oilPriceData.code === 200) {
         const oilPriceInfo = oilPriceData.result;
-        const message = `地区：${oilPriceInfo.prov}      |    0 柴油：${oilPriceInfo.p0}\n89汽油：${oilPriceInfo.p89}  |  92汽油：${oilPriceInfo.p92}\n95汽油：${oilPriceInfo.p95}  |  98汽油：${oilPriceInfo.p98}\n更新：${oilPriceInfo.time}`;
+        const message = `    0 柴油：${oilPriceInfo.p0}  |  92汽油：${oilPriceInfo.p92}\n95汽油：${oilPriceInfo.p95}  |  98汽油：${oilPriceInfo.p98}\n更新：${oilPriceInfo.time}`;
 
         const body = {
             title: "今日油价",
