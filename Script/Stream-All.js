@@ -33,7 +33,7 @@ let args = getArgs();
   panel_result['content'] = content;
 
   let traceData = await getTraceData();
-  let gptSupportStatus = traceData.loc ? "GPT: \u2611" : "GPT: \u2612";
+  let gptSupportStatus = traceData.loc ? "G: \u2611" : "G: \u2612";
 
   content += ` ${gptSupportStatus}${traceData.loc}`;
 
@@ -54,15 +54,15 @@ function getArgs() {
 function formatDisneyPlusResult(status, region) {
   switch (status) {
     case STATUS_COMING:
-      return `D+: 即将登陆~ ${region.toUpperCase()} |`;
+      return `D: 即将登陆~ ${region.toUpperCase()} |`;
     case STATUS_AVAILABLE:
-      return `D+: \u2611${region.toUpperCase()} |`;
+      return `D: \u2611${region.toUpperCase()} |`;
     case STATUS_NOT_AVAILABLE:
-      return `D+: \u2612 |`;
+      return `D: \u2612 |`;
     case STATUS_TIMEOUT:
-      return `D+: N/A |`;
+      return `D: N/A |`;
     default:
-      return `D+: 错误 |`;
+      return `D: 错误 |`;
   }
 }
 
@@ -99,7 +99,7 @@ async function check_youtube_premium() {
     })
   }
 
-  let youtube_check_result = 'YT: '
+  let youtube_check_result = 'Y: '
 
   await inner_check()
     .then((code) => {
@@ -155,7 +155,7 @@ async function check_netflix() {
     })
   }
 
-  let netflix_check_result = 'NF: '
+  let netflix_check_result = 'N: '
 
   await inner_check(81280792)
     .then((code) => {
