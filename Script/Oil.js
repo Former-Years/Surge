@@ -44,7 +44,7 @@
             const message = `  0 柴油：${oilPriceInfo.p0}  |  92汽油：${oilPriceInfo.p92}\n95汽油：${oilPriceInfo.p95}  |  98汽油：${oilPriceInfo.p98}`;
 
             const body = {
-                title: `今日油价 | 更新：${formattedTime}`,
+                title: `今日油价 | ${formattedTime}`,
                 content: message,
                 provname: params.provname,
                 icon: params.icon,
