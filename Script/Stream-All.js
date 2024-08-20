@@ -25,10 +25,10 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
         minutes = minutes > 9 ? minutes : "0" + minutes;
 
         let panel_result = {
-            title: `解锁检测 | ${hour}:${minutes}`,
+            title: `${args.title || 解锁检测 | ${hour}:${minutes}`,
             content: '',
-            icon: "eye.slash.circle.fill",
-            "icon-color": "#ffb621",
+            icon: args.icon || "eye.slash.circle.fill",
+            "icon-color": args.color || "#ffb621",
         }
 
         let [{ region, status }] = await Promise.all([testDisneyPlus()]);
