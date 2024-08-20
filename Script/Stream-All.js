@@ -25,7 +25,7 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
         minutes = minutes > 9 ? minutes : "0" + minutes;
 
         let panel_result = {
-            title: `${args.title || '解锁检测'} | ${hour}:${minutes}`,
+            title: `${args.title} | ${hour}:${minutes}` || `解锁检测 | ${hour}:${minutes}`,
             content: '',
             icon: args.icon || "eye.slash.circle.fill",
             "icon-color": args.color || "#ffb621",
