@@ -27,8 +27,8 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
         let panel_result = {
             title: `解锁检测 | ${hour}:${minutes}`,
             content: '',
-            icon: "play.circle",
-            "icon-color": "#007aff",
+            icon: "eye.slash.circle.fill",
+            "icon-color": "#ffb621",
         }
 
         let [{ region, status }] = await Promise.all([testDisneyPlus()])
@@ -36,16 +36,16 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
             .then((result) => {
                 let disney_result = ''
                 if (status == STATUS_COMING) {
-                    disney_result = 'D: 即将登陆~' + region + ' |'
+                    disney_result = 'D: 即将登陆~' + region
                 } else if (status == STATUS_AVAILABLE) {
-                    disney_result = 'D: \u2611' + region + ' |'
+                    disney_result = 'D: \u2611' + region
                 } else if (status == STATUS_NOT_AVAILABLE) {
-                    disney_result = 'D: \u2612 |'
+                    disney_result = 'D: \u2612'
                 } else if (status == STATUS_TIMEOUT) {
-                    disney_result = 'D: N/A |'
+                    disney_result = 'D: N/A'
                 }
                 result.push(disney_result)
-                let content = result.join('\n')
+                let content = result.join('')
 
                 panel_result['content'] = content
             })
