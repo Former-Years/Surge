@@ -35,21 +35,14 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
         await Promise.all([check_chatgpt(), check_youtube_premium(), check_netflix()])
             .then((result) => {
                 let disney_result = '';
-                switch (status) {
-                    case STATUS_COMING:
-                        disney_result = `D: 即将登陆~ ${region.toUpperCase()}`;
-                        break;
-                    case STATUS_AVAILABLE:
-                        disney_result = `D: \u2611${region.toUpperCase()}`;
-                        break;
-                    case STATUS_NOT_AVAILABLE:
-                        disney_result = `D: \u2612`;
-                        break;
-                    case STATUS_TIMEOUT:
-                        disney_result = `D: N/A`;
-                        break;
-                    default:
-                        disney_result = `D: 错误`;
+                if (status == STATUS_COMING) {
+                    disney_result = 'D: 即将登陆~' + region;
+                } else if (status == STATUS_AVAILABLE) {
+                    disney_result = 'D: \u2611' + region;
+                } else if (status == STATUS_NOT_AVAILABLE) {
+                    disney_result = 'D: \u2612';
+                } else if (status == STATUS_TIMEOUT) {
+                    disney_result = 'D: N/A';
                 }
 
                 result.push(disney_result);
