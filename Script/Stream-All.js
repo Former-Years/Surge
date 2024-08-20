@@ -343,7 +343,7 @@ function testHomePage() {
     })
 }
 
-function timeout(delay = 5000) {
+function timeout(delay = 10000) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             reject('Timeout')
