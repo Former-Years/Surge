@@ -37,13 +37,13 @@ function handleResponse(data) {
     if (oilPriceData.code === 200) {
         const oilPriceInfo = oilPriceData.result;
 
-        // Extract date and time part
-        const formattedTime = oilPriceInfo.time.slice(5, 16);
+        // Extract date part only (MM-DD)
+        const formattedDate = oilPriceInfo.time.slice(5, 10);
 
-        const message = `  0 柴油：${oilPriceInfo.p0}  |  92汽油：${oilPriceInfo.p92}\n95汽油：${oilPriceInfo.p95}  |  98汽油：${oilPriceInfo.p98}`;
+        const message = `0#柴油:${oilPriceInfo.p0}元 | 92汽油:${oilPriceInfo.p92}元\n95汽油:${oilPriceInfo.p95}元 | 98汽油:${oilPriceInfo.p98}元`;
 
         const body = {
-            title: `今日油价 | ${formattedTime}`,
+            title: `今日油价 | ${formattedDate}`,
             content: message,
             provname: params.provname,
             icon: params.icon,
