@@ -32,39 +32,45 @@ function testNextUrl() {
 
 function handleResponse(data) {
     const oilPriceData = JSON.parse(data);
-    console.log(oilPriceData);
-
     if (oilPriceData.code === 200) {
         const oilPriceInfo = oilPriceData.result;
-
         const message = `0#柴油:${oilPriceInfo.p0}元 | 92汽油:${oilPriceInfo.p92}元\n95汽油:${oilPriceInfo.p95}元 | 98汽油:${oilPriceInfo.p98}元`;
 
-        // 获取HTML内容以提取`tishiContent`
+        // 获取 http://m.qiyoujiage.com 网页 HTML 内容并提取 tishiContent
         $httpClient.get('http://m.qiyoujiage.com/', (error, response, data) => {
             if (error) {
                 console.log(`获取HTML内容出错: ${error}`);
             } else {
-                // 从HTML中提取`tishiContent`
+                // 使用正则表达式从HTML中提取 var tishiContent 的内容
                 const tishiMatch = data.match(/var\s+tishiContent\s*=\s*"(.*?)"/);
                 if (tishiMatch) {
                     let tishiContent = tishiMatch[1];
-                    tishiContent = processTishiContent(tishiContent);
 
-                    // 从`tishiContent`中提取动态的价格调整范围
-                    const priceAdjustmentMatch = tishiContent.match(/(下调|上调)：(\d+\.\d+-\d+\.\d+)元\/升/);
-                    let adjustmentType = priceAdjustmentMatch[1]; // "下调" 或 "上调"
-                    const priceAdjustment = priceAdjustmentMatch[2] ? priceAdjustmentMatch[2] : "0.00-0.00";
-
-                    // 替换下调为"降"，上调为"升"
-                    adjustmentType = adjustmentType === "下调" ? "降" : "升";
-
-                    // 提取并更新日期，修改为“9-21”这种格式
+                    // 1. 动态匹配日期并加1天
                     const dateMatch = tishiContent.match(/(\d{1,2})月(\d{1,2})日/);
-                    const formattedDate = dateMatch ? `${dateMatch[1]}-${dateMatch[2]}` : "未知日期";
+                    let formattedDate = "未知日期";
+                    if (dateMatch) {
+                        let [month, day] = [parseInt(dateMatch[1]), parseInt(dateMatch[2]) + 1];
+                        formattedDate = `${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+                    }
 
-                    // 在标题中加入从`tishiContent`提取的动态日期和调整信息
+                    // 2. 动态匹配“下跌”或“下调”变为“降”，“上涨”或“上调”变为“升”
+                    let adjustmentType = "未知调整";
+                    const adjustmentMatch = tishiContent.match(/(下调|下跌|上调|上涨)/);
+                    if (adjustmentMatch) {
+                        adjustmentType = (adjustmentMatch[1].includes("下")) ? "降" : "升";
+                    }
+
+                    // 3. 动态匹配价格区间
+                    const priceRangeMatch = tishiContent.match(/(\d+\.\d+)元\/升-(\d+\.\d+)元\/升/);
+                    let priceAdjustment = "0.00-0.00元";
+                    if (priceRangeMatch) {
+                        priceAdjustment = `${priceRangeMatch[1]}-${priceRangeMatch[2]}元`;
+                    }
+
+                    // 在标题中加入从 tishiContent 提取的动态信息
                     const body = {
-                        title: `今日油价 | ${formattedDate} ${adjustmentType}${priceAdjustment}元`,
+                        title: `今日油价 | ${formattedDate} ${adjustmentType}${priceAdjustment}`,
                         content: `${message}`,
                         provname: params.provname,
                         icon: params.icon,
@@ -90,30 +96,6 @@ function getParams(param) {
             .map((item) => item.split("="))
             .map(([k, v]) => [k, decodeURIComponent(v)])
     );
-}
-
-function processTishiContent(tishiContent) {
-    // 提取并更新日期
-    const dateMatch = tishiContent.match(/(\d{1,2}月\d{1,2}日\d{2}时)/);
-    if (dateMatch) {
-        const originalDate = dateMatch[1];
-        const [month, day] = originalDate.match(/(\d{1,2})月(\d{1,2})日/).slice(1, 3);
-        const currentDate = new Date();
-        currentDate.setDate(parseInt(day) + 1);
-        const newDay = currentDate.getDate();
-        const newDate = `${month}月${newDay}日`;
-        tishiContent = tishiContent.replace(originalDate, newDate);
-    }
-
-    // 删除多余的显示
-    tishiContent = tishiContent
-        .replace(/^油价/, '') // 删除开头的“油价”
-        .replace(/调整<br\/>目前预计/, '') // 删除“调整<br/>目前预计”
-        .replace(/\)，大家相互转告油价大跌了。$/, '') // 删除结尾的“)，大家相互转告油价大跌了。"
-        .replace(/元\/升/, '', 1) // 删除第一个“元/升”
-        .replace(/(\d+元\/吨\()/, '：'); // 将“380元/吨(”替换为“：”
-
-    return tishiContent.trim();
 }
 
 testNextUrl();
