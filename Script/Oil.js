@@ -58,14 +58,14 @@ function handleResponse(data) {
                     let adjustmentType = "未知调整";
                     const adjustmentMatch = tishiContent.match(/(下调|下跌|上调|上涨)/);
                     if (adjustmentMatch) {
-                        adjustmentType = (adjustmentMatch[1].includes("下")) ? "➘" : "➚";
+                        adjustmentType = (adjustmentMatch[1].includes("下")) ? "⤵︎" : "⤴︎";
                     }
 
                     // 3. 动态匹配价格区间
                     const priceRangeMatch = tishiContent.match(/(\d+\.\d+)元\/升-(\d+\.\d+)元\/升/);
                     let priceAdjustment = "0.00-0.00元";
                     if (priceRangeMatch) {
-                        priceAdjustment = `${priceRangeMatch[1]}-${priceRangeMatch[2]}¥`;
+                        priceAdjustment = `${priceRangeMatch[1]}-${priceRangeMatch[2]}`;
                     }
 
                     // 在标题中加入从 tishiContent 提取的动态信息
