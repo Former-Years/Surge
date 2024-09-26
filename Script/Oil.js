@@ -58,7 +58,7 @@ function handleResponse(data) {
                     let adjustmentType = "未知调整";
                     const adjustmentMatch = tishiContent.match(/(下调|下跌|上调|上涨)/);
                     if (adjustmentMatch) {
-                        adjustmentType = (adjustmentMatch[1].includes("➘")) ? "降" : "➚";
+                        adjustmentType = (adjustmentMatch[1].includes("下")) ? "➘" : "➚";
                     }
 
                     // 3. 动态匹配价格区间
