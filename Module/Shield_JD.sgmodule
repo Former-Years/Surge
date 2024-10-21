@@ -39,10 +39,10 @@ https://perf.m.jd.com/app_monitor/v1/report data="https://raw.githubusercontent.
 
 [Rule]
 # 屏蔽京东收集信息
-DOMAIN-SUFFIX,jdqd.jd.com,REJECT
+DOMAIN-SUFFIX,jdqd.jd.com,REJECT,pre-matching
 # 屏蔽京东App换号不用断网
-URL-REGEX,^https:\/\/wlogin\.m\.jd\.com\/applogin_v2$,REJECT
-URL-REGEX,^https:\/\/wlmonitor\.m\.jd\.com\/login_report$,REJECT
+URL-REGEX,^https:\/\/wlogin\.m\.jd\.com\/applogin_v2$,REJECT,pre-matching
+URL-REGEX,^https:\/\/wlmonitor\.m\.jd\.com\/login_report$,REJECT,pre-matching
 
 [MITM]
 hostname = %APPEND% wlmonitor.m.jd.com, wlogin.m.jd.com
