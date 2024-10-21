@@ -7,63 +7,63 @@
 AND,((PROTOCOL,UDP), (DEST-PORT,443)),REJECT-NO-DROP
 
 # > 优酷 去广告
-DOMAIN, iyes.youku.com,REJECT
-URL-REGEX,^http:\/\/.*\.cp31\.ott\.cibntv\.net\/youku\/,REJECT-TINYGIF
+DOMAIN, iyes.youku.com,REJECT,pre-matching
+URL-REGEX,^http:\/\/.*\.cp31\.ott\.cibntv\.net\/youku\/,REJECT,pre-matching
 
 # > 京东 去广告
-URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT
+URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT,pre-matching
 
 # > 京喜 去开屏
-URL-REGEX,^https:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show$,REJECT
-URL-REGEX,^https:\/\/img10\.360buyimg\.com\/deliveryadmin\/jfs,REJECT 
+URL-REGEX,^https:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show$,REJECT,pre-matching
+URL-REGEX,^https:\/\/img10\.360buyimg\.com\/deliveryadmin\/jfs,REJECT,pre-matching
 
 # > 京东极速版 去广告
-URL-REGEX,https://api.m.jd.com/client.action\?functionId=lite_advertising,REJECT
+URL-REGEX,https://api.m.jd.com/client.action\?functionId=lite_advertising,REJECT,pre-matching
 
 # > 京东金融 去广告
-URL-REGEX,^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/aladdin\/(new)?na\/m\/getLoadingPicture,REJECT
+URL-REGEX,^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/aladdin\/(new)?na\/m\/getLoadingPicture,REJECT,pre-matching
 
 # > 交管12123 去广告
-URL-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$,REJECT
+URL-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$,REJECT,pre-matching
 
 # > 爱奇艺 去暂停广告
-DOMAIN-SUFFIX,cupid.iqiyi.com,REJECT
+DOMAIN-SUFFIX,cupid.iqiyi.com,REJECT,pre-matching
 
 # > 优酷 去广告
-DOMAIN,iyes.youku.com,REJECT
-URL-REGEX,^http:\/\/.*\.cp31\.ott\.cibntv\.net\/youku\/,REJECT
+DOMAIN,iyes.youku.com,REJECT,pre-matching
+URL-REGEX,^http:\/\/.*\.cp31\.ott\.cibntv\.net\/youku\/,REJECT,pre-matching
 
 # > 腾讯视频 修正+去开屏（重装app）
 DOMAIN,vv.video.qq.com,DIRECT
-URL-REGEX,^https:\/\/ossgw\.alicdn\.com\/creatives-assets/prod/feupload/user,REJECT
+URL-REGEX,^https:\/\/ossgw\.alicdn\.com\/creatives-assets/prod/feupload/user,REJECT,pre-matching
 IP-CIDR,47.110.187.87/32,REJECT,no-resolve
 OR,((DOMAIN,pgdt.gtimg.cn), (AND,((USER-AGENT,live4iphoneRel*), (IP-CIDR,0.0.0.0/0,no-resolve)))),REJECT-DROP
 
 # > 美团 去广告
-DOMAIN,portal-portm.meituan.com,REJECT
-URL-REGEX,^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg),REJECT
-URL-REGEX,^https?:\/\/peisongapi\.meituan\.com\/client\/getInitiateImage,REJECT-TINYGIF
-URL-REGEX,^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/\w+\.(gif|jpg|jpg\.webp)$,REJECT
-URL-REGEX,^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4),REJECT
-URL-REGEX,^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg,REJECT
-URL-REGEX,^https?:\/\/p\d\.meituan\.net\/movie\/\w+\.jpg\?may_covertWebp,REJECT
+DOMAIN,portal-portm.meituan.com,REJECT,pre-matching
+URL-REGEX,^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg),REJECT,pre-matching
+URL-REGEX,^https?:\/\/peisongapi\.meituan\.com\/client\/getInitiateImage,REJECT,pre-matching
+URL-REGEX,^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/\w+\.(gif|jpg|jpg\.webp)$,REJECT,pre-matching
+URL-REGEX,^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4),REJECT,pre-matching
+URL-REGEX,^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg,REJECT,pre-matching
+URL-REGEX,^https?:\/\/p\d\.meituan\.net\/movie\/\w+\.jpg\?may_covertWebp,REJECT,pre-matching
 
 # > 云闪付 去广告
-URL-REGEX,^https:\/\/wallet\.95516\.com\/s\/wl\/icon\/long,REJECT
+URL-REGEX,^https:\/\/wallet\.95516\.com\/s\/wl\/icon\/long,REJECT,pre-matching
 
 # > 中国联通 去开屏
-DOMAIN-SUFFIX,m1.ad.10010.com,REJECT
+DOMAIN-SUFFIX,m1.ad.10010.com,REJECT,pre-matching
 
 # > 中国电信 去开屏
-DOMAIN,ad.21cn.com,REJECT
-DOMAIN,ad.k.21cn.com,REJECT
-DOMAIN,admarket.21cn.com,REJECT
-DOMAIN,adshows.21cn.com,REJECT
+DOMAIN,ad.21cn.com,REJECT,pre-matching
+DOMAIN,ad.k.21cn.com,REJECT,pre-matching
+DOMAIN,admarket.21cn.com,REJECT,pre-matching
+DOMAIN,adshows.21cn.com,REJECT,pre-matching
 
 # > 顺丰速运 去开屏
-URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade,REJECT
-URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/,REJECT
-URL-REGEX,^https?:\/\/shopic\.sf-express\.com\/crm\/mobile\/common\/flashscreen,REJECT
+URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade,REJECT,pre-matching
+URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/,REJECT,pre-matching
+URL-REGEX,^https?:\/\/shopic\.sf-express\.com\/crm\/mobile\/common\/flashscreen,REJECT,pre-matching
 
 # > 递易智能 去广告
-URL-REGEX,^http:\/\/wxapi\.diyibox\.com\/api\/Advertising\/GetAdvertising$,REJECT-TINYGIF
+URL-REGEX,^http:\/\/wxapi\.diyibox\.com\/api\/Advertising\/GetAdvertising$,REJECT,pre-matching
