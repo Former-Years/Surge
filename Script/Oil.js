@@ -34,7 +34,7 @@ function handleResponse(data) {
     const oilPriceData = JSON.parse(data);
     if (oilPriceData.code === 200) {
         const oilPriceInfo = oilPriceData.result;
-        const message = `0#柴油:${oilPriceInfo.p0}元 | 92汽油:${oilPriceInfo.p92}元\n95汽油:${oilPriceInfo.p95}元 | 98汽油:${oilPriceInfo.p98}元`;
+        const message = `0#柴油: ${oilPriceInfo.p0}元 | 92汽油: ${oilPriceInfo.p92}元\n95汽油: ${oilPriceInfo.p95}元 | 98汽油: ${oilPriceInfo.p98}元`;
 
         // 获取 http://m.qiyoujiage.com 网页 HTML 内容并提取 tishiContent
         $httpClient.get('http://m.qiyoujiage.com/', (error, response, data) => {
