@@ -337,6 +337,54 @@
         "https://raw.githubusercontent.com/Former-Years/icon/master/tls.png",
         "https://raw.githubusercontent.com/Former-Years/icon/master/tls.png"
       ]
+    },
+    {
+      "id": "10086",
+      "name": "中国移动",
+      "keys": [
+        "china_mobile_phonenumber",
+        "china_mobile_cookie",
+        "china_mobile_params"
+      ],
+      "settings": [
+        {
+          "id": "china_mobile_phonenumber",
+          "name": "phonenumber",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "手机号码"
+        },
+        {
+          "id": "china_mobile_cookie",
+          "name": "cookie",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "中国移动cookie"
+        },
+        {
+          "id": "china_mobile_params",
+          "name": "params",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "中国移动参数"
+        }
+      ],
+      "author": "@null",
+      "repo": "https://github.120399.xyz/Script/10086.js",
+      "script": "https://github.120399.xyz/Script/10086.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Former-Years/icon/refs/heads/master/10086.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/refs/heads/master/10086.png"
+      ]
     }
   ]
 }
