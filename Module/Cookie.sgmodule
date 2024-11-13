@@ -57,5 +57,8 @@ PP停车Cookie = type=http-request,pattern=^https:\/\/api\.660pp\.com\/rest\/[\d
 腾讯视频Cookie2 = type=http-request,pattern=https://pbaccess.video.qq.com/trpc.videosearch.hot_rank.HotRankServantHttp/HotRankHttp,script-path=https://raw.githubusercontent.com/WowYiJiu/Personal/main/Script/tenvideo.js
 腾讯视频Cookie3 = type=http-request,pattern=https://pbaccess.video.qq.com/trpc.video_account_login.web_login_trpc.WebLoginTrpc/NewRefresh,requires-body=1,script-path=https://raw.githubusercontent.com/WowYiJiu/Personal/main/Script/tenvideo.js
 
+# > 中国移动
+中国移动Cookie = type=http-request,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/[LD]N\/uam(onekey|randcode)login\/autoLogin,requires-body=1,script-path=https://github.120399.xyz/Script/10086.js
+
 [MITM]
-hostname = %APPEND% mall.telunsu.net, *.amap.com, passport.iqiyi.com, club.yili.com, my.ruanmei.com, c.tieba.baidu.com, ccsp-egmas.sf-express.com, mall.meituan.com, auth.alipan.com, auth.aliyundrive.com, sytgate.jslife.com.cn, api.660pp.com, m.ctrip.com, webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn, pos.meituan.com, mxsa.mxbc.net, mvip.midea.cn, vip.video.qq.com,pbaccess.video.qq.com
+hostname = %APPEND% mall.telunsu.net, *.amap.com, passport.iqiyi.com, club.yili.com, my.ruanmei.com, c.tieba.baidu.com, ccsp-egmas.sf-express.com, mall.meituan.com, auth.alipan.com, auth.aliyundrive.com, sytgate.jslife.com.cn, api.660pp.com, m.ctrip.com, webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn, pos.meituan.com, mxsa.mxbc.net, mvip.midea.cn, vip.video.qq.com,pbaccess.video.qq.com, client.app.coc.10086.cn
