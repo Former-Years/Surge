@@ -20,6 +20,8 @@ always-real-ip = %APPEND% easy-login.10099.com.cn,*-update.xoyocdn.com,id6.me,op
 always-raw-tcp-keywords = %INSERT% "Content-Type: application/pairing+tlv8"
 
 [Rule]
+# > 阻止所有UDP流量到端口443，使HTTP3请求退回到TCP流量
+AND,((PROTOCOL,UDP), (DEST-PORT,443)),REJECT-NO-DROP
 # > Safari 防跳转
 DOMAIN,app-site-association.cdn-apple.com,REJECT,pre-matching
 # > 京东 去广告
