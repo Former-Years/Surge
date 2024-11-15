@@ -67,3 +67,9 @@ URL-REGEX,^https?:\/\/shopic\.sf-express\.com\/crm\/mobile\/common\/flashscreen,
 
 # > 递易智能 去广告
 URL-REGEX,^http:\/\/wxapi\.diyibox\.com\/api\/Advertising\/GetAdvertising$,REJECT,pre-matching
+
+[Body Rewrite]
+http-response ^https?:\/\/wxpusher.zjiecode.com\/api\/message "margin-top: 30px;display: flex;flex-direction: row;justify-content: center;" display:none '<p class="note">' '<p style="display:none;">'
+
+[MITM]
+hostname = %APPEND% wxpusher.zjiecode.com
