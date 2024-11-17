@@ -53,7 +53,7 @@ PP停车Cookie = type=http-request,pattern=^https:\/\/api\.660pp\.com\/rest\/[\d
 中国移动Cookie = type=http-request,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/[LD]N\/uam(onekey|randcode)login\/autoLogin,requires-body=1,script-path=https://github.120399.xyz/Script/10086.js
 
 # > 奈雪点单
-奈雪点单Cookie = type=http-request,pattern=^https:\/\/tm-web\.pin-dao\.cn\/user\/base-userinfo,requires-body=1,script-path=https://gist.githubusercontent.com/Sliverkiss/f4bbb9911b3d8fde9ff9ce077073f0ac/raw/sfsyV2.js
+奈雪点单Cookie = type=http-request,pattern=^https:\/\/tm-web\.pin-dao\.cn\/user\/base-userinfo,requires-body=1,script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js
 
 # > 阿里云社区
 阿里云社区Cookie = type=http-response,pattern=^https?:\/\/developer\.aliyun\.com\/developer\/api\/my\/user\/getUser,requires-body=1,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/aliyun_web/aliyun_web.js
