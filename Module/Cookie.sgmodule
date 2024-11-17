@@ -3,9 +3,6 @@
 #!category=xinian
 
 [Script]
-# > 特仑苏 微信小程序获取
-特仑苏Cookie = type=http-request, pattern=^https:\/\/mall\.telunsu\.net\/wxapi\/rest\/getUser\?openid=.+,script-path=https://raw.githubusercontent.com/Former-Years/Surge/main/Script/tls.js
-
 # > 高德打车 微信小程序获取
 高德打车Cookie = type=http-response, pattern=^https:\/\/m5(-zb)?\.amap\.com\/ws\/yuece\/(act|openapi)\/(activity\/current\/)?query,requires-body=1,script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js
 
@@ -22,7 +19,7 @@ IT之家Cookie = type=http-request,pattern=^https:\/\/my\.ruanmei\.com\/api\/use
 百度贴吧Cookie = type=http-request,pattern=https?:\/\/(c\.tieba\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/BDTieBa-DailyBonus/TieBa.js
 
 # > 顺丰速运
-顺丰速运Cookie = type=http-request,pattern=^https:\/\/ccsp-egmas.sf-express.com\/cx-app-member\/member\/app\/user\/universalSign,requires-body=1,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/sfexpress/sfexpress.cookie.js
+顺丰速运Cookie = type=http-response,pattern=^https:\/\/mcs-mimp-web\.sf-express\.com\/mcs-mimp\/share\/weChat\/shareGiftReceiveRedirect.+,requires-body=1,script-path=https://gist.githubusercontent.com/Sliverkiss/f4bbb9911b3d8fde9ff9ce077073f0ac/raw/sfsyV2.js
 
 # > 美团买菜
 美团买菜Cookie = type=http-request,pattern=^https?:\/\/mall\.meituan\.com\/api\/c\/mallcoin\/checkIn\/queryTaskListInfoV.\?,script-path=https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/mall.meituan.cookie.js
@@ -52,13 +49,14 @@ PP停车Cookie = type=http-request,pattern=^https:\/\/api\.660pp\.com\/rest\/[\d
 # > 美的会员
 美的会员Cookie = type=http-request,pattern=^https:\/\/mvip.midea.cn\/next\/mucuserinfo\/getmucuserinfo,script-path=https://gist.githubusercontent.com/Sliverkiss/3c0239a09cbe381c572a826a5caf5621/raw/midea.js
 
-# > 腾讯视频
-腾讯视频Cookie1 = type=http-request,pattern=https://vip.video.qq.com/rpc/trpc.new_task_system.task_system.TaskSystem/ReadTaskList?,script-path=https://raw.githubusercontent.com/WowYiJiu/Personal/main/Script/tenvideo.js
-腾讯视频Cookie2 = type=http-request,pattern=https://pbaccess.video.qq.com/trpc.videosearch.hot_rank.HotRankServantHttp/HotRankHttp,script-path=https://raw.githubusercontent.com/WowYiJiu/Personal/main/Script/tenvideo.js
-腾讯视频Cookie3 = type=http-request,pattern=https://pbaccess.video.qq.com/trpc.video_account_login.web_login_trpc.WebLoginTrpc/NewRefresh,requires-body=1,script-path=https://raw.githubusercontent.com/WowYiJiu/Personal/main/Script/tenvideo.js
-
 # > 中国移动
 中国移动Cookie = type=http-request,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/[LD]N\/uam(onekey|randcode)login\/autoLogin,requires-body=1,script-path=https://github.120399.xyz/Script/10086.js
 
+# > 奈雪点单
+奈雪点单Cookie = type=http-request,pattern=^https:\/\/tm-web\.pin-dao\.cn\/user\/base-userinfo,requires-body=1,script-path=https://gist.githubusercontent.com/Sliverkiss/f4bbb9911b3d8fde9ff9ce077073f0ac/raw/sfsyV2.js
+
+# > 阿里云社区
+阿里云社区Cookie = type=http-response,pattern=^https?:\/\/developer\.aliyun\.com\/developer\/api\/my\/user\/getUser,requires-body=1,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/aliyun_web/aliyun_web.js
+
 [MITM]
-hostname = %APPEND% mall.telunsu.net, *.amap.com, passport.iqiyi.com, club.yili.com, my.ruanmei.com, c.tieba.baidu.com, ccsp-egmas.sf-express.com, mall.meituan.com, auth.alipan.com, auth.aliyundrive.com, sytgate.jslife.com.cn, api.660pp.com, m.ctrip.com, webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn, pos.meituan.com, mxsa.mxbc.net, mvip.midea.cn, vip.video.qq.com,pbaccess.video.qq.com, client.app.coc.10086.cn
+hostname = %APPEND% mall.telunsu.net, *.amap.com, passport.iqiyi.com, club.yili.com, my.ruanmei.com, c.tieba.baidu.com, mcs-mimp-web.sf-express.com, mall.meituan.com, auth.alipan.com, auth.aliyundrive.com, sytgate.jslife.com.cn, api.660pp.com, m.ctrip.com, webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn, pos.meituan.com, mxsa.mxbc.net, mvip.midea.cn, vip.video.qq.com,pbaccess.video.qq.com, client.app.coc.10086.cn, tm-web.pin-dao.cn, developer.aliyun.com
