@@ -52,8 +52,8 @@ PP停车Cookie = type=http-request,pattern=^https:\/\/api\.660pp\.com\/rest\/[\d
 # > 奈雪点单
 奈雪点单Cookie = type=http-request,pattern=^https:\/\/tm-web\.pin-dao\.cn\/user\/base-userinfo,requires-body=1,script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js
 
-# > 阿里云社区
-阿里云社区Cookie = type=http-response,pattern=^https?:\/\/developer\.aliyun\.com\/developer\/api\/my\/user\/getUser,requires-body=1,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/aliyun_web/aliyun_web.js
+# > 去重二剪
+去重二剪Cookie = type=http-request,pattern=^https:\/\/apis\.ddfans\.com\/bian\/public\/index\.php\/water,requires-body=1,script-path=https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/qcej.js
 
 [MITM]
-hostname = %APPEND% mall.telunsu.net, *.amap.com, passport.iqiyi.com, club.yili.com, my.ruanmei.com, c.tieba.baidu.com, mcs-mimp-web.sf-express.com, mall.meituan.com, auth.alipan.com, auth.aliyundrive.com, sytgate.jslife.com.cn, api.660pp.com, m.ctrip.com, webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn, pos.meituan.com, mxsa.mxbc.net, client.app.coc.10086.cn, tm-web.pin-dao.cn, developer.aliyun.com
+hostname = %APPEND% mall.telunsu.net, *.amap.com, passport.iqiyi.com, club.yili.com, my.ruanmei.com, c.tieba.baidu.com, mcs-mimp-web.sf-express.com, mall.meituan.com, auth.alipan.com, auth.aliyundrive.com, sytgate.jslife.com.cn, api.660pp.com, m.ctrip.com, webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn, pos.meituan.com, mxsa.mxbc.net, client.app.coc.10086.cn, tm-web.pin-dao.cn, apis.ddfans.com
