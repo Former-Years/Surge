@@ -1,3 +1,42 @@
+/*
+脚本名称：去重二剪
+活动入口：去重二剪小程序-会员中心
+环境变量：qcej_token（Node环境，多账号以@隔开）
+使用说明：添加重写规则并打开去重二剪小程序即可获取Token
+更新时间：2024-11-21
+
+================ Surge 配置 ================
+[MITM]
+hostname = %APPEND% apis.ddfans.com
+
+[Script]
+去重二剪Cookie = type=http-request,pattern=^https:\/\/apis\.ddfans\.com\/bian\/public\/index\.php\/water,requires-body=1,script-path=https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/qcej.js
+
+去重二剪 = type=cron, cronexp=15 9 * * *, timeout=60, script-path=https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/qcej.js
+
+============ Quantumult X 配置 =============
+[MITM]
+hostname = apis.ddfans.com
+
+[rewrite_local]
+^https:\/\/apis\.ddfans\.com\/bian\/public\/index\.php\/water url script-request-body https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/qcej.js
+
+[task_local]
+15 9 * * * https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/qcej.js, tag=去重二剪, enabled=true
+
+================ Loon 配置 ================
+[MITM]
+hostname = apis.ddfans.com
+
+cron "15 9 * * *" script-path=https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/qcej.js, tag=去重二剪
+
+http-request ^https:\/\/apis\.ddfans\.com\/bian\/public\/index\.php\/water script-path=https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/qcej.js, requires-body=true, timeout=10, enabled=false, tag=去重二剪Cookie
+
+================ Boxjs订阅 ================
+订阅地址：https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/xinian.boxjs.json
+
+*/
+
 const $ = new Env('去重二剪');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const API_HOST = 'https://apis.ddfans.com';
