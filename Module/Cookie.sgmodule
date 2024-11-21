@@ -55,5 +55,8 @@ PP停车Cookie = type=http-request,pattern=^https:\/\/api\.660pp\.com\/rest\/[\d
 # > 去重二剪
 去重二剪Cookie = type=http-request,pattern=^https:\/\/apis\.ddfans\.com\/bian\/public\/index\.php\/water,requires-body=1,script-path=https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/qcej.js
 
+# > WPS_PC
+WPS_PC_Cookie = type=http-request,pattern=^https:\/\/(vip|account)(userinfo|\.wps\.cn\/p\/auth\/check)$,script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/wps.js
+
 [MITM]
-hostname = %APPEND% mall.telunsu.net, *.amap.com, passport.iqiyi.com, club.yili.com, my.ruanmei.com, c.tieba.baidu.com, mcs-mimp-web.sf-express.com, mall.meituan.com, auth.alipan.com, auth.aliyundrive.com, sytgate.jslife.com.cn, api.660pp.com, m.ctrip.com, webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn, pos.meituan.com, mxsa.mxbc.net, client.app.coc.10086.cn, tm-web.pin-dao.cn, apis.ddfans.com
+hostname = %APPEND% mall.telunsu.net, *.amap.com, passport.iqiyi.com, club.yili.com, my.ruanmei.com, c.tieba.baidu.com, mcs-mimp-web.sf-express.com, mall.meituan.com, auth.alipan.com, auth.aliyundrive.com, sytgate.jslife.com.cn, api.660pp.com, m.ctrip.com, webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn, pos.meituan.com, mxsa.mxbc.net, client.app.coc.10086.cn, tm-web.pin-dao.cn, apis.ddfans.com, *.wps.cn
