@@ -287,6 +287,32 @@
       ]
     },
     {
+      "id": "qcej",
+      "name": "去重二剪",
+      "keys": [
+        "qcej_token"
+      ],
+      "settings": [
+        {
+          "id": "qcej_token",
+          "name": "去重二剪Token",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": ""
+        }
+      ],
+      "author": "@xinian",
+      "repo": "https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/qcej.js",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/qcej.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Former-Years/icon/master/qcej.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/qcej.png"
+      ]
+    },
+    {
       "id": "ampDache",
       "name": "高德打车",
       "keys": [
