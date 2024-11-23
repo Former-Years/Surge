@@ -58,5 +58,8 @@ PP停车Cookie = type=http-request,pattern=^https:\/\/api\.660pp\.com\/rest\/[\d
 # > WPS_PC
 WPS_PC_Cookie = type=http-request,pattern=^https:\/\/(vip|account)(userinfo|\.wps\.cn\/p\/auth\/check)$,script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/wps.js
 
+# > 回收猿旧衣回收
+回收猿回收Cookie = type=http-response,pattern=^https:\/\/www\.52bjy\.com\/api\/app\/hsy\.php\?action=user&appkey=1079fb245839e765&merchant_id=2&method=center&username=.+,requires-body=1,script-path=https://gist.githubusercontent.com/Sliverkiss/86757c4beac9d48ebe76cc436900a021/raw/hsyhs.js
+
 [MITM]
-hostname = %APPEND% mall.telunsu.net, *.amap.com, passport.iqiyi.com, club.yili.com, my.ruanmei.com, c.tieba.baidu.com, mcs-mimp-web.sf-express.com, mall.meituan.com, auth.alipan.com, auth.aliyundrive.com, sytgate.jslife.com.cn, api.660pp.com, m.ctrip.com, webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn, pos.meituan.com, mxsa.mxbc.net, client.app.coc.10086.cn, tm-web.pin-dao.cn, apis.ddfans.com, *.wps.cn
+hostname = %APPEND% mall.telunsu.net, *.amap.com, passport.iqiyi.com, club.yili.com, my.ruanmei.com, c.tieba.baidu.com, mcs-mimp-web.sf-express.com, mall.meituan.com, auth.alipan.com, auth.aliyundrive.com, sytgate.jslife.com.cn, api.660pp.com, m.ctrip.com, webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn, pos.meituan.com, mxsa.mxbc.net, client.app.coc.10086.cn, tm-web.pin-dao.cn, apis.ddfans.com, *.wps.cn, www.52bjy.com
