@@ -57,7 +57,6 @@ if (typeof $request !== 'undefined') {
             return;
         }
 
-        console.log(`\n====== 开始执行签到 ======\n`);
         await executeForMultipleAccounts(requestData);
 
         // 统一发送一次通知
