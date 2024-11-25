@@ -60,9 +60,10 @@ if (typeof $request !== 'undefined') {
         console.log(`\n====== 开始执行签到 ======\n`);
         await executeForMultipleAccounts(requestData);
 
+        // 统一发送一次通知
         if (Message) {
             $.msg($.name, '', Message);
-            if ($.isNode()) await notify.sendNotify($.name, Message); // 推送通知
+            if ($.isNode()) await notify.sendNotify($.name, Message);
         }
     })()
         .catch((e) => {
@@ -118,15 +119,12 @@ async function executeForMultipleAccounts(data) {
 // 执行签到任务
 async function executeForAccount(accountNumber, url) {
     const accountMessage = [];
-    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     let totalPoints = 0;
 
     try {
-        // 构建签到请求体
         const requestBody = buildSignInRequestBody(url);
-
-        // 签到请求
         const signInResult = await signInRequest(requestBody);
+
         if (signInResult.code === '0') {
             accountMessage.push(`🎉 签到成功: 积分 +${signInResult.result.count}`);
             totalPoints += signInResult.result.count;
@@ -134,14 +132,11 @@ async function executeForAccount(accountNumber, url) {
             accountMessage.push(`❌ 签到失败: ${signInResult.message}`);
         }
 
-        // 直接使用抓取的链接来查询积分
         const totalPointsResult = await getTotalPoints(url);
         const totalD007 = totalPointsResult.result.D007 || 0;
         accountMessage.push(`🎉 当前积分: ${totalD007}`);
 
-        // 打印日志
         console.log(`账号 ${accountNumber}:\n${accountMessage.join('\n')}`);
-
     } catch (error) {
         console.error(`❌ 执行失败: ${error}`);
         accountMessage.push(`❌ 执行失败: ${error.message}`);
@@ -204,8 +199,15 @@ function signInRequest(requestBody) {
 
 // 发起查询积分请求
 function getTotalPoints(url) {
+    const options = {
+        url: url,
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    };
+
     return new Promise((resolve, reject) => {
-        $.get(url, (err, resp, data) => {
+        $.get(options, (err, resp, data) => {
             if (err) {
                 console.error(`❌ 查询积分请求失败: ${err}`);
                 reject(err);
