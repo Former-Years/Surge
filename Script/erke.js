@@ -41,7 +41,6 @@ const $ = new Env('鸿星尔克');
 const API_HOST = 'https://hope.demogic.com';
 
 let Message = '';
-let requestData = '';
 const KEY_erke_data = 'erke_data';
 
 // 判断运行环境
@@ -50,7 +49,7 @@ if (typeof $request !== 'undefined') {
     $.done();
 } else {
     !(async () => {
-        loadRequestData();
+        const requestData = loadRequestData();
         if (!requestData) {
             $.msg($.name, '【提示】未找到有效的请求数据', '请先完成抓取或配置环境变量。');
             return;
@@ -63,43 +62,41 @@ if (typeof $request !== 'undefined') {
             $.msg($.name, '', Message);
         }
     })()
-        .catch((e) => console.error(`❌ ${$.name}, 执行失败: ${e}`))
-        .finally(() => $.done());
-}
-
-// 通用函数：从 URL 中提取参数
-function extractURLParams(url) {
-    const urlParams = new URLSearchParams(url.split('?')[1]);
-    const params = {};
-    for (const [key, value] of urlParams.entries()) {
-        params[key] = value;
-    }
-    return params;
+    .catch((e) => console.error(`❌ ${$.name}, 执行失败: ${e}`))
+    .finally(() => $.done());
 }
 
 // 抓取并存储 URL 数据
 function captureRequestURL() {
-    if ($request && $request.url) {
-        $.setdata($request.url, KEY_erke_data);
-        $.msg($.name, '', '🎉 URL 已抓取并保存');
+    const savedData = $.getdata(KEY_erke_data) || '';
+    const currentURL = $request.url;
+
+    // 检查 URL 是否已存在
+    if (savedData.includes(currentURL)) {
+        $.msg($.name, '', '🎉 URL 账号重复');
     } else {
-        $.msg($.name, '', '❌ 未捕获到请求 URL，请检查抓包工具是否正常运行。');
+        const newData = savedData ? `${savedData}@${currentURL}` : currentURL;
+        $.setdata(newData, KEY_erke_data);
+        const accountCount = newData.split('@').length;
+        $.msg($.name, '', `账号 ${accountCount} 🎉 URL 已抓取并保存`);
     }
 }
 
 // 加载存储的 URL 数据
 function loadRequestData() {
-    requestData = $.getdata(KEY_erke_data) || ($.isNode() ? process.env.erke_data : '');
-    if (requestData) {
+    const data = $.getdata(KEY_erke_data) || ($.isNode() ? process.env.erke_data : '');
+    if (data) {
         console.log('🎉 加载到请求数据');
+        return data;
     } else {
         console.error('❌ 未找到有效的 URL 数据');
+        return null;
     }
 }
 
 // 执行多账号签到任务
 async function executeForMultipleAccounts(data) {
-    const accounts = data.split('@');
+    const accounts = data.split('@');  // 按 @ 分隔多个账号
     for (let i = 0; i < accounts.length; i++) {
         const accountURL = accounts[i].trim();
         if (accountURL) {
@@ -109,7 +106,7 @@ async function executeForMultipleAccounts(data) {
     }
 }
 
-// 执行签到任务
+// 执行单个账号的签到任务
 async function executeForAccount(accountNumber, url) {
     const accountMessage = [];
     try {
@@ -139,6 +136,16 @@ async function executeForAccount(accountNumber, url) {
     } finally {
         Message += `账号 ${accountNumber}\n${accountMessage.join('\n')}\n\n`;
     }
+}
+
+// 提取 URL 参数
+function extractURLParams(url) {
+    const urlParams = new URLSearchParams(url.split('?')[1]);
+    const params = {};
+    for (const [key, value] of urlParams.entries()) {
+        params[key] = value;
+    }
+    return params;
 }
 
 // 构建签到请求体
@@ -178,8 +185,7 @@ function signInRequest(requestBody) {
                 reject(err);
             } else {
                 try {
-                    const result = JSON.parse(data);
-                    resolve(result);
+                    resolve(JSON.parse(data));
                 } catch (error) {
                     console.warn('❌ 签到响应解析失败:', error);
                     reject(new Error(`签到请求解析失败: ${data}`));
@@ -189,7 +195,7 @@ function signInRequest(requestBody) {
     });
 }
 
-// 发起查询积分请求
+// 查询积分请求
 function getTotalPoints(url) {
     const options = {
         url: url,
@@ -203,8 +209,7 @@ function getTotalPoints(url) {
                 reject(err);
             } else {
                 try {
-                    const result = JSON.parse(data);
-                    resolve(result);
+                    resolve(JSON.parse(data));
                 } catch (error) {
                     console.warn('❌ 查询积分响应解析失败:', error);
                     reject(new Error(`查询积分请求解析失败: ${data}`));
