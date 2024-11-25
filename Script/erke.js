@@ -19,7 +19,7 @@ hostname = %APPEND% hope.demogic.com
 hostname = hope.demogic.com
 
 [rewrite_local]
-^https:\/\/hope\.demogic\.com\/gic-wx-app\/get-member-asset\.json url https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/erke.js
+^https:\/\/hope\.demogic\.com\/gic-wx-app\/get-member-asset\.json url script-request-header https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/erke.js
 
 [task_local]
 15 9 * * * https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/erke.js, tag=鸿星尔克, enabled=true
