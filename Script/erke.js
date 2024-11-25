@@ -57,6 +57,7 @@ if (typeof $request !== 'undefined') {
             return;
         }
 
+        console.log(`\n==============📣开始签到📣==============\n`);
         await executeForMultipleAccounts(requestData);
 
         // 统一发送一次通知
@@ -109,7 +110,7 @@ async function executeForMultipleAccounts(data) {
     for (let i = 0; i < accounts.length; i++) {
         const accountURL = accounts[i].trim();
         if (accountURL) {
-            console.log(`\n====== 开始执行账号 ${i + 1} ======`);
+            console.log(`\n=============📣执行账号${i + 1}📣=============`);
             await executeForAccount(i + 1, accountURL); // 传递账号编号
         }
     }
@@ -125,8 +126,18 @@ async function executeForAccount(accountNumber, url) {
         const signInResult = await signInRequest(requestBody);
 
         if (signInResult.code === '0') {
-            accountMessage.push(`🎉 签到成功: 积分 +${signInResult.result.count}`);
-            totalPoints += signInResult.result.count;
+            const todayData = signInResult.result.find(entry => entry.currentDayFlag === 1);  // 筛选今天的数据
+
+            if (todayData) {
+                const earnedPoints = todayData.memberSignAwards.reduce((acc, award) => {
+                    return award.type === 'integral' ? acc + award.count : acc;
+                }, 0);
+
+                accountMessage.push(`🎉 签到成功: 积分 +${earnedPoints}`);
+                totalPoints += earnedPoints;
+            } else {
+                accountMessage.push(`❌ 未找到今日签到数据`);
+            }
         } else {
             accountMessage.push(`❌ 签到失败: ${signInResult.message}`);
         }
@@ -143,6 +154,7 @@ async function executeForAccount(accountNumber, url) {
         Message += `账号 ${accountNumber}\n${accountMessage.join('\n')}\n\n`;
     }
 }
+
 
 // 构建签到请求体
 function buildSignInRequestBody(url) {
