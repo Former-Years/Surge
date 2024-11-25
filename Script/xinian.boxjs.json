@@ -313,6 +313,32 @@
       ]
     },
     {
+      "id": "erke",
+      "name": "去重二剪",
+      "keys": [
+        "erke_data"
+      ],
+      "settings": [
+        {
+          "id": "erke_data",
+          "name": "鸿星尔克URL",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": ""
+        }
+      ],
+      "author": "@xinian",
+      "repo": "https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/erke.js",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/erke.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Former-Years/icon/master/erke.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/erke.png"
+      ]
+    },
+    {
       "id": "ampDache",
       "name": "高德打车",
       "keys": [
