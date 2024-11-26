@@ -3,7 +3,7 @@
 活动入口：鸿星尔克小程序
 环境变量：erke_data（Node环境，多账号以@隔开）
 使用说明：添加重写规则并打开鸿星尔克小程序即可获取Cookie
-更新时间：2024-11-25
+更新时间：2024-11-26
 
 ================ Surge 配置 ================
 [MITM]
@@ -70,11 +70,24 @@ if (typeof $request !== 'undefined') {
 function captureRequestURL() {
     const savedData = $.getdata(KEY_erke_data) || '';
     const currentURL = $request.url;
+    
+    // 提取当前 URL 中的 memberId
+    const params = extractURLParams(currentURL);
+    const memberId = params.memberId;
 
-    // 检查 URL 是否已存在
-    if (savedData.includes(currentURL)) {
-        $.msg($.name, '', '🎉 URL 账号重复');
+    // 查找是否有相同 memberId 的 URL
+    const existingData = savedData.split('@').find(accountURL => {
+        const accountParams = extractURLParams(accountURL);
+        return accountParams.memberId === memberId;
+    });
+
+    if (existingData) {
+        // 如果找到相同的 memberId，覆盖该 URL 并提示
+        savedData = savedData.replace(existingData, currentURL);
+        $.setdata(savedData, KEY_erke_data);
+        $.msg($.name, '', `🎉 对应账号 URL 已存在并更新`);
     } else {
+        // 如果没有找到相同的 memberId，添加新的 URL
         const newData = savedData ? `${savedData}@${currentURL}` : currentURL;
         $.setdata(newData, KEY_erke_data);
         const accountCount = newData.split('@').length;
