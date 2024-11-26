@@ -68,7 +68,7 @@ if (typeof $request !== 'undefined') {
 
 // 抓取并存储 URL 数据
 function captureRequestURL() {
-    const savedData = $.getdata(KEY_erke_data) || '';
+    let savedData = $.getdata(KEY_erke_data) || '';
     const currentURL = $request.url;
     
     // 提取当前 URL 中的 memberId
@@ -84,12 +84,12 @@ function captureRequestURL() {
     if (existingData) {
         // 如果找到相同的 memberId，覆盖该 URL 并提示
         savedData = savedData.replace(existingData, currentURL);
-        $.setdata(savedData, KEY_erke_data);
-        $.msg($.name, '', `🎉 对应账号 URL 已存在并更新`);
+        $.setdata(savedData, KEY_erke_data); // 更新存储数据
+        $.msg($.name, '', `🎉 对应账号 URL 已存在，已覆盖并保存新 URL`);
     } else {
         // 如果没有找到相同的 memberId，添加新的 URL
         const newData = savedData ? `${savedData}@${currentURL}` : currentURL;
-        $.setdata(newData, KEY_erke_data);
+        $.setdata(newData, KEY_erke_data); // 更新存储数据
         const accountCount = newData.split('@').length;
         $.msg($.name, '', `账号 ${accountCount} 🎉 URL 已抓取并保存`);
     }
