@@ -3,7 +3,7 @@
 活动入口：鸿星尔克小程序
 环境变量：erke_data（Node环境，多账号以@隔开）
 使用说明：添加重写规则并打开鸿星尔克小程序即可获取Cookie
-更新时间：2024-11-26
+更新时间：2024-11-27
 
 ================ Surge 配置 ================
 [MITM]
@@ -38,6 +38,7 @@ http-request ^https:\/\/hope\.demogic\.com\/gic-wx-app\/get-member-asset\.json s
 */
 
 const $ = new Env('鸿星尔克');
+const notify = $.isNode() ? require('./sendNotify') : '';
 const API_HOST = 'https://hope.demogic.com';
 
 let Message = '';
@@ -57,9 +58,14 @@ if (typeof $request !== 'undefined') {
 
         await executeForMultipleAccounts(requestData);
 
-        // 统一发送一次通知
         if (Message) {
-            $.msg($.name, '', Message);
+            if ($.isNode() && notify) {
+                // 在 Node 环境下使用 sendNotify 发送通知
+                await notify.sendNotify($.name, Message); 
+            } else {
+                // 在非 Node 环境下使用 $.msg 发送通知
+                $.msg($.name, '', Message);
+            }
         }
     })()
     .catch((e) => console.error(`❌ ${$.name}, 执行失败: ${e}`))
