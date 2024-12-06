@@ -29,6 +29,18 @@
  * - [telegram_chat_id] Telegram Chat ID
  */
 
+// 定时缓存清除与刷新
+const refreshCacheInterval = 2 * 60 * 60 * 1000;  // 每2小时刷新一次
+setInterval(() => {
+  $.info('开始清除缓存并重新缓存节点信息...')
+  clearCache()  // 调用清除缓存的函数
+  // 重新执行节点检测
+  executeAsyncTasks(
+    internalProxies.map(proxy => () => check(proxy)),
+    { concurrency }
+  )
+}, refreshCacheInterval);
+
 async function operator(proxies = [], targetPlatform, env) {
   const cacheEnabled = $arguments.cache
   const cache = scriptResourceCache
@@ -65,6 +77,7 @@ async function operator(proxies = [], targetPlatform, env) {
             node[key] = proxy[key]
           }
         }
+        // $.info(JSON.stringify(node, null, 2))
         internalProxies.push({ ...node, _proxies_index: index })
       } else {
         if (keepIncompatible) {
@@ -75,7 +88,7 @@ async function operator(proxies = [], targetPlatform, env) {
       $.error(e)
     }
   })
-
+  // $.info(JSON.stringify(internalProxies, null, 2))
   $.info(`核心支持节点数: ${internalProxies.length}/${proxies.length}`)
   if (!internalProxies.length) return proxies
 
@@ -83,7 +96,6 @@ async function operator(proxies = [], targetPlatform, env) {
 
   let http_meta_pid
   let http_meta_ports = []
-  
   // 启动 HTTP META
   const res = await http({
     retries: 0,
@@ -98,7 +110,6 @@ async function operator(proxies = [], targetPlatform, env) {
       timeout: http_meta_timeout,
     }),
   })
-  
   let body = res.body
   try {
     body = JSON.parse(body)
@@ -107,7 +118,6 @@ async function operator(proxies = [], targetPlatform, env) {
   if (!pid || !ports) {
     throw new Error(`======== HTTP META 启动失败 ====\n${body}`)
   }
-  
   http_meta_pid = pid
   http_meta_ports = ports
   $.info(
@@ -123,20 +133,16 @@ async function operator(proxies = [], targetPlatform, env) {
     internalProxies.map(proxy => () => check(proxy)),
     { concurrency }
   )
+  // const batches = []
+  // for (let i = 0; i < internalProxies.length; i += concurrency) {
+  //   const batch = internalProxies.slice(i, i + concurrency)
+  //   batches.push(batch)
+  // }
+  // for (const batch of batches) {
+  //   await Promise.all(batch.map(check))
+  // }
 
-  // 定时缓存清除与刷新
-  const refreshCacheInterval = 2 * 60 * 60 * 1000;  // 每2小时刷新一次
-  setInterval(() => {
-    $.info('开始清除缓存并重新缓存节点信息...')
-    clearCache()
-    // 重新执行节点检测
-    executeAsyncTasks(
-      internalProxies.map(proxy => () => check(proxy)),
-      { concurrency }
-    )
-  }, refreshCacheInterval);
-
-  // 停止 http meta
+  // stop http meta
   try {
     const res = await http({
       method: 'post',
@@ -171,6 +177,8 @@ async function operator(proxies = [], targetPlatform, env) {
   return keepIncompatible ? [...validProxies, ...incompatibleProxies] : validProxies
 
   async function check(proxy) {
+    // $.info(`[${proxy.name}] 检测`)
+    // $.info(`检测 ${JSON.stringify(proxy, null, 2)}`)
     const id = cacheEnabled
       ? `http-meta:availability:${url}:${method}:${validStatus}:${JSON.stringify(
           Object.fromEntries(
@@ -178,6 +186,7 @@ async function operator(proxies = [], targetPlatform, env) {
           )
         )}`
       : undefined
+    // $.info(`检测 ${id}`)
     try {
       const cached = cache.get(id)
       if (cacheEnabled && cached) {
@@ -191,7 +200,7 @@ async function operator(proxies = [], targetPlatform, env) {
         }
         return
       }
-
+      // $.info(JSON.stringify(proxy, null, 2))
       const index = internalProxies.indexOf(proxy)
       const startedAt = Date.now()
       const res = await http({
@@ -204,8 +213,10 @@ async function operator(proxies = [], targetPlatform, env) {
         url,
       })
       const status = parseInt(res.status || res.statusCode || 200)
-      let latency = `${Date.now() - startedAt}`
+      let latency = ''
+      latency = `${Date.now() - startedAt}`
       $.info(`[${proxy.name}] status: ${status}, latency: ${latency}`)
+      // 判断响应
       if (status == validStatus) {
         validProxies.push({
           ...proxy,
@@ -232,13 +243,7 @@ async function operator(proxies = [], targetPlatform, env) {
       failedProxies.push(proxy)
     }
   }
-
-  function clearCache() {
-    // 清除所有缓存
-    cache.clear()
-    $.info('缓存已清除')
-  }
-
+  // 请求
   async function http(opt = {}) {
     const METHOD = opt.method || $arguments.method || 'get'
     const TIMEOUT = parseFloat(opt.timeout || $arguments.timeout || 5000)
@@ -249,59 +254,37 @@ async function operator(proxies = [], targetPlatform, env) {
       try {
         return await $.http[METHOD]({ ...opt, timeout: TIMEOUT })
       } catch (e) {
-        if (count < RETRIES) {
-          count++
-          const delay = RETRY_DELAY * count
-          await $.wait(delay)
-          return await fn()
-        } else {
-          throw e
-        }
+        // $.error(e.message ?? e)
+        if (count >= RETRIES) throw e
+        count++
+        await $.wait(RETRY_DELAY)
+        return await fn()
       }
     }
     return await fn()
   }
 
-  function executeAsyncTasks(tasks, { wrap, result, concurrency = 1 } = {}) {
-    return new Promise(async (resolve, reject) => {
-      try {
-        let running = 0
-        const results = []
+  // 刷新缓存函数
+  function clearCache() {
+    $.info('清除缓存...')
+    cache.clear()
+  }
 
-        let index = 0
-
-        function executeNextTask() {
-          while (index < tasks.length && running < concurrency) {
-            const taskIndex = index++
-            const currentTask = tasks[taskIndex]
-            running++
-
-            currentTask()
-              .then(data => {
-                if (result) {
-                  results[taskIndex] = wrap ? { data } : data
-                }
-              })
-              .catch(error => {
-                if (result) {
-                  results[taskIndex] = wrap ? { error } : error
-                }
-              })
-              .finally(() => {
-                running--
-                executeNextTask()
-              })
-          }
-
-          if (running === 0) {
-            return resolve(result ? results : undefined)
-          }
-        }
-
-        await executeNextTask()
-      } catch (e) {
-        reject(e)
+  // 执行异步任务
+  async function executeAsyncTasks(tasks, options) {
+    const { concurrency = 5 } = options
+    const taskQueue = [...tasks]
+    const results = []
+    const executing = []
+    while (taskQueue.length) {
+      const task = taskQueue.shift()
+      const taskPromise = task().finally(() => executing.splice(executing.indexOf(taskPromise), 1))
+      executing.push(taskPromise)
+      results.push(taskPromise)
+      if (executing.length >= concurrency) {
+        await Promise.race(executing)
       }
-    })
+    }
+    return Promise.all(results)
   }
 }
