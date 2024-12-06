@@ -209,79 +209,46 @@ async function operator(proxies = [], targetPlatform, env) {
 
       $.info(`[${proxy.name}] status: ${status}, latency: ${latency}`);
 
-      // 判断响应
-      if (status == validStatus) {
+      if (status === validStatus) {
         validProxies.push({
           ...proxy,
           name: `${$arguments.show_latency ? `[${latency}] ` : ''}${proxy.name}`,
           _latency: latency,
         });
-        if (cacheEnabled) {
-          $.info(`[${proxy.name}] 设置成功缓存`);
-          // 缓存时同时记录时间戳
-          cache.set(id, { latency, timestamp: Date.now() });
-        }
       } else {
-        if (cacheEnabled) {
-          $.info(`[${proxy.name}] 设置失败缓存`);
-          cache.set(id, { timestamp: Date.now() });  // 设置失败缓存，记录当前时间戳
-        }
         failedProxies.push(proxy);
       }
-    } catch (e) {
-      $.error(`[${proxy.name}] ${e.message ?? e}`);
+
+      // 缓存结果
       if (cacheEnabled) {
-        $.info(`[${proxy.name}] 设置失败缓存`);
-        cache.set(id, { timestamp: Date.now() });  // 设置失败缓存，记录当前时间戳
+        cache.set(id, { ...res, timestamp: Date.now(), latency });
       }
+    } catch (e) {
       failedProxies.push(proxy);
     }
   }
-
-  async function http(opt = {}) {
-    const METHOD = opt.method || $arguments.method || 'get';
-    const TIMEOUT = parseFloat(opt.timeout || $arguments.timeout || 5000);
-    const RETRIES = parseFloat(opt.retries ?? $arguments.retries ?? 1);
-    const RETRY_DELAY = parseFloat(opt.retry_delay ?? $arguments.retry_delay ?? 1000);
-    let count = 0;
-    const fn = async () => {
-      try {
-        return await $.http[METHOD]({ ...opt, timeout: TIMEOUT });
-      } catch (e) {
-        count++;
-        if (count < RETRIES) {
-          await $.wait(RETRY_DELAY);
-          return await fn();
-        } else {
-          throw e;
-        }
-      }
-    };
-    return await fn();
-  }
-
-  // 并发任务执行函数
-  async function executeAsyncTasks(tasks, options = { concurrency: 10 }) {
-    const concurrency = options.concurrency || 10;
-    const results = [];
-    const executing = [];
-
-    for (const task of tasks) {
-      const promise = task().then(result => {
-        results.push(result);
-        executing.splice(executing.indexOf(promise), 1);
-      });
-      executing.push(promise);
-
-      if (executing.length >= concurrency) {
-        await Promise.race(executing); // 等待至少一个任务完成
-      }
-    }
-
-    // 等待剩余的任务完成
-    await Promise.all(executing);
-
-    return results;
-  }
 }
 
+// 并发任务执行函数
+async function executeAsyncTasks(tasks, options = { concurrency: 10 }) {
+  const concurrency = options.concurrency || 10;
+  const results = [];
+  const executing = [];
+
+  for (const task of tasks) {
+    const promise = task().then(result => {
+      results.push(result);
+      executing.splice(executing.indexOf(promise), 1);
+    });
+    executing.push(promise);
+
+    if (executing.length >= concurrency) {
+      await Promise.race(executing); // 等待至少一个任务完成
+    }
+  }
+
+  // 等待剩余的任务完成
+  await Promise.all(executing);
+
+  return results;
+}
