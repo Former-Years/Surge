@@ -78,7 +78,7 @@ async function operator(proxies = [], targetPlatform, env) {
       $.error(e);
     }
   });
-  
+
   $.info(`核心支持节点数: ${internalProxies.length}/${proxies.length}`);
   if (!internalProxies.length) return proxies;
 
@@ -110,7 +110,7 @@ async function operator(proxies = [], targetPlatform, env) {
   }
   http_meta_pid = pid;
   http_meta_ports = ports;
-  
+
   $.info(
     `\n======== HTTP META 启动 ====\n[端口] ${ports}\n[PID] ${pid}\n[超时] 若未手动关闭 ${
       Math.round(http_meta_timeout / 60 / 10) / 100
@@ -259,4 +259,29 @@ async function operator(proxies = [], targetPlatform, env) {
     };
     return await fn();
   }
+
+  // 并发任务执行函数
+  async function executeAsyncTasks(tasks, options = { concurrency: 10 }) {
+    const concurrency = options.concurrency || 10;
+    const results = [];
+    const executing = [];
+
+    for (const task of tasks) {
+      const promise = task().then(result => {
+        results.push(result);
+        executing.splice(executing.indexOf(promise), 1);
+      });
+      executing.push(promise);
+
+      if (executing.length >= concurrency) {
+        await Promise.race(executing); // 等待至少一个任务完成
+      }
+    }
+
+    // 等待剩余的任务完成
+    await Promise.all(executing);
+
+    return results;
+  }
 }
+
