@@ -2,8 +2,6 @@
  *
  * 节点测活(适配 Sub-Store Node.js 版)
  *
- * 说明: xinian魔改自用版本
- *
  * 说明: https://t.me/zhetengsha/1210
  *
  * 欢迎加入 Telegram 群组 https://t.me/zhetengsha
@@ -40,7 +38,7 @@ async function operator(proxies = [], targetPlatform, env) {
   const http_meta_port = $arguments.http_meta_port ?? 9876
   const http_meta_protocol = $arguments.http_meta_protocol ?? 'http'
   const http_meta_authorization = $arguments.http_meta_authorization ?? ''
-  const http_meta_api = ${http_meta_protocol}://${http_meta_host}:${http_meta_port}
+  const http_meta_api = `${http_meta_protocol}://${http_meta_host}:${http_meta_port}`
 
   const http_meta_start_delay = parseFloat($arguments.http_meta_start_delay ?? 3000)
   const http_meta_proxy_timeout = parseFloat($arguments.http_meta_proxy_timeout ?? 10000)
@@ -79,7 +77,7 @@ async function operator(proxies = [], targetPlatform, env) {
     }
   })
   // $.info(JSON.stringify(internalProxies, null, 2))
-  $.info(核心支持节点数: ${internalProxies.length}/${proxies.length})
+  $.info(`核心支持节点数: ${internalProxies.length}/${proxies.length}`)
   if (!internalProxies.length) return proxies
 
   const http_meta_timeout = http_meta_start_delay + internalProxies.length * http_meta_proxy_timeout
@@ -90,7 +88,7 @@ async function operator(proxies = [], targetPlatform, env) {
   const res = await http({
     retries: 0,
     method: 'post',
-    url: ${http_meta_api}/start,
+    url: `${http_meta_api}/start`,
     headers: {
       'Content-type': 'application/json',
       Authorization: http_meta_authorization,
@@ -106,16 +104,16 @@ async function operator(proxies = [], targetPlatform, env) {
   } catch (e) {}
   const { ports, pid } = body
   if (!pid || !ports) {
-    throw new Error(======== HTTP META 启动失败 ====\n${body})
+    throw new Error(`======== HTTP META 启动失败 ====\n${body}`)
   }
   http_meta_pid = pid
   http_meta_ports = ports
   $.info(
-    \n======== HTTP META 启动 ====\n[端口] ${ports}\n[PID] ${pid}\n[超时] 若未手动关闭 ${
+    `\n======== HTTP META 启动 ====\n[端口] ${ports}\n[PID] ${pid}\n[超时] 若未手动关闭 ${
       Math.round(http_meta_timeout / 60 / 10) / 100
-    } 分钟后自动关闭\n
+    } 分钟后自动关闭\n`
   )
-  $.info(等待 ${http_meta_start_delay / 1000} 秒后开始检测)
+  $.info(`等待 ${http_meta_start_delay / 1000} 秒后开始检测`)
   await $.wait(http_meta_start_delay)
 
   const concurrency = parseInt($arguments.concurrency || 10) // 一组并发数
@@ -136,7 +134,7 @@ async function operator(proxies = [], targetPlatform, env) {
   try {
     const res = await http({
       method: 'post',
-      url: ${http_meta_api}/stop,
+      url: `${http_meta_api}/stop`,
       headers: {
         'Content-type': 'application/json',
         Authorization: http_meta_authorization,
@@ -145,18 +143,18 @@ async function operator(proxies = [], targetPlatform, env) {
         pid: [http_meta_pid],
       }),
     })
-    $.info(\n======== HTTP META 关闭 ====\n${JSON.stringify(res, null, 2)})
+    $.info(`\n======== HTTP META 关闭 ====\n${JSON.stringify(res, null, 2)}`)
   } catch (e) {
     $.error(e)
   }
 
   if (telegram_chat_id && telegram_bot_token && failedProxies.length > 0) {
-    const text = \${subName}\ 节点测试:\n${failedProxies
-      .map(proxy => ❌ [${proxy.type}] \${proxy.name}\`)
-      .join('\n')}
+    const text = `\`${subName}\` 节点测试:\n${failedProxies
+      .map(proxy => `❌ [${proxy.type}] \`${proxy.name}\``)
+      .join('\n')}`
     await http({
       method: 'post',
-      url: https://api.telegram.org/bot${telegram_bot_token}/sendMessage,
+      url: `https://api.telegram.org/bot${telegram_bot_token}/sendMessage`,
       headers: {
         'Content-Type': 'application/json',
       },
@@ -168,11 +166,11 @@ async function operator(proxies = [], targetPlatform, env) {
 
   async function check(proxy) {
     const id = cacheEnabled
-      ? http-meta:availability:${url}:${method}:${validStatus}:${JSON.stringify(
+      ? `http-meta:availability:${url}:${method}:${validStatus}:${JSON.stringify(
           Object.fromEntries(
             Object.entries(proxy).filter(([key]) => !/^(name|collectionName|subName|id|_.*)$/i.test(key))
           )
-        )}
+        )}`
       : undefined;
   
     try {
@@ -184,17 +182,17 @@ async function operator(proxies = [], targetPlatform, env) {
   
         // 检查缓存是否超过2小时，如果超过则重新缓存
         if (currentTime - cacheTime < 7200000) {
-          $.info([${proxy.name}] 使用缓存);
+          $.info(`[${proxy.name}] 使用缓存`);
           if (cached.latency) {
             validProxies.push({
               ...proxy,
-              name: ${$arguments.show_latency ? [${cached.latency}]  : ''}${proxy.name},
+              name: `${$arguments.show_latency ? `[${cached.latency}] ` : ''}${proxy.name}`,
               _latency: cached.latency,
             });
           }
           return;
         } else {
-          $.info([${proxy.name}] 缓存过期，重新检测);
+          $.info(`[${proxy.name}] 缓存过期，重新检测`);
         }
       }
   
@@ -202,7 +200,7 @@ async function operator(proxies = [], targetPlatform, env) {
       const index = internalProxies.indexOf(proxy);
       const startedAt = Date.now();
       const res = await http({
-        proxy: http://${http_meta_host}:${http_meta_ports[index]},
+        proxy: `http://${http_meta_host}:${http_meta_ports[index]}`,
         method,
         headers: {
           'User-Agent':
@@ -211,33 +209,33 @@ async function operator(proxies = [], targetPlatform, env) {
         url,
       });
       const status = parseInt(res.status || res.statusCode || 200);
-      let latency = ${Date.now() - startedAt}; // 计算延迟
+      let latency = `${Date.now() - startedAt}`; // 计算延迟
   
-      $.info([${proxy.name}] status: ${status}, latency: ${latency});
+      $.info(`[${proxy.name}] status: ${status}, latency: ${latency}`);
   
       // 判断响应
       if (status == validStatus) {
         validProxies.push({
           ...proxy,
-          name: ${$arguments.show_latency ? [${latency}]  : ''}${proxy.name},
+          name: `${$arguments.show_latency ? `[${latency}] ` : ''}${proxy.name}`,
           _latency: latency,
         });
         if (cacheEnabled) {
-          $.info([${proxy.name}] 设置成功缓存);
+          $.info(`[${proxy.name}] 设置成功缓存`);
           // 缓存时同时记录时间戳
           cache.set(id, { latency, timestamp: Date.now() });
         }
       } else {
         if (cacheEnabled) {
-          $.info([${proxy.name}] 设置失败缓存);
+          $.info(`[${proxy.name}] 设置失败缓存`);
           cache.set(id, { timestamp: Date.now() });  // 设置失败缓存，记录当前时间戳
         }
         failedProxies.push(proxy);
       }
     } catch (e) {
-      $.error([${proxy.name}] ${e.message ?? e});
+      $.error(`[${proxy.name}] ${e.message ?? e}`);
       if (cacheEnabled) {
-        $.info([${proxy.name}] 设置失败缓存);
+        $.info(`[${proxy.name}] 设置失败缓存`);
         cache.set(id, { timestamp: Date.now() });  // 设置失败缓存，记录当前时间戳
       }
       failedProxies.push(proxy);
@@ -259,7 +257,7 @@ async function operator(proxies = [], targetPlatform, env) {
         if (count < RETRIES) {
           count++
           const delay = RETRY_DELAY * count
-          // $.info(第 ${count} 次请求失败: ${e.message ?? e}, 等待 ${delay / 1000}s 后重试)
+          // $.info(`第 ${count} 次请求失败: ${e.message ?? e}, 等待 ${delay / 1000}s 后重试`)
           await $.wait(delay)
           return await fn()
         } else {
