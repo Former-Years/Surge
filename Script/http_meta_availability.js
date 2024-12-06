@@ -2,6 +2,8 @@
  *
  * 节点测活(适配 Sub-Store Node.js 版)
  *
+ * 说明: xinian魔改自用版本
+ *
  * 说明: https://t.me/zhetengsha/1210
  *
  * 欢迎加入 Telegram 群组 https://t.me/zhetengsha
