@@ -31,6 +31,50 @@
  * - [telegram_chat_id] Telegram Chat ID
  */
 
+// 并发任务执行函数
+function executeAsyncTasks(tasks, { wrap, result, concurrency = 1 } = {}) {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let running = 0
+      const results = []
+
+      let index = 0
+
+      function executeNextTask() {
+        while (index < tasks.length && running < concurrency) {
+          const taskIndex = index++
+          const currentTask = tasks[taskIndex]
+          running++
+
+          currentTask()
+            .then(data => {
+              if (result) {
+                results[taskIndex] = wrap ? { data } : data
+              }
+            })
+            .catch(error => {
+              if (result) {
+                results[taskIndex] = wrap ? { error } : error
+              }
+            })
+            .finally(() => {
+              running--
+              executeNextTask()
+            })
+        }
+
+        if (running === 0) {
+          return resolve(result ? results : undefined)
+        }
+      }
+
+      await executeNextTask()
+    } catch (e) {
+      reject(e)
+    }
+  })
+}
+
 async function operator(proxies = [], targetPlatform, env) {
   const cacheEnabled = $arguments.cache;
   const cache = scriptResourceCache;
@@ -227,28 +271,4 @@ async function operator(proxies = [], targetPlatform, env) {
       failedProxies.push(proxy);
     }
   }
-}
-
-// 并发任务执行函数
-async function executeAsyncTasks(tasks, options = { concurrency: 10 }) {
-  const concurrency = options.concurrency || 10;
-  const results = [];
-  const executing = [];
-
-  for (const task of tasks) {
-    const promise = task().then(result => {
-      results.push(result);
-      executing.splice(executing.indexOf(promise), 1);
-    });
-    executing.push(promise);
-
-    if (executing.length >= concurrency) {
-      await Promise.race(executing); // 等待至少一个任务完成
-    }
-  }
-
-  // 等待剩余的任务完成
-  await Promise.all(executing);
-
-  return results;
 }
