@@ -30,61 +30,60 @@
  */
 
 async function operator(proxies = [], targetPlatform, env) {
-  const cacheEnabled = $arguments.cache
-  const cache = scriptResourceCache
-  const telegram_chat_id = $arguments.telegram_chat_id
-  const telegram_bot_token = $arguments.telegram_bot_token
-  const http_meta_host = $arguments.http_meta_host ?? '127.0.0.1'
-  const http_meta_port = $arguments.http_meta_port ?? 9876
-  const http_meta_protocol = $arguments.http_meta_protocol ?? 'http'
-  const http_meta_authorization = $arguments.http_meta_authorization ?? ''
-  const http_meta_api = `${http_meta_protocol}://${http_meta_host}:${http_meta_port}`
+  const cacheEnabled = $arguments.cache;
+  const cache = scriptResourceCache;
+  const telegram_chat_id = $arguments.telegram_chat_id;
+  const telegram_bot_token = $arguments.telegram_bot_token;
+  const http_meta_host = $arguments.http_meta_host ?? '127.0.0.1';
+  const http_meta_port = $arguments.http_meta_port ?? 9876;
+  const http_meta_protocol = $arguments.http_meta_protocol ?? 'http';
+  const http_meta_authorization = $arguments.http_meta_authorization ?? '';
+  const http_meta_api = `${http_meta_protocol}://${http_meta_host}:${http_meta_port}`;
 
-  const http_meta_start_delay = parseFloat($arguments.http_meta_start_delay ?? 3000)
-  const http_meta_proxy_timeout = parseFloat($arguments.http_meta_proxy_timeout ?? 10000)
+  const http_meta_start_delay = parseFloat($arguments.http_meta_start_delay ?? 3000);
+  const http_meta_proxy_timeout = parseFloat($arguments.http_meta_proxy_timeout ?? 10000);
 
-  const method = $arguments.method || 'head'
-  const keepIncompatible = $arguments.keep_incompatible
-  const validStatus = parseInt($arguments.status || 200)
-  const url = decodeURIComponent($arguments.url || 'http://www.apple.com/library/test/success.html')
+  const method = $arguments.method || 'head';
+  const keepIncompatible = $arguments.keep_incompatible;
+  const validStatus = parseInt($arguments.status || 200);
+  const url = decodeURIComponent($arguments.url || 'http://www.apple.com/library/test/success.html');
 
-  const $ = $substore
-  const validProxies = []
-  const incompatibleProxies = []
-  const internalProxies = []
-  const failedProxies = []
-  const sub = env.source[proxies?.[0]?._subName || proxies?.[0]?.subName]
-  const subName = sub?.displayName || sub?.name
+  const $ = $substore;
+  const validProxies = [];
+  const incompatibleProxies = [];
+  const internalProxies = [];
+  const failedProxies = [];
+  const sub = env.source[proxies?.[0]?._subName || proxies?.[0]?.subName];
+  const subName = sub?.displayName || sub?.name;
 
-  proxies.map((proxy, index) => {
+  // 节点初始化
+  proxies.forEach((proxy, index) => {
     try {
-      const node = ProxyUtils.produce([{ ...proxy }], 'ClashMeta', 'internal')?.[0]
+      const node = ProxyUtils.produce([{ ...proxy }], 'ClashMeta', 'internal')?.[0];
       if (node) {
         for (const key in proxy) {
           if (/^_/i.test(key)) {
-            node[key] = proxy[key]
+            node[key] = proxy[key];
           }
         }
-        // $.info(JSON.stringify(node, null, 2))
-        internalProxies.push({ ...node, _proxies_index: index })
+        internalProxies.push({ ...node, _proxies_index: index });
       } else {
         if (keepIncompatible) {
-          incompatibleProxies.push(proxy)
+          incompatibleProxies.push(proxy);
         }
       }
     } catch (e) {
-      $.error(e)
+      $.error(e);
     }
-  })
-  // $.info(JSON.stringify(internalProxies, null, 2))
-  $.info(`核心支持节点数: ${internalProxies.length}/${proxies.length}`)
-  if (!internalProxies.length) return proxies
+  });
+  
+  $.info(`核心支持节点数: ${internalProxies.length}/${proxies.length}`);
+  if (!internalProxies.length) return proxies;
 
-  const http_meta_timeout = http_meta_start_delay + internalProxies.length * http_meta_proxy_timeout
+  const http_meta_timeout = http_meta_start_delay + internalProxies.length * http_meta_proxy_timeout;
 
-  let http_meta_pid
-  let http_meta_ports = []
   // 启动 HTTP META
+  let http_meta_pid, http_meta_ports;
   const res = await http({
     retries: 0,
     method: 'post',
@@ -97,40 +96,34 @@ async function operator(proxies = [], targetPlatform, env) {
       proxies: internalProxies,
       timeout: http_meta_timeout,
     }),
-  })
-  let body = res.body
+  });
+
+  let body = res.body;
   try {
-    body = JSON.parse(body)
+    body = JSON.parse(body);
   } catch (e) {}
-  const { ports, pid } = body
+  const { ports, pid } = body;
   if (!pid || !ports) {
-    throw new Error(`======== HTTP META 启动失败 ====\n${body}`)
+    throw new Error(`======== HTTP META 启动失败 ====\n${body}`);
   }
-  http_meta_pid = pid
-  http_meta_ports = ports
+  http_meta_pid = pid;
+  http_meta_ports = ports;
+  
   $.info(
     `\n======== HTTP META 启动 ====\n[端口] ${ports}\n[PID] ${pid}\n[超时] 若未手动关闭 ${
       Math.round(http_meta_timeout / 60 / 10) / 100
     } 分钟后自动关闭\n`
-  )
-  $.info(`等待 ${http_meta_start_delay / 1000} 秒后开始检测`)
-  await $.wait(http_meta_start_delay)
+  );
+  $.info(`等待 ${http_meta_start_delay / 1000} 秒后开始检测`);
+  await $.wait(http_meta_start_delay);
 
-  const concurrency = parseInt($arguments.concurrency || 10) // 一组并发数
+  const concurrency = parseInt($arguments.concurrency || 10); // 设置并发数
   await executeAsyncTasks(
     internalProxies.map(proxy => () => check(proxy)),
     { concurrency }
-  )
-  // const batches = []
-  // for (let i = 0; i < internalProxies.length; i += concurrency) {
-  //   const batch = internalProxies.slice(i, i + concurrency)
-  //   batches.push(batch)
-  // }
-  // for (const batch of batches) {
-  //   await Promise.all(batch.map(check))
-  // }
+  );
 
-  // stop http meta
+  // 停止 HTTP META
   try {
     const res = await http({
       method: 'post',
@@ -142,16 +135,17 @@ async function operator(proxies = [], targetPlatform, env) {
       body: JSON.stringify({
         pid: [http_meta_pid],
       }),
-    })
-    $.info(`\n======== HTTP META 关闭 ====\n${JSON.stringify(res, null, 2)}`)
+    });
+    $.info(`\n======== HTTP META 关闭 ====\n${JSON.stringify(res, null, 2)}`);
   } catch (e) {
-    $.error(e)
+    $.error(e);
   }
 
+  // 如果失败，发送 Telegram 通知
   if (telegram_chat_id && telegram_bot_token && failedProxies.length > 0) {
     const text = `\`${subName}\` 节点测试:\n${failedProxies
       .map(proxy => `❌ [${proxy.type}] \`${proxy.name}\``)
-      .join('\n')}`
+      .join('\n')}`;
     await http({
       method: 'post',
       url: `https://api.telegram.org/bot${telegram_bot_token}/sendMessage`,
@@ -159,10 +153,10 @@ async function operator(proxies = [], targetPlatform, env) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ chat_id: telegram_chat_id, text, parse_mode: 'MarkdownV2' }),
-    })
+    });
   }
 
-  return keepIncompatible ? [...validProxies, ...incompatibleProxies] : validProxies
+  return keepIncompatible ? [...validProxies, ...incompatibleProxies] : validProxies;
 
   async function check(proxy) {
     const id = cacheEnabled
@@ -172,14 +166,14 @@ async function operator(proxies = [], targetPlatform, env) {
           )
         )}`
       : undefined;
-  
+
     try {
       const cached = cache.get(id);
-  
+
       if (cacheEnabled && cached) {
         const currentTime = Date.now();
         const cacheTime = cached.timestamp || 0;
-  
+
         // 检查缓存是否超过2小时，如果超过则重新缓存
         if (currentTime - cacheTime < 7200000) {
           $.info(`[${proxy.name}] 使用缓存`);
@@ -195,7 +189,7 @@ async function operator(proxies = [], targetPlatform, env) {
           $.info(`[${proxy.name}] 缓存过期，重新检测`);
         }
       }
-  
+
       // 继续正常的网络请求检测
       const index = internalProxies.indexOf(proxy);
       const startedAt = Date.now();
@@ -210,9 +204,9 @@ async function operator(proxies = [], targetPlatform, env) {
       });
       const status = parseInt(res.status || res.statusCode || 200);
       let latency = `${Date.now() - startedAt}`; // 计算延迟
-  
+
       $.info(`[${proxy.name}] status: ${status}, latency: ${latency}`);
-  
+
       // 判断响应
       if (status == validStatus) {
         validProxies.push({
@@ -240,73 +234,27 @@ async function operator(proxies = [], targetPlatform, env) {
       }
       failedProxies.push(proxy);
     }
-  }  
-  
-  // 请求
+  }
+
   async function http(opt = {}) {
-    const METHOD = opt.method || $arguments.method || 'get'
-    const TIMEOUT = parseFloat(opt.timeout || $arguments.timeout || 5000)
-    const RETRIES = parseFloat(opt.retries ?? $arguments.retries ?? 1)
-    const RETRY_DELAY = parseFloat(opt.retry_delay ?? $arguments.retry_delay ?? 1000)
-    let count = 0
+    const METHOD = opt.method || $arguments.method || 'get';
+    const TIMEOUT = parseFloat(opt.timeout || $arguments.timeout || 5000);
+    const RETRIES = parseFloat(opt.retries ?? $arguments.retries ?? 1);
+    const RETRY_DELAY = parseFloat(opt.retry_delay ?? $arguments.retry_delay ?? 1000);
+    let count = 0;
     const fn = async () => {
       try {
-        return await $.http[METHOD]({ ...opt, timeout: TIMEOUT })
+        return await $.http[METHOD]({ ...opt, timeout: TIMEOUT });
       } catch (e) {
-        // $.error(e)
+        count++;
         if (count < RETRIES) {
-          count++
-          const delay = RETRY_DELAY * count
-          // $.info(`第 ${count} 次请求失败: ${e.message ?? e}, 等待 ${delay / 1000}s 后重试`)
-          await $.wait(delay)
-          return await fn()
+          await $.wait(RETRY_DELAY);
+          return await fn();
         } else {
-          throw e
+          throw e;
         }
       }
-    }
-    return await fn()
-  }
-  function executeAsyncTasks(tasks, { wrap, result, concurrency = 1 } = {}) {
-    return new Promise(async (resolve, reject) => {
-      try {
-        let running = 0
-        const results = []
-
-        let index = 0
-
-        function executeNextTask() {
-          while (index < tasks.length && running < concurrency) {
-            const taskIndex = index++
-            const currentTask = tasks[taskIndex]
-            running++
-
-            currentTask()
-              .then(data => {
-                if (result) {
-                  results[taskIndex] = wrap ? { data } : data
-                }
-              })
-              .catch(error => {
-                if (result) {
-                  results[taskIndex] = wrap ? { error } : error
-                }
-              })
-              .finally(() => {
-                running--
-                executeNextTask()
-              })
-          }
-
-          if (running === 0) {
-            return resolve(result ? results : undefined)
-          }
-        }
-
-        await executeNextTask()
-      } catch (e) {
-        reject(e)
-      }
-    })
+    };
+    return await fn();
   }
 }
