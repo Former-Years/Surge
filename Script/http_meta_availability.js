@@ -175,18 +175,28 @@ async function operator(proxies = [], targetPlatform, env) {
   
     try {
       const cached = cache.get(id);
+  
       if (cacheEnabled && cached) {
-        $.info(`[${proxy.name}] 使用缓存`);
-        if (cached.latency) {
-          validProxies.push({
-            ...proxy,
-            name: `${$arguments.show_latency ? `[${cached.latency}] ` : ''}${proxy.name}`,
-            _latency: cached.latency,
-          });
+        const currentTime = Date.now();
+        const cacheTime = cached.timestamp || 0;
+  
+        // 检查缓存是否超过2小时，如果超过则重新缓存
+        if (currentTime - cacheTime < 7200000) {
+          $.info(`[${proxy.name}] 使用缓存`);
+          if (cached.latency) {
+            validProxies.push({
+              ...proxy,
+              name: `${$arguments.show_latency ? `[${cached.latency}] ` : ''}${proxy.name}`,
+              _latency: cached.latency,
+            });
+          }
+          return;
+        } else {
+          $.info(`[${proxy.name}] 缓存过期，重新检测`);
         }
-        return;
       }
   
+      // 继续正常的网络请求检测
       const index = internalProxies.indexOf(proxy);
       const startedAt = Date.now();
       const res = await http({
@@ -212,12 +222,13 @@ async function operator(proxies = [], targetPlatform, env) {
         });
         if (cacheEnabled) {
           $.info(`[${proxy.name}] 设置成功缓存`);
-          cache.set(id, { latency });  // 设置缓存
+          // 缓存时同时记录时间戳
+          cache.set(id, { latency, timestamp: Date.now() });
         }
       } else {
         if (cacheEnabled) {
           $.info(`[${proxy.name}] 设置失败缓存`);
-          cache.set(id, {});  // 设置失败缓存
+          cache.set(id, { timestamp: Date.now() });  // 设置失败缓存，记录当前时间戳
         }
         failedProxies.push(proxy);
       }
@@ -225,11 +236,11 @@ async function operator(proxies = [], targetPlatform, env) {
       $.error(`[${proxy.name}] ${e.message ?? e}`);
       if (cacheEnabled) {
         $.info(`[${proxy.name}] 设置失败缓存`);
-        cache.set(id, {});  // 设置失败缓存
+        cache.set(id, { timestamp: Date.now() });  // 设置失败缓存，记录当前时间戳
       }
       failedProxies.push(proxy);
     }
-  }
+  }  
   
   // 请求
   async function http(opt = {}) {
