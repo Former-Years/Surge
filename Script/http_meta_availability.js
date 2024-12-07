@@ -31,20 +31,14 @@
 
 // 定时缓存清除与刷新
 const refreshCacheInterval = 2 * 60 * 60 * 1000;  // 每2小时刷新一次
-setInterval(async () => {
+setInterval(() => {
   $.info('开始清除缓存并重新缓存节点信息...')
   clearCache()  // 调用清除缓存的函数
-
-  const result = await executeAsyncTasks(
+  // 重新执行节点检测
+  executeAsyncTasks(
     internalProxies.map(proxy => () => check(proxy)),
     { concurrency }
   )
-
-  // 判断是否所有节点都失败
-  if (failedProxies.length === internalProxies.length) {
-    const text = `⚠️ 订阅链接 "${subName}" 的所有节点均未能成功，建议删除该订阅。`
-    await sendTelegramNotification(text)
-  }
 }, refreshCacheInterval);
 
 async function operator(proxies = [], targetPlatform, env) {
@@ -71,6 +65,7 @@ async function operator(proxies = [], targetPlatform, env) {
   const incompatibleProxies = []
   const internalProxies = []
   const failedProxies = []
+  const failedSubscribes = { remote: [], local: [] }  // 新增：记录失败的订阅
   const sub = env.source[proxies?.[0]?._subName || proxies?.[0]?.subName]
   const subName = sub?.displayName || sub?.name
 
@@ -93,7 +88,7 @@ async function operator(proxies = [], targetPlatform, env) {
       $.error(e)
     }
   })
-
+  
   $.info(`核心支持节点数: ${internalProxies.length}/${proxies.length}`)
   if (!internalProxies.length) return proxies
 
@@ -101,7 +96,6 @@ async function operator(proxies = [], targetPlatform, env) {
 
   let http_meta_pid
   let http_meta_ports = []
-
   // 启动 HTTP META
   const res = await http({
     retries: 0,
@@ -158,18 +152,24 @@ async function operator(proxies = [], targetPlatform, env) {
     $.error(e)
   }
 
-  if (telegram_chat_id && telegram_bot_token && failedProxies.length > 0) {
-    const text = `\`${subName}\` 节点测试:\n${failedProxies
-      .map(proxy => `❌ [${proxy.type}] \`${proxy.name}\``)
-      .join('\n')}`
-    await http({
-      method: 'post',
-      url: `https://api.telegram.org/bot${telegram_bot_token}/sendMessage`,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ chat_id: telegram_chat_id, text, parse_mode: 'MarkdownV2' }),
-    })
+  // 记录失败的订阅和所有节点连接失败的订阅，发送 Telegram 提示
+  if (telegram_chat_id && telegram_bot_token) {
+    if (failedProxies.length > 0) {
+      const text = `\`${subName}\` 节点测试:\n${failedProxies
+        .map(proxy => `❌ [${proxy.type}] \`${proxy.name}\``)
+        .join('\n')}`
+      await sendTelegramMessage(telegram_chat_id, telegram_bot_token, text)
+    }
+
+    // 检查是否有任何节点的远程或本地订阅完全失败
+    if (failedSubscribes.remote.length > 0 || failedSubscribes.local.length > 0) {
+      const failedRemoteText = failedSubscribes.remote.length > 0 ? 
+        `远程订阅失败: ${failedSubscribes.remote.join(', ')}` : '';
+      const failedLocalText = failedSubscribes.local.length > 0 ? 
+        `本地订阅失败: ${failedSubscribes.local.join(', ')}` : '';
+      const text = `${failedRemoteText}\n${failedLocalText}`;
+      await sendTelegramMessage(telegram_chat_id, telegram_bot_token, text)
+    }
   }
 
   return keepIncompatible ? [...validProxies, ...incompatibleProxies] : validProxies
@@ -182,6 +182,7 @@ async function operator(proxies = [], targetPlatform, env) {
           )
         )}`
       : undefined
+
     try {
       const cached = cache.get(id)
       if (cacheEnabled && cached) {
@@ -195,6 +196,7 @@ async function operator(proxies = [], targetPlatform, env) {
         }
         return
       }
+      
       const index = internalProxies.indexOf(proxy)
       const startedAt = Date.now()
       const res = await http({
@@ -209,7 +211,7 @@ async function operator(proxies = [], targetPlatform, env) {
       const status = parseInt(res.status || res.statusCode || 200)
       let latency = `${Date.now() - startedAt}`
       $.info(`[${proxy.name}] status: ${status}, latency: ${latency}`)
-      // 判断响应
+
       if (status == validStatus) {
         validProxies.push({
           ...proxy,
@@ -217,12 +219,10 @@ async function operator(proxies = [], targetPlatform, env) {
           _latency: latency,
         })
         if (cacheEnabled) {
-          $.info(`[${proxy.name}] 设置成功缓存`)
           cache.set(id, { latency })
         }
       } else {
         if (cacheEnabled) {
-          $.info(`[${proxy.name}] 设置失败缓存`)
           cache.set(id, {})
         }
         failedProxies.push(proxy)
@@ -230,7 +230,6 @@ async function operator(proxies = [], targetPlatform, env) {
     } catch (e) {
       $.error(`[${proxy.name}] ${e.message ?? e}`)
       if (cacheEnabled) {
-        $.info(`[${proxy.name}] 设置失败缓存`)
         cache.set(id, {})
       }
       failedProxies.push(proxy)
@@ -257,41 +256,16 @@ async function operator(proxies = [], targetPlatform, env) {
     return await fn()
   }
 
-  // 刷新缓存函数
-  function clearCache() {
-    $.info('清除缓存...')
-    cache.clear()
-  }
-
-  // 执行异步任务
-  async function executeAsyncTasks(tasks, options) {
-    const { concurrency = 5 } = options
-    const taskQueue = [...tasks]
-    const results = []
-    const executing = []
-    while (taskQueue.length) {
-      const task = taskQueue.shift()
-      const taskPromise = task().finally(() => executing.splice(executing.indexOf(taskPromise), 1))
-      executing.push(taskPromise)
-      results.push(taskPromise)
-      if (executing.length >= concurrency) {
-        await Promise.race(executing)
-      }
-    }
-    return Promise.all(results)
-  }
-
-  // 发送 Telegram 通知
-  async function sendTelegramNotification(text) {
-    if (telegram_chat_id && telegram_bot_token) {
-      await http({
-        method: 'post',
-        url: `https://api.telegram.org/bot${telegram_bot_token}/sendMessage`,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ chat_id: telegram_chat_id, text, parse_mode: 'MarkdownV2' }),
-      })
-    }
+  async function sendTelegramMessage(chat_id, bot_token, message) {
+    await http({
+      method: 'post',
+      url: `https://api.telegram.org/bot${bot_token}/sendMessage`,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: chat_id,
+        text: message,
+        parse_mode: 'MarkdownV2',
+      }),
+    })
   }
 }
