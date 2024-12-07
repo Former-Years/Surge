@@ -64,8 +64,7 @@ async function operator(proxies = [], targetPlatform, env) {
   const validProxies = []
   const incompatibleProxies = []
   const internalProxies = []
-  const failedProxies = []
-  const failedSubscribes = { remote: [], local: [] }  // 新增：记录失败的订阅
+  const failedProxies = []  // 记录失败的节点
   const sub = env.source[proxies?.[0]?._subName || proxies?.[0]?.subName]
   const subName = sub?.displayName || sub?.name
 
@@ -88,7 +87,6 @@ async function operator(proxies = [], targetPlatform, env) {
       $.error(e)
     }
   })
-  
   $.info(`核心支持节点数: ${internalProxies.length}/${proxies.length}`)
   if (!internalProxies.length) return proxies
 
@@ -152,24 +150,19 @@ async function operator(proxies = [], targetPlatform, env) {
     $.error(e)
   }
 
-  // 记录失败的订阅和所有节点连接失败的订阅，发送 Telegram 提示
-  if (telegram_chat_id && telegram_bot_token) {
-    if (failedProxies.length > 0) {
-      const text = `\`${subName}\` 节点测试:\n${failedProxies
-        .map(proxy => `❌ [${proxy.type}] \`${proxy.name}\``)
-        .join('\n')}`
-      await sendTelegramMessage(telegram_chat_id, telegram_bot_token, text)
-    }
-
-    // 检查是否有任何节点的远程或本地订阅完全失败
-    if (failedSubscribes.remote.length > 0 || failedSubscribes.local.length > 0) {
-      const failedRemoteText = failedSubscribes.remote.length > 0 ? 
-        `远程订阅失败: ${failedSubscribes.remote.join(', ')}` : '';
-      const failedLocalText = failedSubscribes.local.length > 0 ? 
-        `本地订阅失败: ${failedSubscribes.local.join(', ')}` : '';
-      const text = `${failedRemoteText}\n${failedLocalText}`;
-      await sendTelegramMessage(telegram_chat_id, telegram_bot_token, text)
-    }
+  // 发送 Telegram 提示失败节点
+  if (telegram_chat_id && telegram_bot_token && failedProxies.length > 0) {
+    const text = `\`${subName}\` 节点测试:\n${failedProxies
+      .map(proxy => `❌ [${proxy.type}] \`${proxy.name}\``)
+      .join('\n')}`
+    await http({
+      method: 'post',
+      url: `https://api.telegram.org/bot${telegram_bot_token}/sendMessage`,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ chat_id: telegram_chat_id, text, parse_mode: 'MarkdownV2' }),
+    })
   }
 
   return keepIncompatible ? [...validProxies, ...incompatibleProxies] : validProxies
@@ -182,7 +175,6 @@ async function operator(proxies = [], targetPlatform, env) {
           )
         )}`
       : undefined
-
     try {
       const cached = cache.get(id)
       if (cacheEnabled && cached) {
@@ -196,7 +188,6 @@ async function operator(proxies = [], targetPlatform, env) {
         }
         return
       }
-      
       const index = internalProxies.indexOf(proxy)
       const startedAt = Date.now()
       const res = await http({
@@ -211,7 +202,6 @@ async function operator(proxies = [], targetPlatform, env) {
       const status = parseInt(res.status || res.statusCode || 200)
       let latency = `${Date.now() - startedAt}`
       $.info(`[${proxy.name}] status: ${status}, latency: ${latency}`)
-
       if (status == validStatus) {
         validProxies.push({
           ...proxy,
@@ -219,20 +209,23 @@ async function operator(proxies = [], targetPlatform, env) {
           _latency: latency,
         })
         if (cacheEnabled) {
+          $.info(`[${proxy.name}] 设置成功缓存`)
           cache.set(id, { latency })
         }
       } else {
         if (cacheEnabled) {
+          $.info(`[${proxy.name}] 设置失败缓存`)
           cache.set(id, {})
         }
-        failedProxies.push(proxy)
+        failedProxies.push(proxy)  // 添加失败节点
       }
     } catch (e) {
       $.error(`[${proxy.name}] ${e.message ?? e}`)
       if (cacheEnabled) {
+        $.info(`[${proxy.name}] 设置失败缓存`)
         cache.set(id, {})
       }
-      failedProxies.push(proxy)
+      failedProxies.push(proxy)  // 添加失败节点
     }
   }
 
@@ -256,16 +249,9 @@ async function operator(proxies = [], targetPlatform, env) {
     return await fn()
   }
 
-  async function sendTelegramMessage(chat_id, bot_token, message) {
-    await http({
-      method: 'post',
-      url: `https://api.telegram.org/bot${bot_token}/sendMessage`,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: chat_id,
-        text: message,
-        parse_mode: 'MarkdownV2',
-      }),
-    })
+  // 刷新缓存函数
+  function clearCache() {
+    $.info('清除缓存...')
+    cache.clear()
   }
-}
+
