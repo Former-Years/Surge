@@ -64,7 +64,7 @@ async function operator(proxies = [], targetPlatform, env) {
   const validProxies = []
   const incompatibleProxies = []
   const internalProxies = []
-  const failedProxies = []  // 记录失败的节点
+  const failedProxies = []
   const sub = env.source[proxies?.[0]?._subName || proxies?.[0]?.subName]
   const subName = sub?.displayName || sub?.name
 
@@ -77,6 +77,7 @@ async function operator(proxies = [], targetPlatform, env) {
             node[key] = proxy[key]
           }
         }
+        // $.info(JSON.stringify(node, null, 2))
         internalProxies.push({ ...node, _proxies_index: index })
       } else {
         if (keepIncompatible) {
@@ -87,6 +88,7 @@ async function operator(proxies = [], targetPlatform, env) {
       $.error(e)
     }
   })
+  // $.info(JSON.stringify(internalProxies, null, 2))
   $.info(`核心支持节点数: ${internalProxies.length}/${proxies.length}`)
   if (!internalProxies.length) return proxies
 
@@ -131,6 +133,14 @@ async function operator(proxies = [], targetPlatform, env) {
     internalProxies.map(proxy => () => check(proxy)),
     { concurrency }
   )
+  // const batches = []
+  // for (let i = 0; i < internalProxies.length; i += concurrency) {
+  //   const batch = internalProxies.slice(i, i + concurrency)
+  //   batches.push(batch)
+  // }
+  // for (const batch of batches) {
+  //   await Promise.all(batch.map(check))
+  // }
 
   // stop http meta
   try {
@@ -150,7 +160,6 @@ async function operator(proxies = [], targetPlatform, env) {
     $.error(e)
   }
 
-  // 发送 Telegram 提示失败节点
   if (telegram_chat_id && telegram_bot_token && failedProxies.length > 0) {
     const text = `\`${subName}\` 节点测试:\n${failedProxies
       .map(proxy => `❌ [${proxy.type}] \`${proxy.name}\``)
@@ -168,6 +177,8 @@ async function operator(proxies = [], targetPlatform, env) {
   return keepIncompatible ? [...validProxies, ...incompatibleProxies] : validProxies
 
   async function check(proxy) {
+    // $.info(`[${proxy.name}] 检测`)
+    // $.info(`检测 ${JSON.stringify(proxy, null, 2)}`)
     const id = cacheEnabled
       ? `http-meta:availability:${url}:${method}:${validStatus}:${JSON.stringify(
           Object.fromEntries(
@@ -175,6 +186,7 @@ async function operator(proxies = [], targetPlatform, env) {
           )
         )}`
       : undefined
+    // $.info(`检测 ${id}`)
     try {
       const cached = cache.get(id)
       if (cacheEnabled && cached) {
@@ -188,6 +200,7 @@ async function operator(proxies = [], targetPlatform, env) {
         }
         return
       }
+      // $.info(JSON.stringify(proxy, null, 2))
       const index = internalProxies.indexOf(proxy)
       const startedAt = Date.now()
       const res = await http({
@@ -200,8 +213,10 @@ async function operator(proxies = [], targetPlatform, env) {
         url,
       })
       const status = parseInt(res.status || res.statusCode || 200)
-      let latency = `${Date.now() - startedAt}`
+      let latency = ''
+      latency = `${Date.now() - startedAt}`
       $.info(`[${proxy.name}] status: ${status}, latency: ${latency}`)
+      // 判断响应
       if (status == validStatus) {
         validProxies.push({
           ...proxy,
@@ -217,7 +232,7 @@ async function operator(proxies = [], targetPlatform, env) {
           $.info(`[${proxy.name}] 设置失败缓存`)
           cache.set(id, {})
         }
-        failedProxies.push(proxy)  // 添加失败节点
+        failedProxies.push(proxy)
       }
     } catch (e) {
       $.error(`[${proxy.name}] ${e.message ?? e}`)
@@ -225,10 +240,9 @@ async function operator(proxies = [], targetPlatform, env) {
         $.info(`[${proxy.name}] 设置失败缓存`)
         cache.set(id, {})
       }
-      failedProxies.push(proxy)  // 添加失败节点
+      failedProxies.push(proxy)
     }
   }
-
   // 请求
   async function http(opt = {}) {
     const METHOD = opt.method || $arguments.method || 'get'
@@ -240,6 +254,7 @@ async function operator(proxies = [], targetPlatform, env) {
       try {
         return await $.http[METHOD]({ ...opt, timeout: TIMEOUT })
       } catch (e) {
+        // $.error(e.message ?? e)
         if (count >= RETRIES) throw e
         count++
         await $.wait(RETRY_DELAY)
@@ -255,3 +270,21 @@ async function operator(proxies = [], targetPlatform, env) {
     cache.clear()
   }
 
+  // 执行异步任务
+  async function executeAsyncTasks(tasks, options) {
+    const { concurrency = 5 } = options
+    const taskQueue = [...tasks]
+    const results = []
+    const executing = []
+    while (taskQueue.length) {
+      const task = taskQueue.shift()
+      const taskPromise = task().finally(() => executing.splice(executing.indexOf(taskPromise), 1))
+      executing.push(taskPromise)
+      results.push(taskPromise)
+      if (executing.length >= concurrency) {
+        await Promise.race(executing)
+      }
+    }
+    return Promise.all(results)
+  }
+}
