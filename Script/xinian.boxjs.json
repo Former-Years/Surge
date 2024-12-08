@@ -21,246 +21,6 @@
       ]
     },
     {
-      "id": "hellobike",
-      "name": "哈啰出行",
-      "keys": [
-        "hellobike"
-      ],
-      "author": "@chavyleung",
-      "repo": "https://github.com/chavyleung/scripts/blob/master/hellobike/hellobike.js",
-      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/hellobike/hellobike.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Former-Years/icon/master/hellobike_mini.png",
-        "https://raw.githubusercontent.com/Former-Years/icon/master/hellobike.png"
-      ]
-    },
-    {
-      "id": "dongqiudi",
-      "name": "懂球帝",
-      "keys": [
-        "chavy_cookie_dongqiudi"
-      ],
-      "author": "@chavyleung",
-      "repo": "https://github.com/chavyleung/scripts/blob/master/dongqiudi/dongqiudi.js",
-      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/dongqiudi/dongqiudi.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Former-Years/icon/master/dqd.png",
-        "https://raw.githubusercontent.com/Former-Years/icon/master/dqd.png"
-      ]
-    },
-    {
-      "id": "ttwk",
-      "name": "天天挖矿",
-      "keys": [
-        "ttwksignurl",
-        "ttwksignheader",
-        "ttwksignbody"
-      ],
-      "author": "@yangtingxiao",
-      "repo": "https://github.com/yangtingxiao/QuantumultX/blob/master/scripts/ttwk/ttwk.js",
-      "script": "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js",
-      "icons": [
-        "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/ttwk.png",
-        "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/ttwk.png"
-      ]
-    },
-    {
-      "id": "xmyd",
-      "name": "小米运动",
-      "keys": [
-        "xmSportsToken",
-        "xmMinStep",
-        "xmMaxStep"
-      ],
-      "settings": [
-        {
-          "id": "xmSportsToken",
-          "name": "小米运动Token",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": "小米运动登录时获取的token"
-        },
-        {
-          "id": "xmMinStep",
-          "name": "最小运动步数",
-          "val": "30060",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": "需要修改最小的运动步数的数字,例如:30060"
-        },
-        {
-          "id": "xmMaxStep",
-          "name": "最大运动步数",
-          "val": "33010",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": "需要修改最小的运动步数的数字,例如:33010"
-        }
-      ],
-      "author": "@null",
-      "repo": "https://github.com/Former-Years/Surge/blob/main/Script/xmSports.js",
-      "script": "https://raw.githubusercontent.com/Former-Years/Surge/main/Script/xmSports.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Former-Years/icon/master/xmyd_mini.png",
-        "https://raw.githubusercontent.com/Former-Years/icon/master/xmyd.png"
-      ]
-    },
-    {
-      "id": "mtmc",
-      "name": "美团买菜",
-      "keys": [
-        "jojo_mall_meituan"
-      ],
-      "settings": [
-        {
-          "id": "jojo_mall_meituan",
-          "name": "美团买菜Token",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": "美团买菜Token"
-        }
-      ],
-      "author": "@JoJoJotarou",
-      "repo": "https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/mall.meituan.mallcoin.task.js",
-      "script": "https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/mall.meituan.mallcoin.task.js",
-      "icons": [
-        "https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/icon/mall.meituan.png",
-        "https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/icon/mall.meituan.png"
-      ]
-    },
-    {
-      "id": "thyc",
-      "name": "途虎养车",
-      "keys": [
-        "tuhuvx"
-      ],
-      "settings": [
-        {
-          "id": "TU_usersignKeyTU",
-          "name": "TU_usersignKeyTU",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": ""
-        }
-      ],
-      "author": "@Zoo",
-      "repo": "https://raw.githubusercontent.com/Crazy-Z7/Task/main/Tuhyche.js",
-      "script": "https://raw.githubusercontent.com/Crazy-Z7/Task/main/Tuhyche.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/tuhu.png",
-        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/tuhu.png"
-      ]
-    },
-    {
-      "id": "zsfc",
-      "name": "掌上飞车",
-      "keys": [
-        "zsfc_url",
-        "zsfc_headers",
-        "zsfc_query"
-      ],
-      "settings": [
-        {
-          "id": "zsfc_url",
-          "name": "掌上飞车url",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": ""
-        },
-        {
-          "id": "zsfc_headers",
-          "name": "掌上飞车headers",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": ""
-        },
-        {
-          "id": "zsfc_query",
-          "name": "掌上飞车query",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": ""
-        }
-      ],
-      "author": "@chavyleung",
-      "repo": "https://raw.githubusercontent.com/chavyleung/scripts/master/zsfc/zsfc.js",
-      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/zsfc/zsfc.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Former-Years/icon/master/zsfc.png",
-        "https://raw.githubusercontent.com/Former-Years/icon/master/zsfc.png"
-      ]
-    },
-    {
-      "id": "qqvideo",
-      "name": "腾讯视频",
-      "keys": [
-        "videoqq_pc_cookie",
-        "videoqq_ref_url",
-        "videoqq_cookie"
-      ],
-      "settings": [
-        {
-          "id": "videoqq_pc_cookie",
-          "name": "pc_cookie",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": "腾讯视频网页版cookie"
-        },
-        {
-          "id": "videoqq_ref_url",
-          "name": "ref_url",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": "腾讯视频Request URL"
-        },
-        {
-          "id": "videoqq_cookie",
-          "name": "腾讯视频APP_Cookie",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": "腾讯视频APP_Cookie"
-        }
-      ],
-      "author": "@MartinsKing",
-      "repo": "https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/videoqq.js",
-      "script": "https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/videoqq.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/videoqq.png",
-        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/videoqq.png"
-      ]
-    },
-    {
       "id": "AtstudyDK",
       "name": "学掌门打卡",
       "keys": [
@@ -339,6 +99,32 @@
       ]
     },
     {
+      "id": "tjdd",
+      "name": "唐机豆豆",
+      "keys": [
+        "tjdd_data"
+      ],
+      "settings": [
+        {
+          "id": "tjdd_data",
+          "name": "唐机豆豆access_token和extra_data",
+          "val": "",
+          "type": "text",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": ""
+        }
+      ],
+      "author": "@xinian",
+      "repo": "https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/tjdd.js",
+      "script": "https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/tjdd.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Former-Years/icon/master/tjdd.png",
+        "https://raw.githubusercontent.com/Former-Years/icon/master/tjdd.png"
+      ]
+    },
+    {
       "id": "ampDache",
       "name": "高德打车",
       "keys": [
@@ -362,32 +148,6 @@
       "icons": [
         "https://raw.githubusercontent.com/Former-Years/icon/master/ampDache.png",
         "https://raw.githubusercontent.com/Former-Years/icon/master/ampDache.png"
-      ]
-    },
-    {
-      "id": "tls",
-      "name": "特仑苏",
-      "keys": [
-        "tls_data"
-      ],
-      "settings": [
-        {
-          "id": "tls_data",
-          "name": "tls_data",
-          "val": "",
-          "type": "text",
-          "placeholder": "",
-          "autoGrow": true,
-          "rows": 2,
-          "desc": ""
-        }
-      ],
-      "author": "@Sliverkiss",
-      "repo": "https://raw.githubusercontent.com/Sliverkiss/helloworld/master/Study/tls.js",
-      "script": "https://raw.githubusercontent.com/Sliverkiss/helloworld/master/Study/tls.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Former-Years/icon/master/tls.png",
-        "https://raw.githubusercontent.com/Former-Years/icon/master/tls.png"
       ]
     },
     {
