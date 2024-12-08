@@ -1,3 +1,41 @@
+/*
+脚本名称：唐机豆豆
+活动入口：唐机豆豆小程序-会员中心-签到
+环境变量：tjdd_data（Node环境，多账号以@隔开）
+使用说明：添加重写规则并打开唐机豆豆小程序即可获取Token
+更新时间：2024-12-9
+
+================ Surge 配置 ================
+[MITM]
+hostname = %APPEND% h5.youzan.com
+
+[Script]
+唐机豆豆Cookie = type=http-request,pattern=^https:\/\/h5\.youzan\.com\/wscshop\/weappp\/shop_business_hour\.json,script-path=https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/tjdd.js
+
+唐机豆豆 = type=cron, cronexp=15 9 * * *, timeout=60, script-path=https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/tjdd.js
+
+============ Quantumult X 配置 =============
+[MITM]
+hostname = h5.youzan.com
+
+[rewrite_local]
+^https:\/\/h5\.youzan\.com\/wscshop\/weappp\/shop_business_hour\.json url script-request-header https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/tjdd.js
+
+[task_local]
+15 9 * * * https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/tjdd.js, tag=唐机豆豆, enabled=true
+
+================ Loon 配置 ================
+[MITM]
+hostname = h5.youzan.com
+
+cron "15 9 * * *" script-path=https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/tjdd.js, tag=唐机豆豆
+
+http-request ^https:\/\/h5\.youzan\.com\/wscshop\/weappp\/shop_business_hour\.json script-path=https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/tjdd.js, tag=唐机豆豆Cookie
+
+================ Boxjs订阅 ================
+订阅地址：https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/xinian.boxjs.json
+*/
+
 const $ = new Env('唐机豆豆');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const KEY_TJDD_DATA = 'tjdd_data';  // 存储抓取到的 URL 数据
