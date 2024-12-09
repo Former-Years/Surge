@@ -141,7 +141,7 @@ function captureRequestURL() {
             const urlData = `${accessToken}&${JSON.stringify(jsonData)}`;
             savedData = updateStoredData(savedData, urlData, accessToken);
             $.setdata(savedData, KEY_TJDD_DATA);  // 更新存储数据
-            $.msg($.name, '', `🎉 数据已抓取并保存`);
+            $.msg($.name, '', `账号 ${accountCount} 🎉 数据已抓取并保存`);
         } catch (error) {
             console.error('❌ 解析 extraData 失败:', error);
             $.msg($.name, '【错误】解析 extraData 失败', '无法解析抓取的数据');
@@ -160,7 +160,7 @@ function updateStoredData(savedData, urlData, accessToken) {
         $.msg($.name, '', `🎉 对应账号的 token 已存在，已覆盖更新`);
     } else {
         savedData = savedData ? `${savedData}@${urlData}` : urlData;  // 添加新账号数据
-        $.msg($.name, '', `账号 数据已抓取并保存`);
+        $.msg($.name, '', `账号 ${accountCount} 🎉 数据已抓取并保存`);
     }
     return savedData;
 }
