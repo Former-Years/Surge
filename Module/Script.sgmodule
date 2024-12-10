@@ -84,10 +84,11 @@ DOMAIN,iadmusicmat.music.126.net,REJECT,pre-matching
 
 [Script]
 # > 扫描全能王 pro
-全能扫描 = type=http-response,requires-body=1,max-size=0,pattern=https:\/\/(api|api-cs)*\.intsig\.net\/purchase\/cs\/query_property\?,script-update-interval=0,script-path=https://raw.githubusercontent.com/id77/QuantumultX/master/Script/camscanner.js
+全能扫描 = type=http-response,pattern=https:\/\/(api|api-cs)*\.intsig\.net\/purchase\/cs\/query_property\?,requires-body=1,script-path=https://raw.githubusercontent.com/id77/QuantumultX/master/Script/camscanner.js
 # > Google 人机验证
-谷歌验证 = type=http-response,pattern=^https:\/\/www\.google\.com(?:\.[a-z]+|)\/(?:search\?(?:|.+?&)q=|$),requires-body=1,debug=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Google_CAPTCHA.js,max-size=0,ability=http-client-policy,timeout=10
-
+谷歌验证 = type=http-response,pattern=^https:\/\/www\.google\.com(?:\.[a-z]+|)\/(?:search\?(?:|.+?&)q=|$),requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Google_CAPTCHA.js,ability=http-client-policy,timeout=10
+# > Unidream
+Unidream = type=http-response,pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt,requires-body=1,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/itunes/Unidream.js
 
 [MITM]
-hostname = %APPEND% www.bing.com, testflight.apple.com, wxpusher.zjiecode.com, api.m.jd.com, m.360buyimg.com, gab.122.gov.cn, guard.sec.xiaojukeji.com, conf.diditaxi.com.cn, res.xiaojukeji.com, shop-gw.chengxinyouxuan.com, img-ys011.didistatic.com, pt-starimg.didistatic.com, wallet.95516.com, api.wfdata.club, flowplus.meituan.net, s3plus.meituan.net, api.pinduoduo.com, yunbusiness.ccb.com, iobs.pingan.com.cn, ap*.intsig.net, www.google.com*
+hostname = %APPEND% www.bing.com, testflight.apple.com, wxpusher.zjiecode.com, api.m.jd.com, m.360buyimg.com, gab.122.gov.cn, guard.sec.xiaojukeji.com, conf.diditaxi.com.cn, res.xiaojukeji.com, shop-gw.chengxinyouxuan.com, img-ys011.didistatic.com, pt-starimg.didistatic.com, wallet.95516.com, api.wfdata.club, flowplus.meituan.net, s3plus.meituan.net, api.pinduoduo.com, yunbusiness.ccb.com, iobs.pingan.com.cn, ap*.intsig.net, www.google.com*, buy.itunes.apple.com
