@@ -28,7 +28,6 @@ IP-CIDR,95.161.76.100/31,REJECT,no-resolve,pre-matching
 DOMAIN,app-site-association.cdn-apple.com,REJECT,pre-matching
 # > 京东 去广告
 URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts),REJECT
-URL-REGEX,^https:\/\/m\.360buyimg\.com\/mobilecms\/s\d{4}x\d{4},REJECT
 # > 交管12123 去广告
 URL-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$,REJECT
 # > 京东金融 去广告
