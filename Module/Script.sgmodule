@@ -27,37 +27,37 @@ IP-CIDR,95.161.76.100/31,REJECT,no-resolve,pre-matching
 # > Safari 防跳转
 DOMAIN,app-site-association.cdn-apple.com,REJECT,pre-matching
 # > 京东 去广告
-URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts),REJECT,pre-matching
-URL-REGEX,^https:\/\/m\.360buyimg\.com\/mobilecms\/s\d{4}x\d{4},REJECT,pre-matching
+URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts),REJECT
+URL-REGEX,^https:\/\/m\.360buyimg\.com\/mobilecms\/s\d{4}x\d{4},REJECT
 # > 交管12123 去广告
-URL-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$,REJECT,pre-matching
+URL-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$,REJECT
 # > 京东金融 去广告
-URL-REGEX,^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/aladdin\/(new)?na\/m\/getLoadingPicture,REJECT,pre-matching
+URL-REGEX,^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/aladdin\/(new)?na\/m\/getLoadingPicture,REJECT
 # > 滴滴出行 去广告
 //01 安全提示横幅
-URL-REGEX,^https:\/\/guard\.sec\.xiaojukeji\.com\/api\/guard\/psg\/v2\/getShieldStatus,REJECT,pre-matching
+URL-REGEX,^https:\/\/guard\.sec\.xiaojukeji\.com\/api\/guard\/psg\/v2\/getShieldStatus,REJECT
 //02 底部打车&代价推荐
-URL-REGEX,^https:\/\/conf\.diditaxi\.com\.cn\/one,REJECT,pre-matching
+URL-REGEX,^https:\/\/conf\.diditaxi\.com\.cn\/one,REJECT
 //03 福利专区-金融服务-公交-骑车-滴滴乐园
-URL-REGEX,^https:\/\/conf\.diditaxi\.com\.cn\/nav\/widget,REJECT,pre-matching
+URL-REGEX,^https:\/\/conf\.diditaxi\.com\.cn\/nav\/widget,REJECT
 //04 主页 领任务
-URL-REGEX,^https:\/\/conf\.diditaxi\.com\.cn\/api\/(component|fusion|dynamicmodule|usercenter),REJECT,pre-matching
-URL-REGEX,^https:\/\/conf\.diditaxi\.com\.cn\/dynamic,REJECT,pre-matching
+URL-REGEX,^https:\/\/conf\.diditaxi\.com\.cn\/api\/(component|fusion|dynamicmodule|usercenter),REJECT
+URL-REGEX,^https:\/\/conf\.diditaxi\.com\.cn\/dynamic,REJECT
 //05 主页 非主流式悬浮挂件
-URL-REGEX,^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget,REJECT,pre-matching
+URL-REGEX,^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget,REJECT
 //06 商城
-URL-REGEX,^https:\/\/shop-gw\.chengxinyouxuan\.com\/(route|indexConfig|apolloConfig|getShopTuanInfos),REJECT,pre-matching
+URL-REGEX,^https:\/\/shop-gw\.chengxinyouxuan\.com\/(route|indexConfig|apolloConfig|getShopTuanInfos),REJECT
 //07 开屏广告
-URL-REGEX,^https:\/\/img-ys011\.didistatic\.com\/static,REJECT,pre-matching
+URL-REGEX,^https:\/\/img-ys011\.didistatic\.com\/static,REJECT
 //08 骑行
-URL-REGEX,^https:\/\/pt-starimg\.didistatic\.com\/static,REJECT,pre-matching
+URL-REGEX,^https:\/\/pt-starimg\.didistatic\.com\/static,REJECT
 # > 云闪付 去广告
-URL-REGEX,^https:\/\/wallet\.95516\.com\/s\/wl\/icon\/long,REJECT,pre-matching
+URL-REGEX,^https:\/\/wallet\.95516\.com\/s\/wl\/icon\/long,REJECT
 # > 威锋 去广告
-URL-REGEX,^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList),REJECT,pre-matching
+URL-REGEX,^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList),REJECT
 # > 美团 去广告
-URL-REGEX,^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.jpg$,REJECT,pre-matching
-URL-REGEX,^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$,REJECT,pre-matching
+URL-REGEX,^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.jpg$,REJECT
+URL-REGEX,^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$,REJECT
 # > 中国联通 去开屏
 DOMAIN-SUFFIX,m1.ad.10010.com,REJECT,pre-matching
 # > 中国电信 去开屏
@@ -66,15 +66,15 @@ DOMAIN,ad.k.21cn.com,REJECT,pre-matching
 DOMAIN,admarket.21cn.com,REJECT,pre-matching
 DOMAIN,adshows.21cn.com,REJECT,pre-matching
 # > 顺丰速运 去开屏
-URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade,REJECT,pre-matching
-URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/,REJECT,pre-matching
-URL-REGEX,^https?:\/\/shopic\.sf-express\.com\/crm\/mobile\/common\/flashscreen,REJECT,pre-matching
+URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade,REJECT
+URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/,REJECT
+URL-REGEX,^https?:\/\/shopic\.sf-express\.com\/crm\/mobile\/common\/flashscreen,REJECT
 # > 拼多多 去开屏
-URL-REGEX,^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash,REJECT,pre-matching
+URL-REGEX,^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash,REJECT
 # > 建行生活 去开屏
-URL-REGEX,^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341A00(6|9),REJECT,pre-matching
+URL-REGEX,^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341A00(6|9),REJECT
 # > 平安好车主 去开屏
-URL-REGEX,^https?:\/\/iobs\.pingan\.com\.cn\/download\/icore-aops-base-dmz-prd\/(YourSystemName|icore-apps-ad),REJECT,pre-matching
+URL-REGEX,^https?:\/\/iobs\.pingan\.com\.cn\/download\/icore-aops-base-dmz-prd\/(YourSystemName|icore-apps-ad),REJECT
 # 网易云音乐 去开屏
 DOMAIN,img1.360buyimg.com,REJECT,pre-matching
 DOMAIN,g.cn.miaozhen.com,REJECT,pre-matching
