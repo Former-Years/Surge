@@ -27,7 +27,6 @@ IP-CIDR,95.161.76.100/31,REJECT,no-resolve,pre-matching
 # > Safari 防跳转
 DOMAIN,app-site-association.cdn-apple.com,REJECT,pre-matching
 # > 京东 去广告
-URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome),REJECT
 URL-REGEX,^https:\/\/m\.360buyimg\.com\/mobilecms\/s(?:1125x2436|1080x1920),REJECT
 # > 交管12123 去广告
 URL-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$,REJECT
@@ -91,4 +90,4 @@ DOMAIN,iadmusicmat.music.126.net,REJECT,pre-matching
 Unidream = type=http-response,pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt,requires-body=1,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/itunes/Unidream.js
 
 [MITM]
-hostname = %APPEND% www.bing.com, testflight.apple.com, wxpusher.zjiecode.com, api.m.jd.com, m.360buyimg.com, gab.122.gov.cn, guard.sec.xiaojukeji.com, conf.diditaxi.com.cn, res.xiaojukeji.com, shop-gw.chengxinyouxuan.com, img-ys011.didistatic.com, pt-starimg.didistatic.com, wallet.95516.com, api.wfdata.club, flowplus.meituan.net, s3plus.meituan.net, api.pinduoduo.com, yunbusiness.ccb.com, iobs.pingan.com.cn, ap*.intsig.net, www.google.com*, buy.itunes.apple.com
+hostname = %APPEND% www.bing.com, testflight.apple.com, wxpusher.zjiecode.com, m.360buyimg.com, gab.122.gov.cn, guard.sec.xiaojukeji.com, conf.diditaxi.com.cn, res.xiaojukeji.com, shop-gw.chengxinyouxuan.com, img-ys011.didistatic.com, pt-starimg.didistatic.com, wallet.95516.com, api.wfdata.club, flowplus.meituan.net, s3plus.meituan.net, api.pinduoduo.com, yunbusiness.ccb.com, iobs.pingan.com.cn, ap*.intsig.net, www.google.com*, buy.itunes.apple.com
