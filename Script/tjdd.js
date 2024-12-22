@@ -134,7 +134,9 @@ function captureRequestURL() {
     if (accessToken && extraData) {
         // 直接解析 extraData 为 JSON 对象
         try {
-            const jsonData = JSON.parse(extraData);
+            // 清除多余的空格或换行符
+            const cleanedData = extraData.trim();
+            const jsonData = JSON.parse(cleanedData);
             console.log('Parsed extraData:', jsonData);
 
             // 构造保存的数据格式
@@ -151,6 +153,7 @@ function captureRequestURL() {
         $.msg($.name, '【错误】缺少必要的参数', '无法抓取有效的数据');
     }
 }
+
 
 // 更新存储数据
 function updateStoredData(savedData, urlData, accessToken) {
