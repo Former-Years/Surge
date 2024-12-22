@@ -93,10 +93,10 @@ async function processMultipleAccounts(data) {
 // 执行单个账号的签到任务
 async function processSingleAccount(accountNumber, data) {
     const accountMessage = [];
-    const [accessToken, extraData] = data.split('&');  // 提取 accessToken 和 extraData
+    const accessToken = data;  // 只处理 accessToken
 
     try {
-        const signInResult = await signInRequest(accessToken, extraData);
+        const signInResult = await signInRequest(accessToken);
 
         if (signInResult.code === 0) {
             // 处理签到成功的情况
@@ -119,40 +119,30 @@ async function processSingleAccount(accountNumber, data) {
     }
 }
 
-
 // 抓取并存储 URL 数据
 function captureRequestURL() {
     let savedData = $.getdata(KEY_TJDD_DATA) || '';
     const url = $request.url;  // 获取当前请求的 URL
-    const headers = $request.headers;  // 获取请求头
 
     // 从 URL 中提取 access_token
     const urlParams = new URLSearchParams(url.split('?')[1]);
     const accessToken = urlParams.get('access_token');  // 获取 access_token
 
     if (accessToken) {
-        const urlData = `${accessToken}`;
-        savedData = updateStoredData(savedData, urlData, accessToken);
+        // 计算当前账号的数量
+        const accountCount = savedData.split('@').length;
+
+        // 更新存储数据，避免重复存储
+        savedData = savedData.split('@').includes(accessToken) 
+            ? savedData  // 如果已存在该 token，则不添加
+            : savedData ? `${savedData}@${accessToken}` : accessToken;
+
         $.setdata(savedData, KEY_TJDD_DATA);  // 更新存储数据
         $.msg($.name, '', `账号 ${accountCount} 🎉 数据已抓取并保存`);
     } else {
         console.error('❌ 缺少 access_token');
         $.msg($.name, '【错误】缺少必要的参数', '无法抓取有效的数据');
     }
-}
-
-
-// 更新存储数据
-function updateStoredData(savedData, urlData, accessToken) {
-    const existingData = savedData.split('@').find(accountData => accountData.split('&')[0] === accessToken);
-    if (existingData) {
-        savedData = savedData.replace(existingData, urlData);  // 更新已存在的 token
-        $.msg($.name, '', `🎉 对应账号的 token 已存在，已覆盖更新`);
-    } else {
-        savedData = savedData ? `${savedData}@${urlData}` : urlData;  // 添加新账号数据
-        $.msg($.name, '', `账号 ${accountCount} 🎉 数据已抓取并保存`);
-    }
-    return savedData;
 }
 
 // 发起签到请求
