@@ -127,7 +127,7 @@ function captureRequestURL() {
     const headers = $request.headers;  // 获取请求头
 
     // 从 URL 中提取 access_token
-    const urlParams = new URLSearchParams(url.split('?')[1]);
+    const urlParams = url.includes('?') ? new URLSearchParams(url.split('?')[1]) : new URLSearchParams();
     const accessToken = urlParams.get('access_token');
     const extraData = headers['extra-data'];  // 从请求头中提取 extra-data
 
