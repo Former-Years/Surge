@@ -107,7 +107,7 @@
       "settings": [
         {
           "id": "tjdd_data",
-          "name": "唐机豆豆access_token和extra_data",
+          "name": "唐机豆豆access_token",
           "val": "",
           "type": "text",
           "placeholder": "",
