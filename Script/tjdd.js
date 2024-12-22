@@ -127,29 +127,16 @@ function captureRequestURL() {
     const headers = $request.headers;  // 获取请求头
 
     // 从 URL 中提取 access_token
-    const urlParams = url.includes('?') ? new URLSearchParams(url.split('?')[1]) : new URLSearchParams();
-    const accessToken = urlParams.get('access_token');
-    const extraData = headers['extra-data'];  // 从请求头中提取 extra-data
+    const urlParams = new URLSearchParams(url.split('?')[1]);
+    const accessToken = urlParams.get('access_token');  // 获取 access_token
 
-    if (accessToken && extraData) {
-        // 直接解析 extraData 为 JSON 对象
-        try {
-            // 清除多余的空格或换行符
-            const cleanedData = extraData.trim();
-            const jsonData = JSON.parse(cleanedData);
-            console.log('Parsed extraData:', jsonData);
-
-            // 构造保存的数据格式
-            const urlData = `${accessToken}&${JSON.stringify(jsonData)}`;
-            savedData = updateStoredData(savedData, urlData, accessToken);
-            $.setdata(savedData, KEY_TJDD_DATA);  // 更新存储数据
-            $.msg($.name, '', `账号 ${accountCount} 🎉 数据已抓取并保存`);
-        } catch (error) {
-            console.error('❌ 解析 extraData 失败:', error);
-            $.msg($.name, '【错误】解析 extraData 失败', '无法解析抓取的数据');
-        }
+    if (accessToken) {
+        const urlData = `${accessToken}`;
+        savedData = updateStoredData(savedData, urlData, accessToken);
+        $.setdata(savedData, KEY_TJDD_DATA);  // 更新存储数据
+        $.msg($.name, '', `账号 ${accountCount} 🎉 数据已抓取并保存`);
     } else {
-        console.error('❌ 缺少 access_token 或 extra_data');
+        console.error('❌ 缺少 access_token');
         $.msg($.name, '【错误】缺少必要的参数', '无法抓取有效的数据');
     }
 }
@@ -175,7 +162,7 @@ function signInRequest(accessToken, extraData) {
         method: 'GET',
         headers: {
             'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_1_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.54(0x18003631) NetType/4G Language/zh_CN',
-            'Extra-Data': extraData,
+            'Extra-Data': '{"is_weapp":1,"sid":"YZ1320431994584350720YZViQT5ODW","version":"2.164.10.101","client":"weapp","bizEnv":"wsc","uuid":"eKP2wCVMV8ne4Y61734739720381","ftime":1734739720379}',
         },
     };
 
