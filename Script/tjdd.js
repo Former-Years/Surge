@@ -93,7 +93,7 @@ async function processMultipleAccounts(data) {
 // 执行单个账号的签到任务
 async function processSingleAccount(accountNumber, data) {
     const accountMessage = [];
-    const accessToken = data;  // 只处理 accessToken
+    const accessToken = data.split('&')[0];  // 获取 access_token
 
     try {
         const signInResult = await signInRequest(accessToken);
@@ -148,13 +148,18 @@ function captureRequestURL() {
     }
 
     if (accessToken) {
+        // 合并 access_token、sid 和 uuid，用 & 分隔
+        const sid = $.getdata('sid');
+        const uuid = $.getdata('uuid');
+        const accountData = `${accessToken}&${sid}&${uuid}`;
+
         // 计算当前账号的数量
         const accountCount = savedData.split('@').length;
 
         // 更新存储数据，避免重复存储
-        savedData = savedData.split('@').includes(accessToken) 
+        savedData = savedData.split('@').includes(accountData) 
             ? savedData  // 如果已存在该 token，则不添加
-            : savedData ? `${savedData}@${accessToken}` : accessToken;
+            : savedData ? `${savedData}@${accountData}` : accountData;
 
         $.setdata(savedData, KEY_TJDD_DATA);  // 更新存储数据
         $.msg($.name, '', `账号 ${accountCount} 🎉 数据已抓取并保存`);
