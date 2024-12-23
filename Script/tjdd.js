@@ -93,10 +93,12 @@ async function processMultipleAccounts(data) {
 // 执行单个账号的签到任务
 async function processSingleAccount(accountNumber, data) {
     const accountMessage = [];
-    const accessToken = data.split('&')[0];  // 获取 access_token
+
+    // 从 data 中提取 access_token、sid 和 uuid
+    const [accessToken, sid, uuid] = data.split('&');  // 使用 destructuring 来简化提取
 
     try {
-        const signInResult = await signInRequest(accessToken);
+        const signInResult = await signInRequest(accessToken, sid, uuid);
 
         if (signInResult.code === 0) {
             // 处理签到成功的情况
@@ -176,11 +178,7 @@ function captureRequestURL() {
 }
 
 // 发起签到请求
-function signInRequest(accessToken) {
-    // 获取存储的 sid 和 uuid
-    const sid = $.getdata('sid');
-    const uuid = $.getdata('uuid');
-
+function signInRequest(accessToken, sid, uuid) {
     if (!sid || !uuid) {
         console.error('❌ sid 或 uuid 不存在');
         return Promise.reject(new Error('缺少 sid 或 uuid'));
