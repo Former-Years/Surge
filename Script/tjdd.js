@@ -123,14 +123,31 @@ async function processSingleAccount(accountNumber, data) {
 function captureRequestURL() {
     let savedData = $.getdata(KEY_TJDD_DATA) || '';
     const url = $request.url;  // 获取当前请求的 URL
+    const headers = $request.headers;  // 获取请求头
 
-    // 从 URL 中提取 access_token 和 extraData（sid 和 uuid）
+    // 从 URL 中提取 access_token
     const urlParams = new URLSearchParams(url.split('?')[1]);
     const accessToken = urlParams.get('access_token');  // 获取 access_token
-    const sid = urlParams.get('sid');  // 获取 sid
-    const uuid = urlParams.get('uuid');  // 获取 uuid
 
-    if (accessToken && sid && uuid) {
+    // 从请求头中提取 sid 和 uuid
+    const extraData = headers['Extra-Data'];
+    if (extraData) {
+        try {
+            const parsedExtraData = JSON.parse(extraData);
+            const sid = parsedExtraData.sid;
+            const uuid = parsedExtraData.uuid;
+
+            // 存储 sid 和 uuid
+            $.setdata(sid, 'sid');
+            $.setdata(uuid, 'uuid');
+        } catch (error) {
+            console.error('❌ 解析 Extra-Data 错误:', error);
+            $.msg($.name, '【错误】解析 Extra-Data 错误', '请确保请求头中的 Extra-Data 格式正确');
+            return;
+        }
+    }
+
+    if (accessToken) {
         // 计算当前账号的数量
         const accountCount = savedData.split('@').length;
 
@@ -141,10 +158,8 @@ function captureRequestURL() {
 
         $.setdata(savedData, KEY_TJDD_DATA);  // 更新存储数据
         $.msg($.name, '', `账号 ${accountCount} 🎉 数据已抓取并保存`);
-        $.setdata(sid, 'sid');
-        $.setdata(uuid, 'uuid');
     } else {
-        console.error('❌ 缺少 access_token, sid 或 uuid');
+        console.error('❌ 缺少 access_token');
         $.msg($.name, '【错误】缺少必要的参数', '无法抓取有效的数据');
     }
 }
