@@ -3,7 +3,7 @@
 活动入口：唐机豆豆小程序-会员中心-签到
 环境变量：tjdd_data（Node环境，多账号以@隔开）
 使用说明：添加重写规则并打开唐机豆豆小程序即可获取Token
-更新时间：2024-12-22
+更新时间：2024-12-23
 
 ================ Surge 配置 ================
 [MITM]
@@ -124,11 +124,13 @@ function captureRequestURL() {
     let savedData = $.getdata(KEY_TJDD_DATA) || '';
     const url = $request.url;  // 获取当前请求的 URL
 
-    // 从 URL 中提取 access_token
+    // 从 URL 中提取 access_token 和 extraData（sid 和 uuid）
     const urlParams = new URLSearchParams(url.split('?')[1]);
     const accessToken = urlParams.get('access_token');  // 获取 access_token
+    const sid = urlParams.get('sid');  // 获取 sid
+    const uuid = urlParams.get('uuid');  // 获取 uuid
 
-    if (accessToken) {
+    if (accessToken && sid && uuid) {
         // 计算当前账号的数量
         const accountCount = savedData.split('@').length;
 
@@ -139,20 +141,42 @@ function captureRequestURL() {
 
         $.setdata(savedData, KEY_TJDD_DATA);  // 更新存储数据
         $.msg($.name, '', `账号 ${accountCount} 🎉 数据已抓取并保存`);
+        $.setdata(sid, 'sid');
+        $.setdata(uuid, 'uuid');
     } else {
-        console.error('❌ 缺少 access_token');
+        console.error('❌ 缺少 access_token, sid 或 uuid');
         $.msg($.name, '【错误】缺少必要的参数', '无法抓取有效的数据');
     }
 }
 
 // 发起签到请求
-function signInRequest(accessToken, extraData) {
+function signInRequest(accessToken) {
+    // 获取存储的 sid 和 uuid
+    const sid = $.getdata('sid');
+    const uuid = $.getdata('uuid');
+
+    if (!sid || !uuid) {
+        console.error('❌ sid 或 uuid 不存在');
+        return Promise.reject(new Error('缺少 sid 或 uuid'));
+    }
+
+    // 构建 extraData
+    const extraData = JSON.stringify({
+        is_weapp: 1,
+        sid: sid,
+        version: '2.164.10.101',
+        client: 'weapp',
+        bizEnv: 'wsc',
+        uuid: uuid,
+        ftime: Date.now(),
+    });
+
     const signInOptions = {
         url: `https://h5.youzan.com/wscump/checkin/checkinV2.json?checkinId=1997&access_token=${accessToken}`,
         method: 'GET',
         headers: {
             'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_1_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.54(0x18003631) NetType/4G Language/zh_CN',
-            'Extra-Data': '{"is_weapp":1,"sid":"YZ1320431994584350720YZViQT5ODW","version":"2.164.10.101","client":"weapp","bizEnv":"wsc","uuid":"eKP2wCVMV8ne4Y61734739720381","ftime":1734739720379}',
+            'Extra-Data': extraData,
         },
     };
 
