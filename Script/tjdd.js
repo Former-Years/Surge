@@ -125,12 +125,14 @@ function captureRequestURL() {
     const url = $request.url;  // 获取当前请求的 URL
     const headers = $request.headers;  // 获取请求头
 
+    console.log('请求头:', JSON.stringify(headers));  // 调试：打印请求头
+
     // 从 URL 中提取 access_token
     const urlParams = new URLSearchParams(url.split('?')[1]);
     const accessToken = urlParams.get('access_token');  // 获取 access_token
 
-    // 从请求头中提取 sid 和 uuid
-    const extraData = headers['Extra-Data'];
+    // 从请求头中提取 extra-data
+    const extraData = headers['extra-data'] || headers['Extra-Data'];  // 根据实际情况，尝试不同的键名
     if (extraData) {
         try {
             const parsedExtraData = JSON.parse(extraData);
@@ -145,6 +147,10 @@ function captureRequestURL() {
             $.msg($.name, '【错误】解析 Extra-Data 错误', '请确保请求头中的 Extra-Data 格式正确');
             return;
         }
+    } else {
+        console.error('❌ 未找到 Extra-Data 请求头');
+        $.msg($.name, '【错误】未找到 Extra-Data 请求头', '请确保请求头包含正确的 Extra-Data');
+        return;
     }
 
     if (accessToken) {
