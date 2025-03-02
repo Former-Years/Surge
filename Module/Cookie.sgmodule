@@ -47,7 +47,7 @@ PP停车Cookie = type=http-request,pattern=^https:\/\/api\.660pp\.com\/rest\/[\d
 蜜雪冰城Cookie = type=http-response,pattern=^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info,requires-body=1,script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js
 
 # > 中国移动
-中国移动Cookie = type=http-request,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/[LD]N\/uam(onekey|randcode)login\/autoLogin,requires-body=1,script-path=https://github.com/ChinaTelecomOperators/ChinaMobile/releases/download/Prerelease-Alpha/10086.js
+中国移动Cookie = type=http-request,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/[LD]N\/uam(onekey|randcode)login\/autoLogin,requires-body=1,script-path=https://github.120399.xyz/Script/10086.js
 
 # > 奈雪点单
 奈雪点单Cookie = type=http-request,pattern=^https:\/\/tm-web\.pin-dao\.cn\/user\/base-userinfo,requires-body=1,script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js
