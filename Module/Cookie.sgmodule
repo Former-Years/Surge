@@ -67,5 +67,8 @@ WPS_PC_Cookie = type=http-request,pattern=^https:\/\/(vip|account)(userinfo|\.wp
 # > 唐机豆豆
 唐机豆豆Cookie = type=http-request,pattern=^https:\/\/h5\.youzan\.com\/wscshop\/weappp\/shop_business_hour\.json,script-path=https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/tjdd.js
 
+# > 途虎养车
+途虎养车Cookie = type=http-request,pattern=https:\/\/api\.tuhu\.cn\/User\/GetInternalCenterInfo,script-path=https://raw.githubusercontent.com/Sliverkiss/GoodNight/master/Script/tuhu.js
+
 [MITM]
-hostname = %APPEND% mall.telunsu.net, *.amap.com, passport.iqiyi.com, club.yili.com, my.ruanmei.com, c.tieba.baidu.com, mcs-mimp-web.sf-express.com, mall.meituan.com, auth.alipan.com, auth.aliyundrive.com, sytgate.jslife.com.cn, api.660pp.com, m.ctrip.com, webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn, pos.meituan.com, mxsa.mxbc.net, client.app.coc.10086.cn, tm-web.pin-dao.cn, apis.ddfans.com, *.wps.cn, www.52bjy.com, www.nodeseek.com, hope.demogic.com, h5.youzan.com
+hostname = %APPEND% mall.telunsu.net, *.amap.com, passport.iqiyi.com, club.yili.com, my.ruanmei.com, c.tieba.baidu.com, mcs-mimp-web.sf-express.com, mall.meituan.com, auth.alipan.com, auth.aliyundrive.com, sytgate.jslife.com.cn, api.660pp.com, m.ctrip.com, webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn, pos.meituan.com, mxsa.mxbc.net, client.app.coc.10086.cn, tm-web.pin-dao.cn, apis.ddfans.com, *.wps.cn, www.52bjy.com, www.nodeseek.com, hope.demogic.com, h5.youzan.com, api.tuhu.cn
