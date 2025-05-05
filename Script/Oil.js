@@ -55,7 +55,7 @@ function handleResponse(data) {
                     }
 
                     // 2. 动态匹配“下跌”或“下调”变为“降”，“上涨”或“上调”变为“升”
-                    let adjustmentType = "?";
+                    let adjustmentType = "-";
                     const adjustmentMatch = tishiContent.match(/(下调|下跌|上调|上涨)/);
                     if (adjustmentMatch) {
                         adjustmentType = (adjustmentMatch[1].includes("下")) ? "⤵︎" : "⤴︎";
