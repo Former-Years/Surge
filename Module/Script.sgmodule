@@ -2,6 +2,23 @@
 #!desc=去广告与解锁
 #!category=xinian
 
+[URL Rewrite]
+# > App Store 区域切换
+# cn  国区
+^https:\/\/duckduckgo.com\/\?q=cn&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143465&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=cn&urlDesc=$1 302
+# us  美区
+^https:\/\/duckduckgo.com\/\?q=us&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143441&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=us&urlDesc=$1 302
+# hk  港区
+^https:\/\/duckduckgo.com\/\?q=hk&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143463&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=hk&urlDesc=$1 302
+# tw  台湾
+^https:\/\/duckduckgo.com\/\?q=tw&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143470&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=tw&urlDesc=$1 302
+# jp  日本
+^https:\/\/duckduckgo.com\/\?q=jp&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143462&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=jp&urlDesc=$1 302
+# kr  韩国
+^https:\/\/duckduckgo.com\/\?q=kr&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143466&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=kr&urlDesc=$1 302
+# tr  土耳其
+^https:\/\/duckduckgo.com\/\?q=tr&.+ https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143480&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=tr&urlDesc=$1 302
+
 [Header Rewrite]
 # > Bing Ai
 ^https:\/\/www\.bing\.com\/search header-replace User-Agent "Mozilla/5.0 (iphone; Intel Mac OS X 10_12_6) AppleWebKit/537.36 Chrome/110.0 Safari/537.36 Edg/110.0"
@@ -88,5 +105,4 @@ DOMAIN,iadmusicmat.music.126.net,REJECT,pre-matching
 Unidream = type=http-response,pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt,requires-body=1,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/itunes/Unidream.js
 
 [MITM]
-hostname = %APPEND% www.bing.com, wxpusher.zjiecode.com, m.360buyimg.com, gab.122.gov.cn, guard.sec.xiaojukeji.com, conf.diditaxi.com.cn, res.xiaojukeji.com, shop-gw.chengxinyouxuan.com, img-ys011.didistatic.com, pt-starimg.didistatic.com, wallet.95516.com, api.wfdata.club, flowplus.meituan.net, s3plus.meituan.net, api.pinduoduo.com, yunbusiness.ccb.com, iobs.pingan.com.cn, ap*.intsig.net, www.google.com*, buy.itunes.apple.com
-
+hostname = %APPEND% duckduckgo.com, www.bing.com, wxpusher.zjiecode.com, m.360buyimg.com, gab.122.gov.cn, guard.sec.xiaojukeji.com, conf.diditaxi.com.cn, res.xiaojukeji.com, shop-gw.chengxinyouxuan.com, img-ys011.didistatic.com, pt-starimg.didistatic.com, wallet.95516.com, api.wfdata.club, flowplus.meituan.net, s3plus.meituan.net, api.pinduoduo.com, yunbusiness.ccb.com, iobs.pingan.com.cn, ap*.intsig.net, www.google.com*, buy.itunes.apple.com
