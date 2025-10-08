@@ -1,36 +1,36 @@
-// Surge MITM Script for unlocking VIP in tesla.touping.vip (Optimized Version)
+// Surge MITM Script for unlocking VIP in tesla.touping.vip member info
+// Usage: Add to Surge config: [MITM] & [Script] sections
+
 function main() {
     const response = $response;
-    console.log("=== Debug: Script triggered at " + new Date().toISOString() + " ===");
-
     if (response && response.body) {
         try {
-            console.log("Debug: Received body length: " + response.body.length);
             const body = JSON.parse(response.body);
-
+            
+            // Check if it's the member info response
             if (body && body.data && body.data.member) {
                 const member = body.data.member;
-                console.log("Debug: Original expiration: " + member.vip_expiration_date);
-
+                
                 // Unlock VIP
                 member.vip = 1;
                 member.vip_expiration_date = "2099-12-31";
-                member.vip_free = 1;
+                member.vip_free = 1; // If applicable, enable free VIP
                 member.is_sub = 1;
                 member.is_sub1 = 1;
-
+                member.point = 999999; // Bonus points if needed
+                member.send_mileage = 999999; // Unlimited mileage
+                
+                // Optional: Modify other fields for full unlock
+                // member.price = 0;
+                // member.price1 = 0;
+                
+                // Reconstruct the response
                 response.body = JSON.stringify(body);
-                console.log("Debug: Modified expiration: " + member.vip_expiration_date);
-                console.log("Debug: New body length: " + response.body.length);
-            } else {
-                console.log("Debug: No member data found");
             }
         } catch (e) {
-            console.log("Debug: JSON parse error: " + e.message);
+            console.log("Error parsing JSON: " + e);
         }
-    } else {
-        console.log("Debug: No response body");
     }
-
+    
     $done(response);
 }
