@@ -83,7 +83,8 @@ DOMAIN,iadmusicmat.music.126.net,REJECT,pre-matching
 # > Unidream
 Unidream = type=http-response,pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt,requires-body=1,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/itunes/Unidream.js
 # > 毛豆随行小程序 VIP
-毛豆随行 = type=http-response,pattern=^https:\/\/tesla\.touping\.vip/api/member/myInfo,requires-body=1,script-path=https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/mdsx_vip.js
+毛豆随行 = type=http-response,pattern=^https:\/\/tesla\.touping\.vip/api/*,requires-body=1,script-path=https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/mdsx_vip.js
 
 [MITM]
 hostname = %APPEND% wxpusher.zjiecode.com, m.360buyimg.com, gab.122.gov.cn, guard.sec.xiaojukeji.com, conf.diditaxi.com.cn, res.xiaojukeji.com, shop-gw.chengxinyouxuan.com, img-ys011.didistatic.com, pt-starimg.didistatic.com, wallet.95516.com, api.wfdata.club, flowplus.meituan.net, s3plus.meituan.net, api.pinduoduo.com, yunbusiness.ccb.com, iobs.pingan.com.cn, ap*.intsig.net, www.google.com*, buy.itunes.apple.com, tesla.touping.vip
+
