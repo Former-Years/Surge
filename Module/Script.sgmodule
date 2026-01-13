@@ -8,7 +8,7 @@ http-response ^https?:\/\/wxpusher.zjiecode.com\/api\/message '<p class="note">[
 
 [General]
 # > 代理检测
-skip-proxy = %APPEND% www.baidu.com,yunbusiness.ccb.com,wxh.wo.cn,gate.lagou.com,www.abchina.com.cn,www.shanbay.com,login-service.mobile-bank.psbc.com,mobile-bank.psbc.com,id6.me,iosapps.itunes.apple.com,*.byd.auto,*.byd.com
+skip-proxy = %APPEND% www.baidu.com,yunbusiness.ccb.com,wxh.wo.cn,gate.lagou.com,www.abchina.com.cn,www.shanbay.com,login-service.mobile-bank.psbc.com,mobile-bank.psbc.com,id6.me,iosapps.itunes.apple.com,*.byd.auto
 # > DNS返回假IP
 always-real-ip = %APPEND% easy-login.10099.com.cn,*-update.xoyocdn.com,id6.me,open.e.189.cn
 # > HomeKit Accessories Quirk
@@ -88,4 +88,5 @@ Unidream = type=http-response,pattern=^https:\/\/buy\.itunes\.apple\.com\/verify
 
 [MITM]
 hostname = %APPEND% wxpusher.zjiecode.com, m.360buyimg.com, gab.122.gov.cn, guard.sec.xiaojukeji.com, conf.diditaxi.com.cn, res.xiaojukeji.com, shop-gw.chengxinyouxuan.com, img-ys011.didistatic.com, pt-starimg.didistatic.com, wallet.95516.com, api.wfdata.club, flowplus.meituan.net, s3plus.meituan.net, api.pinduoduo.com, yunbusiness.ccb.com, iobs.pingan.com.cn, ap*.intsig.net, www.google.com*, buy.itunes.apple.com, tesla.touping.vip
+
 
