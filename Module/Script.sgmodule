@@ -75,6 +75,18 @@ DOMAIN,g.cn.miaozhen.com,REJECT,pre-matching
 DOMAIN,ef-dongfeng.tanx.com,REJECT,pre-matching
 DOMAIN,ossgw.alicdn.com,REJECT,pre-matching
 DOMAIN,iadmusicmat.music.126.net,REJECT,pre-matching
+# > 喜马拉雅 去广告
+URL-REGEX,^https?://passport\.ximalaya\.com/friendship-mobile/v1/findFriendsBanner/show/,REJECT
+URL-REGEX,^https?://xdcs-collector\.ximalaya\.com/api/v1/realtime,REJECT
+URL-REGEX,^https?://adse\.wsa\.ximalaya\.com,REJECT
+URL-REGEX,^https?://adse\.ximalaya\.com,REJECT
+URL-REGEX,^https?://ad\.ximalaya\.com,REJECT
+URL-REGEX,^https?://ulogs\.umeng\.com\/unify_logs,REJECT
+
+[Map Local]
+# > 喜马拉雅 去广告
+^https?:\/\/.*ximalaya\.com\/x-web-activity\/signIn\/getHomePageSignInInfo\/ data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/.*ximalaya\.com\/product\/promotion\/v1\/album\/price data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
 # > 扫描全能王 pro
@@ -85,8 +97,8 @@ DOMAIN,iadmusicmat.music.126.net,REJECT,pre-matching
 Unidream = type=http-response,pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt,requires-body=1,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/itunes/Unidream.js
 # > 毛豆随行小程序 VIP
 毛豆随行 = type=http-response,pattern=^https:\/\/tesla\.touping\.vip/api/*,requires-body=1,script-path=https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/mdsx_vip.js
+# > 喜马拉雅 VIP & 净化
+喜马拉雅VIP = type=http-response,pattern=^https?:\/\/.+((ximalaya)|(xmcdn)).+(mobile-user\/v2\/homePage|product\/detail\/v1|v1\/album\/track\/ts|mobile-playpage\/track\/v4\/baseInfo\/ts|mobile-playpage\/playpage\/tabs\/v2|mobile-playpage\/playpage\/track\/qualityAndEffect|mobile\/download\/v2\/track|mobile-user-grade\/decoratorV2\/decorationDetails\/page),requires-body=1,script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/ximalaya.js
 
 [MITM]
-hostname = %APPEND% wxpusher.zjiecode.com, m.360buyimg.com, gab.122.gov.cn, guard.sec.xiaojukeji.com, conf.diditaxi.com.cn, res.xiaojukeji.com, shop-gw.chengxinyouxuan.com, img-ys011.didistatic.com, pt-starimg.didistatic.com, wallet.95516.com, api.wfdata.club, flowplus.meituan.net, s3plus.meituan.net, api.pinduoduo.com, yunbusiness.ccb.com, iobs.pingan.com.cn, ap*.intsig.net, www.google.com*, buy.itunes.apple.com, tesla.touping.vip
-
-
+hostname = %APPEND% wxpusher.zjiecode.com, m.360buyimg.com, gab.122.gov.cn, guard.sec.xiaojukeji.com, conf.diditaxi.com.cn, res.xiaojukeji.com, shop-gw.chengxinyouxuan.com, img-ys011.didistatic.com, pt-starimg.didistatic.com, wallet.95516.com, api.wfdata.club, flowplus.meituan.net, s3plus.meituan.net, api.pinduoduo.com, yunbusiness.ccb.com, iobs.pingan.com.cn, ap*.intsig.net, www.google.com*, buy.itunes.apple.com, tesla.touping.vip, *.ximalaya.com, *.xmcdn.com, *.himalaya.com
