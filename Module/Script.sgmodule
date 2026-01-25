@@ -23,58 +23,8 @@ IP-CIDR,95.161.76.100/31,REJECT,no-resolve,pre-matching
 DOMAIN,app-site-association.cdn-apple.com,REJECT,pre-matching
 # > 京东 去广告
 URL-REGEX,^https:\/\/m\.360buyimg\.com\/mobilecms\/s(?:1125x2436|1080x1920),REJECT
-# > 交管12123 去广告
-URL-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$,REJECT
 # > 京东金融 去广告
 URL-REGEX,^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/aladdin\/(new)?na\/m\/getLoadingPicture,REJECT
-# > 滴滴出行 去广告
-//01 安全提示横幅
-URL-REGEX,^https:\/\/guard\.sec\.xiaojukeji\.com\/api\/guard\/psg\/v2\/getShieldStatus,REJECT
-//02 底部打车&代价推荐
-URL-REGEX,^https:\/\/conf\.diditaxi\.com\.cn\/one,REJECT
-//03 福利专区-金融服务-公交-骑车-滴滴乐园
-URL-REGEX,^https:\/\/conf\.diditaxi\.com\.cn\/nav\/widget,REJECT
-//04 主页 领任务
-URL-REGEX,^https:\/\/conf\.diditaxi\.com\.cn\/api\/(component|fusion|dynamicmodule|usercenter),REJECT
-URL-REGEX,^https:\/\/conf\.diditaxi\.com\.cn\/dynamic,REJECT
-//05 主页 非主流式悬浮挂件
-URL-REGEX,^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget,REJECT
-//06 商城
-URL-REGEX,^https:\/\/shop-gw\.chengxinyouxuan\.com\/(route|indexConfig|apolloConfig|getShopTuanInfos),REJECT
-//07 开屏广告
-URL-REGEX,^https:\/\/img-ys011\.didistatic\.com\/static,REJECT
-//08 骑行
-URL-REGEX,^https:\/\/pt-starimg\.didistatic\.com\/static,REJECT
-# > 云闪付 去广告
-URL-REGEX,^https:\/\/wallet\.95516\.com\/s\/wl\/icon\/long,REJECT
-# > 威锋 去广告
-URL-REGEX,^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList),REJECT
-# > 美团 去广告
-URL-REGEX,^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.jpg$,REJECT
-URL-REGEX,^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$,REJECT
-# > 中国联通 去开屏
-DOMAIN-SUFFIX,m1.ad.10010.com,REJECT,pre-matching
-# > 中国电信 去开屏
-DOMAIN,ad.21cn.com,REJECT,pre-matching
-DOMAIN,ad.k.21cn.com,REJECT,pre-matching
-DOMAIN,admarket.21cn.com,REJECT,pre-matching
-DOMAIN,adshows.21cn.com,REJECT,pre-matching
-# > 顺丰速运 去开屏
-URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade,REJECT
-URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/,REJECT
-URL-REGEX,^https?:\/\/shopic\.sf-express\.com\/crm\/mobile\/common\/flashscreen,REJECT
-# > 拼多多 去开屏
-URL-REGEX,^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash,REJECT
-# > 建行生活 去开屏
-URL-REGEX,^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341A00(6|9),REJECT
-# > 平安好车主 去开屏
-URL-REGEX,^https?:\/\/iobs\.pingan\.com\.cn\/download\/icore-aops-base-dmz-prd\/(YourSystemName|icore-apps-ad),REJECT
-# 网易云音乐 去开屏
-DOMAIN,img1.360buyimg.com,REJECT,pre-matching
-DOMAIN,g.cn.miaozhen.com,REJECT,pre-matching
-DOMAIN,ef-dongfeng.tanx.com,REJECT,pre-matching
-DOMAIN,ossgw.alicdn.com,REJECT,pre-matching
-DOMAIN,iadmusicmat.music.126.net,REJECT,pre-matching
 # > 喜马拉雅 去广告
 URL-REGEX,^https?://passport\.ximalaya\.com/friendship-mobile/v1/findFriendsBanner/show/,REJECT
 URL-REGEX,^https?://xdcs-collector\.ximalaya\.com/api/v1/realtime,REJECT
@@ -91,8 +41,6 @@ URL-REGEX,^https?://ulogs\.umeng\.com\/unify_logs,REJECT
 [Script]
 # > 扫描全能王 pro
 全能扫描 = type=http-response,pattern=https:\/\/(api|api-cs)*\.intsig\.net\/purchase\/cs\/query_property\?,requires-body=1,script-path=https://raw.githubusercontent.com/id77/QuantumultX/master/Script/camscanner.js
-# > Google 人机验证
-谷歌验证 = type=http-response,pattern=^https:\/\/www\.google\.com(?:\.[a-z]+|)\/(?:search\?(?:|.+?&)q=|$),requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Google_CAPTCHA.js,ability=http-client-policy,timeout=10
 # > Unidream
 Unidream = type=http-response,pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt,requires-body=1,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/itunes/Unidream.js
 # > 毛豆随行小程序 VIP
@@ -101,4 +49,4 @@ Unidream = type=http-response,pattern=^https:\/\/buy\.itunes\.apple\.com\/verify
 喜马拉雅VIP = type=http-response,pattern=^https?:\/\/.+((ximalaya)|(xmcdn)).+(mobile-user\/v2\/homePage|product\/detail\/v1|v1\/album\/track\/ts|mobile-playpage\/track\/v4\/baseInfo\/ts|mobile-playpage\/playpage\/tabs\/v2|mobile-playpage\/playpage\/track\/qualityAndEffect|mobile\/download\/v2\/track|mobile-user-grade\/decoratorV2\/decorationDetails\/page),requires-body=1,script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/ximalaya.js
 
 [MITM]
-hostname = %APPEND% wxpusher.zjiecode.com, m.360buyimg.com, gab.122.gov.cn, guard.sec.xiaojukeji.com, conf.diditaxi.com.cn, res.xiaojukeji.com, shop-gw.chengxinyouxuan.com, img-ys011.didistatic.com, pt-starimg.didistatic.com, wallet.95516.com, api.wfdata.club, flowplus.meituan.net, s3plus.meituan.net, api.pinduoduo.com, yunbusiness.ccb.com, iobs.pingan.com.cn, ap*.intsig.net, www.google.com*, buy.itunes.apple.com, tesla.touping.vip, *.ximalaya.com, *.xmcdn.com, *.himalaya.com
+hostname = %APPEND% wxpusher.zjiecode.com, m.360buyimg.com, ap*.intsig.net, buy.itunes.apple.com, tesla.touping.vip, *.ximalaya.com, *.xmcdn.com, *.himalaya.com
