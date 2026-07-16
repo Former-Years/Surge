@@ -2,17 +2,11 @@
 #!desc=去广告与解锁
 #!category=xinian
 
-[Body Rewrite]
-# > WxPusher消息推送平台 底部广告
-http-response ^https?:\/\/wxpusher.zjiecode.com\/api\/message '<p class="note">[\s\S]*?<\/body>' </body>
-
 [General]
 # > 代理检测
 skip-proxy = %APPEND% www.baidu.com,yunbusiness.ccb.com,wxh.wo.cn,gate.lagou.com,www.abchina.com.cn,www.shanbay.com,login-service.mobile-bank.psbc.com,mobile-bank.psbc.com,id6.me,iosapps.itunes.apple.com,*.byd.auto
 # > DNS返回假IP
 always-real-ip = %APPEND% easy-login.10099.com.cn,*-update.xoyocdn.com,id6.me,open.e.189.cn
-# > HomeKit Accessories Quirk
-always-raw-tcp-keywords = %INSERT% "Content-Type: application/pairing+tlv8"
 
 [Rule]
 # > 阻止所有UDP流量到端口443，使HTTP3请求退回到TCP流量
@@ -21,32 +15,3 @@ AND,((PROTOCOL,UDP), (DEST-PORT,443)),REJECT-NO-DROP
 IP-CIDR,95.161.76.100/31,REJECT,no-resolve,pre-matching
 # > Safari 防跳转
 DOMAIN,app-site-association.cdn-apple.com,REJECT,pre-matching
-# > 京东 去广告
-URL-REGEX,^https:\/\/m\.360buyimg\.com\/mobilecms\/s(?:1125x2436|1080x1920),REJECT
-# > 京东金融 去广告
-URL-REGEX,^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/aladdin\/(new)?na\/m\/getLoadingPicture,REJECT
-# > 喜马拉雅 去广告
-URL-REGEX,^https?://passport\.ximalaya\.com/friendship-mobile/v1/findFriendsBanner/show/,REJECT
-URL-REGEX,^https?://xdcs-collector\.ximalaya\.com/api/v1/realtime,REJECT
-URL-REGEX,^https?://adse\.wsa\.ximalaya\.com,REJECT
-URL-REGEX,^https?://adse\.ximalaya\.com,REJECT
-URL-REGEX,^https?://ad\.ximalaya\.com,REJECT
-URL-REGEX,^https?://ulogs\.umeng\.com\/unify_logs,REJECT
-
-[Map Local]
-# > 喜马拉雅 去广告
-^https?:\/\/.*ximalaya\.com\/x-web-activity\/signIn\/getHomePageSignInInfo\/ data="{}" status-code=200 header="Content-Type:application/json"
-^https?:\/\/.*ximalaya\.com\/product\/promotion\/v1\/album\/price data="{}" status-code=200 header="Content-Type:application/json"
-
-[Script]
-# > 扫描全能王 pro
-全能扫描 = type=http-response,pattern=https:\/\/(api|api-cs)*\.intsig\.net\/purchase\/cs\/query_property\?,requires-body=1,script-path=https://raw.githubusercontent.com/id77/QuantumultX/master/Script/camscanner.js
-# > Unidream
-Unidream = type=http-response,pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt,requires-body=1,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/itunes/Unidream.js
-# > 毛豆随行小程序 VIP
-毛豆随行 = type=http-response,pattern=^https:\/\/tesla\.touping\.vip/api/*,requires-body=1,script-path=https://raw.githubusercontent.com/Former-Years/Surge/refs/heads/main/Script/mdsx_vip.js
-# > 喜马拉雅 VIP & 净化
-喜马拉雅VIP = type=http-response,pattern=^https?:\/\/.+((ximalaya)|(xmcdn)).+(mobile-user\/v2\/homePage|product\/detail\/v1|v1\/album\/track\/ts|mobile-playpage\/track\/v4\/baseInfo\/ts|mobile-playpage\/playpage\/tabs\/v2|mobile-playpage\/playpage\/track\/qualityAndEffect|mobile\/download\/v2\/track|mobile-user-grade\/decoratorV2\/decorationDetails\/page),requires-body=1,script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/ximalaya.js
-
-[MITM]
-hostname = %APPEND% wxpusher.zjiecode.com, m.360buyimg.com, ap*.intsig.net, buy.itunes.apple.com, tesla.touping.vip, *.ximalaya.com, *.xmcdn.com, *.himalaya.com
