@@ -184,7 +184,7 @@
     // 用旧版图2的单行标题和两行价格，避免预测说明挤占面板。
     var title = prefix + ' | ' + (next ? shortDate(next.day) : '下轮待公布');
     if (prediction) {
-      var arrow = prediction.direction === '上涨' ? '⤴︎' : '⤵︎';
+      var arrow = prediction.direction === '上涨' ? '⤴︎ ' : '⤵︎ ';
       title += ' ' + arrow + (typeof prediction.low === 'number'
         ? fmt(prediction.low) + '-' + fmt(prediction.high) + '元'
         : prediction.ton + '元/吨');
