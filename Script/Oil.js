@@ -1,7 +1,6 @@
 /*
  * Surge 今日油价面板
- * 通过 argument=...&provname=广东 修改地区。
- * 未来调价的「11月12日24时」统一显示为「11月13日00:00」（同一时刻）。
+ * 通过 argument=...&provname=广东 修改省份地区。
  * 预报属于预测，不代表发改委正式调价结果。
  */
 (function () {
@@ -90,40 +89,40 @@
   }
   function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 
+  // 优先按真实 HTML 表格的 TR/TD 取价格；不能把「每升涨跌」误判成价格列。
   function getPriceValues(text, html) {
-    var index = text.indexOf('各省今日油价');
-    if (index < 0) return null;
-    var end = text.indexOf('挂牌价数据日期', index);
-    var area = text.slice(index, end > index ? end : index + 10000);
-    var region = escapeRe(province);
-    // 同一行的数值依次为：92价/涨跌、95价/涨跌、98价/涨跌、柴油价/涨跌。
-    var r8 = new RegExp('(?:^|\\s)' + region + '\\s+((?:[+-]?\\d+(?:\\.\\d+)?\\s+){7}[+-]?\\d+(?:\\.\\d+)?)');
-    var m = area.match(r8), vals;
-    if (m) {
-      vals = m[1].trim().split(/\s+/).map(safeNumber);
-      return [vals[0], vals[2], vals[4], vals[6]];
-    }
-    // 兼容不显示每升涨跌列的表格、全国均价行。
-    var r4 = new RegExp('(?:^|\\s)' + region + '\\s+((?:\\d+(?:\\.\\d+)?\\s+){3}\\d+(?:\\.\\d+)?)');
-    m = area.match(r4);
-    if (m) {
-      vals = m[1].trim().split(/\s+/).map(safeNumber);
-      return [vals[0], vals[1], vals[2], vals[3]];
-    }
-    // 当表格含有价格标识或特殊标点时，再按 TR/TD 单元格解析一次。
-    var rows = String(html).match(/<tr\b[^>]*>[\s\S]*?<\/tr\s*>/gi) || [];
+    var rows = String(html || '').match(/<tr\b[^>]*>[\s\S]*?<\/tr\s*>/gi) || [];
     for (var i = 0; i < rows.length; i++) {
       var cells = rows[i].match(/<(?:td|th)\b[^>]*>[\s\S]*?<\/(?:td|th)\s*>/gi) || [];
-      if (!cells.length || htmText(cells[0]) !== province) continue;
-      var nums = [];
-      for (var k = 1; k < cells.length; k++) {
-        var first = htmText(cells[k]).match(/\d+(?:\.\d+)?/);
-        if (first) nums.push(Number(first[0]));
+      if (cells.length < 5 || htmText(cells[0]) !== province) continue;
+      var prices = [];
+      for (var k = 1; k < 5; k++) {
+        // 单元格可能是 8.91<br>+0.28 或 8.91<span>⤴︎ +0.28</span>，只取第一个油价。
+        var cellText = htmText(cells[k]);
+        var m = cellText.match(/(?:^|[^\d])([0-9]{1,2}(?:\.[0-9]{1,3})?)(?!\d)/);
+        if (!m) { prices = []; break; }
+        prices.push(Number(m[1]));
       }
-      if (nums.length >= 8) return [nums[0], nums[2], nums[4], nums[6]];
-      if (nums.length >= 4) return nums.slice(0, 4);
+      if (prices.length === 4) return prices;
     }
-    return null;
+
+    // 兼容价格表没有 tr/td 的网页：截取当前省份到下一省份之间的一行数据。
+    var sectionStart = text.indexOf('各省今日油价');
+    if (sectionStart < 0) return null;
+    var sectionEnd = text.indexOf('挂牌价数据日期', sectionStart);
+    var area = text.slice(sectionStart, sectionEnd > sectionStart ? sectionEnd : sectionStart + 15000);
+    var regionRe = new RegExp('(?:^|\\s)' + escapeRe(province) + '(?=\\s)');
+    var match = regionRe.exec(area);
+    if (!match) return null;
+    var line = area.slice(match.index + match[0].length);
+    var allRegions = PROVINCES.concat(['全国均价']);
+    var nextMatch = new RegExp('(?:^|\\s)(?:' + allRegions.map(escapeRe).join('|') + ')(?=\\s)').exec(line);
+    if (nextMatch) line = line.slice(0, nextMatch.index);
+    else line = line.slice(0, 200);
+    // 同页涨跌通常是 +0.28、-0.20 等；过滤低于 3 元的变化额。
+    var nums = line.match(/[+-]?\d{1,2}(?:\.\d+)?/g) || [];
+    var prices2 = nums.map(safeNumber).filter(function (n) { return valid(n, 3, 30); });
+    return prices2.length >= 4 ? prices2.slice(0, 4) : null;
   }
 
   function readNext(text, generatedDay) {
@@ -168,45 +167,33 @@
   function render(html) {
     var t = htmText(html);
     var generated = t.match(/页面生成\s*[：:]\s*(20\d\d-\d\d-\d\d)(?:\s+\d\d:\d\d)?/);
-    if (!generated) return fail('数据页面缺少生成时间，可能已改版');
+    if (!generated) return fail('油价网页缺少更新时间，稍后刷新');
     var age = dayDiff(generated[1]);
-    if (!valid(age, 0, 2)) return fail('油价网页更新日期异常或超过2天');
+    if (!valid(age, 0, 7)) return fail('油价网页未及时更新，拒绝显示旧数据');
 
     var published = t.match(/挂牌价数据日期\s*[：:]\s*(20\d\d-\d\d-\d\d)/);
-    var values = getPriceValues(t, html);
     var dateAge = published ? dayDiff(published[1]) : age;
-    var pricesOK = values && valid(dateAge, 0, 60) &&
-      valid(values[0], 4, 25) && valid(values[1], 4, 25) &&
-      valid(values[2], values[1], 30) && valid(values[3], 3, 25) && values[1] >= values[0];
+    var values = getPriceValues(t, html);
+    // 挂牌价不要求每天换日期：每轮成品油调价生效后才更新价格。
+    var pricesOK = values && valid(dateAge, 0, 30) &&
+      valid(values[0], 4, 25) && valid(values[1], values[0], 30) &&
+      valid(values[2], values[1], 35) && valid(values[3], 3, 25);
     var next = readNext(t, generated[1]);
     var prediction = readForecast(t, next);
-    var title = prefix + ' | ' + (next ? next.label : '下次调价待公布');
-    if (prediction) {
-      var arrow = prediction.direction === '上涨' ? '↑' : '↓';
-      title += ' ' + arrow + (typeof prediction.low === 'number' ? fmt(prediction.low) + '～' + fmt(prediction.high) + '元' : prediction.ton + '元/吨');
-    }
-    var lines = [];
 
-    if (pricesOK) {
-      lines.push('0#柴油: ' + fmt(values[3]) + '元 | 92#汽油: ' + fmt(values[0]) + '元');
-      lines.push('95#汽油: ' + fmt(values[1]) + '元 | 98#汽油: ' + fmt(values[2]) + '元');
-    } else {
-      lines.push(province + '油价暂不可用（不显示过期价格）');
-    }
+    // 用旧版图2的单行标题和两行价格，避免预测说明挤占面板。
+    var title = prefix + ' | ' + (next ? shortDate(next.day) : '下轮待公布');
     if (prediction) {
-      var desc = '预计' + prediction.direction + ' ' + prediction.ton + '元/吨';
-      if (typeof prediction.low === 'number') desc += ' ≈ ' + fmt(prediction.low) + '～' + fmt(prediction.high) + '元/升';
-      lines.push(desc);
-      var meta = '预测更新 ' + shortDate(prediction.updated) + (prediction.clock ? ' ' + prediction.clock : '');
-      if (prediction.step !== null && valid(prediction.step, 0, 10)) meta += ' | 第' + prediction.step + '/10工作日';
-      if (typeof prediction.rate === 'number') meta += ' | 变化率' + (prediction.rate > 0 ? '+' : '') + prediction.rate + '%';
-      lines.push(meta + '（非最终调价）');
-    } else {
-      lines.push(next ? '下轮涨跌预测待更新（不显示旧预测）' : '下次调价日期与预测待更新');
-      lines.push('数据源 itlaoli | 页面 ' + shortDate(generated[1]));
+      var arrow = prediction.direction === '上涨' ? '⤴︎' : '⤵︎';
+      title += ' ' + arrow + (typeof prediction.low === 'number'
+        ? fmt(prediction.low) + '-' + fmt(prediction.high) + '元'
+        : prediction.ton + '元/吨');
     }
-    if (!pricesOK && !prediction && !next) return fail('网站未提供可用的' + province + '油价与预测');
-    finish(title, lines);
+    if (!pricesOK) return finish(title, [province + '油价获取失败，请稍后刷新']);
+    finish(title, [
+      '0#柴油: ' + fmt(values[3]) + '元 | 92汽油: ' + fmt(values[0]) + '元',
+      '95汽油: ' + fmt(values[1]) + '元 | 98汽油: ' + fmt(values[2]) + '元'
+    ]);
   }
 
   if (!province) return fail('地区无效：请将 provname 设为省份名称');
