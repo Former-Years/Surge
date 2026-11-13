@@ -1,5 +1,5 @@
 #!name=策略面板
-#!desc=流媒体解锁检测+机场信息展示
+#!desc=流媒体解锁检测+今日油价信息展示
 #!category=xinian
 
 [Panel]
