@@ -1,0 +1,10 @@
+#!name=千鸟物联去广告
+#!desc=屏蔽首页广告列表与开屏/横幅开关；阻断抓包中出现的广告 SDK 域名。需启用 MITM 和重写；不保证移除全部广告。
+#!system=ios
+
+[Map Local]
+^https://public\.dayunlinks\.cn/operation-manage/cst/queryAdvList(?:[?]|$) data-type=base64 data="eyJjb2RlIjoiMjAwIiwibXNnIjoi5oiQ5YqfIiwiZGF0YSI6eyJob21lTGlzdCI6W10sImxpdmVMaXN0IjpbXSwibXNnTGlzdCI6W10sImNsb3VkUmVwbGF5TGlzdCI6W10sImNhcmRSZXBsYXlMaXN0IjpbXX0sInRpbWUiOiIyMDI2LTExLTEzIDEzOjU4OjE1In0=" header="Content-Type:application/json" status-code=200
+^https://public\.dayunlinks\.cn/public/checkAdv(?:[?]|$) data-type=base64 data="eyJob3RTdGFydEluciI6MTUsInZlciI6MCwiaXNCYW5uZXIiOjAsImNvbGRTdGFydEluciI6MCwiYWR2VHlwZSI6IjAiLCJzbG90IjowLCJpc05hdGl2ZSI6MCwiY29sZFN0YXJ0Q3RybCI6MCwibGRnV2FpdEluciI6OCwiaG90U3RhcnRDdHJsIjowLCJsZGdXYWl0T3QiOjgsImluc2NyZWVuIjowLCJzdGF0dXMiOjIwMCwic3dpdGNoTnVtIjowfQ==" header="Content-Type:text/plain" status-code=200
+
+[MITM]
+hostname = %APPEND% public.dayunlinks.cn
