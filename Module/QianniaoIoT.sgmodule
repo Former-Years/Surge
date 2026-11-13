@@ -1,61 +1,10 @@
 #!name=千鸟物联去广告
-#!desc=屏蔽首页广告列表与开屏/横幅开关；阻断抓包中出现的广告 SDK 域名。需启用 MITM 和重写；不保证移除全部广告。
+#!desc=去除开屏、首页及横幅广告
 #!system=ios
 
 [Map Local]
 ^https://public\.dayunlinks\.cn/operation-manage/cst/queryAdvList(?:[?]|$) data-type=base64 data="eyJjb2RlIjoiMjAwIiwibXNnIjoi5oiQ5YqfIiwiZGF0YSI6eyJob21lTGlzdCI6W10sImxpdmVMaXN0IjpbXSwibXNnTGlzdCI6W10sImNsb3VkUmVwbGF5TGlzdCI6W10sImNhcmRSZXBsYXlMaXN0IjpbXX0sInRpbWUiOiIyMDI2LTExLTEzIDEzOjU4OjE1In0=" header="Content-Type:application/json" status-code=200
 ^https://public\.dayunlinks\.cn/public/checkAdv(?:[?]|$) data-type=base64 data="eyJob3RTdGFydEluciI6MTUsInZlciI6MCwiaXNCYW5uZXIiOjAsImNvbGRTdGFydEluciI6MCwiYWR2VHlwZSI6IjAiLCJzbG90IjowLCJpc05hdGl2ZSI6MCwiY29sZFN0YXJ0Q3RybCI6MCwibGRnV2FpdEluciI6OCwiaG90U3RhcnRDdHJsIjowLCJsZGdXYWl0T3QiOjgsImluc2NyZWVuIjowLCJzdGF0dXMiOjIwMCwic3dpdGNoTnVtIjowfQ==" header="Content-Type:text/plain" status-code=200
-
-[Rule]
-DOMAIN,adtracker.medproad.com,REJECT
-DOMAIN,qcwx.medproad.com,REJECT
-DOMAIN,p2-lm.adukwai.com,REJECT
-DOMAIN,p1-lm.adukwai.com,REJECT
-DOMAIN,p66-ad.adkwai.com,REJECT
-DOMAIN,api-access.pangolin-sdk-toutiao1.com,REJECT
-DOMAIN,api-access.pangolin-sdk-toutiao.com,REJECT
-DOMAIN,log-api.pangolin-sdk-toutiao.com,REJECT
-DOMAIN,gromore.pangolin-sdk-toutiao.com,REJECT
-DOMAIN,mi.gdt.qq.com,REJECT
-DOMAIN,sdk.e.qq.com,REJECT
-DOMAIN,sdkquic.e.qq.com,REJECT
-DOMAIN,open.e.kuaishou.com,REJECT
-DOMAIN,open.e.kuaishou.cn,REJECT
-DOMAIN,gdfp.gifshow.com,REJECT
-DOMAIN,tracker.yfanads.com,REJECT
-DOMAIN,api.yfanads.com,REJECT
-DOMAIN,s.funlinkads.com,REJECT
-DOMAIN,t.funlinkads.com,REJECT
-DOMAIN,ads-bid.leadmoad.com,REJECT
-DOMAIN,adsbid.leadmoad.com,REJECT
-DOMAIN,adxbid.leadmoad.com,REJECT
-DOMAIN,sdk.1rtb.net,REJECT
-DOMAIN,bid.buluken.com,REJECT
-DOMAIN,sl.buluken.com,REJECT
-DOMAIN,sdkconf.buluken.com,REJECT
-DOMAIN,tk.anythinktech.com,REJECT
-DOMAIN,da.anythinktech.com,REJECT
-DOMAIN,api.anythinktech.com,REJECT
-DOMAIN,apiv4.anythinktech.com,REJECT
-DOMAIN,mores.anythinktech.com,REJECT
-DOMAIN,api-v3.mentamob.com,REJECT
-DOMAIN,adx-strategy-api-cn.statisticslinks.com,REJECT
-DOMAIN,tk.statisticslinks.com,REJECT
-DOMAIN,da.statisticslinks.com,REJECT
-DOMAIN,dspvideo.umeng.com,REJECT
-DOMAIN,dsp.ads.umeng.com,REJECT
-DOMAIN,mobads.baidu.com,REJECT
-DOMAIN,bgg.baidu.com,REJECT
-DOMAIN,rudder.ydmob.com,REJECT
-DOMAIN,bid-adx2.vlion.cn,REJECT
-DOMAIN,bj-td-menta-01-callback.advlion.com,REJECT
-DOMAIN,nfydmhs.richmob.cn,REJECT
-DOMAIN,t.hs.lingjuad.com,REJECT
-DOMAIN,ssp-cb-api.tyedo.com,REJECT
-DOMAIN,g.fancyapi.com,REJECT
-DOMAIN,t2.fancyapi.com,REJECT
-DOMAIN,mpcfg.fancydsp.com,REJECT
-DOMAIN,adx.halomobi.com,REJECT
 
 [MITM]
 hostname = %APPEND% public.dayunlinks.cn
