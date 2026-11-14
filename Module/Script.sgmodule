@@ -28,3 +28,64 @@ AND,((PROTOCOL,UDP), (DEST-PORT,443)),REJECT-NO-DROP
 IP-CIDR,95.161.76.100/31,REJECT,no-resolve,pre-matching
 # > Safari 防跳转
 DOMAIN,app-site-association.cdn-apple.com,REJECT,pre-matching
+# 巨量千川
+DOMAIN-SUFFIX,zijieapi.com,𝗗𝗜𝗥𝗘𝗖𝗧
+# TIKTOK
+DOMAIN-SUFFIX,ads.tiktok.com,𝗣𝗥𝗢𝗫𝗬
+# 淘宝联盟
+DOMAIN-SUFFIX,alimama.com,𝗗𝗜𝗥𝗘𝗖𝗧
+# 1688
+DOMAIN,dj.1688.com,𝗗𝗜𝗥𝗘𝗖𝗧
+# 百度智能云
+DOMAIN-SUFFIX,bce.baidu.com,𝗗𝗜𝗥𝗘𝗖𝗧
+# 抖音巨量引擎
+DOMAIN-SUFFIX,oceanengine.com,𝗗𝗜𝗥𝗘𝗖𝗧
+DOMAIN-SUFFIX,byteadverts.com,𝗗𝗜𝗥𝗘𝗖𝗧
+# Apple Intelligence + ChatGPT 专用
+DOMAIN,gspe1-ssl.ls.apple.com,"𝗨𝗻𝗶𝘁𝗲𝗱 𝗦𝘁𝗮𝘁𝗲𝘀"
+DOMAIN,apple-relay.apple.com,"𝗨𝗻𝗶𝘁𝗲𝗱 𝗦𝘁𝗮𝘁𝗲𝘀"
+DOMAIN,apple-relay.cloudflare.com,"𝗨𝗻𝗶𝘁𝗲𝗱 𝗦𝘁𝗮𝘁𝗲𝘀"
+DOMAIN,apple-relay.fastly-edge.com,"𝗨𝗻𝗶𝘁𝗲𝗱 𝗦𝘁𝗮𝘁𝗲𝘀"
+DOMAIN,apple-relay.akamaized.net,"𝗨𝗻𝗶𝘁𝗲𝗱 𝗦𝘁𝗮𝘁𝗲𝘀"
+DOMAIN,apple-relay.mask.apple-dns.net,"𝗨𝗻𝗶𝘁𝗲𝗱 𝗦𝘁𝗮𝘁𝗲𝘀"
+DOMAIN,cp4.cloudflare.com,"𝗨𝗻𝗶𝘁𝗲𝗱 𝗦𝘁𝗮𝘁𝗲𝘀"
+DOMAIN,mask-api.icloud.com,"𝗨𝗻𝗶𝘁𝗲𝗱 𝗦𝘁𝗮𝘁𝗲𝘀"
+DOMAIN,mask.icloud.com,"𝗨𝗻𝗶𝘁𝗲𝗱 𝗦𝘁𝗮𝘁𝗲𝘀"
+DOMAIN,mask-h2.icloud.com,"𝗨𝗻𝗶𝘁𝗲𝗱 𝗦𝘁𝗮𝘁𝗲𝘀"
+# 普通 Siri 直连
+DOMAIN,guzzoni.apple.com,𝗗𝗜𝗥𝗘𝗖𝗧
+DOMAIN,dejavu.apple.com,𝗗𝗜𝗥𝗘𝗖𝗧
+DOMAIN-SUFFIX,siri.apple.com,𝗗𝗜𝗥𝗘𝗖𝗧
+DOMAIN-SUFFIX,smoot.apple.com,𝗗𝗜𝗥𝗘𝗖𝗧
+# Adobe软件屏蔽
+PROCESS-NAME,"/Applications/Adobe Photoshop 2026/Adobe Photoshop 2026.app/",𝗥𝗘𝗝𝗘𝗖𝗧
+PROCESS-NAME,"/Applications/Adobe Illustrator 2026/Adobe Illustrator.app/",𝗥𝗘𝗝𝗘𝗖𝗧
+# Corel软件屏蔽
+DOMAIN,sws.corel.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,www.corel.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,content.corel.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,ipp.corel.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,secure.ipp.corel.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,lm.licenses.adobe.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,na2m-pr.licenses.adobe.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,practivate.adobe.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,activate.adobe.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,ereg.adobe.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,wip.adobe.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,lmlicenses.wip4.adobe.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,cloud.coreldraw.app,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,dev1.ipm.corel.public.corel.net,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,compute-1.amazonaws.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,origin-mc.corel.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,ipm.corel.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,iws.corel.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,apps.corel.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,dam.corel.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,mc.corel.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+# Fiddler软件屏蔽
+DOMAIN,downloads.getfiddler.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+# Xmind软件屏蔽
+DOMAIN,www.xmind.net,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+DOMAIN,www.xmind.cn,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
+# Postman软件屏蔽
+DOMAIN,dl.pstmn.io,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching #!MACOS-ONLY
