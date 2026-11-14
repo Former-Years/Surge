@@ -1,5 +1,5 @@
-#!name=去广告与解锁
-#!desc=代理兼容优化、QUIC 控制与防跳转
+#!name=网络优化与增强
+#!desc=APNs 推送、代理兼容、QUIC 控制与防跳转
 #!category=xinian
 
 [General]
