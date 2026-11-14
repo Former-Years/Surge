@@ -25,9 +25,9 @@ IP-CIDR6,2a01:b740:a42::/48,𝗣𝗥𝗢𝗫𝗬,no-resolve
 # > 阻止所有UDP流量到端口443，使HTTP3请求退回到TCP流量
 AND,((PROTOCOL,UDP), (DEST-PORT,443)),REJECT-NO-DROP
 # 防止TG加载转圈
-IP-CIDR,95.161.76.100/31,REJECT,no-resolve,pre-matching
+IP-CIDR,95.161.76.100/31,𝗥𝗘𝗝𝗘𝗖𝗧,no-resolve,pre-matching
 # > Safari 防跳转
-DOMAIN,app-site-association.cdn-apple.com,REJECT,pre-matching
+DOMAIN,app-site-association.cdn-apple.com,𝗥𝗘𝗝𝗘𝗖𝗧,pre-matching
 # 巨量千川
 DOMAIN-SUFFIX,zijieapi.com,𝗗𝗜𝗥𝗘𝗖𝗧
 # TIKTOK
